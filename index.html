@@ -1,0 +1,1863 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VOIDHEART: Far Futures — A Spacefaring TTRPG</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --void: #03060F;
+  --deep: #080E1F;
+  --panel: #0D1530;
+  --panel-bright: #121C3A;
+  --signal: #F5A623;
+  --signal-dim: #C4821A;
+  --signal-glow: rgba(245,166,35,0.15);
+  --static: #7B4FD4;
+  --static-dim: #5A36A8;
+  --static-glow: rgba(123,79,212,0.15);
+  --text: #D8E0F0;
+  --text-dim: #7A8BAD;
+  --text-faint: #3A4A6A;
+  --border: rgba(255,255,255,0.07);
+  --border-signal: rgba(245,166,35,0.3);
+  --border-static: rgba(123,79,212,0.3);
+  --accent-teal: #2ECFCF;
+  --accent-rose: #E8547A;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--void);
+  color: var(--text);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 18px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ── STARFIELD ── */
+#starfield {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+.star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  animation: twinkle var(--dur) ease-in-out infinite alternate;
+  opacity: 0;
+}
+@keyframes twinkle {
+  from { opacity: var(--min-op); transform: scale(1); }
+  to   { opacity: var(--max-op); transform: scale(1.4); }
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: rgba(3,6,15,0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+.nav-logo {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 900;
+  font-size: 1rem;
+  letter-spacing: 0.15em;
+  color: var(--signal);
+  text-decoration: none;
+}
+.nav-logo span { color: var(--text-dim); font-weight: 400; font-size: 0.7rem; margin-left: 0.5rem; letter-spacing: 0.2em; vertical-align: middle; }
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+.nav-links a {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  color: var(--text-dim);
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--signal); }
+
+/* ── MAIN CONTENT ── */
+main {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 2rem 6rem;
+}
+
+/* ── HERO ── */
+.hero {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 6rem 2rem 4rem;
+}
+.hero-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  color: var(--signal);
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  animation: fadeDown 1s ease both;
+}
+.hero h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 900;
+  font-size: clamp(3.5rem, 10vw, 7rem);
+  letter-spacing: 0.05em;
+  line-height: 0.95;
+  background: linear-gradient(135deg, #fff 30%, var(--signal) 70%, var(--static) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: fadeDown 1s 0.1s ease both;
+}
+.hero-sub {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 400;
+  font-size: clamp(0.75rem, 2vw, 1rem);
+  letter-spacing: 0.3em;
+  color: var(--text-dim);
+  margin-top: 0.75rem;
+  text-transform: uppercase;
+  animation: fadeDown 1s 0.2s ease both;
+}
+.hero-desc {
+  max-width: 600px;
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--text-dim);
+  margin-top: 2.5rem;
+  line-height: 1.8;
+  animation: fadeDown 1s 0.35s ease both;
+}
+.hero-dice {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 3rem;
+  animation: fadeDown 1s 0.5s ease both;
+}
+.die-signal, .die-static {
+  width: 72px; height: 72px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  position: relative;
+}
+.die-signal {
+  background: rgba(245,166,35,0.1);
+  border: 2px solid var(--signal);
+  color: var(--signal);
+  box-shadow: 0 0 30px rgba(245,166,35,0.2);
+  animation: pulse-signal 3s ease-in-out infinite;
+}
+.die-static {
+  background: rgba(123,79,212,0.1);
+  border: 2px solid var(--static);
+  color: var(--static);
+  box-shadow: 0 0 30px rgba(123,79,212,0.2);
+  animation: pulse-static 3s 1.5s ease-in-out infinite;
+}
+.die-label {
+  position: absolute;
+  bottom: -1.5rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.55rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+@keyframes pulse-signal {
+  0%,100% { box-shadow: 0 0 20px rgba(245,166,35,0.2); }
+  50%      { box-shadow: 0 0 40px rgba(245,166,35,0.4); }
+}
+@keyframes pulse-static {
+  0%,100% { box-shadow: 0 0 20px rgba(123,79,212,0.2); }
+  50%      { box-shadow: 0 0 40px rgba(123,79,212,0.45); }
+}
+@keyframes fadeDown {
+  from { opacity:0; transform:translateY(-18px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+.scroll-cue {
+  margin-top: 5rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  animation: bob 2s ease-in-out infinite, fadeDown 1s 0.8s ease both;
+}
+@keyframes bob {
+  0%,100% { transform: translateY(0); }
+  50%      { transform: translateY(6px); }
+}
+
+/* ── SECTIONS ── */
+section {
+  margin-top: 5rem;
+  scroll-margin-top: 70px;
+}
+.section-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.25em;
+  color: var(--signal);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  color: #fff;
+  letter-spacing: 0.04em;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  color: var(--signal);
+  margin: 2rem 0 0.75rem;
+}
+h4 {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 600;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  color: var(--text);
+  margin-bottom: 0.4rem;
+}
+p { margin-bottom: 1rem; }
+p:last-child { margin-bottom: 0; }
+em { color: var(--text); font-style: italic; }
+strong { color: #fff; font-weight: 600; }
+
+/* ── RULE CARD ── */
+.rule-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.75rem 2rem;
+  margin: 1.5rem 0;
+  position: relative;
+  overflow: hidden;
+}
+.rule-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 4px; height: 100%;
+  background: var(--signal);
+}
+.rule-card.static-card::before { background: var(--static); }
+.rule-card.teal-card::before { background: var(--accent-teal); }
+.rule-card.rose-card::before { background: var(--accent-rose); }
+
+/* ── ROLL RESULT TABLE ── */
+.roll-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.95rem;
+}
+.roll-table th {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+}
+.roll-table td {
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+.roll-table tr:last-child td { border-bottom: none; }
+.roll-result {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.roll-signal .roll-result { color: var(--signal); }
+.roll-static .roll-result { color: var(--static); }
+.roll-crit .roll-result { color: var(--accent-teal); }
+.roll-table tr:hover td { background: rgba(255,255,255,0.02); }
+
+/* ── CURRENCY PILLS ── */
+.currency-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin: 1.5rem 0;
+}
+.currency-pill {
+  border-radius: 10px;
+  padding: 1.5rem;
+  border: 1px solid;
+}
+.currency-pill.signal-pill {
+  background: var(--signal-glow);
+  border-color: var(--border-signal);
+}
+.currency-pill.static-pill {
+  background: var(--static-glow);
+  border-color: var(--border-static);
+}
+.currency-pill h4 {
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.5rem;
+}
+.currency-pill.signal-pill h4 { color: var(--signal); }
+.currency-pill.static-pill h4 { color: var(--static); }
+.currency-pill p { font-size: 0.9rem; color: var(--text-dim); }
+
+/* ── DOMAIN GRID ── */
+.domain-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+.domain-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.25rem 1.5rem;
+  transition: border-color 0.2s, transform 0.2s;
+  cursor: default;
+}
+.domain-card:hover {
+  border-color: var(--border-signal);
+  transform: translateY(-3px);
+}
+.domain-icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+.domain-card h4 {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  color: var(--signal);
+  margin-bottom: 0.35rem;
+}
+.domain-card p {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  line-height: 1.5;
+}
+.domain-tags {
+  margin-top: 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+.tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.55rem;
+  letter-spacing: 0.1em;
+  color: var(--text-dim);
+  background: var(--panel-bright);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.2rem 0.5rem;
+  text-transform: uppercase;
+}
+
+/* ── LINEAGE CARDS ── */
+.lineage-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+.lineage-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.25rem 1.5rem;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.25s, transform 0.25s;
+}
+.lineage-card:hover { border-color: rgba(46,207,207,0.35); transform: translateY(-3px); }
+.lineage-card h4 {
+  font-size: 0.78rem;
+  color: var(--accent-teal);
+  margin-bottom: 0.3rem;
+  letter-spacing: 0.12em;
+}
+.lineage-card .lore {
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--text-dim);
+  margin-bottom: 0.75rem;
+}
+.feature-line {
+  font-size: 0.82rem;
+  color: var(--text);
+  margin-bottom: 0.3rem;
+  padding-left: 0.75rem;
+  border-left: 2px solid var(--border);
+}
+.feature-line strong { color: var(--accent-teal); }
+
+/* ── ORIGIN CARDS ── */
+.origin-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+.origin-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.25rem 1.5rem;
+  transition: border-color 0.25s, transform 0.25s;
+}
+.origin-card:hover { border-color: rgba(232,84,122,0.4); transform: translateY(-3px); }
+.origin-card h4 {
+  font-size: 0.78rem;
+  color: var(--accent-rose);
+  margin-bottom: 0.3rem;
+  letter-spacing: 0.12em;
+}
+.origin-card .lore {
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--text-dim);
+  margin-bottom: 0.75rem;
+}
+.origin-card .feature-line { border-color: rgba(232,84,122,0.25); }
+.origin-card .feature-line strong { color: var(--accent-rose); }
+
+/* ── STRESS TRACK ── */
+.stress-display {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin: 1rem 0;
+}
+.stress-pip {
+  width: 32px; height: 32px;
+  border-radius: 6px;
+  border: 2px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+}
+.pip-vitality { border-color: var(--accent-teal); background: rgba(46,207,207,0.1); color: var(--accent-teal); }
+.pip-resolve  { border-color: var(--static); background: rgba(123,79,212,0.1); color: var(--static); }
+
+/* ── ADVERSARY BLOCK ── */
+.adversary-block {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--accent-rose);
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+}
+.adversary-block h4 { color: var(--accent-rose); margin-bottom: 0.25rem; }
+.adversary-type {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+.stat-row {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+.stat-box {
+  text-align: center;
+  min-width: 60px;
+}
+.stat-box .val {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+}
+.stat-box .key {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.55rem;
+  letter-spacing: 0.1em;
+  color: var(--text-dim);
+  text-transform: uppercase;
+}
+.move-list { list-style: none; }
+.move-list li {
+  font-size: 0.9rem;
+  color: var(--text);
+  padding: 0.4rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.move-list li:last-child { border-bottom: none; }
+.move-list strong { color: var(--accent-rose); }
+
+/* ── SHIP BLOCK ── */
+.ship-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+.ship-stat {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+}
+.ship-stat h4 {
+  font-size: 0.65rem;
+  color: var(--text-dim);
+  margin-bottom: 0.35rem;
+}
+.ship-stat .stat-val {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--accent-teal);
+}
+
+/* ── DIVIDER ── */
+.divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 4rem 0;
+  position: relative;
+}
+.divider::after {
+  content: '◆';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background: var(--void);
+  padding: 0 1rem;
+  color: var(--text-faint);
+  font-size: 0.7rem;
+}
+
+/* ── CALLOUT BOX ── */
+.callout {
+  background: linear-gradient(135deg, rgba(245,166,35,0.05) 0%, rgba(123,79,212,0.05) 100%);
+  border: 1px solid rgba(245,166,35,0.2);
+  border-radius: 10px;
+  padding: 1.5rem 2rem;
+  margin: 2rem 0;
+  font-style: italic;
+  color: var(--text-dim);
+  font-size: 1.05rem;
+  text-align: center;
+  line-height: 1.9;
+}
+
+/* ── GM SECTION ── */
+.gm-principles {
+  counter-reset: principle;
+  margin: 1.5rem 0;
+}
+.principle {
+  counter-increment: principle;
+  display: flex;
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+  align-items: flex-start;
+}
+.principle-num {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--signal);
+  min-width: 2rem;
+  line-height: 1;
+  margin-top: 0.25rem;
+}
+.principle p { font-size: 0.95rem; }
+
+/* ── FOOTER ── */
+footer {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 3rem 2rem;
+  border-top: 1px solid var(--border);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  line-height: 2.2;
+}
+
+/* ── VOCATION STAT TABLE ── */
+.voc-stat-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.88rem;
+}
+.voc-stat-table th {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.55rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  padding: 0.5rem 0.75rem;
+  border-bottom: 2px solid var(--border);
+  text-align: center;
+  white-space: nowrap;
+}
+.voc-stat-table th:first-child { text-align: left; }
+.voc-stat-table td {
+  padding: 0.7rem 0.75rem;
+  border-bottom: 1px solid var(--border);
+  text-align: center;
+  vertical-align: middle;
+}
+.voc-stat-table td:first-child {
+  text-align: left;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--signal);
+}
+.voc-stat-table tr:last-child td { border-bottom: none; }
+.voc-stat-table tr:hover td { background: rgba(255,255,255,0.02); }
+.v-high { color: var(--accent-teal); font-weight: 600; }
+.v-low  { color: var(--text-dim); }
+.v-threshold {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+}
+.voc-group-header td {
+  background: var(--panel-bright);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.55rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  text-align: left !important;
+  padding: 0.4rem 0.75rem;
+}
+
+/* ── SHIP CLASS CARDS ── */
+.ship-class-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin: 1.5rem 0;
+}
+.ship-class-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent-teal);
+  border-radius: 10px;
+  padding: 1.5rem;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.ship-class-card:hover { border-left-color: var(--signal); transform: translateX(3px); }
+.ship-class-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.ship-class-name {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  color: #fff;
+}
+.ship-class-role {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  color: var(--accent-teal);
+  text-transform: uppercase;
+  margin-top: 0.2rem;
+}
+.ship-stat-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+.ship-stat-item { text-align: center; min-width: 50px; }
+.ship-stat-item .val {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--accent-teal);
+}
+.ship-stat-item .key {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.52rem;
+  letter-spacing: 0.1em;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  display: block;
+  margin-top: 0.15rem;
+}
+.ship-threshold-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+.threshold-pill {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 4px;
+  letter-spacing: 0.08em;
+}
+.threshold-minor { background: rgba(245,166,35,0.1); color: var(--signal); border: 1px solid rgba(245,166,35,0.3); }
+.threshold-major { background: rgba(232,84,122,0.1); color: var(--accent-rose); border: 1px solid rgba(232,84,122,0.3); }
+.breach-slots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+.breach-slot {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  background: rgba(232,84,122,0.08);
+  border: 1px solid rgba(232,84,122,0.2);
+  color: var(--accent-rose);
+  letter-spacing: 0.05em;
+}
+.ship-trait {
+  font-size: 0.88rem;
+  color: var(--text-dim);
+  font-style: italic;
+}
+.ship-trait strong { color: var(--signal); font-style: normal; }
+
+/* ── DAMAGE HOW-TO BOX ── */
+.damage-flow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 1.25rem 0;
+}
+.damage-tier {
+  background: var(--panel);
+  padding: 1rem;
+  text-align: center;
+}
+.damage-tier .tier-val {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+.damage-tier .tier-effect { font-size: 0.78rem; color: var(--text-dim); line-height: 1.4; }
+.tier-a .tier-val { color: var(--text-dim); }
+.tier-b .tier-val { color: var(--signal); }
+.tier-c .tier-val { color: var(--accent-rose); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 600px) {
+  .currency-grid { grid-template-columns: 1fr; }
+  .nav-links { display: none; }
+  .hero h1 { font-size: 3rem; }
+  .hero-dice { gap: 1rem; }
+  .damage-flow { grid-template-columns: 1fr; }
+  .voc-stat-table { font-size: 0.78rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- Starfield -->
+<div id="starfield"></div>
+
+<!-- Navigation -->
+<nav>
+  <a class="nav-logo" href="#">VOIDHEART <span>Far Futures</span></a>
+  <ul class="nav-links">
+    <li><a href="#core">Core Roll</a></li>
+    <li><a href="#characters">Characters</a></li>
+    <li><a href="#vocations">Vocations</a></li>
+    <li><a href="#ships">Ships</a></li>
+    <li><a href="#gm">GM Guide</a></li>
+  </ul>
+</nav>
+
+<!-- Hero -->
+<div class="hero">
+  <div class="hero-tag">A Far Future Tabletop Roleplaying Game</div>
+  <h1>VOIDHEART</h1>
+  <div class="hero-sub">Far Futures · Deep Space · Signal &amp; Static</div>
+  <p class="hero-desc">
+    The galaxy is vast. Empires rise and collapse between star systems that haven't spoken in centuries.
+    You are the kind of person who walks toward the edge of the map — and keeps walking.
+  </p>
+  <div class="hero-dice" style="margin-top:3rem">
+    <div style="text-align:center">
+      <div class="die-signal">d12<div class="die-label" style="color:var(--signal)">Signal</div></div>
+    </div>
+    <div style="text-align:center">
+      <div class="die-static">d12<div class="die-label" style="color:var(--static)">Static</div></div>
+    </div>
+  </div>
+  <div class="scroll-cue" style="margin-top:4rem">▾ Scroll to Read ▾</div>
+</div>
+
+<!-- MAIN -->
+<main>
+
+  <!-- INTRODUCTION -->
+  <section id="intro">
+    <div class="section-label">01 / Introduction</div>
+    <h2>What Is Voidheart?</h2>
+    <p>
+      <strong>Voidheart</strong> is a tabletop roleplaying game of far-future spacefaring adventure, built on the bones of
+      a beloved hope-and-fear dice system — reimagined for the stars. One player takes the role of the
+      <em>Navigator</em> (the GM), painting the galaxy and all its dangers. The rest play <em>Crew</em> —
+      explorers, soldiers, hackers, psionics, pilots, and drifters who push into the unknown together.
+    </p>
+    <p>
+      The game centers on a fundamental tension: <strong>Signal</strong> — connection, luck, ingenuity, and hope —
+      versus <strong>Static</strong> — entropy, threat, chaos, and the cold indifference of the void.
+      Every roll of the dice asks which force holds sway at this moment, in this corner of the galaxy.
+    </p>
+    <div class="callout">
+      "The void doesn't hate you. It doesn't even know you exist.<br>
+      That's the part that should keep you up at night."
+    </div>
+
+    <h3>What You'll Need</h3>
+    <div class="rule-card">
+      <p>Two twelve-sided dice in two different colors — designate one your <strong style="color:var(--signal)">Signal Die</strong> and one your <strong style="color:var(--static)">Static Die</strong>. A handful of six-siders for damage. Character sheets. A Navigator screen (or nothing — play with your cards on the table). And people willing to stare into the dark together.</p>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- CORE ROLL -->
+  <section id="core">
+    <div class="section-label">02 / Core Mechanics</div>
+    <h2>The Signal &amp; Static Roll</h2>
+    <p>
+      Whenever a Crew member attempts something risky, the Navigator calls for a roll.
+      Grab your two d12s — <strong style="color:var(--signal)">Signal</strong> and <strong style="color:var(--static)">Static</strong> —
+      add the relevant <em>Trait modifier</em>, and compare them.
+    </p>
+
+    <h3>Reading the Roll</h3>
+    <table class="roll-table">
+      <thead>
+        <tr>
+          <th>Result</th>
+          <th>Outcome</th>
+          <th>What Happens</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="roll-crit">
+          <td><span class="roll-result">BOTH show 12</span></td>
+          <td><strong>Critical Signal</strong></td>
+          <td>Exceptional success. You gain 2 Signal tokens and describe something spectacular. The Navigator has no say in how it goes.</td>
+        </tr>
+        <tr class="roll-signal">
+          <td><span class="roll-result">Signal &gt; Static</span></td>
+          <td><strong>With Signal</strong></td>
+          <td>You succeed and gain 1 Signal token. If the roll is 17+, describe an added benefit.</td>
+        </tr>
+        <tr class="roll-static">
+          <td><span class="roll-result">Static &gt; Signal</span></td>
+          <td><strong>With Static</strong></td>
+          <td>You succeed, but the Navigator gains 1 Static token and introduces a cost, complication, or threat.</td>
+        </tr>
+        <tr class="roll-static">
+          <td><span class="roll-result">Total &lt; 10</span></td>
+          <td><strong>Miss</strong></td>
+          <td>You don't succeed. The Navigator gains 1 Static token and narrates what goes wrong. The action still matters — the story moves.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Trait Scores</h3>
+    <p>Characters have six traits. Add the relevant one to your total (both dice combined) when making a check.</p>
+    <div class="rule-card">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem 2rem">
+        <div><strong>Nerve</strong> — Combat, endurance, staying cool under fire.</div>
+        <div><strong>Finesse</strong> — Stealth, piloting, precision work.</div>
+        <div><strong>Edge</strong> — Hacking, science, technical problem-solving.</div>
+        <div><strong>Presence</strong> — Persuasion, leadership, reading people.</div>
+        <div><strong>Instinct</strong> — Sensing danger, survival, psionic attunement.</div>
+        <div><strong>Mettle</strong> — Willpower, resisting harm, brute force.</div>
+      </div>
+    </div>
+
+    <h3>Difficulty Thresholds</h3>
+    <div class="rule-card teal-card">
+      <p>The Navigator sets a <strong>Difficulty</strong> before the roll: <strong>Standard (10)</strong>, <strong>Tough (15)</strong>, or <strong>Brutal (20)</strong>. The total of both dice plus trait must meet or beat the threshold to succeed. The Signal vs. Static comparison still determines the <em>tone</em> of the success.</p>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- SIGNAL & STATIC TOKENS -->
+  <section id="tokens">
+    <div class="section-label">03 / Currencies</div>
+    <h2>Signal &amp; Static Tokens</h2>
+    <p>
+      Signal and Static are more than dice — they're the tidal forces of every scene. Both the Crew and
+      the Navigator accumulate tokens and spend them to shape the story.
+    </p>
+    <div class="currency-grid">
+      <div class="currency-pill signal-pill">
+        <h4>◈ Signal Tokens (Crew)</h4>
+        <p>Earned on Signal rolls and Critical hits. Spend them to: push a failed roll into a success, add a detail to the world, heal 1 Vitality, resist an incoming consequence, or trigger a Vocation's Signal ability.</p>
+      </div>
+      <div class="currency-pill static-pill">
+        <h4>◇ Static Tokens (Navigator)</h4>
+        <p>Earned on Static rolls and misses. Spend them to: introduce a new threat, trigger an adversary action outside normal order, make the environment more dangerous, or activate a named adversary's special move.</p>
+      </div>
+    </div>
+    <div class="rule-card">
+      <h4>Token Limits</h4>
+      <p>The Crew may hold up to <strong>5 Signal tokens</strong> total, shared among the group. The Navigator may hold up to <strong>6 Static tokens</strong>. Any earned beyond the cap is simply lost.</p>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- CHARACTER CREATION -->
+  <section id="characters">
+    <div class="section-label">04 / Character Creation</div>
+    <h2>Building Your Crew</h2>
+    <p>
+      Creating a Voidheart character takes four steps: choose a <strong>Lineage</strong> (your species and biological heritage),
+      choose an <strong>Origin</strong> (where and how you grew up), pick a <strong>Vocation</strong> (your role aboard ship and in the galaxy),
+      and set your <strong>Traits</strong>.
+    </p>
+
+    <h3>Step 1: Lineage</h3>
+    <p>Lineage reflects your biology. Every lineage follows the same budget: <strong>2 stat points</strong>, plus <strong>one passive</strong>. A threshold improvement <em>is</em> the passive for that lineage — those lineages don't get a separate ability on top of it.</p>
+
+    <div class="lineage-grid">
+      <div class="lineage-card">
+        <h4>TERRAN</h4>
+        <p class="lore">Humanity spread from a blue world that most living Terrans have never seen.</p>
+        <div class="feature-line"><strong>Stats:</strong> Vit +1, Res +1</div>
+        <div class="feature-line"><strong>Adaptive:</strong> Once per session, re-roll any one die after seeing the result but before the consequence is narrated.</div>
+      </div>
+      <div class="lineage-card">
+        <h4>SYNTH</h4>
+        <p class="lore">Artificial minds in synthetic bodies — some remember being made; others were born into it.</p>
+        <div class="feature-line"><strong>Stats:</strong> Vit +2</div>
+        <div class="feature-line"><strong>Environmental Immunity:</strong> Immune to Resolve damage from environmental sources — hard vacuum, toxins, extreme cold, the psychological weight of the void. Your mind doesn't register those as threats.</div>
+      </div>
+      <div class="lineage-card">
+        <h4>VEKHARI</h4>
+        <p class="lore">Insectoid beings from a high-gravity hive world. Their colonies fell to the Rend three centuries ago.</p>
+        <div class="feature-line"><strong>Stats:</strong> Vit +2, Vit Minor threshold +1</div>
+        <div class="feature-line"><em>The threshold is the passive. No separate ability.</em></div>
+      </div>
+      <div class="lineage-card">
+        <h4>LUMINAL</h4>
+        <p class="lore">Energy-based entities in physical forms — "bodies" sustained by internal coherence fields.</p>
+        <div class="feature-line"><strong>Stats:</strong> Res +2</div>
+        <div class="feature-line"><strong>Phaseshift:</strong> Once per scene, pass through one solid obstacle up to 2m thick. You emerge on the other side intact.</div>
+      </div>
+      <div class="lineage-card">
+        <h4>GRAVBORN</h4>
+        <p class="lore">Humans evolved or engineered for high-gravity worlds. Dense-boned, wide-framed, unstoppable.</p>
+        <div class="feature-line"><strong>Stats:</strong> Vit +2, Vit Major threshold +1</div>
+        <div class="feature-line"><em>The threshold is the passive. No separate ability.</em></div>
+      </div>
+      <div class="lineage-card">
+        <h4>RIMFOLK</h4>
+        <p class="lore">Born on ships, stations, or frontier rocks — raised between destinations, at home nowhere and everywhere.</p>
+        <div class="feature-line"><strong>Stats:</strong> Vit +1, Res +1</div>
+        <div class="feature-line"><strong>Shipwise:</strong> When aboard a ship, you may spend 1 Signal to treat any failed check as a With Static success instead — you get what you needed, but the Navigator still gains a Static token and introduces a complication.</div>
+      </div>
+    </div>
+
+    <h3>Step 2: Origin</h3>
+    <p>Origin is where you grew up and what it made you. Every origin follows the same budget: <strong>3 stat points</strong>, where a threshold improvement counts as 1 point. Origins also grant a bonus skill, a starting contact, and gear.</p>
+
+    <div class="origin-grid">
+      <div class="origin-card">
+        <h4>HEGEMONY CORE</h4>
+        <p class="lore">You grew up inside the Interstellar Hegemony — clean air, propaganda, and opportunity for those who don't ask too many questions.</p>
+        <div class="feature-line"><strong>Stats:</strong> Res +2, Res Minor threshold +1 — institutional conditioning breeds deep composure under pressure</div>
+        <div class="feature-line"><strong>Bonus Skill:</strong> Politics, Protocol</div>
+        <div class="feature-line"><strong>Contact:</strong> A Hegemony officer who still owes you something</div>
+        <div class="feature-line"><strong>Gear:</strong> Hegemony credentials (1 use before expiring)</div>
+      </div>
+      <div class="origin-card">
+        <h4>FRONTIER COLONY</h4>
+        <p class="lore">A small world at the edge of settled space. Self-sufficient and suspicious of authority by necessity.</p>
+        <div class="feature-line"><strong>Stats:</strong> Vit +3 — hard labour, hard weather, and the understanding that no one is coming to help you</div>
+        <div class="feature-line"><strong>Bonus Skill:</strong> Engineering, Survival</div>
+        <div class="feature-line"><strong>Contact:</strong> A colonist community that will harbour you, no questions asked</div>
+        <div class="feature-line"><strong>Gear:</strong> Frontier-issue multi-tool (never breaks)</div>
+      </div>
+      <div class="origin-card">
+        <h4>WANDERING FLEET</h4>
+        <p class="lore">You were born aboard one of the great migration fleets — a city of ships moving slow between distant stars.</p>
+        <div class="feature-line"><strong>Stats:</strong> Res +3 — years of close quarters, long hauls, and the relentless intimacy of shared purpose</div>
+        <div class="feature-line"><strong>Bonus Skill:</strong> Navigation, Trade</div>
+        <div class="feature-line"><strong>Contact:</strong> A fleet captain who'll give you passage anywhere on the route</div>
+        <div class="feature-line"><strong>Gear:</strong> Ancient star charts (accurate to a dead civilization)</div>
+      </div>
+      <div class="origin-card">
+        <h4>STATION-BORN</h4>
+        <p class="lore">Raised on a space station — corridors, hierarchies, and the politics of enclosed spaces were your whole world.</p>
+        <div class="feature-line"><strong>Stats:</strong> Vit +1, Res +2 — street-smart endurance that is neither purely physical nor purely mental</div>
+        <div class="feature-line"><strong>Bonus Skill:</strong> Streetwise, Black Market</div>
+        <div class="feature-line"><strong>Contact:</strong> A fixer in the station's underbelly who can move things quietly</div>
+        <div class="feature-line"><strong>Gear:</strong> Concealed holdout pistol, EMP charge ×2</div>
+      </div>
+      <div class="origin-card">
+        <h4>RECLAIMED</h4>
+        <p class="lore">You grew up in the ruins of something the Rend destroyed. Everything you have, you took back.</p>
+        <div class="feature-line"><strong>Stats:</strong> Vit +2, Vit Minor threshold +1 — a survivor's body is forged by necessity, not genetics</div>
+        <div class="feature-line"><strong>Bonus Skill:</strong> Combat, Scavenging</div>
+        <div class="feature-line"><strong>Contact:</strong> A cell of resistance fighters who trust you with their lives</div>
+        <div class="feature-line"><strong>Gear:</strong> Rend-pattern armour plating (worn, but functional)</div>
+      </div>
+      <div class="origin-card">
+        <h4>DEEP SURVEY</h4>
+        <p class="lore">Raised by scientists or explorers at the very edge of charted space. You've seen things most people haven't named yet.</p>
+        <div class="feature-line"><strong>Stats:</strong> Res +2, Res Major threshold +1 — exposure to the unknowable teaches you either to break or to become unbreakable</div>
+        <div class="feature-line"><strong>Bonus Skill:</strong> Xenology, Archaeology</div>
+        <div class="feature-line"><strong>Contact:</strong> A research institute that will trade information for information</div>
+        <div class="feature-line"><strong>Gear:</strong> Personal scanner with 3 unknown readings still queued</div>
+      </div>
+    </div>
+
+    <h3>Step 3: Traits</h3>
+    <div class="rule-card">
+      <p>Distribute <strong>10 points</strong> among your six traits. No trait may start above +3 or below −1. At character creation, pick one trait to be your <em>Prime</em> — once per session, you may use your Prime trait in place of any other trait on a single roll.</p>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- VITALITY & RESOLVE -->
+  <section id="health">
+    <div class="section-label">05 / Health &amp; Stress</div>
+    <h2>Vitality &amp; Resolve</h2>
+    <p>
+      Characters track two harm tracks: <strong style="color:var(--accent-teal)">Vitality</strong> (physical punishment your body can absorb)
+      and <strong style="color:var(--static)">Resolve</strong> (mental and emotional endurance). Both tracks are defined by
+      <em>three values</em>: a <strong>total capacity</strong> (how many pips), a <strong>Minor Threshold</strong>, and a <strong>Major Threshold</strong>.
+    </p>
+
+    <h3>How Damage Works</h3>
+    <p>When you take a hit, the Navigator says how much damage it deals. Compare that number to your thresholds — <em>not</em> your current pips — to determine how many pips you mark.</p>
+    <div class="damage-flow">
+      <div class="damage-tier tier-a">
+        <div class="tier-val">Below Minor</div>
+        <div class="tier-effect">Mark <strong>1 pip</strong>. Glancing blow, superficial wound, passing fear.</div>
+      </div>
+      <div class="damage-tier tier-b">
+        <div class="tier-val">At or above Minor</div>
+        <div class="tier-effect">Mark <strong>2 pips</strong>. Real harm — you'll feel this later.</div>
+      </div>
+      <div class="damage-tier tier-c">
+        <div class="tier-val">At or above Major</div>
+        <div class="tier-effect">Mark <strong>3 pips + a Condition</strong>. Serious injury or psychological break.</div>
+      </div>
+    </div>
+    <p>When all Vitality pips are filled: <strong>Incapacitated</strong> (unconscious or dying — another character must stabilize you before you can act). When all Resolve pips are filled: <strong>Broken</strong> (you are overwhelmed — you cannot act offensively until you receive aid or rest).</p>
+
+    <h3>Thresholds by Vocation</h3>
+    <p>Every Vocation sets your base Vitality and Resolve values. A Fleet Warden is a wall of physical endurance with modest mental defense; a Void Seeker is fragile in a firefight but nearly unshakeable in the mind. Lineage modifiers apply on top of these base values.</p>
+
+    <table class="voc-stat-table">
+      <thead>
+        <tr>
+          <th>Vocation</th>
+          <th>Vitality</th>
+          <th>Vit. Minor</th>
+          <th>Vit. Major</th>
+          <th>Resolve</th>
+          <th>Res. Minor</th>
+          <th>Res. Major</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="voc-group-header"><td colspan="7">— Combat-Forward —</td></tr>
+        <tr>
+          <td>Fleet Warden</td>
+          <td class="v-high v-threshold">12</td>
+          <td class="v-threshold">4</td>
+          <td class="v-threshold">7</td>
+          <td class="v-low v-threshold">6</td>
+          <td class="v-threshold">2</td>
+          <td class="v-threshold">4</td>
+        </tr>
+        <tr>
+          <td>Commander</td>
+          <td class="v-threshold">9</td>
+          <td class="v-threshold">3</td>
+          <td class="v-threshold">6</td>
+          <td class="v-threshold">8</td>
+          <td class="v-threshold">3</td>
+          <td class="v-threshold">5</td>
+        </tr>
+        <tr class="voc-group-header"><td colspan="7">— Agility &amp; Cunning —</td></tr>
+        <tr>
+          <td>Drifter Pilot</td>
+          <td class="v-threshold">7</td>
+          <td class="v-threshold">2</td>
+          <td class="v-threshold">5</td>
+          <td class="v-threshold">8</td>
+          <td class="v-threshold">3</td>
+          <td class="v-threshold">5</td>
+        </tr>
+        <tr>
+          <td>Ghost Operative</td>
+          <td class="v-threshold">7</td>
+          <td class="v-threshold">3</td>
+          <td class="v-threshold">5</td>
+          <td class="v-threshold">7</td>
+          <td class="v-threshold">3</td>
+          <td class="v-threshold">5</td>
+        </tr>
+        <tr>
+          <td>Corsair</td>
+          <td class="v-threshold">8</td>
+          <td class="v-threshold">3</td>
+          <td class="v-threshold">5</td>
+          <td class="v-low v-threshold">6</td>
+          <td class="v-threshold">2</td>
+          <td class="v-threshold">4</td>
+        </tr>
+        <tr class="voc-group-header"><td colspan="7">— Mind &amp; Esoterica —</td></tr>
+        <tr>
+          <td>Savant</td>
+          <td class="v-low v-threshold">5</td>
+          <td class="v-threshold">2</td>
+          <td class="v-threshold">4</td>
+          <td class="v-threshold">9</td>
+          <td class="v-threshold">4</td>
+          <td class="v-threshold">6</td>
+        </tr>
+        <tr>
+          <td>Void Seeker</td>
+          <td class="v-low v-threshold">5</td>
+          <td class="v-threshold">2</td>
+          <td class="v-threshold">4</td>
+          <td class="v-high v-threshold">10</td>
+          <td class="v-threshold">4</td>
+          <td class="v-threshold">7</td>
+        </tr>
+        <tr>
+          <td>Empath</td>
+          <td class="v-low v-threshold">4</td>
+          <td class="v-threshold">1</td>
+          <td class="v-threshold">3</td>
+          <td class="v-high v-threshold">11</td>
+          <td class="v-threshold">4</td>
+          <td class="v-threshold">7</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Applying Lineage &amp; Origin Modifiers</h3>
+    <div class="rule-card">
+      <p>Apply Lineage first, then Origin, on top of your Vocation's base stats. A threshold improvement raises the number incoming damage must reach to trigger that severity tier.</p>
+      <div style="margin-top:1rem">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;letter-spacing:0.15em;color:var(--text-dim);text-transform:uppercase;margin-bottom:0.6rem">Lineage — 2 stat points + 1 passive (threshold = passive)</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.4rem 2rem;font-size:0.88rem;margin-bottom:1.25rem">
+          <div><strong style="color:var(--accent-teal)">Terran:</strong> Vit +1, Res +1</div>
+          <div><strong style="color:var(--accent-teal)">Synth:</strong> Vit +2</div>
+          <div><strong style="color:var(--accent-teal)">Vekhari:</strong> Vit +2, Vit Minor threshold +1</div>
+          <div><strong style="color:var(--accent-teal)">Luminal:</strong> Res +2</div>
+          <div><strong style="color:var(--accent-teal)">Gravborn:</strong> Vit +2, Vit Major threshold +1</div>
+          <div><strong style="color:var(--accent-teal)">Rimfolk:</strong> Vit +1, Res +1</div>
+        </div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;letter-spacing:0.15em;color:var(--text-dim);text-transform:uppercase;margin-bottom:0.6rem">Origin — 3 stat points (threshold = 1 point)</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.4rem 2rem;font-size:0.88rem">
+          <div><strong style="color:var(--accent-rose)">Hegemony Core:</strong> Res +2, Res Minor threshold +1</div>
+          <div><strong style="color:var(--accent-rose)">Frontier Colony:</strong> Vit +3</div>
+          <div><strong style="color:var(--accent-rose)">Wandering Fleet:</strong> Res +3</div>
+          <div><strong style="color:var(--accent-rose)">Station-Born:</strong> Vit +1, Res +2</div>
+          <div><strong style="color:var(--accent-rose)">Reclaimed:</strong> Vit +2, Vit Minor threshold +1</div>
+          <div><strong style="color:var(--accent-rose)">Deep Survey:</strong> Res +2, Res Major threshold +1</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="rule-card teal-card" style="margin-top:1.25rem">
+      <h4>Armor &amp; Shielding</h4>
+      <p>Armor reduces incoming physical damage by its value <em>before</em> you compare to thresholds. Shielding works the same for Resolve damage. Both refresh at the start of each new encounter. A hit reduced below 1 by Armor still counts as a hit — mark 1 pip regardless.</p>
+    </div>
+
+    <h3>Recovery</h3>
+    <div class="rule-card">
+      <p><strong>Short Rest (10 min):</strong> Spend 1 Signal token to clear 2 Vitality pips or 2 Resolve pips. A Savant or Fleet Warden crewmate may assist, allowing you to clear pips without spending Signal once per short rest.</p>
+      <p style="margin-top:0.75rem"><strong>Long Rest (8 hrs, safe location):</strong> Clear all pips. Conditions require a successful Mettle or Edge roll (Difficulty 10) or appropriate treatment to clear — they don't go away on their own.</p>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- VOCATIONS -->
+  <section id="vocations">
+    <div class="section-label">06 / Vocations &amp; Domains</div>
+    <h2>Vocations &amp; Domains</h2>
+    <p>
+      Your <strong>Vocation</strong> is your character class — your identity and role aboard ship. There are eight Vocations.
+      Each one has fixed Vitality/Resolve stats (see Section 05), a Prime Trait, a unique Signal Ability, and access to
+      two <strong>Domains</strong>.
+    </p>
+    <p>
+      <strong>Domains</strong> are the ability pools you draw Maneuvers from. They are not Vocations — they're thematic
+      libraries of moves. At creation, pick <strong>three Maneuvers</strong> total from your Vocation's two Domains.
+      As you advance, you pick more.
+    </p>
+
+    <h3>The Nine Domains</h3>
+    <p style="color:var(--text-dim);font-size:0.9rem;margin-bottom:1rem">These are distinct from the Vocation names. A Corsair draws from Sable and Iron domains. The domains are the toolbox; the Vocation is who you are.</p>
+    <div class="domain-grid">
+      <div class="domain-card">
+        <div class="domain-icon">🔫</div>
+        <h4>IRON</h4>
+        <p>Direct combat, personal weapons, armor use, close-quarters tactics, and refusing to go down.</p>
+        <div class="domain-tags"><span class="tag">Nerve</span><span class="tag">Mettle</span></div>
+      </div>
+      <div class="domain-card">
+        <div class="domain-icon">🚀</div>
+        <h4>VECTOR</h4>
+        <p>Ship piloting, jump navigation, evasive maneuvers, orbital mechanics, and reading space like a language.</p>
+        <div class="domain-tags"><span class="tag">Finesse</span><span class="tag">Instinct</span></div>
+      </div>
+      <div class="domain-card">
+        <div class="domain-icon">🌑</div>
+        <h4>SHADOW</h4>
+        <p>Stealth, infiltration, disguise, assassination, and moving through places you were never supposed to be.</p>
+        <div class="domain-tags"><span class="tag">Finesse</span><span class="tag">Presence</span></div>
+      </div>
+      <div class="domain-card">
+        <div class="domain-icon">💾</div>
+        <h4>GRID</h4>
+        <p>Hacking, electronic warfare, system intrusion, drone control, and the weaponization of information.</p>
+        <div class="domain-tags"><span class="tag">Edge</span><span class="tag">Finesse</span></div>
+      </div>
+      <div class="domain-card">
+        <div class="domain-icon">🔬</div>
+        <h4>CIPHER</h4>
+        <p>Science, medicine, engineering, analysis, and building things no one else could from what's at hand.</p>
+        <div class="domain-tags"><span class="tag">Edge</span><span class="tag">Mettle</span></div>
+      </div>
+      <div class="domain-card">
+        <div class="domain-icon">🌌</div>
+        <h4>DEEP</h4>
+        <p>Xenoarchaeology, alien biology, ancient technologies, void phenomena, and lore from dead civilizations.</p>
+        <div class="domain-tags"><span class="tag">Instinct</span><span class="tag">Edge</span></div>
+      </div>
+      <div class="domain-card">
+        <div class="domain-icon">🧠</div>
+        <h4>PSIONIC</h4>
+        <p>Mental projection, emotional reading, precognition, psychic defense, and communion with the inhuman.</p>
+        <div class="domain-tags"><span class="tag">Instinct</span><span class="tag">Presence</span></div>
+      </div>
+      <div class="domain-card">
+        <div class="domain-icon">⚓</div>
+        <h4>TIDE</h4>
+        <p>Leadership, morale, tactical coordination, inspiring under fire, and the weight of being the one others follow.</p>
+        <div class="domain-tags"><span class="tag">Presence</span><span class="tag">Mettle</span></div>
+      </div>
+      <div class="domain-card">
+        <div class="domain-icon">💀</div>
+        <h4>SABLE</h4>
+        <p>Smuggling, underworld contacts, improvised solutions, heists, and the charisma of someone with nothing to lose.</p>
+        <div class="domain-tags"><span class="tag">Nerve</span><span class="tag">Presence</span></div>
+      </div>
+    </div>
+
+    <h3>The Eight Vocations</h3>
+    <p>Each Vocation lists its two Domains, Prime Trait, and Signal Ability. <strong>No two Vocations share the same domain pair.</strong> Overlap in individual domains is intentional — a Ghost Operative and a Savant both draw from Grid, but what they do with it is completely different.</p>
+
+    <div style="display:grid;gap:1rem;margin-top:1.25rem">
+
+      <div class="rule-card">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem">
+          <h4 style="margin:0">FLEET WARDEN</h4>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:var(--text-dim);letter-spacing:0.1em">IRON · TIDE &nbsp;|&nbsp; Prime: NERVE</div>
+        </div>
+        <p style="margin-bottom:0.5rem;font-size:0.9rem;color:var(--text-dim)"><em>Niche: frontline combatant, crew protector, last line of defence.</em></p>
+        <p style="margin-bottom:0.5rem">You are the wall between your crew and the galaxy's teeth. You fight, you endure, and you lead from the front. The Tide domain isn't about commanding from a bridge — it's about inspiring people while standing next to them.</p>
+        <p style="font-size:0.9rem"><strong style="color:var(--signal)">Signal Ability — Rally:</strong> Spend 1 Signal. One crewmate takes an immediate free action outside initiative order and clears 1 Vitality pip.</p>
+      </div>
+
+      <div class="rule-card">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem">
+          <h4 style="margin:0">COMMANDER</h4>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:var(--text-dim);letter-spacing:0.1em">TIDE · VECTOR &nbsp;|&nbsp; Prime: PRESENCE</div>
+        </div>
+        <p style="margin-bottom:0.5rem;font-size:0.9rem;color:var(--text-dim)"><em>Niche: tactical coordinator, fleet engagement, strategic resource management.</em></p>
+        <p style="margin-bottom:0.5rem">You lead through clarity, foresight, and an understanding of space that makes the crew feel like they're always in the right place. You're not the one flying the ship — you're the one who knows where it needs to be three moves from now.</p>
+        <p style="font-size:0.9rem"><strong style="color:var(--signal)">Signal Ability — Tactical Override:</strong> Spend 2 Signal. Redirect any one adversary action — after it's announced but before it resolves — to a different target of your choice.</p>
+      </div>
+
+      <div class="rule-card">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem">
+          <h4 style="margin:0">DRIFTER PILOT</h4>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:var(--text-dim);letter-spacing:0.1em">VECTOR · SABLE &nbsp;|&nbsp; Prime: FINESSE</div>
+        </div>
+        <p style="margin-bottom:0.5rem;font-size:0.9rem;color:var(--text-dim)"><em>Niche: ship handling, evasion, getting in and out of places you weren't invited.</em></p>
+        <p style="margin-bottom:0.5rem">You fly by feel and spite. The Sable domain gives you the underworld contacts and improvised audacity that turns a flight plan into something more interesting — landing in places that aren't on charts, with cargo that isn't on manifests.</p>
+        <p style="font-size:0.9rem"><strong style="color:var(--signal)">Signal Ability — Emergency Burn:</strong> Spend 1 Signal. Automatically succeed on any piloting check — no roll — once per scene. The ship takes 1d6 Hull damage from drive stress.</p>
+      </div>
+
+      <div class="rule-card">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem">
+          <h4 style="margin:0">GHOST OPERATIVE</h4>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:var(--text-dim);letter-spacing:0.1em">SHADOW · GRID &nbsp;|&nbsp; Prime: FINESSE</div>
+        </div>
+        <p style="margin-bottom:0.5rem;font-size:0.9rem;color:var(--text-dim)"><em>Niche: infiltration, electronic intrusion, assassination, leaving no trace.</em></p>
+        <p style="margin-bottom:0.5rem">You move through physical and digital spaces with equal ease. Where the Savant brute-forces systems from the outside, you're already inside the building when the hack completes. The combination of Shadow and Grid makes you a professional absence.</p>
+        <p style="font-size:0.9rem"><strong style="color:var(--signal)">Signal Ability — Clean Slate:</strong> Spend 2 Signal. Completely erase your presence from one electronic system, one set of surveillance records, or one verified witness's memory.</p>
+      </div>
+
+      <div class="rule-card">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem">
+          <h4 style="margin:0">CORSAIR</h4>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:var(--text-dim);letter-spacing:0.1em">SABLE · IRON &nbsp;|&nbsp; Prime: NERVE</div>
+        </div>
+        <p style="margin-bottom:0.5rem;font-size:0.9rem;color:var(--text-dim)"><em>Niche: scrappy combat, underworld dealing, improvised solutions under pressure.</em></p>
+        <p style="margin-bottom:0.5rem">You operate in the space between laws. Unlike the Ghost Operative, who avoids confrontation, you lean into it — fights, deals, heists. The Iron domain means you can handle yourself when things go wrong, which they do regularly.</p>
+        <p style="font-size:0.9rem"><strong style="color:var(--signal)">Signal Ability — Always an Angle:</strong> Spend 1 Signal. Declare a resource, contact, or escape route you "had prepared." The Navigator must make it true, or spend 2 Static to complicate it instead.</p>
+      </div>
+
+      <div class="rule-card">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem">
+          <h4 style="margin:0">SAVANT</h4>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:var(--text-dim);letter-spacing:0.1em">GRID · CIPHER &nbsp;|&nbsp; Prime: EDGE</div>
+        </div>
+        <p style="margin-bottom:0.5rem;font-size:0.9rem;color:var(--text-dim)"><em>Niche: system mastery, field medicine, engineering, scientific analysis.</em></p>
+        <p style="margin-bottom:0.5rem">You understand systems — digital, mechanical, biological. Where the Ghost Operative uses Grid for access, you use it for control. Cipher is your other half: you build things, fix things, and understand why things are broken in the first place.</p>
+        <p style="font-size:0.9rem"><strong style="color:var(--signal)">Signal Ability — System Crack:</strong> Spend 1 Signal. Gain complete control of one electronic system — weapons, doors, comms, life support — for one scene. No roll required.</p>
+      </div>
+
+      <div class="rule-card">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem">
+          <h4 style="margin:0">VOID SEEKER</h4>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:var(--text-dim);letter-spacing:0.1em">DEEP · PSIONIC &nbsp;|&nbsp; Prime: INSTINCT</div>
+        </div>
+        <p style="margin-bottom:0.5rem;font-size:0.9rem;color:var(--text-dim)"><em>Niche: xenoarchaeology, ancient tech, psionic sensing, alien communication.</em></p>
+        <p style="margin-bottom:0.5rem">Something out in the dark has been calling to you. You've already heard it. Where the Empath reads living minds, you read dead civilizations — ruins, artifacts, the psychic residue of species that no longer exist. The Psionic domain amplifies what you find there.</p>
+        <p style="font-size:0.9rem"><strong style="color:var(--signal)">Signal Ability — Resonance:</strong> Spend 1 Signal. Ask the Navigator one truthful question about any ruin, artifact, alien presence, or ancient technology in the current scene. They must answer honestly.</p>
+      </div>
+
+      <div class="rule-card">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem">
+          <h4 style="margin:0">EMPATH</h4>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:var(--text-dim);letter-spacing:0.1em">PSIONIC · SHADOW &nbsp;|&nbsp; Prime: PRESENCE</div>
+        </div>
+        <p style="margin-bottom:0.5rem;font-size:0.9rem;color:var(--text-dim)"><em>Niche: social manipulation, psionic projection, reading and moving through people.</em></p>
+        <p style="margin-bottom:0.5rem">You feel what others feel — sometimes before they do. Unlike the Void Seeker, who turns psionics outward toward the ancient and alien, you turn them inward toward living minds. The Shadow domain isn't about hiding from people — it's about moving through them.</p>
+        <p style="font-size:0.9rem"><strong style="color:var(--signal)">Signal Ability — Projection:</strong> Spend 2 Signal. Project an emotion, sensation, or false memory into one target's mind. They act on it as real until end of scene or until something breaks the effect.</p>
+      </div>
+
+    </div>
+
+    <div class="rule-card teal-card" style="margin-top:1.5rem">
+      <h4>Domain Coverage at a Glance</h4>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.4rem 1rem;font-size:0.82rem;margin-top:0.5rem">
+        <div><strong style="color:var(--accent-teal)">Iron:</strong> Fleet Warden, Corsair</div>
+        <div><strong style="color:var(--accent-teal)">Tide:</strong> Fleet Warden, Commander</div>
+        <div><strong style="color:var(--accent-teal)">Vector:</strong> Commander, Drifter Pilot</div>
+        <div><strong style="color:var(--accent-teal)">Sable:</strong> Drifter Pilot, Corsair</div>
+        <div><strong style="color:var(--accent-teal)">Shadow:</strong> Ghost Operative, Empath</div>
+        <div><strong style="color:var(--accent-teal)">Grid:</strong> Ghost Operative, Savant</div>
+        <div><strong style="color:var(--accent-teal)">Cipher:</strong> Savant only</div>
+        <div><strong style="color:var(--accent-teal)">Deep:</strong> Void Seeker only</div>
+        <div><strong style="color:var(--accent-teal)">Psionic:</strong> Void Seeker, Empath</div>
+      </div>
+      <p style="font-size:0.8rem;color:var(--text-dim);margin-top:0.75rem">Cipher and Deep each appear in only one Vocation — intentionally. They represent rare, specialised knowledge that belongs to a single archetype.</p>
+    </div>
+
+  <hr class="divider">
+
+  <!-- SHIPS -->
+  <section id="ships">
+    <div class="section-label">07 / Starships</div>
+    <h2>Ships: The Sixth Crew Member</h2>
+    <p>
+      Your ship has its own stat block, its own harm tracks, and it changes over time — upgraded, damaged,
+      repaired, and named. No two ships play the same way. At the start of a campaign, the crew picks
+      a <em>Ship Class</em>, which sets all base stats. Everything beyond that is earned.
+    </p>
+
+    <h3>Ship Stats Explained</h3>
+    <div class="rule-card">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem 2rem;font-size:0.9rem">
+        <div><strong style="color:var(--accent-teal)">Hull Points (HP):</strong> Total damage the ship can absorb. When Hull Points hit 0, the ship is destroyed (or breaking apart — the Navigator decides).</div>
+        <div><strong style="color:var(--accent-teal)">Armor:</strong> Reduces all incoming physical damage before it touches Hull Points. Applied before threshold comparison.</div>
+        <div><strong style="color:var(--accent-teal)">Minor / Major Threshold:</strong> Determines how bad each hit is — like character Vitality thresholds. Compare the damage after Armor to these values to find out how many Breach slots you mark.</div>
+        <div><strong style="color:var(--accent-teal)">Breach Slots:</strong> Named conditions that activate when marked. Each class has a fixed list. Marking all Breach slots = Critical Failure (ship cannot maneuver or fire).</div>
+        <div><strong style="color:var(--accent-teal)">Systems:</strong> Electronic integrity — depleted by hacking, EMP, and sensor attacks. Systems have their own Minor/Major thresholds and their own condition list.</div>
+        <div><strong style="color:var(--accent-teal)">Thrust:</strong> Modifier added to all Pilot rolls for maneuvering and evasion.</div>
+        <div><strong style="color:var(--accent-teal)">Armament:</strong> Damage dice rolled when the ship's weapons fire successfully.</div>
+      </div>
+    </div>
+
+    <h3>How Ship Damage Works</h3>
+    <p>When a weapon hits your ship, subtract Armor from the damage, then compare the result to your thresholds:</p>
+    <div class="damage-flow">
+      <div class="damage-tier tier-a">
+        <div class="tier-val">Below Minor</div>
+        <div class="tier-effect">Hull Points reduced by the damage amount. No Breach marked. Hull is taking a beating but systems hold.</div>
+      </div>
+      <div class="damage-tier tier-b">
+        <div class="tier-val">At or above Minor</div>
+        <div class="tier-effect">Hull Points reduced + mark <strong>1 Breach slot</strong>. Something breaks.</div>
+      </div>
+      <div class="damage-tier tier-c">
+        <div class="tier-val">At or above Major</div>
+        <div class="tier-effect">Hull Points reduced + mark <strong>2 Breach slots</strong>. Serious structural damage.</div>
+      </div>
+    </div>
+    <p>
+      When a Breach slot is marked, the Navigator picks which condition activates — or uses the ship's pre-listed conditions in order. Each condition imposes an immediate ongoing penalty. When HP hits 0, the ship is gone regardless of remaining Breach slots.
+    </p>
+
+    <h3>Universal Breach Conditions</h3>
+    <div class="rule-card static-card">
+      <p>Each ship class has a selection from this list. When a breach is marked, that condition is immediately active until repaired.</p>
+      <ul style="list-style:none;margin-top:0.75rem">
+        <li style="padding:0.4rem 0;border-bottom:1px solid var(--border)"><strong style="color:var(--accent-rose)">Thrusters Compromised:</strong> Thrust −2. Stacks if marked again.</li>
+        <li style="padding:0.4rem 0;border-bottom:1px solid var(--border)"><strong style="color:var(--accent-rose)">Weapon Systems Offline:</strong> The ship cannot fire until this breach is repaired.</li>
+        <li style="padding:0.4rem 0;border-bottom:1px solid var(--border)"><strong style="color:var(--accent-rose)">Life Support Critical:</strong> Each round of combat, all crew take 1 Resolve damage from the alarms, pressure drop, and panic.</li>
+        <li style="padding:0.4rem 0;border-bottom:1px solid var(--border)"><strong style="color:var(--accent-rose)">Sensor Blackout:</strong> The crew fires blind. All attack rolls made at disadvantage.</li>
+        <li style="padding:0.4rem 0;border-bottom:1px solid var(--border)"><strong style="color:var(--accent-rose)">Jump Drive Locked:</strong> Hyperspace entry is impossible until repaired. You're not going anywhere fast.</li>
+        <li style="padding:0.4rem 0;border-bottom:1px solid var(--border)"><strong style="color:var(--accent-rose)">Hull Integrity Compromised:</strong> All future hits deal +3 damage (before Armor) due to stress fractures.</li>
+        <li style="padding:0.4rem 0"><strong style="color:var(--accent-rose)">Reactor Unstable:</strong> The next hit that marks a breach triggers an internal explosion — all crew take 2d6 Vitality damage, no Armor applies.</li>
+      </ul>
+    </div>
+
+    <h3>Repairing Breaches</h3>
+    <div class="rule-card teal-card">
+      <p>Repairing a breach requires an <strong>Edge roll</strong> (Difficulty 12 for most breaches, 16 for Reactor Unstable or Jump Drive Locked) and at least 10 minutes of work. A Savant character reduces all repair Difficulties by 3. <em>Hull Points do not recover automatically</em> — restoring HP requires a starport, a supply run, or extended downtime.</p>
+    </div>
+
+    <h3>Ship Classes</h3>
+
+    <div class="ship-class-grid">
+
+      <div class="ship-class-card">
+        <div class="ship-class-header">
+          <div>
+            <div class="ship-class-name">⚡ NEEDLE-CLASS SCOUT</div>
+            <div class="ship-class-role">Speed · Recon · Low Profile</div>
+          </div>
+        </div>
+        <div class="ship-stat-row">
+          <div class="ship-stat-item"><div class="val">15</div><span class="key">Hull Points</span></div>
+          <div class="ship-stat-item"><div class="val">0</div><span class="key">Armor</span></div>
+          <div class="ship-stat-item"><div class="val">+4</div><span class="key">Thrust</span></div>
+          <div class="ship-stat-item"><div class="val">1d6</div><span class="key">Armament</span></div>
+          <div class="ship-stat-item"><div class="val">10</div><span class="key">Systems</span></div>
+        </div>
+        <div class="ship-threshold-row">
+          <span class="threshold-pill threshold-minor">Minor ≥ 4</span>
+          <span class="threshold-pill threshold-major">Major ≥ 8</span>
+          <span class="threshold-pill threshold-minor" style="background:rgba(46,207,207,0.08);color:var(--accent-teal);border-color:rgba(46,207,207,0.3)">Sys Minor ≥ 3</span>
+          <span class="threshold-pill threshold-major" style="background:rgba(46,207,207,0.08);color:var(--accent-teal);border-color:rgba(46,207,207,0.3)">Sys Major ≥ 6</span>
+        </div>
+        <div class="breach-slots">
+          <span class="breach-slot">Thrusters Compromised</span>
+          <span class="breach-slot">Sensor Blackout</span>
+          <span class="breach-slot">Jump Drive Locked</span>
+        </div>
+        <p class="ship-trait"><strong>Sensor Ghost:</strong> The Needle runs quiet. Enemies must succeed on a Difficulty 15 scan to detect you at long range. Gain advantage on evasion rolls when not in direct weapons range.</p>
+      </div>
+
+      <div class="ship-class-card">
+        <div class="ship-class-header">
+          <div>
+            <div class="ship-class-name">📦 HAULER-CLASS FREIGHTER</div>
+            <div class="ship-class-role">Cargo · Endurance · Modular</div>
+          </div>
+        </div>
+        <div class="ship-stat-row">
+          <div class="ship-stat-item"><div class="val">30</div><span class="key">Hull Points</span></div>
+          <div class="ship-stat-item"><div class="val">2</div><span class="key">Armor</span></div>
+          <div class="ship-stat-item"><div class="val">+0</div><span class="key">Thrust</span></div>
+          <div class="ship-stat-item"><div class="val">1d6</div><span class="key">Armament</span></div>
+          <div class="ship-stat-item"><div class="val">8</div><span class="key">Systems</span></div>
+        </div>
+        <div class="ship-threshold-row">
+          <span class="threshold-pill threshold-minor">Minor ≥ 6</span>
+          <span class="threshold-pill threshold-major">Major ≥ 12</span>
+          <span class="threshold-pill threshold-minor" style="background:rgba(46,207,207,0.08);color:var(--accent-teal);border-color:rgba(46,207,207,0.3)">Sys Minor ≥ 3</span>
+          <span class="threshold-pill threshold-major" style="background:rgba(46,207,207,0.08);color:var(--accent-teal);border-color:rgba(46,207,207,0.3)">Sys Major ≥ 5</span>
+        </div>
+        <div class="breach-slots">
+          <span class="breach-slot">Thrusters Compromised</span>
+          <span class="breach-slot">Hull Integrity Compromised</span>
+          <span class="breach-slot">Life Support Critical</span>
+          <span class="breach-slot">Jump Drive Locked</span>
+          <span class="breach-slot">Reactor Unstable</span>
+        </div>
+        <p class="ship-trait"><strong>Modular Hold:</strong> The Hauler's hold can be reconfigured between runs — concealed compartments (Operative checks against boarding get advantage), passenger berths, or a field hospital. Pick one configuration per voyage.</p>
+      </div>
+
+      <div class="ship-class-card">
+        <div class="ship-class-header">
+          <div>
+            <div class="ship-class-name">🔪 BLADE-CLASS CORSAIR RAIDER</div>
+            <div class="ship-class-role">Raid · Interdiction · Hit-and-Run</div>
+          </div>
+        </div>
+        <div class="ship-stat-row">
+          <div class="ship-stat-item"><div class="val">22</div><span class="key">Hull Points</span></div>
+          <div class="ship-stat-item"><div class="val">1</div><span class="key">Armor</span></div>
+          <div class="ship-stat-item"><div class="val">+3</div><span class="key">Thrust</span></div>
+          <div class="ship-stat-item"><div class="val">2d6</div><span class="key">Armament</span></div>
+          <div class="ship-stat-item"><div class="val">10</div><span class="key">Systems</span></div>
+        </div>
+        <div class="ship-threshold-row">
+          <span class="threshold-pill threshold-minor">Minor ≥ 5</span>
+          <span class="threshold-pill threshold-major">Major ≥ 9</span>
+          <span class="threshold-pill threshold-minor" style="background:rgba(46,207,207,0.08);color:var(--accent-teal);border-color:rgba(46,207,207,0.3)">Sys Minor ≥ 3</span>
+          <span class="threshold-pill threshold-major" style="background:rgba(46,207,207,0.08);color:var(--accent-teal);border-color:rgba(46,207,207,0.3)">Sys Major ≥ 6</span>
+        </div>
+        <div class="breach-slots">
+          <span class="breach-slot">Thrusters Compromised</span>
+          <span class="breach-slot">Weapon Systems Offline</span>
+          <span class="breach-slot">Hull Integrity Compromised</span>
+          <span class="breach-slot">Jump Drive Locked</span>
+        </div>
+        <p class="ship-trait"><strong>Running Dark:</strong> Once per combat, the Blade can cut all emissions and drift silently. While dark, it cannot fire or use active sensors, but cannot be targeted by any weapon system. Reactivating takes one full round and must be announced.</p>
+      </div>
+
+      <div class="ship-class-card">
+        <div class="ship-class-header">
+          <div>
+            <div class="ship-class-name">💥 WRATH-CLASS GUNSHIP</div>
+            <div class="ship-class-role">Combat · Suppression · Escort</div>
+          </div>
+        </div>
+        <div class="ship-stat-row">
+          <div class="ship-stat-item"><div class="val">28</div><span class="key">Hull Points</span></div>
+          <div class="ship-stat-item"><div class="val">3</div><span class="key">Armor</span></div>
+          <div class="ship-stat-item"><div class="val">+1</div><span class="key">Thrust</span></div>
+          <div class="ship-stat-item"><div class="val">3d6</div><span class="key">Armament</span></div>
+          <div class="ship-stat-item"><div class="val">7</div><span class="key">Systems</span></div>
+        </div>
+        <div class="ship-threshold-row">
+          <span class="threshold-pill threshold-minor">Minor ≥ 6</span>
+          <span class="threshold-pill threshold-major">Major ≥ 11</span>
+          <span class="threshold-pill threshold-minor" style="background:rgba(46,207,207,0.08);color:var(--accent-teal);border-color:rgba(46,207,207,0.3)">Sys Minor ≥ 2</span>
+          <span class="threshold-pill threshold-major" style="background:rgba(46,207,207,0.08);color:var(--accent-teal);border-color:rgba(46,207,207,0.3)">Sys Major ≥ 5</span>
+        </div>
+        <div class="breach-slots">
+          <span class="breach-slot">Weapon Systems Offline</span>
+          <span class="breach-slot">Thrusters Compromised</span>
+          <span class="breach-slot">Hull Integrity Compromised</span>
+          <span class="breach-slot">Life Support Critical</span>
+          <span class="breach-slot">Reactor Unstable</span>
+        </div>
+        <p class="ship-trait"><strong>Point Defense Grid:</strong> Once per round, when the ship would take damage, the Navigator rolls openly — if the damage total (before Armor) is 8 or less, the PD grid intercepts and reduces damage to 0. Spend 1 Static to overcome it.</p>
+      </div>
+
+      <div class="ship-class-card">
+        <div class="ship-class-header">
+          <div>
+            <div class="ship-class-name">🔭 ARCHIVE-CLASS RESEARCH VESSEL</div>
+            <div class="ship-class-role">Exploration · Analysis · Deep Survey</div>
+          </div>
+        </div>
+        <div class="ship-stat-row">
+          <div class="ship-stat-item"><div class="val">18</div><span class="key">Hull Points</span></div>
+          <div class="ship-stat-item"><div class="val">1</div><span class="key">Armor</span></div>
+          <div class="ship-stat-item"><div class="val">+1</div><span class="key">Thrust</span></div>
+          <div class="ship-stat-item"><div class="val">1d6</div><span class="key">Armament</span></div>
+          <div class="ship-stat-item"><div class="val">16</div><span class="key">Systems</span></div>
+        </div>
+        <div class="ship-threshold-row">
+          <span class="threshold-pill threshold-minor">Minor ≥ 4</span>
+          <span class="threshold-pill threshold-major">Major ≥ 8</span>
+          <span class="threshold-pill threshold-minor" style="background:rgba(46,207,207,0.08);color:var(--accent-teal);border-color:rgba(46,207,207,0.3)">Sys Minor ≥ 5</span>
+          <span class="threshold-pill threshold-major" style="background:rgba(46,207,207,0.08);color:var(--accent-teal);border-color:rgba(46,207,207,0.3)">Sys Major ≥ 9</span>
+        </div>
+        <div class="breach-slots">
+          <span class="breach-slot">Sensor Blackout</span>
+          <span class="breach-slot">Jump Drive Locked</span>
+          <span class="breach-slot">Life Support Critical</span>
+        </div>
+        <p class="ship-trait"><strong>Deep Scan Array:</strong> Can identify cloaked ships, masked signals, and anomalies at extreme range. In unexplored systems, the Savant or Void Seeker may ask the Navigator two free questions about what's out there before anyone commits to a course.</p>
+      </div>
+
+    </div>
+
+    <h3>Ship Actions in Combat</h3>
+    <div class="rule-card">
+      <p>Each round, the Pilot chooses one Ship Action on their turn, separate from their personal action:</p>
+      <ul style="list-style:none;margin-top:0.75rem">
+        <li style="padding:0.4rem 0;border-bottom:1px solid var(--border)"><strong>Attack Vector</strong> — Roll Finesse + Thrust vs. Difficulty set by enemy Thrust. On success, the ship's Armament fires.</li>
+        <li style="padding:0.4rem 0;border-bottom:1px solid var(--border)"><strong>Evasive Pattern</strong> — Roll Finesse + Thrust (Difficulty 12). Success: impose +3 Difficulty on the next attack targeting you this round.</li>
+        <li style="padding:0.4rem 0;border-bottom:1px solid var(--border)"><strong>Emergency Jump</strong> — Attempt a hasty hyperspace entry. Roll Instinct (Difficulty 15). On success: escaped. On failure: you jump somewhere wrong — Navigator decides where.</li>
+        <li style="padding:0.4rem 0"><strong>Full Burn</strong> — Thrust becomes +6 this round. Next round, Thrust drops to −2 while drives vent heat. Can't be used two rounds in a row.</li>
+      </ul>
+    </div>
+
+    <h3>Upgrades</h3>
+    <div class="rule-card">
+      <p>Between sessions, at a starport or with the right parts, the crew can upgrade their ship. Each upgrade costs either <em>credits</em> or a significant favor. Suggested upgrades include:</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.4rem 1.5rem;margin-top:0.75rem;font-size:0.88rem">
+        <div><strong>Reinforced Hull:</strong> +5 Hull Points, Minor threshold +1</div>
+        <div><strong>Overdrive Thrusters:</strong> Thrust +2 permanently</div>
+        <div><strong>Weapons Upgrade:</strong> Armament increases one die size (d6 → d8 → d10)</div>
+        <div><strong>ECM Suite:</strong> Systems +4, enemies suffer −2 on all scan rolls</div>
+        <div><strong>Emergency Gel Foam:</strong> Once per session, automatically negate one Breach condition</div>
+        <div><strong>Black Box:</strong> If the ship is destroyed, crew survives in emergency pods — no guaranteed destination</div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ADVERSARIES -->
+  <section id="adversaries">
+    <div class="section-label">08 / Adversaries</div>
+    <h2>Threats &amp; Adversaries</h2>
+    <p>
+      Adversaries in Voidheart don't roll dice — they <em>act</em>. The Navigator spends Static tokens
+      to activate their moves, making danger feel deliberate and relentless rather than random.
+    </p>
+
+    <h3>Sample Adversary: Hegemony Enforcer</h3>
+    <div class="adversary-block">
+      <h4>HEGEMONY ENFORCER</h4>
+      <div class="adversary-type">Humanoid · Standard · Law Enforcement</div>
+      <div class="stat-row">
+        <div class="stat-box"><div class="val">12</div><div class="key">Vitality</div></div>
+        <div class="stat-box"><div class="val">+2</div><div class="key">Attack Mod</div></div>
+        <div class="stat-box"><div class="val">2d6</div><div class="key">Damage</div></div>
+        <div class="stat-box"><div class="val">2</div><div class="key">Armor</div></div>
+      </div>
+      <ul class="move-list">
+        <li><strong>Suppressive Fire (free):</strong> Forces one target to take cover or suffer 1 Vitality damage and be Exposed until end of turn.</li>
+        <li><strong>Call for Backup (1 Static):</strong> A second Enforcer enters the scene at the end of this round.</li>
+        <li><strong>Scan Net (2 Static):</strong> All crew members lose their Hidden status and cannot re-enter stealth this scene.</li>
+        <li><strong>Execute Warrant (on kill):</strong> If an Enforcer downs a crew member, that character gains the Wanted tag — escalating all future Hegemony interactions.</li>
+      </ul>
+    </div>
+
+    <h3>Sample Adversary: The Rend Tendril</h3>
+    <div class="adversary-block" style="border-top-color:var(--static)">
+      <h4>REND TENDRIL</h4>
+      <div class="adversary-type">Alien Entity · Severe · Ancient / Unknown</div>
+      <div class="stat-row">
+        <div class="stat-box"><div class="val">20</div><div class="key">Vitality</div></div>
+        <div class="stat-box"><div class="val">+4</div><div class="key">Attack Mod</div></div>
+        <div class="stat-box"><div class="val">3d6</div><div class="key">Damage</div></div>
+        <div class="stat-box"><div class="val">0</div><div class="key">Armor</div></div>
+      </div>
+      <ul class="move-list">
+        <li><strong>Void Touch (free):</strong> Deals 1d6 Resolve damage to all crew within close range as their perception warps.</li>
+        <li><strong>Phase Shift (1 Static):</strong> The Tendril briefly becomes non-corporeal. All attacks against it this turn miss automatically.</li>
+        <li><strong>Psychic Bleed (2 Static):</strong> One crew member must describe an intrusive memory or fear. They take 2 Resolve stress and cannot spend Signal this turn.</li>
+        <li><strong>Signal Drain (3 Static):</strong> Remove all Signal tokens from the Crew pool. The Tendril heals 5 Vitality.</li>
+      </ul>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- GM GUIDE -->
+  <section id="gm">
+    <div class="section-label">09 / Navigator's Guide</div>
+    <h2>Running the Stars</h2>
+    <p>
+      As the Navigator, you don't play to win or to challenge the Crew into failure. You play to find out
+      what happens when interesting people collide with impossible situations. The galaxy exists to be
+      explored — and to push back.
+    </p>
+
+    <h3>Navigator Principles</h3>
+    <div class="gm-principles">
+      <div class="principle">
+        <div class="principle-num">01</div>
+        <p><strong>Portray a galaxy that lives without the Crew.</strong> Factions make moves. Politics shift. Ships depart. The universe doesn't pause while the characters are sleeping. Events should feel like consequences, not coincidences.</p>
+      </div>
+      <div class="principle">
+        <div class="principle-num">02</div>
+        <p><strong>Spend Static loudly.</strong> When you spend a Static token, name what you're doing and why. "I'm spending 2 Static — the hull scanner finds an incoming signal. It's encrypted. It's not from anywhere charted." Static should feel purposeful, not punishing.</p>
+      </div>
+      <div class="principle">
+        <div class="principle-num">03</div>
+        <p><strong>Make the void feel vast.</strong> Distance is time. Time is cost. Every jump is a commitment. When the Crew arrives somewhere, make them feel the strangeness of having crossed light-years. Sounds, smells, gravity. Alien skies.</p>
+      </div>
+      <div class="principle">
+        <div class="principle-num">04</div>
+        <p><strong>Misses move the story forward.</strong> A miss is never a dead end — it's a complication. If the crew fails to hack the door, the door is still there, but so is the security team that got the alert.</p>
+      </div>
+      <div class="principle">
+        <div class="principle-num">05</div>
+        <p><strong>The Rend is real, and it's still out there.</strong> Whatever destroyed the Vekhari homeworld three centuries ago didn't stop. It got quiet. Work that into the background like static in a radio signal — always present, never fully resolved.</p>
+      </div>
+      <div class="principle">
+        <div class="principle-num">06</div>
+        <p><strong>Ask questions and use the answers.</strong> Where did your character get that scar? What's the ship's name and why? Who left that photo in the locker? Their answers are your best material.</p>
+      </div>
+    </div>
+
+    <h3>Scene Clocks</h3>
+    <div class="rule-card static-card">
+      <p>Use <strong>Clocks</strong> to track ongoing threats: a 4-segment clock fills as Static is spent or missed rolls occur. When a clock fills, something bad happens — reinforcements arrive, the reactor overloads, the negotiations collapse. Show clocks to the players. Tension should be visible.</p>
+    </div>
+
+    <h3>Factions</h3>
+    <p>The galaxy has three dominant powers and several wild cards. Each has an <em>Agenda</em>, an <em>Asset</em>, and a <em>Pressure</em> — what they want, what they'll trade, and how they squeeze.</p>
+
+    <div class="rule-card" style="margin-bottom:1rem">
+      <h4>THE INTERSTELLAR HEGEMONY</h4>
+      <p><em>Agenda:</em> Maintain economic and political control over the Core systems. <em>Asset:</em> Unlimited naval resources and legitimate authority. <em>Pressure:</em> Warrants, blockades, and economic sanctions. They rarely get their hands dirty — they don't need to.</p>
+    </div>
+    <div class="rule-card" style="margin-bottom:1rem">
+      <h4>THE FREE DRIFT COMPACT</h4>
+      <p><em>Agenda:</em> Protect the autonomy of independent stations and wandering fleets. <em>Asset:</em> Information networks, safe harbors, and mutual aid. <em>Pressure:</em> Trade embargoes and whisper campaigns — they win through information and solidarity, not firepower.</p>
+    </div>
+    <div class="rule-card" style="margin-bottom:1rem">
+      <h4>THE DEEP ARCHIVE</h4>
+      <p><em>Agenda:</em> Recover and control xenotech from dead civilizations — and prevent the next Rend event. <em>Asset:</em> Ancient technology that shouldn't exist and knowledge no one else has. <em>Pressure:</em> They know secrets. Sometimes they share them. Mostly they don't.</p>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- QUICK REFERENCE -->
+  <section id="quickref">
+    <div class="section-label">10 / Quick Reference</div>
+    <h2>The Core Loop</h2>
+    <div class="rule-card teal-card">
+      <ol style="padding-left:1.25rem;line-height:2.2;font-size:0.95rem">
+        <li>Navigator describes a situation and invites action.</li>
+        <li>Crew declares intent and approach.</li>
+        <li>Navigator determines Trait and Difficulty (10 / 15 / 20).</li>
+        <li>Roll Signal + Static + Trait. Signal higher = succeed + gain Signal. Static higher = succeed + Navigator gains Static. Total misses = fail + Navigator gains Static.</li>
+        <li>Describe the result. Adjust tokens. Advance the scene.</li>
+        <li>Navigator asks: what do you do?</li>
+      </ol>
+    </div>
+
+    <div class="callout" style="margin-top:2rem">
+      "There's no map past this point. There hasn't been for three hundred years.<br>
+      Every beacon out here is either dead or lying.<br>
+      We're going anyway. That's why they call it the Void."
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div>VOIDHEART: Far Futures — An Unofficial Sci-Fi Adaptation of the Daggerheart System Framework</div>
+  <div>Signal & Static · Far Futures · Deep Space Adventure</div>
+  <div style="margin-top:0.5rem;font-size:0.5rem">This is a fan-created adaptation. Daggerheart is a trademark of Darrington Press LLC. This document is not affiliated with or endorsed by Darrington Press.</div>
+</footer>
+
+<script>
+// Starfield
+const sf = document.getElementById('starfield');
+const count = 220;
+for (let i = 0; i < count; i++) {
+  const s = document.createElement('div');
+  s.className = 'star';
+  const size = Math.random() * 2.5 + 0.4;
+  s.style.cssText = `
+    width:${size}px;height:${size}px;
+    left:${Math.random()*100}%;
+    top:${Math.random()*100}%;
+    --dur:${(Math.random()*4+2).toFixed(1)}s;
+    --min-op:${(Math.random()*0.2+0.05).toFixed(2)};
+    --max-op:${(Math.random()*0.6+0.2).toFixed(2)};
+    animation-delay:${(Math.random()*5).toFixed(1)}s;
+  `;
+  sf.appendChild(s);
+}
+
+// A few coloured nebula stars
+const colours = ['rgba(245,166,35,0.6)','rgba(123,79,212,0.6)','rgba(46,207,207,0.5)'];
+for (let i = 0; i < 15; i++) {
+  const s = document.createElement('div');
+  s.className = 'star';
+  s.style.cssText = `
+    width:${Math.random()*3+1}px;height:${Math.random()*3+1}px;
+    left:${Math.random()*100}%;top:${Math.random()*100}%;
+    background:${colours[i%3]};
+    --dur:${(Math.random()*6+3).toFixed(1)}s;
+    --min-op:0.1;--max-op:0.7;
+    animation-delay:${(Math.random()*6).toFixed(1)}s;
+  `;
+  sf.appendChild(s);
+}
+</script>
+</body>
+</html>
