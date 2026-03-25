@@ -1096,9 +1096,69 @@ footer {
     </div>
 
     <h3>Step 3: Traits</h3>
+    <p>
+      Your six traits are <strong>Nerve, Finesse, Edge, Presence, Instinct,</strong> and <strong>Mettle</strong>.
+      Rather than free point-buy, your Vocation gives you a fixed <em>trait array</em> — a set of six values
+      you freely assign to the six traits in any order you like. Your <strong>Prime Trait</strong> is fixed
+      by your Vocation; it's the trait your class abilities key off of, and it should generally receive
+      your highest array value.
+    </p>
     <div class="rule-card">
-      <p>Distribute <strong>10 points</strong> among your six traits. No trait may start above +3 or below −1. At character creation, pick one trait to be your <em>Prime</em> — once per session, you may use your Prime trait in place of any other trait on a single roll.</p>
+      <table class="voc-stat-table" style="margin:0">
+        <thead>
+          <tr>
+            <th>Vocation</th>
+            <th>Prime Trait</th>
+            <th>Trait Array (assign freely)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Fleet Warden</td>
+            <td style="color:var(--signal);font-family:'JetBrains Mono',monospace;font-size:0.7rem">NERVE</td>
+            <td style="font-family:'JetBrains Mono',monospace;font-size:0.78rem">+2, +2, +1, +0, +0, −1</td>
+          </tr>
+          <tr>
+            <td>Commander</td>
+            <td style="color:var(--signal);font-family:'JetBrains Mono',monospace;font-size:0.7rem">PRESENCE</td>
+            <td style="font-family:'JetBrains Mono',monospace;font-size:0.78rem">+2, +1, +1, +1, +0, −1</td>
+          </tr>
+          <tr>
+            <td>Drifter Pilot</td>
+            <td style="color:var(--signal);font-family:'JetBrains Mono',monospace;font-size:0.7rem">FINESSE</td>
+            <td style="font-family:'JetBrains Mono',monospace;font-size:0.78rem">+3, +1, +1, +0, −1, −1</td>
+          </tr>
+          <tr>
+            <td>Ghost Operative</td>
+            <td style="color:var(--signal);font-family:'JetBrains Mono',monospace;font-size:0.7rem">FINESSE</td>
+            <td style="font-family:'JetBrains Mono',monospace;font-size:0.78rem">+2, +2, +1, +0, −1, −1</td>
+          </tr>
+          <tr>
+            <td>Corsair</td>
+            <td style="color:var(--signal);font-family:'JetBrains Mono',monospace;font-size:0.7rem">NERVE</td>
+            <td style="font-family:'JetBrains Mono',monospace;font-size:0.78rem">+2, +1, +1, +1, −1, −1</td>
+          </tr>
+          <tr>
+            <td>Savant</td>
+            <td style="color:var(--signal);font-family:'JetBrains Mono',monospace;font-size:0.7rem">EDGE</td>
+            <td style="font-family:'JetBrains Mono',monospace;font-size:0.78rem">+3, +1, +0, +0, +0, −1</td>
+          </tr>
+          <tr>
+            <td>Void Seeker</td>
+            <td style="color:var(--signal);font-family:'JetBrains Mono',monospace;font-size:0.7rem">INSTINCT</td>
+            <td style="font-family:'JetBrains Mono',monospace;font-size:0.78rem">+2, +2, +1, +0, −1, −1</td>
+          </tr>
+          <tr>
+            <td>Empath</td>
+            <td style="color:var(--signal);font-family:'JetBrains Mono',monospace;font-size:0.7rem">PRESENCE</td>
+            <td style="font-family:'JetBrains Mono',monospace;font-size:0.78rem">+3, +1, +0, +0, +0, −1</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
+    <p style="font-size:0.9rem;color:var(--text-dim);margin-top:0.75rem">
+      Arrays are shaped to reflect the vocation's identity. The Drifter Pilot and Savant/Empath have a sharp +3 spike — they're exceptional at one thing and trade breadth for depth. The Commander and Corsair have flatter arrays — more versatile, less extreme. You assign the values, but the shape is yours to work with, not around.
+    </p>
   </section>
 
   <hr class="divider">
@@ -1339,14 +1399,14 @@ footer {
     </div>
 
     <h3>The Eight Vocations</h3>
-    <p>Each Vocation lists its two Domains, Prime Trait, and Signal Ability. <strong>No two Vocations share the same domain pair.</strong> Overlap in individual domains is intentional — a Ghost Operative and a Savant both draw from Grid, but what they do with it is completely different.</p>
+    <p>Each Vocation lists its two Domains and Signal Ability. The Prime Trait for each is set in the trait array table in Step 3 of character creation. <strong>No two Vocations share the same domain pair.</strong></p>
 
     <div style="display:grid;gap:1rem;margin-top:1.25rem">
 
       <div class="rule-card">
         <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem">
           <h4 style="margin:0">FLEET WARDEN</h4>
-          <div style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:var(--text-dim);letter-spacing:0.1em">IRON · TIDE &nbsp;|&nbsp; Prime: NERVE</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:var(--text-dim);letter-spacing:0.1em">IRON · TIDE</div>
         </div>
         <p style="margin-bottom:0.5rem;font-size:0.9rem;color:var(--text-dim)"><em>Niche: frontline combatant, crew protector, last line of defence.</em></p>
         <p style="margin-bottom:0.5rem">You are the wall between your crew and the galaxy's teeth. You fight, you endure, and you lead from the front. The Tide domain isn't about commanding from a bridge — it's about inspiring people while standing next to them.</p>
@@ -1356,7 +1416,7 @@ footer {
       <div class="rule-card">
         <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem">
           <h4 style="margin:0">COMMANDER</h4>
-          <div style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:var(--text-dim);letter-spacing:0.1em">TIDE · VECTOR &nbsp;|&nbsp; Prime: PRESENCE</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:var(--text-dim);letter-spacing:0.1em">TIDE · VECTOR</div>
         </div>
         <p style="margin-bottom:0.5rem;font-size:0.9rem;color:var(--text-dim)"><em>Niche: tactical coordinator, fleet engagement, strategic resource management.</em></p>
         <p style="margin-bottom:0.5rem">You lead through clarity, foresight, and an understanding of space that makes the crew feel like they're always in the right place. You're not the one flying the ship — you're the one who knows where it needs to be three moves from now.</p>
@@ -1366,7 +1426,7 @@ footer {
       <div class="rule-card">
         <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem">
           <h4 style="margin:0">DRIFTER PILOT</h4>
-          <div style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:var(--text-dim);letter-spacing:0.1em">VECTOR · SABLE &nbsp;|&nbsp; Prime: FINESSE</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:var(--text-dim);letter-spacing:0.1em">VECTOR · SABLE</div>
         </div>
         <p style="margin-bottom:0.5rem;font-size:0.9rem;color:var(--text-dim)"><em>Niche: ship handling, evasion, getting in and out of places you weren't invited.</em></p>
         <p style="margin-bottom:0.5rem">You fly by feel and spite. The Sable domain gives you the underworld contacts and improvised audacity that turns a flight plan into something more interesting — landing in places that aren't on charts, with cargo that isn't on manifests.</p>
@@ -1376,7 +1436,7 @@ footer {
       <div class="rule-card">
         <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem">
           <h4 style="margin:0">GHOST OPERATIVE</h4>
-          <div style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:var(--text-dim);letter-spacing:0.1em">SHADOW · GRID &nbsp;|&nbsp; Prime: FINESSE</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:var(--text-dim);letter-spacing:0.1em">SHADOW · GRID</div>
         </div>
         <p style="margin-bottom:0.5rem;font-size:0.9rem;color:var(--text-dim)"><em>Niche: infiltration, electronic intrusion, assassination, leaving no trace.</em></p>
         <p style="margin-bottom:0.5rem">You move through physical and digital spaces with equal ease. Where the Savant brute-forces systems from the outside, you're already inside the building when the hack completes. The combination of Shadow and Grid makes you a professional absence.</p>
@@ -1386,7 +1446,7 @@ footer {
       <div class="rule-card">
         <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem">
           <h4 style="margin:0">CORSAIR</h4>
-          <div style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:var(--text-dim);letter-spacing:0.1em">SABLE · IRON &nbsp;|&nbsp; Prime: NERVE</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:var(--text-dim);letter-spacing:0.1em">SABLE · IRON</div>
         </div>
         <p style="margin-bottom:0.5rem;font-size:0.9rem;color:var(--text-dim)"><em>Niche: scrappy combat, underworld dealing, improvised solutions under pressure.</em></p>
         <p style="margin-bottom:0.5rem">You operate in the space between laws. Unlike the Ghost Operative, who avoids confrontation, you lean into it — fights, deals, heists. The Iron domain means you can handle yourself when things go wrong, which they do regularly.</p>
@@ -1396,7 +1456,7 @@ footer {
       <div class="rule-card">
         <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem">
           <h4 style="margin:0">SAVANT</h4>
-          <div style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:var(--text-dim);letter-spacing:0.1em">GRID · CIPHER &nbsp;|&nbsp; Prime: EDGE</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:var(--text-dim);letter-spacing:0.1em">GRID · CIPHER</div>
         </div>
         <p style="margin-bottom:0.5rem;font-size:0.9rem;color:var(--text-dim)"><em>Niche: system mastery, field medicine, engineering, scientific analysis.</em></p>
         <p style="margin-bottom:0.5rem">You understand systems — digital, mechanical, biological. Where the Ghost Operative uses Grid for access, you use it for control. Cipher is your other half: you build things, fix things, and understand why things are broken in the first place.</p>
@@ -1406,7 +1466,7 @@ footer {
       <div class="rule-card">
         <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem">
           <h4 style="margin:0">VOID SEEKER</h4>
-          <div style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:var(--text-dim);letter-spacing:0.1em">DEEP · PSIONIC &nbsp;|&nbsp; Prime: INSTINCT</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:var(--text-dim);letter-spacing:0.1em">DEEP · PSIONIC</div>
         </div>
         <p style="margin-bottom:0.5rem;font-size:0.9rem;color:var(--text-dim)"><em>Niche: xenoarchaeology, ancient tech, psionic sensing, alien communication.</em></p>
         <p style="margin-bottom:0.5rem">Something out in the dark has been calling to you. You've already heard it. Where the Empath reads living minds, you read dead civilizations — ruins, artifacts, the psychic residue of species that no longer exist. The Psionic domain amplifies what you find there.</p>
@@ -1416,7 +1476,7 @@ footer {
       <div class="rule-card">
         <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem">
           <h4 style="margin:0">EMPATH</h4>
-          <div style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:var(--text-dim);letter-spacing:0.1em">PSIONIC · SHADOW &nbsp;|&nbsp; Prime: PRESENCE</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:var(--text-dim);letter-spacing:0.1em">PSIONIC · SHADOW</div>
         </div>
         <p style="margin-bottom:0.5rem;font-size:0.9rem;color:var(--text-dim)"><em>Niche: social manipulation, psionic projection, reading and moving through people.</em></p>
         <p style="margin-bottom:0.5rem">You feel what others feel — sometimes before they do. Unlike the Void Seeker, who turns psionics outward toward the ancient and alien, you turn them inward toward living minds. The Shadow domain isn't about hiding from people — it's about moving through them.</p>
