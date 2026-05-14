@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Classes — VOIDHEART</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=JetBrains+Mono:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div id="starfield"></div>
+
+<nav class="site-nav">
+  <a class="nav-logo" href="index.html">VOIDHEART <span>Far Futures</span></a>
+  <button class="nav-toggle" aria-label="Toggle menu">MENU</button>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="classes.html" class="active">Classes</a></li>
+    <li><a href="lineages.html">Lineages</a></li>
+    <li><a href="domains.html">Domains</a></li>
+    <li><a href="ship-combat.html">Ship Combat</a></li>
+  </ul>
+</nav>
+
+<header class="page-header">
+  <div class="crumb">▸ The Reference / Vocations</div>
+  <h1>CLASSES</h1>
+  <div class="sub">Ten Paths Across the Void</div>
+  <p class="desc">
+    Your class is who you are at the heart of the crew &mdash; the role you take when things go wrong, the
+    skills you fall back on when the void presses in. Pick one of the ten, then choose between its two subclasses.
+  </p>
+</header>
+
+<main>
+
+  <!-- TOC -->
+  <div class="toc">
+    <div class="toc-label">Jump to a Class</div>
+    <div class="toc-grid">
+      <a href="#herald">Herald</a>
+      <a href="#symbiote">Symbiote</a>
+      <a href="#sentinel">Sentinel</a>
+      <a href="#hunter">Hunter</a>
+      <a href="#operative">Operative</a>
+      <a href="#paragon">Paragon</a>
+      <a href="#psion">Psion</a>
+      <a href="#vanguard">Vanguard</a>
+      <a href="#technomancer">Technomancer</a>
+      <a href="#ace">Ace</a>
+    </div>
+  </div>
+
+  <p style="color:var(--text-dim);font-size:0.92rem;margin-bottom:2rem">
+    Each class lists its <span class="tag signal-tag">Domains</span> (the ability pools it draws from),
+    starting stats, signature features, two subclasses, and background prompts to help build your character.
+    Tap any subclass to see its progression: <em>Foundation</em> (level 1), <em>Specialization</em> (level 5),
+    and <em>Mastery</em> (level 8) features.
+  </p>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- HERALD                                                   -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <section id="herald" class="class-block">
+    <div class="class-header">
+      <div>
+        <h3>HERALD</h3>
+        <div class="reskin">was Bard</div>
+      </div>
+      <div class="domains-tag">TIDE · SABLE</div>
+    </div>
+    <p class="class-flavor">
+      Heralds are the most magnetic people in all the galaxy &mdash; masters of captivation who specialize in
+      sonic broadcast, live amplification, propaganda craft, or cutting wit. Whether performing for a packed
+      station concourse or speaking one-on-one in the dim corner of a dive bar, Heralds thrive in social
+      situations. They may be the most likely class to hold a fractured crew together, but a Herald with
+      a grudge can just as easily burn it all down.
+    </p>
+
+    <div class="class-statline">
+      <div class="statbox"><div class="val">10</div><div class="key">Evasion</div></div>
+      <div class="statbox"><div class="val">5</div><div class="key">Hit Points</div></div>
+      <div class="statbox items">
+        <div class="key" style="margin-bottom:0.3rem">Class Items</div>
+        <div class="val">A love letter in an encrypted data chip, or a holoprint of someone you left behind &mdash; faded at the edges</div>
+      </div>
+    </div>
+
+    <div class="feature-block signal-feature">
+      <div class="feature-title">◈ SIGNAL FEATURE — Command the Room</div>
+      <p>Spend 3 Signal to temporarily <em>Distract</em> a target within Close range, giving them a −2 penalty to their Difficulty. You don't need to raise your voice. Sometimes all it takes is the right look.</p>
+    </div>
+
+    <div class="feature-block class-feature">
+      <div class="feature-title">⌖ CLASS FEATURE — Rally</div>
+      <p>Once per session, describe how you rally the crew &mdash; a fired-up transmission over comms, a speech in the cargo bay, a single defiant look across the flight deck &mdash; and give yourself and each ally a <strong>Rally Die</strong>. At level 1, your Rally Die is a <strong>d6</strong>. A PC can spend their Rally Die to roll it and add the result to an action roll, reaction roll, or damage roll, or to clear Stress equal to the result. Clear all unspent Rally Dice at the end of each session.</p>
+      <p>At level 5, your Rally Die increases to a <strong>d8</strong>.</p>
+    </div>
+
+    <h4 style="color:var(--static);margin:1.5rem 0 0.5rem;font-size:0.78rem;letter-spacing:0.12em">SUBCLASSES</h4>
+
+    <div class="subclass-block">
+      <div class="subclass-name">RESONANT</div>
+      <div class="subclass-tag">Weaponize sonic frequencies to rally your crew.</div>
+      <div class="channel">Channel Trait: Presence</div>
+      <p style="font-size:0.9rem;color:var(--text-dim)">
+        Resonants treat sound as a weapon, a balm, and a tool in equal measure. Through calibrated sonic emitters,
+        resonance rigs, or sheer trained vocal range, you manipulate the emotional and physical state of everyone
+        around you.
+      </p>
+      <h5>Foundation</h5>
+      <div class="feat"><em class="feat-name">Signal Artist:</em> Activate each frequency once per long rest. <strong>Harmonic Frequency:</strong> You and all allies within Close range clear a Hit Point. <strong>Dissonance Pulse:</strong> Make a target within Close range temporarily <em>Vulnerable</em>. <strong>War Cry Broadcast:</strong> You and all allies within Close range gain a Signal.</div>
+      <h5>Specialization</h5>
+      <div class="feat"><em class="feat-name">Conductor:</em> When you give a Rally Die to an ally, they can also gain a Signal or clear a Stress.</div>
+      <h5>Mastery</h5>
+      <div class="feat"><em class="feat-name">Virtuoso:</em> You can activate each Signal Artist frequency twice per long rest.</div>
+    </div>
+
+    <div class="subclass-block alt">
+      <div class="subclass-name">SILVERTONGUE</div>
+      <div class="subclass-tag">Use sharp rhetoric to bend any crowd to your will.</div>
+      <div class="channel">Channel Trait: Presence</div>
+      <p style="font-size:0.9rem;color:var(--text-dim)">
+        Silvertongues are architects of persuasion. Where a Resonant moves people through sound, a Silvertongue
+        moves them through words &mdash; speeches that land like detonations, provocations that cut precisely where
+        they need to.
+      </p>
+      <h5>Foundation</h5>
+      <div class="feat"><em class="feat-name">Rallying Address:</em> Once per long rest, deliver a rallying address. All allies within Far range clear 2 Stress.</div>
+      <div class="feat"><em class="feat-name">Razor Wit:</em> After you make an action roll to impress, persuade, or offend someone, spend a Signal to add a <strong>d4</strong> to the roll.</div>
+      <h5>Specialization</h5>
+      <div class="feat"><em class="feat-name">Orator:</em> Once per session, when you encourage an ally, do one of: locate a mundane piece of gear or contact; Help an Ally without spending Signal; give them an additional downtime move during their next rest.</div>
+      <h5>Mastery</h5>
+      <div class="feat"><em class="feat-name">Living Legend:</em> Rally Die increases to a <strong>d10</strong>. When you Help an Ally, roll a <strong>d10</strong> as your advantage die.</div>
+    </div>
+
+    <div class="bg-questions">
+      <h5>Background Questions</h5>
+      <ul>
+        <li>Who from your crew or community taught you to have such confidence in yourself?</li>
+        <li>You believed in something &mdash; or someone &mdash; completely once. What happened to that belief?</li>
+        <li>You've always looked up to another Herald. Who are they, and why do you measure yourself against them?</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- SYMBIOTE                                                 -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <section id="symbiote" class="class-block">
+    <div class="class-header">
+      <div>
+        <h3>SYMBIOTE</h3>
+        <div class="reskin">was Druid</div>
+      </div>
+      <div class="domains-tag">DEEP · CIPHER</div>
+    </div>
+    <p class="class-flavor">
+      Becoming a Symbiote is a calling for those who wish to study and commune with the living cosmos.
+      One might underestimate a quiet Symbiote who practices the careful work of cultivating xeno-ecosystems,
+      but those who channel the raw forces of the void are terrifying to behold. Through years of study and
+      deep biological fusion, Symbiotes can shift into xeno-forms and reshape the very matter of the cosmos.
+    </p>
+
+    <div class="class-statline">
+      <div class="statbox"><div class="val">10</div><div class="key">Evasion</div></div>
+      <div class="statbox"><div class="val">6</div><div class="key">Hit Points</div></div>
+      <div class="statbox items">
+        <div class="key" style="margin-bottom:0.3rem">Class Items</div>
+        <div class="val">A vial of bioluminescent xeno-fluid, or a chip of alien ore that hums faintly against your skin</div>
+      </div>
+    </div>
+
+    <div class="feature-block signal-feature">
+      <div class="feature-title">◈ SIGNAL FEATURE — Transcendence</div>
+      <p>Spend 3 Signal to shift into a Xenoform without marking a Stress. When you do, choose one trait to raise by +1 until you drop out of that Xenoform.</p>
+    </div>
+
+    <div class="feature-block class-feature">
+      <div class="feature-title">⌖ CLASS FEATURE — Xenoform</div>
+      <p><strong>Mark a Stress</strong> to biologically merge with and transform into an alien creature of your tier or lower. You can drop out at any time. While transformed, you can't use weapons or channel abilities, but you gain the Xenoform's features, Evasion bonus, and attack. If you mark your last Hit Point, you drop out.</p>
+    </div>
+
+    <div class="feature-block class-feature">
+      <div class="feature-title">⌖ CLASS FEATURE — Xeno-Sense</div>
+      <p>You can perform harmless, subtle effects involving biological or void phenomena &mdash; causing a bioluminescent bloom to pulse, summoning a faint static charge, accelerating the growth of local flora &mdash; at will.</p>
+    </div>
+
+    <h4 style="color:var(--static);margin:1.5rem 0 0.5rem;font-size:0.78rem;letter-spacing:0.12em">SUBCLASSES</h4>
+
+    <div class="subclass-block">
+      <div class="subclass-name">VOIDSHAPER</div>
+      <div class="subclass-tag">Embody the raw elements of the cosmos.</div>
+      <div class="channel">Channel Trait: Instinct</div>
+      <p style="font-size:0.9rem;color:var(--text-dim)">
+        Voidshapers treat the fundamental forces of the universe as extensions of their own body. Through deep
+        biological attunement, they channel Plasma, Gravity, Flux, or Drift &mdash; each reshaping the battlefield.
+      </p>
+      <h5>Foundation</h5>
+      <div class="feat"><em class="feat-name">Void Channeling:</em> Mark a Stress to <em>Channel</em> one of: <strong>Plasma</strong> (adversary within Melee dealing damage to you takes 1d10 energy back), <strong>Gravity</strong> (+Proficiency to damage thresholds), <strong>Flux</strong> (when you damage an adversary, others within Very Close mark Stress), or <strong>Drift</strong> (hover, advantage on Agility).</div>
+      <h5>Specialization</h5>
+      <div class="feat"><em class="feat-name">Resonant Field:</em> Once per rest while Channeling, project a field matching your force across Close range.</div>
+      <h5>Mastery</h5>
+      <div class="feat"><em class="feat-name">Void Dominion:</em> Further embody your cosmic force with a Channel-specific bonus (+1 Proficiency, damage reduction, Vulnerable on attackers, or flight + Evasion).</div>
+    </div>
+
+    <div class="subclass-block alt">
+      <div class="subclass-name">LIFEWEAVER</div>
+      <div class="subclass-tag">Use advanced biotech to heal your crew.</div>
+      <div class="channel">Channel Trait: Instinct</div>
+      <p style="font-size:0.9rem;color:var(--text-dim)">
+        Lifeweavers are the surgeons of the living cosmos. Through nanite arrays, symbiotic biotech grafts, or
+        deep cellular attunement, they sustain the people around them &mdash; patching wounds, clearing toxins,
+        and keeping crews alive in conditions that should be fatal.
+      </p>
+      <h5>Foundation</h5>
+      <div class="feat"><em class="feat-name">Biome Sanctuary:</em> Once per long rest, generate a field of biological calm within Close range. When you rest in the field for a few minutes, clear Stress equal to your Instinct, distributed between you and allies.</div>
+      <div class="feat"><em class="feat-name">Nanite Surge:</em> Touch a creature and spend 3 Signal. That creature clears 1d4 Hit Points.</div>
+      <h5>Specialization</h5>
+      <div class="feat"><em class="feat-name">Extended Reach:</em> Target creatures within Very Close range with Nanite Surge.</div>
+      <div class="feat"><em class="feat-name">Lifeweave Protocol:</em> Once per long rest, spend 2 Signal to clear 2 Hit Points on 1d4 allies within Close range.</div>
+      <h5>Mastery</h5>
+      <div class="feat"><em class="feat-name">Guardian Symbiont:</em> While in Xenoform and an ally within Close range marks 2+ Hit Points, mark a Stress to reduce by 1.</div>
+    </div>
+
+    <div class="bg-questions">
+      <h5>Background Questions</h5>
+      <ul>
+        <li>Why was the community you grew up in so dependent on the void and its creatures?</li>
+        <li>What was the first xeno-creature you bonded with? Why did that bond end?</li>
+        <li>Who has been trying to track you down across the stars? What do they want from you?</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- SENTINEL                                                 -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <section id="sentinel" class="class-block">
+    <div class="class-header">
+      <div>
+        <h3>SENTINEL</h3>
+        <div class="reskin">was Guardian</div>
+      </div>
+      <div class="domains-tag">IRON · TIDE</div>
+    </div>
+    <p class="class-flavor">
+      The title of Sentinel represents an array of martial vocations, speaking more to their moral compass and
+      unshakeable fortitude than the means by which they fight. While many serve in ship security, planetary
+      militias, or private protection details, they're more likely to follow the few they truly care for, majority
+      be damned. Woe betide those who harm the ally of a Sentinel.
+    </p>
+
+    <div class="class-statline">
+      <div class="statbox"><div class="val">9</div><div class="key">Evasion</div></div>
+      <div class="statbox"><div class="val">7</div><div class="key">Hit Points</div></div>
+      <div class="statbox items">
+        <div class="key" style="margin-bottom:0.3rem">Class Items</div>
+        <div class="val">A dog tag from someone you couldn't save, or a security override chip you were never supposed to keep</div>
+      </div>
+    </div>
+
+    <div class="feature-block signal-feature">
+      <div class="feature-title">◈ SIGNAL FEATURE — Frontline Tank</div>
+      <p>Spend 3 Signal to clear 2 Armor Slots.</p>
+    </div>
+
+    <div class="feature-block class-feature">
+      <div class="feature-title">⌖ CLASS FEATURE — Unstoppable</div>
+      <p>Once per long rest, become <em>Unstoppable</em>. You gain an Unstoppable Die (d4 at level 1, d6 at level 5). Place it with the 1 facing up. After any damage roll that deals 1+ Hit Points, increase the die value by one. When it exceeds maximum or the scene ends, drop out of Unstoppable.</p>
+      <p>While Unstoppable: reduce physical damage severity by one threshold; add the die's current value to damage rolls; you can't be <em>Restrained</em> or <em>Vulnerable</em>.</p>
+    </div>
+
+    <h4 style="color:var(--static);margin:1.5rem 0 0.5rem;font-size:0.78rem;letter-spacing:0.12em">SUBCLASSES</h4>
+
+    <div class="subclass-block">
+      <div class="subclass-name">BULWARK</div>
+      <div class="subclass-tag">Soak plasma fire and keep your crew standing.</div>
+      <p style="font-size:0.9rem;color:var(--text-dim)">
+        Bulwarks are the wall between their crew and everything trying to kill them. Through combat hardening,
+        advanced armor use, or sheer stubborn refusal to go down, they absorb punishment that would flatten
+        anyone else and keep coming forward.
+      </p>
+      <h5>Foundation</h5>
+      <div class="feat"><em class="feat-name">Unwavering:</em> Permanent +1 bonus to your damage thresholds.</div>
+      <div class="feat"><em class="feat-name">Iron Will:</em> When you take physical damage, mark an additional Armor Slot to reduce severity by one threshold.</div>
+      <h5>Specialization</h5>
+      <div class="feat"><em class="feat-name">Unrelenting:</em> Permanent +2 bonus to your damage thresholds.</div>
+      <div class="feat"><em class="feat-name">Combat Screen:</em> When an ally within Very Close range takes damage, mark an Armor Slot to reduce severity by one threshold.</div>
+      <h5>Mastery</h5>
+      <div class="feat"><em class="feat-name">Undaunted:</em> Permanent +3 bonus to your damage thresholds.</div>
+      <div class="feat"><em class="feat-name">Loyal Protector:</em> When an ally within Close range has 2 or fewer Hit Points and would take damage, mark a Stress to sprint to their side and take the damage instead.</div>
+    </div>
+
+    <div class="subclass-block alt">
+      <div class="subclass-name">RECKONER</div>
+      <div class="subclass-tag">Strike down anyone who harms you or your crew.</div>
+      <p style="font-size:0.9rem;color:var(--text-dim)">
+        Reckoners don't just endure &mdash; they respond. Every hit their crew takes is a debt, and Reckoners
+        are very good at collecting. Through cold tactical focus or barely-contained fury, they track every
+        slight, every injury, and they make it count.
+      </p>
+      <h5>Foundation</h5>
+      <div class="feat"><em class="feat-name">At Ease:</em> Gain an additional Stress slot.</div>
+      <div class="feat"><em class="feat-name">Payback:</em> When an adversary within Melee succeeds on an attack against you, mark 2 Stress to force them to mark a Hit Point.</div>
+      <h5>Specialization</h5>
+      <div class="feat"><em class="feat-name">Act of Reprisal:</em> When an adversary damages an ally within Melee, gain +1 Proficiency for your next successful attack against that adversary.</div>
+      <h5>Mastery</h5>
+      <div class="feat"><em class="feat-name">Nemesis:</em> Spend 2 Signal to <em>Prioritize</em> an adversary until your next rest. When attacking your Prioritized adversary, swap the results of your Signal and Static Dice.</div>
+    </div>
+
+    <div class="bg-questions">
+      <h5>Background Questions</h5>
+      <ul>
+        <li>Who from your crew or community did you fail to protect, and why do you still think of them?</li>
+        <li>You've been tasked with protecting something important and moving it somewhere dangerous. What is it, and where does it need to go?</li>
+        <li>You consider an aspect of yourself to be a weakness. What is it, and how has it shaped the way you fight?</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- HUNTER                                                   -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <section id="hunter" class="class-block">
+    <div class="class-header">
+      <div>
+        <h3>HUNTER</h3>
+        <div class="reskin">was Ranger</div>
+      </div>
+      <div class="domains-tag">DEEP · SHADOW</div>
+    </div>
+    <p class="class-flavor">
+      Hunters are highly skilled trackers who, despite their martial abilities, rarely lend their skills to a
+      standing army. Through mastery of the body and a deep understanding of the void and its creatures, Hunters
+      become sly tacticians &mdash; pursuing their quarry with cunning and patience across planets, stations, and
+      the dark between stars. Many track and fight alongside a xeno-companion.
+    </p>
+
+    <div class="class-statline">
+      <div class="statbox"><div class="val">12</div><div class="key">Evasion</div></div>
+      <div class="statbox"><div class="val">6</div><div class="key">Hit Points</div></div>
+      <div class="statbox items">
+        <div class="key" style="margin-bottom:0.3rem">Class Items</div>
+        <div class="val">A trophy from your first kill, or a navigation chip that always points somewhere you've never been</div>
+      </div>
+    </div>
+
+    <div class="feature-block signal-feature">
+      <div class="feature-title">◈ SIGNAL FEATURE — Hold Them Off</div>
+      <p>Spend 3 Signal when you succeed on a weapon attack to use that same roll against two additional adversaries within range of the attack.</p>
+    </div>
+
+    <div class="feature-block class-feature">
+      <div class="feature-title">⌖ CLASS FEATURE — Hunter's Focus</div>
+      <p>Spend a Signal and make an attack. On a success, deal damage and temporarily make the target your <em>Focus</em>. Against your Focus: you know what direction they're in; when you damage them they mark a Stress; on a failed attack, you can end Focus to reroll your Duality Dice.</p>
+    </div>
+
+    <h4 style="color:var(--static);margin:1.5rem 0 0.5rem;font-size:0.78rem;letter-spacing:0.12em">SUBCLASSES</h4>
+
+    <div class="subclass-block">
+      <div class="subclass-name">BEASTBOUND</div>
+      <div class="subclass-tag">Forge a deep bond with a xeno-companion.</div>
+      <div class="channel">Channel Trait: Agility</div>
+      <p style="font-size:0.9rem;color:var(--text-dim)">
+        Beastbound Hunters travel the stars with a bonded xeno-creature at their side &mdash; not a pet, not a
+        tool, but a partner. Through years of shared danger, mutual trust, and the kind of wordless
+        communication that only comes from surviving together, a Beastbound and their companion move as one.
+      </p>
+      <h5>Foundation</h5>
+      <div class="feat"><em class="feat-name">Companion:</em> You have a xeno-companion at your side. Take the Hunter Companion sheet. Choose a companion level-up option when you level up.</div>
+      <h5>Specialization</h5>
+      <div class="feat"><em class="feat-name">Expert Training:</em> Choose an additional companion level-up option.</div>
+      <div class="feat"><em class="feat-name">Battle-Bonded:</em> When an adversary attacks you while within your companion's Melee range, +2 Evasion against the attack.</div>
+      <h5>Mastery</h5>
+      <div class="feat"><em class="feat-name">Advanced Training:</em> Choose two additional companion level-up options.</div>
+      <div class="feat"><em class="feat-name">Loyal Friend:</em> Once per long rest, when damage would mark your companion's last Stress or your last Hit Point and you're within Close range, you or your companion can rush over and take the damage instead.</div>
+    </div>
+
+    <div class="subclass-block alt">
+      <div class="subclass-name">TRAILBLAZER</div>
+      <div class="subclass-tag">Hunt your mark across the stars with deadly precision.</div>
+      <div class="channel">Channel Trait: Agility</div>
+      <p style="font-size:0.9rem;color:var(--text-dim)">
+        Trailblazers are relentless. Once they've picked up a trail &mdash; a ship's ion signature, a smuggler's
+        alias, a wanted face on a dozen bounty boards &mdash; they don't stop. They know the fastest route through
+        a debris field, the cheapest bribe at a checkpoint, and exactly which fault line to hit when they finally
+        close the distance.
+      </p>
+      <h5>Foundation</h5>
+      <div class="feat"><em class="feat-name">Ruthless Predator:</em> Mark a Stress to gain +1 Proficiency on a damage roll. When you deal Severe damage, the adversary marks a Stress.</div>
+      <div class="feat"><em class="feat-name">Dead Reckoning:</em> When traveling to a place you've visited or carrying an object from there, you can identify the shortest, most direct route.</div>
+      <h5>Specialization</h5>
+      <div class="feat"><em class="feat-name">Elusive Predator:</em> When your Focus attacks you, +2 Evasion against the attack.</div>
+      <h5>Mastery</h5>
+      <div class="feat"><em class="feat-name">Apex Predator:</em> Before attacking your Focus, spend a Signal. On a successful attack, remove a Static from the GM's Static pool.</div>
+    </div>
+
+    <div class="bg-questions">
+      <h5>Background Questions</h5>
+      <ul>
+        <li>Something dangerous destroyed something you loved. You've vowed to find them. What are they, and what unique trail do they leave behind?</li>
+        <li>Your first kill almost killed you, too. What was it, and what part of you was never the same after that?</li>
+        <li>You've moved through many dangerous systems, but there is one place you refuse to go. What is it?</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- OPERATIVE                                                -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <section id="operative" class="class-block">
+    <div class="class-header">
+      <div>
+        <h3>OPERATIVE</h3>
+        <div class="reskin">was Rogue</div>
+      </div>
+      <div class="domains-tag">SHADOW · SABLE</div>
+    </div>
+    <p class="class-flavor">
+      Operatives are scoundrels, often in both attitude and practice. Broadly known as liars and thieves, the best
+      among them move through the galaxy anonymously. Utilizing sharp wits and blades, Operatives trick foes through
+      social manipulation as easily as bypassing a security lock or threading through a ventilation shaft. There's
+      honor among thieves &mdash; for those who know where to look.
+    </p>
+
+    <div class="class-statline">
+      <div class="statbox"><div class="val">12</div><div class="key">Evasion</div></div>
+      <div class="statbox"><div class="val">6</div><div class="key">Hit Points</div></div>
+      <div class="statbox items">
+        <div class="key" style="margin-bottom:0.3rem">Class Items</div>
+        <div class="val">A set of bypass tools, or a mag-grapple worn smooth from use</div>
+      </div>
+    </div>
+
+    <div class="feature-block signal-feature">
+      <div class="feature-title">◈ SIGNAL FEATURE — Ghost Step</div>
+      <p>Spend 3 Signal to gain a +2 bonus to your Evasion until the next time an attack succeeds against you. Otherwise, this bonus lasts until your next rest.</p>
+    </div>
+
+    <div class="feature-block class-feature">
+      <div class="feature-title">⌖ CLASS FEATURE — Cloaked</div>
+      <p>Any time you would be <em>Hidden</em>, you are instead <em>Cloaked</em>. While Cloaked, you remain unseen if you're stationary when an adversary moves to where they would normally see you. After you make an attack or end a move within line of sight, you are no longer Cloaked.</p>
+    </div>
+
+    <div class="feature-block class-feature">
+      <div class="feature-title">⌖ CLASS FEATURE — Sneak Attack</div>
+      <p>When you succeed on an attack while <em>Cloaked</em> or while an ally is within Melee range of your target, add a number of <strong>d6s</strong> equal to your tier to your damage roll.</p>
+    </div>
+
+    <h4 style="color:var(--static);margin:1.5rem 0 0.5rem;font-size:0.78rem;letter-spacing:0.12em">SUBCLASSES</h4>
+
+    <div class="subclass-block">
+      <div class="subclass-name">PHANTOM</div>
+      <div class="subclass-tag">Bend cloaking tech to slip through any environment.</div>
+      <div class="channel">Channel Trait: Finesse</div>
+      <p style="font-size:0.9rem;color:var(--text-dim)">
+        Phantoms treat concealment as infrastructure &mdash; something to move through, exploit, and weaponize.
+        Through military-grade cloaking rigs, sensor-baffling implants, or sheer trained instinct for dead zones
+        and blind spots, a Phantom can slip through any environment without leaving a trace.
+      </p>
+      <h5>Foundation</h5>
+      <div class="feat"><em class="feat-name">Phase Step:</em> When you move into an area outside sensor coverage (ECM shadow, blind spot, interference zone), mark a Stress to vanish and reappear inside another such zone within Far range. You appear <em>Cloaked</em>.</div>
+      <h5>Specialization</h5>
+      <div class="feat"><em class="feat-name">Sensor Wash:</em> Channel Roll (15). On success, create a sensor blackout field within Close range. You're <em>Cloaked</em> to any adversary whose line of sight is blocked.</div>
+      <div class="feat"><em class="feat-name">Adrenaline:</em> While Vulnerable, add your level to damage rolls.</div>
+      <h5>Mastery</h5>
+      <div class="feat"><em class="feat-name">Ghost Protocol:</em> Permanent +1 to Evasion. Phase Step works up to Very Far range.</div>
+      <div class="feat"><em class="feat-name">Vanishing Act:</em> Mark a Stress to become <em>Cloaked</em> at any time. Automatically clear <em>Restrained</em> if you have it.</div>
+    </div>
+
+    <div class="subclass-block alt">
+      <div class="subclass-name">FIXER</div>
+      <div class="subclass-tag">A web of contacts in every spaceport you visit.</div>
+      <div class="channel">Channel Trait: Finesse</div>
+      <p style="font-size:0.9rem;color:var(--text-dim)">
+        Fixers are the people who know people. Every station has a black market, every spaceport has a smuggler's
+        back channel, every colony has someone who owes someone else a favor &mdash; and a Fixer has a name for
+        all of them.
+      </p>
+      <h5>Foundation</h5>
+      <div class="feat"><em class="feat-name">Well-Connected:</em> When you arrive at a prominent station, spaceport, or settlement, you know somebody who calls this place home. Give them a name and pick one fact about your relationship.</div>
+      <h5>Specialization</h5>
+      <div class="feat"><em class="feat-name">Contacts Everywhere:</em> Once per session, call on a shady contact for: credits/gear, a +3 bonus to a die result on your next action, or 2d8 damage support fire on your next damage roll.</div>
+      <h5>Mastery</h5>
+      <div class="feat"><em class="feat-name">Reliable Backup:</em> Use Contacts Everywhere three times per session. New options: reduce 1 marked Hit Point when damaged; roll a d20 as your Signal Die on a Presence Roll in conversation.</div>
+    </div>
+
+    <div class="bg-questions">
+      <h5>Background Questions</h5>
+      <ul>
+        <li>What did you get caught doing that got you exiled from your home station or crew?</li>
+        <li>You used to have a different life, but you've tried to leave it behind. Who from your past is still chasing you?</li>
+        <li>Who from your past were you most sad to say goodbye to?</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- PARAGON                                                  -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <section id="paragon" class="class-block">
+    <div class="class-header">
+      <div>
+        <h3>PARAGON</h3>
+        <div class="reskin">was Seraph</div>
+      </div>
+      <div class="domains-tag">IRON · PSIONIC</div>
+    </div>
+    <p class="class-flavor">
+      Paragons are elite warriors and protectors imbued with sacred purpose &mdash; not by gods, but by oath, order,
+      or the rare psionic awakening that marks a soul as something more. Their ethos aligns with whatever creed or
+      cause drives them: defending the vulnerable, exacting justice, holding a station or relic, or upholding a
+      code older than any government they've served. It is better to be a Paragon's ally than their enemy.
+    </p>
+
+    <div class="class-statline">
+      <div class="statbox"><div class="val">9</div><div class="key">Evasion</div></div>
+      <div class="statbox"><div class="val">7</div><div class="key">Hit Points</div></div>
+      <div class="statbox items">
+        <div class="key" style="margin-bottom:0.3rem">Class Items</div>
+        <div class="val">A worn oath-seal etched into your armor, or a memento from the order that forged you</div>
+      </div>
+    </div>
+
+    <div class="feature-block signal-feature">
+      <div class="feature-title">◈ SIGNAL FEATURE — Life Support</div>
+      <p>Spend 3 Signal to clear a Hit Point on an ally within Close range.</p>
+    </div>
+
+    <div class="feature-block class-feature">
+      <div class="feature-title">⌖ CLASS FEATURE — Conviction Dice</div>
+      <p>At the beginning of each session, roll a number of <strong>d4s</strong> equal to your subclass's Channel trait. These are your Conviction Dice. Spend them to aid yourself or an ally within Far range: reduce incoming damage by the value, add to a roll's result after the roll is made, or gain Signal equal to the result. Clear all unspent Conviction Dice at session end.</p>
+    </div>
+
+    <h4 style="color:var(--static);margin:1.5rem 0 0.5rem;font-size:0.78rem;letter-spacing:0.12em">SUBCLASSES</h4>
+
+    <div class="subclass-block">
+      <div class="subclass-name">SOVEREIGN BLADE</div>
+      <div class="subclass-tag">Dominate the field with a legendary bonded weapon.</div>
+      <div class="channel">Channel Trait: Strength</div>
+      <p style="font-size:0.9rem;color:var(--text-dim)">
+        Sovereign Blades are bonded to their weapon in a way that transcends the physical. Through years of
+        resonant conditioning, psionic attunement, or a sacred oath sealed in battle, a Sovereign Blade and
+        their weapon move as one.
+      </p>
+      <h5>Foundation</h5>
+      <div class="feat"><em class="feat-name">Bonded Weapon:</em> An equipped Melee or Very Close weapon can fly from your hand to strike an adversary within Close range, then return. Mark a Stress to target an additional adversary with the same roll.</div>
+      <div class="feat"><em class="feat-name">Stabilize:</em> Once per long rest, touch a creature and clear 2 Hit Points or 2 Stress.</div>
+      <h5>Specialization</h5>
+      <div class="feat"><em class="feat-name">Disciplined:</em> When you roll Conviction Dice, roll an additional die and discard the lowest. Use Stabilize twice per long rest.</div>
+      <h5>Mastery</h5>
+      <div class="feat"><em class="feat-name">Harmonic Resonance:</em> When rolling damage for Bonded Weapon, if any dice results match, double the value of each matching die.</div>
+    </div>
+
+    <div class="subclass-block alt">
+      <div class="subclass-name">SKYWARDEN</div>
+      <div class="subclass-tag">Jetwing flight and crushing strikes from the void.</div>
+      <div class="channel">Channel Trait: Strength</div>
+      <p style="font-size:0.9rem;color:var(--text-dim)">
+        Skywardens fight from above. Through high-performance jetwing systems, void-trained combat instincts,
+        and a physical presence that reads as deeply, unsettlingly other, they dominate the aerial dimension of
+        any engagement.
+      </p>
+      <h5>Foundation</h5>
+      <div class="feat"><em class="feat-name">Jetwing Flight:</em> Fly via integrated jetwings. Mark a Stress to carry a willing creature your size or smaller. Spend a Signal to deal an extra 1d8 on a successful attack.</div>
+      <h5>Specialization</h5>
+      <div class="feat"><em class="feat-name">Void Presence:</em> While flying, advantage on Presence Rolls. On a Signal success, remove a Static from the GM's pool instead of gaining Signal.</div>
+      <h5>Mastery</h5>
+      <div class="feat"><em class="feat-name">Ascendant:</em> Permanent +4 bonus to your Severe damage threshold.</div>
+      <div class="feat"><em class="feat-name">Strike from the Void:</em> While flying, the Jetwing Flight bonus is 1d12 instead of 1d8.</div>
+    </div>
+
+    <div class="bg-questions">
+      <h5>Background Questions</h5>
+      <ul>
+        <li>What cause, code, or order did you devote yourself to? What extraordinary thing did it demand of you in a moment of desperation?</li>
+        <li>How did you change &mdash; physically, mentally, or both &mdash; after committing fully to your path?</li>
+        <li>What ritual or practice keeps you connected to your conviction when everything else falls apart?</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- PSION                                                    -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <section id="psion" class="class-block">
+    <div class="class-header">
+      <div>
+        <h3>PSION</h3>
+        <div class="reskin">was Sorcerer</div>
+      </div>
+      <div class="domains-tag">PSIONIC · DEEP</div>
+    </div>
+    <p class="class-flavor">
+      Not all psionic individuals choose to hone their abilities, but those who do can become terrifying forces of
+      nature. The gifts of these wielders emerge from within &mdash; passing down bloodlines, awakening through trauma,
+      or sparked by exposure to something vast and inhuman out in the void. An untrained or misguided Psion is a
+      dangerous force indeed.
+    </p>
+
+    <div class="class-statline">
+      <div class="statbox"><div class="val">10</div><div class="key">Evasion</div></div>
+      <div class="statbox"><div class="val">6</div><div class="key">Hit Points</div></div>
+      <div class="statbox items">
+        <div class="key" style="margin-bottom:0.3rem">Class Items</div>
+        <div class="val">A resonance crystal that pulses when you're afraid, or a neural interface salvaged from a wreck you can't quite remember</div>
+      </div>
+    </div>
+
+    <div class="feature-block signal-feature">
+      <div class="feature-title">◈ SIGNAL FEATURE — Volatile Psionics</div>
+      <p>Spend 3 Signal to reroll any number of your damage dice on an attack that deals psionic damage.</p>
+    </div>
+
+    <div class="feature-block class-feature">
+      <div class="feature-title">⌖ CLASS FEATURE — Psionic Sense</div>
+      <p>You can sense the presence of psionic entities, active anomalies, and charged tech within Close range.</p>
+    </div>
+
+    <div class="feature-block class-feature">
+      <div class="feature-title">⌖ CLASS FEATURE — Neural Projection</div>
+      <p>Channel Roll (10). On a success, project a minor holographic or psionic construct no larger than yourself within Close range. Convincing to anyone at Close range or farther.</p>
+    </div>
+
+    <div class="feature-block class-feature">
+      <div class="feature-title">⌖ CLASS FEATURE — Surge Protocol</div>
+      <p>Once per long rest, push your psionics beyond their limits. Draw on a domain card from your loadout and choose: gain Signal equal to the card's level, <em>or</em> enhance a psionic damage ability with a bonus equal to twice the card's level.</p>
+    </div>
+
+    <h4 style="color:var(--static);margin:1.5rem 0 0.5rem;font-size:0.78rem;letter-spacing:0.12em">SUBCLASSES</h4>
+
+    <div class="subclass-block">
+      <div class="subclass-name">VOIDBORN</div>
+      <div class="subclass-tag">Channel the raw power of a cosmic force inside you.</div>
+      <div class="channel">Channel Trait: Instinct</div>
+      <p style="font-size:0.9rem;color:var(--text-dim)">
+        Voidborn Psions don't just wield the forces of the cosmos &mdash; they <em>are</em> those forces, poorly
+        contained in flesh. Through accident, lineage, or a transformative encounter, a Voidborn carries a specific
+        cosmic energy inside them.
+      </p>
+      <h5>Foundation</h5>
+      <div class="feat"><em class="feat-name">Cosmic Affinity:</em> Choose one cosmic force at creation: Drift, Gravity, Plasma, Static, or Flux. Shape it into ambient effects at will. Spend a Signal to gain either a +2 bonus to an action roll or a +3 bonus to its damage.</div>
+      <h5>Specialization</h5>
+      <div class="feat"><em class="feat-name">Void Shield:</em> When an attack roll against you succeeds, mark a Stress to roll a d6 and add it to your Evasion against the attack.</div>
+      <h5>Mastery</h5>
+      <div class="feat"><em class="feat-name">Void Manifestation:</em> Once per long rest, manifest your cosmic force physically. Choose two: +4 Severe threshold, +1 to a trait, +1 Proficiency, or +2 Evasion. Effects last until next rest.</div>
+    </div>
+
+    <div class="subclass-block alt">
+      <div class="subclass-name">MINDWEAVER</div>
+      <div class="subclass-tag">Extend the versatility of your psionics in powerful ways.</div>
+      <div class="channel">Channel Trait: Instinct</div>
+      <p style="font-size:0.9rem;color:var(--text-dim)">
+        Mindweavers are architects of possibility. Where other Psions channel raw force, a Mindweaver bends the
+        rules of what their psionics can <em>do</em> &mdash; extending reach, amplifying effect, turning a single
+        ability into something that hits harder, farther, or stranger than it was ever designed to.
+      </p>
+      <h5>Foundation</h5>
+      <div class="feat"><em class="feat-name">Psionic Weave:</em> After using a domain ability or making a psionic damage attack, mark a Stress to: extend reach by one range, +2 to the action roll, double a damage die, or hit an additional target.</div>
+      <h5>Specialization</h5>
+      <div class="feat"><em class="feat-name">Neural Link:</em> When Helping an Ally with a Channel Roll, roll a d8 as your advantage die. Once per long rest after an ally's Channel Roll with your help, swap their Duality Dice.</div>
+      <h5>Mastery</h5>
+      <div class="feat"><em class="feat-name">Psionic Charge:</em> When you take energy damage, become <em>Charged</em> (or spend 2 Signal to charge). On a successful psionic damage attack while Charged, spend the Charge for either +10 to damage or +3 Difficulty to a target's reaction roll.</div>
+    </div>
+
+    <div class="bg-questions">
+      <h5>Background Questions</h5>
+      <ul>
+        <li>What did you do that made the people around you wary of you?</li>
+        <li>What mentor taught you to control your untamed psionics, and why are they no longer able to guide you?</li>
+        <li>You have a deep fear you hide from everyone. What is it, and why does it scare you?</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- VANGUARD                                                 -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <section id="vanguard" class="class-block">
+    <div class="class-header">
+      <div>
+        <h3>VANGUARD</h3>
+        <div class="reskin">was Warrior</div>
+      </div>
+      <div class="domains-tag">VECTOR · TIDE</div>
+    </div>
+    <p class="class-flavor">
+      Becoming a Vanguard requires years &mdash; often a lifetime &mdash; of training and dedication to the mastery
+      of weapons and violence. While many who seek to fight hone only their strength, Vanguards understand the
+      importance of an agile body and mind, making them some of the most sought-after fighters across the galaxy.
+      Vanguards are known to have a favored weapon; to come between them and it would be a grievous mistake.
+    </p>
+
+    <div class="class-statline">
+      <div class="statbox"><div class="val">11</div><div class="key">Evasion</div></div>
+      <div class="statbox"><div class="val">6</div><div class="key">Hit Points</div></div>
+      <div class="statbox items">
+        <div class="key" style="margin-bottom:0.3rem">Class Items</div>
+        <div class="val">A photo chip of someone waiting for you, or a calibration block worn smooth from daily use</div>
+      </div>
+    </div>
+
+    <div class="feature-block signal-feature">
+      <div class="feature-title">◈ SIGNAL FEATURE — No Mercy</div>
+      <p>Spend 3 Signal to gain a +1 bonus to your attack rolls until your next rest.</p>
+    </div>
+
+    <div class="feature-block class-feature">
+      <div class="feature-title">⌖ CLASS FEATURE — Attack of Opportunity</div>
+      <p>If an adversary within Melee range attempts to leave that range, make a reaction roll using a trait of your choice against their Difficulty. On success choose one effect (two on a crit): they can't move from where they are; deal damage equal to your primary weapon's; you move with them.</p>
+    </div>
+
+    <div class="feature-block class-feature">
+      <div class="feature-title">⌖ CLASS FEATURE — Combat Training</div>
+      <p>You ignore burden when equipping weapons. When you deal physical damage, gain a bonus to your damage roll equal to your level.</p>
+    </div>
+
+    <h4 style="color:var(--static);margin:1.5rem 0 0.5rem;font-size:0.78rem;letter-spacing:0.12em">SUBCLASSES</h4>
+
+    <div class="subclass-block">
+      <div class="subclass-name">CRY OF THE BRAVE</div>
+      <div class="subclass-tag">Feed off the might of your enemies to fuel your own.</div>
+      <p style="font-size:0.9rem;color:var(--text-dim)">
+        Some fighters crumble under pressure. Vanguards who walk the Cry of the Brave sharpen against it. The worse
+        the odds, the louder the signal &mdash; and they answer. Their crew doesn't just follow them into the breach.
+        They believe they'll come out the other side.
+      </p>
+      <h5>Foundation</h5>
+      <div class="feat"><em class="feat-name">Courage:</em> When you fail a roll with Static, you gain a Signal.</div>
+      <div class="feat"><em class="feat-name">Battle Ritual:</em> Once per long rest, before attempting something dangerous, describe a ritual or preparation. Clear 2 Stress and gain 2 Signal.</div>
+      <h5>Specialization</h5>
+      <div class="feat"><em class="feat-name">Rise to the Challenge:</em> While you have 2 or fewer Hit Points unmarked, roll a d20 as your Signal Die.</div>
+      <h5>Mastery</h5>
+      <div class="feat"><em class="feat-name">Camaraderie:</em> Initiate a Tag Team Roll one additional time per session. When an ally initiates a Tag Team Roll with you, they only spend 2 Signal.</div>
+    </div>
+
+    <div class="subclass-block alt">
+      <div class="subclass-name">CRY OF THE SLAYER</div>
+      <div class="subclass-tag">Strike down adversaries with overwhelming force.</div>
+      <p style="font-size:0.9rem;color:var(--text-dim)">
+        Cry of the Slayer Vanguards are engines of attrition. They build momentum the way a ship builds velocity
+        &mdash; patient, deliberate, and almost impossible to stop once they're moving.
+      </p>
+      <h5>Foundation</h5>
+      <div class="feat"><em class="feat-name">Slayer:</em> On a Signal roll, place a d6 on this card instead of gaining Signal. Store up to Proficiency Slayer Dice. Spend any number on an attack or damage roll. Clear unspent dice at session end (gain a Signal per die cleared).</div>
+      <h5>Specialization</h5>
+      <div class="feat"><em class="feat-name">Weapon Specialist:</em> On a successful attack, spend a Signal to add a damage die from your secondary weapon. Once per long rest when rolling Slayer Dice, reroll any 1s.</div>
+      <h5>Mastery</h5>
+      <div class="feat"><em class="feat-name">Martial Preparation:</em> Your crew gains the Martial Preparation downtime move. You and each ally choosing it gain a d6 Slayer Die.</div>
+    </div>
+
+    <div class="bg-questions">
+      <h5>Background Questions</h5>
+      <ul>
+        <li>Who taught you to fight, and why did they stay behind when you shipped out?</li>
+        <li>Somebody defeated you in battle years ago and left you to die. Who was it, and how did they betray you?</li>
+        <li>What legendary station, world, or sector have you always wanted to reach, and why does it call to you?</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- TECHNOMANCER                                             -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <section id="technomancer" class="class-block">
+    <div class="class-header">
+      <div>
+        <h3>TECHNOMANCER</h3>
+        <div class="reskin">was Wizard</div>
+      </div>
+      <div class="domains-tag">GRID · CIPHER</div>
+    </div>
+    <p class="class-flavor">
+      Technomancers acquire and hone immense technical power over years of learning using data archives, experimental
+      hardware, proprietary software, and salvaged schematics. Some dedicate their lives to mastering a single
+      discipline; others learn from a wide variety of fields. Many become indispensable figures aboard ships and
+      stations &mdash; advising commanders, architecting systems, running electronic warfare, and weaponizing code.
+    </p>
+
+    <div class="class-statline">
+      <div class="statbox"><div class="val">11</div><div class="key">Evasion</div></div>
+      <div class="statbox"><div class="val">5</div><div class="key">Hit Points</div></div>
+      <div class="statbox items">
+        <div class="key" style="margin-bottom:0.3rem">Class Items</div>
+        <div class="val">A data slate filled with half-decrypted schematics you can't stop working on, or a small maintenance drone that follows you everywhere</div>
+      </div>
+    </div>
+
+    <div class="feature-block signal-feature">
+      <div class="feature-title">◈ SIGNAL FEATURE — System Override</div>
+      <p>Spend 3 Signal to force an adversary within Far range to reroll an attack or damage roll.</p>
+    </div>
+
+    <div class="feature-block class-feature">
+      <div class="feature-title">⌖ CLASS FEATURE — Technomancy</div>
+      <p>You can perform harmless, subtle effects involving technology at will &mdash; altering a display's readout, generating a soft sound or light, remotely activating a small device, projecting a minor hologram, or restoring basic function to a damaged piece of gear.</p>
+    </div>
+
+    <div class="feature-block class-feature">
+      <div class="feature-title">⌖ CLASS FEATURE — Predictive Modeling</div>
+      <p>Choose a number between 1 and 12. When you roll that number on a Duality Die, gain a Signal or clear a Stress. You can change this number when you take a long rest.</p>
+    </div>
+
+    <h4 style="color:var(--static);margin:1.5rem 0 0.5rem;font-size:0.78rem;letter-spacing:0.12em">SUBCLASSES</h4>
+
+    <div class="subclass-block">
+      <div class="subclass-name">DATAVAULT</div>
+      <div class="subclass-tag">A keen understanding of every system around you.</div>
+      <div class="channel">Channel Trait: Knowledge</div>
+      <p style="font-size:0.9rem;color:var(--text-dim)">
+        Datavaults are walking archives. Through exhaustive study, neural interfaces, or simply an obsessive refusal
+        to stop learning, they accumulate technical knowledge faster than anyone else aboard.
+      </p>
+      <h5>Foundation</h5>
+      <div class="feat"><em class="feat-name">Preloaded:</em> Take an additional domain card of your level or lower from a domain you have access to.</div>
+      <div class="feat"><em class="feat-name">Adept:</em> When you Utilize an Experience, mark a Stress instead of spending a Signal. If you do, double your Experience modifier.</div>
+      <h5>Specialization</h5>
+      <div class="feat"><em class="feat-name">Accomplished:</em> Take an additional domain card of your level or lower.</div>
+      <div class="feat"><em class="feat-name">Cached Memory:</em> Once per rest, when you recall a domain card in your vault, reduce its Recall Cost by 1.</div>
+      <h5>Mastery</h5>
+      <div class="feat"><em class="feat-name">Brilliant:</em> Take an additional domain card of your level or lower.</div>
+      <div class="feat"><em class="feat-name">Honed Expertise:</em> When you use an Experience, roll a d6. On 5+, use it without spending Signal.</div>
+    </div>
+
+    <div class="subclass-block alt">
+      <div class="subclass-name">WARTECH</div>
+      <div class="subclass-tag">Weaponize trained code and tech for violence.</div>
+      <div class="channel">Channel Trait: Knowledge</div>
+      <p style="font-size:0.9rem;color:var(--text-dim)">
+        Wartech Technomancers are a particular kind of dangerous: they took everything scholars use to understand
+        systems and pointed it directly at the problem of hurting people. Through combat protocols, weaponized code,
+        kinetic barriers, and a cultivated habit of thriving in chaos.
+      </p>
+      <h5>Foundation</h5>
+      <div class="feat"><em class="feat-name">Combat Protocol:</em> Gain an additional Hit Point slot.</div>
+      <div class="feat"><em class="feat-name">Calculated Risk:</em> When you succeed on an attack roll with Static, deal an extra 1d10 energy damage.</div>
+      <h5>Specialization</h5>
+      <div class="feat"><em class="feat-name">Kinetic Barrier:</em> While you have at least 2 Signal, add your Proficiency to your Evasion.</div>
+      <div class="feat"><em class="feat-name">Overclock:</em> Calculated Risk damage increases to 2d10.</div>
+      <h5>Mastery</h5>
+      <div class="feat"><em class="feat-name">Thrive in Chaos:</em> On a successful attack, mark a Stress after damage to force the target to mark an additional Hit Point.</div>
+      <div class="feat"><em class="feat-name">Maximum Output:</em> Calculated Risk damage increases to 3d10.</div>
+    </div>
+
+    <div class="bg-questions">
+      <h5>Background Questions</h5>
+      <ul>
+        <li>What responsibilities did your crew or station once count on you for? How did you let them down?</li>
+        <li>You've spent years searching for a particular data cache, piece of tech, or lost schematic. What is it, and why does it matter so much to you?</li>
+        <li>You have a powerful rival. Who are they, and why are you so determined to outrun them?</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- ACE                                                      -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <section id="ace" class="class-block">
+    <div class="class-header">
+      <div>
+        <h3>ACE</h3>
+        <div class="reskin">new — Voidheart original</div>
+      </div>
+      <div class="domains-tag">VECTOR · GRID</div>
+    </div>
+    <p class="class-flavor">
+      Aces are pilots who never really stopped flying, even when they're on foot. Trained at orbital combat academies,
+      fleet flight schools, or simply born with the rare instinct that lets a person read a debris field at a glance,
+      they treat every space as a vector problem and every adversary as a trajectory to be solved. Many maintain a
+      personal drone wing. By the time you've decided to fire, they're somewhere else.
+    </p>
+
+    <div class="class-statline">
+      <div class="statbox"><div class="val">12</div><div class="key">Evasion</div></div>
+      <div class="statbox"><div class="val">5</div><div class="key">Hit Points</div></div>
+      <div class="statbox items">
+        <div class="key" style="margin-bottom:0.3rem">Class Items</div>
+        <div class="val">A flight stick worn smooth from a thousand near-misses, or a callsign patch from a squadron that doesn't exist anymore</div>
+      </div>
+    </div>
+
+    <div class="feature-block signal-feature">
+      <div class="feature-title">◈ SIGNAL FEATURE — Read the Shot</div>
+      <p>Spend 3 Signal when an attack is made against you. Force the attacker to reroll the attack roll. You weren't where they aimed.</p>
+    </div>
+
+    <div class="feature-block class-feature">
+      <div class="feature-title">⌖ CLASS FEATURE — Slipstream</div>
+      <p>You don't fight where they expect. When you take an action, you can move up to Very Close range as part of that action without rolling, ignoring rough terrain. When you move at least Very Close range on your turn before making an attack, that attack roll gains advantage.</p>
+    </div>
+
+    <div class="feature-block class-feature">
+      <div class="feature-title">⌖ CLASS FEATURE — Recon Drone</div>
+      <p>You have a personal recon drone deployed within Close range. As a <strong>free action once per turn</strong>, command your drone to:</p>
+      <ul style="margin-top:0.5rem;font-size:0.9rem">
+        <li><strong>Scout:</strong> Ask the GM one question about an area or creature within Close range of the drone.</li>
+        <li><strong>Tag:</strong> Mark a target within Close range of the drone. You and allies gain +1 attack rolls against it until destroyed or another is tagged.</li>
+        <li><strong>Jam:</strong> Until your next turn, adversaries within Close range of the drone have disadvantage on reaction rolls.</li>
+      </ul>
+      <p style="margin-top:0.5rem">If your drone takes any damage, it's destroyed. Rebuild during a short or long rest.</p>
+    </div>
+
+    <h4 style="color:var(--static);margin:1.5rem 0 0.5rem;font-size:0.78rem;letter-spacing:0.12em">SUBCLASSES</h4>
+
+    <div class="subclass-block">
+      <div class="subclass-name">TRAJECTORY</div>
+      <div class="subclass-tag">Fly on instinct and never be where they aimed.</div>
+      <div class="channel">Channel Trait: Instinct</div>
+      <p style="font-size:0.9rem;color:var(--text-dim)">
+        Trajectory Aces flew before they understood physics. They read combat the way they read a debris field
+        &mdash; every adversary a vector, every shot a calculation that resolved before the trigger pulled.
+      </p>
+      <h5>Foundation</h5>
+      <div class="feat"><em class="feat-name">Precognitive Reflex:</em> When you would take Severe damage, mark a Stress to reduce it to Major instead.</div>
+      <div class="feat"><em class="feat-name">Vector Sight:</em> Once per long rest, when you arrive in a new scene, ask the GM one question about spatial layout, escape routes, or likely movement patterns.</div>
+      <h5>Specialization</h5>
+      <div class="feat"><em class="feat-name">Flow State:</em> When you move at least Close range with Slipstream, you also gain advantage on your next reaction roll this round.</div>
+      <h5>Mastery</h5>
+      <div class="feat"><em class="feat-name">Untouchable:</em> When an attack roll against you would succeed with Static, mark a Stress to make it miss instead. Your Read the Shot Signal Feature costs 2 Signal instead of 3.</div>
+    </div>
+
+    <div class="subclass-block alt">
+      <div class="subclass-name">SIGNAL</div>
+      <div class="subclass-tag">A wing of drones and the electronic warfare to break their formation.</div>
+      <div class="channel">Channel Trait: Knowledge</div>
+      <p style="font-size:0.9rem;color:var(--text-dim)">
+        Signal Aces don't fly alone. They fly with a swarm &mdash; recon birds, attack drones, jam units, each one
+        an extension of their will. They know that information is the real weapon, and they have more of it than
+        anyone else in the room.
+      </p>
+      <h5>Foundation</h5>
+      <div class="feat"><em class="feat-name">Wing Command:</em> You have two additional recon drones (three total). All three can be deployed simultaneously in different locations.</div>
+      <div class="feat"><em class="feat-name">Electronic Bite:</em> Once per long rest, have one of your drones attack a target within Close range of that drone. The drone deals 2d6 energy damage using your Proficiency, then is destroyed.</div>
+      <h5>Specialization</h5>
+      <div class="feat"><em class="feat-name">Hardened Mesh:</em> When a drone would be destroyed, mark a Stress to keep it operational. The next damage to that drone destroys it without the option to save.</div>
+      <h5>Mastery</h5>
+      <div class="feat"><em class="feat-name">Swarm Network:</em> While you have at least one drone deployed, issue two drone commands per turn instead of one. When an ally succeeds on an attack within Close range of one of your drones, that drone can Tag the target as a free reaction.</div>
+    </div>
+
+    <div class="bg-questions">
+      <h5>Background Questions</h5>
+      <ul>
+        <li>What did you fly first, and what happened to it?</li>
+        <li>You have a kill count, a flight record, or a callsign you don't talk about. Why?</li>
+        <li>Someone taught you to fly. Where are they now?</li>
+      </ul>
+    </div>
+  </section>
+
+  <p style="text-align:center;margin-top:3rem;color:var(--text-dim);font-size:0.88rem">
+    Next: <a href="lineages.html">choose your lineage</a> &mdash; or pick out your <a href="domains.html">domains</a>.
+  </p>
+
+</main>
+
+<footer>
+  <div>VOIDHEART &mdash; <a href="index.html">Home</a> · <a href="classes.html">Classes</a> · <a href="lineages.html">Lineages</a> · <a href="domains.html">Domains</a> · <a href="ship-combat.html">Ship Combat</a></div>
+  <div>Signal &amp; Static · Far Futures · Deep Space Adventure</div>
+</footer>
+
+<script src="scripts.js"></script>
+</body>
+</html>
