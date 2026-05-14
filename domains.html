@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Domains — VOIDHEART</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=JetBrains+Mono:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+.domain-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.75rem 2rem;
+  margin: 1.5rem 0;
+  scroll-margin-top: 80px;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1.75rem;
+  align-items: start;
+}
+.domain-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 5px; height: 100%;
+}
+.domain-card.iron::before { background: linear-gradient(180deg, #c97e3a, #8a4a1a); }
+.domain-card.vector::before { background: linear-gradient(180deg, var(--signal), #c97e3a); }
+.domain-card.shadow::before { background: linear-gradient(180deg, #3a4a6a, #0a1020); }
+.domain-card.grid::before { background: linear-gradient(180deg, var(--accent-teal), #1a8a8a); }
+.domain-card.cipher::before { background: linear-gradient(180deg, #4ac9b8, #2e8a7a); }
+.domain-card.deep::before { background: linear-gradient(180deg, var(--static), #2a0a4a); }
+.domain-card.psionic::before { background: linear-gradient(180deg, var(--accent-rose), var(--static)); }
+.domain-card.tide::before { background: linear-gradient(180deg, var(--accent-gold), #b88a1a); }
+.domain-card.sable::before { background: linear-gradient(180deg, #1a1020, #0a0612); }
+
+.domain-card .glyph {
+  text-align: center;
+  padding: 1.25rem 0;
+}
+.domain-card .glyph-symbol {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 3rem;
+  font-weight: 900;
+  line-height: 1;
+  background: linear-gradient(135deg, var(--signal) 0%, var(--static) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.05em;
+}
+.domain-card.iron .glyph-symbol { background: linear-gradient(135deg, #e8a560 0%, #8a4a1a 100%); -webkit-background-clip: text; background-clip: text; }
+.domain-card.vector .glyph-symbol { background: linear-gradient(135deg, var(--signal) 0%, var(--accent-gold) 100%); -webkit-background-clip: text; background-clip: text; }
+.domain-card.shadow .glyph-symbol { background: linear-gradient(135deg, #5a6a8a 0%, #0a1020 100%); -webkit-background-clip: text; background-clip: text; }
+.domain-card.grid .glyph-symbol { background: linear-gradient(135deg, var(--accent-teal) 0%, #1a8a8a 100%); -webkit-background-clip: text; background-clip: text; }
+.domain-card.cipher .glyph-symbol { background: linear-gradient(135deg, #7adcc8 0%, #2e8a7a 100%); -webkit-background-clip: text; background-clip: text; }
+.domain-card.deep .glyph-symbol { background: linear-gradient(135deg, var(--static) 0%, #2a0a4a 100%); -webkit-background-clip: text; background-clip: text; }
+.domain-card.psionic .glyph-symbol { background: linear-gradient(135deg, var(--accent-rose) 0%, var(--static) 100%); -webkit-background-clip: text; background-clip: text; }
+.domain-card.tide .glyph-symbol { background: linear-gradient(135deg, var(--accent-gold) 0%, #b88a1a 100%); -webkit-background-clip: text; background-clip: text; }
+.domain-card.sable .glyph-symbol { background: linear-gradient(135deg, #6a5080 0%, #0a0612 100%); -webkit-background-clip: text; background-clip: text; }
+
+.domain-card .glyph-name {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #fff;
+  margin-top: 0.75rem;
+}
+.domain-card .glyph-trait {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  margin-top: 0.4rem;
+}
+.domain-card .content h4 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  color: var(--signal);
+  text-transform: uppercase;
+  margin: 1rem 0 0.4rem;
+}
+.domain-card .content h4:first-child { margin-top: 0; }
+.domain-card .content p {
+  font-size: 0.92rem;
+  color: var(--text);
+  line-height: 1.7;
+}
+.domain-card .content .tagline {
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--text-dim);
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+.domain-card .users {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.domain-card .users a {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  color: var(--text);
+  background: var(--panel-darker);
+  border: 1px solid var(--border-bright);
+  padding: 0.3rem 0.65rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+  transition: border-color 0.2s, color 0.2s;
+}
+.domain-card .users a:hover {
+  border-color: var(--signal);
+  color: var(--signal);
+}
+
+@media (max-width: 720px) {
+  .domain-card {
+    grid-template-columns: 1fr;
+    padding: 1.25rem 1.25rem;
+  }
+  .domain-card .glyph {
+    padding: 0;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .domain-card .glyph-symbol { font-size: 2rem; }
+  .domain-card .glyph-name { margin-top: 0; font-size: 1.1rem; }
+}
+</style>
+</head>
+<body>
+
+<div id="starfield"></div>
+
+<nav class="site-nav">
+  <a class="nav-logo" href="index.html">VOIDHEART <span>Far Futures</span></a>
+  <button class="nav-toggle" aria-label="Toggle menu">MENU</button>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="classes.html">Classes</a></li>
+    <li><a href="lineages.html">Lineages</a></li>
+    <li><a href="domains.html" class="active">Domains</a></li>
+    <li><a href="ship-combat.html">Ship Combat</a></li>
+  </ul>
+</nav>
+
+<header class="page-header">
+  <div class="crumb">▸ The Reference / Practice</div>
+  <h1>DOMAINS</h1>
+  <div class="sub">Nine Schools of Expertise</div>
+  <p class="desc">
+    Domains are the conceptual toolboxes your class draws from. Each class has access to two of the nine domains,
+    and at every level you choose Domain Cards from those two decks to add to your loadout &mdash; spells,
+    techniques, gear, and signature moves.
+  </p>
+</header>
+
+<main class="wide">
+
+  <div class="toc">
+    <div class="toc-label">Jump to a Domain</div>
+    <div class="toc-grid">
+      <a href="#iron">Iron</a>
+      <a href="#vector">Vector</a>
+      <a href="#shadow">Shadow</a>
+      <a href="#grid">Grid</a>
+      <a href="#cipher">Cipher</a>
+      <a href="#deep">Deep</a>
+      <a href="#psionic">Psionic</a>
+      <a href="#tide">Tide</a>
+      <a href="#sable">Sable</a>
+    </div>
+  </div>
+
+  <div class="rule-card">
+    <h4 style="color:var(--signal);margin-bottom:0.5rem;font-size:0.78rem;letter-spacing:0.12em">HOW DOMAINS WORK</h4>
+    <p style="font-size:0.92rem;margin-bottom:0.5rem">
+      At character creation you choose <strong>2 Domain Cards</strong> of level 1 from your class's two domain decks.
+      As you level up you gain access to higher-level cards from those same two decks. Cards represent everything
+      from learned techniques to specialized gear &mdash; each one has a Recall Cost and either an ability you can
+      activate or a passive benefit you gain just by having it loaded.
+    </p>
+    <p style="font-size:0.92rem">
+      Your two domains define what you can <em>do</em>. Your traits define how well you do it.
+    </p>
+  </div>
+
+  <!-- IRON -->
+  <section id="iron" class="domain-card iron">
+    <div class="glyph">
+      <div class="glyph-symbol">⛨</div>
+      <div class="glyph-name">IRON</div>
+      <div class="glyph-trait">Combat · Resilience · Armor</div>
+    </div>
+    <div class="content">
+      <p class="tagline">"The hull holds, or the hull doesn't. Make sure it holds."</p>
+      <p>
+        Iron is the domain of close-quarters violence, weapons handling, and physical durability. Iron cards lean
+        toward direct martial application &mdash; reinforced strikes, defensive maneuvers, weapon specializations,
+        armored stances &mdash; alongside techniques for absorbing punishment that would put down anyone less
+        prepared. Iron answers the question <em>can you keep going?</em> with stubborn, hammered-flat certainty.
+      </p>
+      <h4>Used By</h4>
+      <div class="users">
+        <a href="classes.html#sentinel">Sentinel</a>
+        <a href="classes.html#paragon">Paragon</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- VECTOR -->
+  <section id="vector" class="domain-card vector">
+    <div class="glyph">
+      <div class="glyph-symbol">↗</div>
+      <div class="glyph-name">VECTOR</div>
+      <div class="glyph-trait">Motion · Piloting · Evasion</div>
+    </div>
+    <div class="content">
+      <p class="tagline">"The shot was perfect. They just weren't there anymore."</p>
+      <p>
+        Vector is the domain of trajectory &mdash; piloting, motion, jump navigation, hard maneuvers, and the
+        precise read of where things are going before they arrive. Vector cards favor those who treat space as a
+        problem of geometry: fighter pilots, jump-drive navigators, freerunners and parkour specialists, anyone
+        whose survival depends on being somewhere other than where the enemy aimed.
+      </p>
+      <h4>Used By</h4>
+      <div class="users">
+        <a href="classes.html#vanguard">Vanguard</a>
+        <a href="classes.html#ace">Ace</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHADOW -->
+  <section id="shadow" class="domain-card shadow">
+    <div class="glyph">
+      <div class="glyph-symbol">◐</div>
+      <div class="glyph-name">SHADOW</div>
+      <div class="glyph-trait">Stealth · Infiltration · Concealment</div>
+    </div>
+    <div class="content">
+      <p class="tagline">"They never knew we were there. That's the point."</p>
+      <p>
+        Shadow is the domain of staying unseen. Cloaking tech, sensor-baffling rigs, dead-zone navigation,
+        infiltration techniques, the discipline of not being noticed in rooms full of people who are paid to
+        notice. Shadow cards favor those who treat awareness as a resource to be denied &mdash; spies, infiltrators,
+        ghost-step operatives, and the rare hunter who tracks through stations and corridors instead of wilderness.
+      </p>
+      <h4>Used By</h4>
+      <div class="users">
+        <a href="classes.html#hunter">Hunter</a>
+        <a href="classes.html#operative">Operative</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- GRID -->
+  <section id="grid" class="domain-card grid">
+    <div class="glyph">
+      <div class="glyph-symbol">⊞</div>
+      <div class="glyph-name">GRID</div>
+      <div class="glyph-trait">Hacking · Drones · Electronic Warfare</div>
+    </div>
+    <div class="content">
+      <p class="tagline">"Every system has an input. Every input is a doorway."</p>
+      <p>
+        Grid is the domain of systems &mdash; networks, drones, electronic warfare, breach code, and the digital
+        architecture that holds civilization together when the analog edges fray. Grid cards range from precise
+        single-target intrusions to broadcast-scale signal jamming, from drone control rigs to weaponized AI
+        subroutines. If a thing has a circuit, Grid can talk to it. If it has a vulnerability, Grid can find it.
+      </p>
+      <h4>Used By</h4>
+      <div class="users">
+        <a href="classes.html#technomancer">Technomancer</a>
+        <a href="classes.html#ace">Ace</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CIPHER -->
+  <section id="cipher" class="domain-card cipher">
+    <div class="glyph">
+      <div class="glyph-symbol">⌬</div>
+      <div class="glyph-name">CIPHER</div>
+      <div class="glyph-trait">Science · Medicine · Engineering</div>
+    </div>
+    <div class="content">
+      <p class="tagline">"Understand it, and you can rebuild it. Rebuild it, and you can change it."</p>
+      <p>
+        Cipher is the domain of applied knowledge &mdash; biotech, medicine, hard engineering, the disciplined work
+        of understanding how something is built and using that understanding to alter, repair, replicate, or improve
+        it. Cipher cards favor field medics, ship engineers, xenobiologists, weapons techs, and the kind of polymath
+        who can rewire a life support system with one hand while running diagnostics on a salvaged xeno-artifact
+        with the other.
+      </p>
+      <h4>Used By</h4>
+      <div class="users">
+        <a href="classes.html#symbiote">Symbiote</a>
+        <a href="classes.html#technomancer">Technomancer</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEEP -->
+  <section id="deep" class="domain-card deep">
+    <div class="glyph">
+      <div class="glyph-symbol">∞</div>
+      <div class="glyph-name">DEEP</div>
+      <div class="glyph-trait">Void · Xenoarchaeology · The Beyond</div>
+    </div>
+    <div class="content">
+      <p class="tagline">"There's something out there older than us. Try to remember that."</p>
+      <p>
+        Deep is the domain of the void itself &mdash; xenoarchaeology, dead-civilization tech, anomalous phenomena,
+        and the practiced art of working with forces that don't entirely obey the physics anyone bothered to write
+        down. Deep cards favor those who have stood at the edge of a non-Euclidean ruin and not turned back: void
+        seekers, ancient-tech specialists, biologists who have stopped pretending xeno-fauna is conventional life.
+      </p>
+      <h4>Used By</h4>
+      <div class="users">
+        <a href="classes.html#symbiote">Symbiote</a>
+        <a href="classes.html#hunter">Hunter</a>
+        <a href="classes.html#psion">Psion</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PSIONIC -->
+  <section id="psionic" class="domain-card psionic">
+    <div class="glyph">
+      <div class="glyph-symbol">✺</div>
+      <div class="glyph-name">PSIONIC</div>
+      <div class="glyph-trait">Mind · Projection · Precognition</div>
+    </div>
+    <div class="content">
+      <p class="tagline">"The signal is louder if you know how to listen."</p>
+      <p>
+        Psionic is the domain of the mind &mdash; mental projection, telepathic communication, precognitive flashes,
+        and the controlled manipulation of consciousness itself. Psionic cards include direct mind-to-mind contact,
+        memory work, glimpses of probable futures, and the careful, dangerous art of putting thoughts into someone
+        else's head and getting back out without leaving fingerprints.
+      </p>
+      <h4>Used By</h4>
+      <div class="users">
+        <a href="classes.html#paragon">Paragon</a>
+        <a href="classes.html#psion">Psion</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIDE -->
+  <section id="tide" class="domain-card tide">
+    <div class="glyph">
+      <div class="glyph-symbol">≈</div>
+      <div class="glyph-name">TIDE</div>
+      <div class="glyph-trait">Leadership · Morale · Command</div>
+    </div>
+    <div class="content">
+      <p class="tagline">"They follow because you make them believe they can."</p>
+      <p>
+        Tide is the domain of moving people. Inspiration, command presence, tactical coordination across a crew or
+        squad, the kind of words and timing that turn a panicked engine room into a working one. Tide cards favor
+        ship captains, battlefield commanders, charismatic frontline leaders, performers who use the crowd as an
+        instrument, and anyone whose effectiveness depends less on what <em>they</em> can do and more on what they
+        can get the people around them to do.
+      </p>
+      <h4>Used By</h4>
+      <div class="users">
+        <a href="classes.html#herald">Herald</a>
+        <a href="classes.html#sentinel">Sentinel</a>
+        <a href="classes.html#vanguard">Vanguard</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SABLE -->
+  <section id="sable" class="domain-card sable">
+    <div class="glyph">
+      <div class="glyph-symbol">◆</div>
+      <div class="glyph-name">SABLE</div>
+      <div class="glyph-trait">Smuggling · Underworld · Improvisation</div>
+    </div>
+    <div class="content">
+      <p class="tagline">"There's always a back door. The trick is knowing which palm to grease."</p>
+      <p>
+        Sable is the domain of the underworld &mdash; smuggling routes, black-market contacts, false identities,
+        the unwritten code that moves people and cargo through customs barriers and across system lines without
+        anyone official noticing. Sable cards favor smugglers, fixers, con artists, charming liars, and the kind
+        of operator who treats a clean reputation as a liability.
+      </p>
+      <h4>Used By</h4>
+      <div class="users">
+        <a href="classes.html#herald">Herald</a>
+        <a href="classes.html#operative">Operative</a>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section>
+    <div class="section-label">▾ Domain Cards at a Glance</div>
+    <h2>What's on a Domain Card?</h2>
+    <p style="color:var(--text-dim);margin-bottom:1rem">
+      Every Domain Card has the same anatomy &mdash; whether it's a level 1 starter or a level 10 mastery card.
+    </p>
+    <div class="grid-2">
+      <div class="rule-card">
+        <h4 style="color:var(--signal);margin-bottom:0.5rem">◈ NAME &amp; LEVEL</h4>
+        <p style="font-size:0.9rem">Each card has a flavorful name (e.g., <em>Hardlight Barrier</em>, <em>Sensor Wash</em>, <em>Bonded Weapon</em>) and a level from 1 to 10. You can only take cards at or below your character level.</p>
+      </div>
+      <div class="rule-card teal-card">
+        <h4 style="color:var(--accent-teal);margin-bottom:0.5rem">⌬ RECALL COST</h4>
+        <p style="font-size:0.9rem">A number representing how much mental bandwidth the card takes up in your loadout. Higher-cost cards are more powerful. Your total loadout capacity scales with level.</p>
+      </div>
+      <div class="rule-card static-card">
+        <h4 style="color:var(--static);margin-bottom:0.5rem">◇ TYPE</h4>
+        <p style="font-size:0.9rem"><strong>Ability</strong> cards have an action you spend a turn to perform. <strong>Spell</strong> cards channel a specific effect with a roll. <strong>Grimoire</strong> cards represent passive knowledge or gear you simply have.</p>
+      </div>
+      <div class="rule-card rose-card">
+        <h4 style="color:var(--accent-rose);margin-bottom:0.5rem">✺ EFFECT</h4>
+        <p style="font-size:0.9rem">The actual rules text. Damage rolls, trigger conditions, costs in Signal or Stress, ranges, and any narrative permissions the card grants.</p>
+      </div>
+    </div>
+  </section>
+
+  <p style="text-align:center;margin-top:3rem;color:var(--text-dim);font-size:0.88rem">
+    Next: <a href="ship-combat.html">ship combat</a> &mdash; or revisit a <a href="classes.html">class</a>.
+  </p>
+
+</main>
+
+<footer>
+  <div>VOIDHEART &mdash; <a href="index.html">Home</a> · <a href="classes.html">Classes</a> · <a href="lineages.html">Lineages</a> · <a href="domains.html">Domains</a> · <a href="ship-combat.html">Ship Combat</a></div>
+  <div>Signal &amp; Static · Far Futures · Deep Space Adventure</div>
+</footer>
+
+<script src="scripts.js"></script>
+</body>
+</html>

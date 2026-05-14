@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ship Combat — VOIDHEART</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=JetBrains+Mono:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+/* SHIP FRAME CARDS */
+.ship-frame {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.75rem 2rem;
+  margin: 1.5rem 0;
+  scroll-margin-top: 80px;
+  position: relative;
+  overflow: hidden;
+}
+.ship-frame::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 4px; height: 100%;
+  background: var(--accent-teal);
+}
+.ship-frame.scout::before    { background: var(--accent-teal); }
+.ship-frame.hauler::before   { background: var(--accent-gold); }
+.ship-frame.corsair::before  { background: var(--accent-rose); }
+.ship-frame.gunship::before  { background: var(--signal); }
+.ship-frame.research::before { background: var(--static); }
+
+.ship-frame .frame-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.75rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+.ship-frame h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  color: #fff;
+  margin: 0;
+}
+.ship-frame .frame-role {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  margin-top: 0.3rem;
+}
+.ship-frame .frame-class {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.ship-frame.scout    .frame-class { color: var(--accent-teal); }
+.ship-frame.hauler   .frame-class { color: var(--accent-gold); }
+.ship-frame.corsair  .frame-class { color: var(--accent-rose); }
+.ship-frame.gunship  .frame-class { color: var(--signal); }
+.ship-frame.research .frame-class { color: var(--static); }
+
+.ship-frame .frame-flavor {
+  font-style: italic;
+  color: var(--text-dim);
+  font-size: 0.95rem;
+  margin-bottom: 1.25rem;
+  line-height: 1.7;
+}
+
+.ship-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(95px, 1fr));
+  gap: 0.5rem;
+  padding: 1rem;
+  background: var(--panel-darker);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  margin: 1rem 0 1.25rem;
+}
+.stat-pill {
+  text-align: center;
+  padding: 0.4rem 0.3rem;
+}
+.stat-pill .v {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--signal);
+  line-height: 1.1;
+}
+.stat-pill .k {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.52rem;
+  letter-spacing: 0.12em;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  margin-top: 0.25rem;
+}
+
+.ship-perks h5 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: var(--accent-teal);
+  margin: 1rem 0 0.5rem;
+  text-transform: uppercase;
+}
+.ship-perks ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.9rem;
+}
+.ship-perks ul li {
+  padding: 0.35rem 0 0.35rem 1.25rem;
+  position: relative;
+  color: var(--text);
+  margin-bottom: 0.25rem;
+}
+.ship-perks ul li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--accent-teal);
+}
+.ship-perks ul li strong { color: #fff; }
+
+/* breach grid */
+.breach-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.breach-box {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent-rose);
+  border-radius: 8px;
+  padding: 1.1rem 1.3rem;
+}
+.breach-box h4 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.74rem;
+  letter-spacing: 0.1em;
+  color: var(--accent-rose);
+  text-transform: uppercase;
+  margin-bottom: 0.45rem;
+}
+.breach-box p {
+  font-size: 0.88rem;
+  color: var(--text);
+  margin: 0;
+}
+
+/* threshold strip */
+.threshold-strip {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.75rem;
+  margin: 1.25rem 0;
+}
+.thresh-tile {
+  background: var(--panel-darker);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem 1.15rem;
+}
+.thresh-tile.minor { border-left: 3px solid var(--accent-teal); }
+.thresh-tile.major { border-left: 3px solid var(--signal); }
+.thresh-tile.severe { border-left: 3px solid var(--accent-rose); }
+.thresh-tile h4 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+.thresh-tile.minor h4 { color: var(--accent-teal); }
+.thresh-tile.major h4 { color: var(--signal); }
+.thresh-tile.severe h4 { color: var(--accent-rose); }
+.thresh-tile p { font-size: 0.85rem; margin: 0; }
+
+/* ship actions */
+.action-block {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.25rem 1.5rem;
+  margin: 0.75rem 0;
+  border-left: 3px solid var(--signal);
+}
+.action-block h4 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  color: var(--signal);
+  margin: 0 0 0.4rem;
+}
+.action-block .station-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.55rem;
+  letter-spacing: 0.15em;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+}
+.action-block p { font-size: 0.9rem; margin: 0; }
+
+/* stations grid */
+.stations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.85rem;
+  margin: 1rem 0;
+}
+.station-card {
+  background: var(--panel-darker);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem 1.2rem;
+}
+.station-card h4 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  color: var(--accent-teal);
+  margin-bottom: 0.35rem;
+  text-transform: uppercase;
+}
+.station-card .trait {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.55rem;
+  letter-spacing: 0.12em;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+.station-card p { font-size: 0.85rem; margin: 0; color: var(--text); }
+
+/* range bands */
+.range-bands {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 1.25rem 0;
+}
+.range-row {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.7rem 1rem;
+  background: var(--panel-darker);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+.range-row .rname {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--signal);
+  text-transform: uppercase;
+}
+.range-row .rdesc { font-size: 0.88rem; color: var(--text); }
+
+@media (max-width: 720px) {
+  .threshold-strip { grid-template-columns: 1fr; }
+  .range-row { grid-template-columns: 1fr; gap: 0.2rem; }
+}
+</style>
+</head>
+<body>
+
+<div id="starfield"></div>
+
+<nav class="site-nav">
+  <a class="nav-logo" href="index.html">VOIDHEART <span>Far Futures</span></a>
+  <button class="nav-toggle" aria-label="Toggle menu">MENU</button>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="classes.html">Classes</a></li>
+    <li><a href="lineages.html">Lineages</a></li>
+    <li><a href="domains.html">Domains</a></li>
+    <li><a href="ship-combat.html" class="active">Ship Combat</a></li>
+  </ul>
+</nav>
+
+<header class="page-header">
+  <div class="crumb">▸ The Reference / Void Combat</div>
+  <h1>SHIP COMBAT</h1>
+  <div class="sub">The Sixth Crew Member</div>
+  <p class="desc">
+    Your ship isn't transport. It's a character &mdash; with its own statline, its own threshold for damage, its own
+    breach conditions waiting to go critical. Ship combat in Voidheart runs parallel to personal combat: same Duality
+    Roll, same Signal &amp; Static economy, escalated stakes.
+  </p>
+</header>
+
+<main>
+
+  <div class="toc">
+    <div class="toc-label">Jump to a Section</div>
+    <div class="toc-grid">
+      <a href="#anatomy">Ship Anatomy</a>
+      <a href="#ranges">Range Bands</a>
+      <a href="#stations">Stations</a>
+      <a href="#damage">Damage &amp; Thresholds</a>
+      <a href="#breach">Breach Conditions</a>
+      <a href="#actions">Ship Actions</a>
+      <a href="#frames">Ship Frames</a>
+      <a href="#upgrades">Upgrades</a>
+    </div>
+  </div>
+
+  <!-- ANATOMY -->
+  <section id="anatomy">
+    <div class="section-label">01 / The Ship Sheet</div>
+    <h2>Ship Anatomy</h2>
+    <p>
+      Every ship has the following stats. Most are determined by frame &mdash; the kind of vessel you're flying.
+      Upgrades and modules can shift them.
+    </p>
+
+    <div class="rule-card">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem 2rem">
+        <div>
+          <h4 style="color:var(--signal)">◈ HULL POINTS (HP)</h4>
+          <p style="font-size:0.9rem;color:var(--text-dim)">The ship's structural integrity. When all HP fill, the ship is wrecked &mdash; non-functional and possibly venting atmosphere.</p>
+        </div>
+        <div>
+          <h4 style="color:var(--accent-teal)">⌬ ARMOR</h4>
+          <p style="font-size:0.9rem;color:var(--text-dim)">Damage reduction. Subtract Armor from incoming damage before checking thresholds. Heavily armored ships shrug off small-arms fire entirely.</p>
+        </div>
+        <div>
+          <h4 style="color:var(--accent-rose)">⊞ MINOR / MAJOR THRESHOLDS</h4>
+          <p style="font-size:0.9rem;color:var(--text-dim)">Two damage values that determine how badly each incoming hit lands. Damage at or above the Major Threshold triggers a Breach Condition.</p>
+        </div>
+        <div>
+          <h4 style="color:var(--static)">◇ BREACH SLOTS</h4>
+          <p style="font-size:0.9rem;color:var(--text-dim)">How many active Breach Conditions the ship can sustain before it loses critical function. Once all slots are filled, every further breach forces an immediate Hull Failure check.</p>
+        </div>
+        <div>
+          <h4 style="color:var(--accent-gold)">✺ SYSTEMS</h4>
+          <p style="font-size:0.9rem;color:var(--text-dim)">The collective number of functional subsystems &mdash; sensors, comms, life support, weapons, etc. Breaches knock systems offline; repairs bring them back.</p>
+        </div>
+        <div>
+          <h4 style="color:var(--signal)">↗ THRUST &amp; ARMAMENT</h4>
+          <p style="font-size:0.9rem;color:var(--text-dim)"><strong>Thrust</strong> is your maneuver bonus on Vector rolls and Evasive Pattern. <strong>Armament</strong> is your default weapon damage when firing a hardpoint.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RANGE BANDS -->
+  <section id="ranges">
+    <div class="section-label">02 / Engagement</div>
+    <h2>Range Bands in the Void</h2>
+    <p>
+      Ship-scale ranges use the same vocabulary as personal combat, but the actual distances are an order of
+      magnitude larger. A "Close" engagement on the ground is across a room; a "Close" engagement in the void is
+      ships within visual contact of each other.
+    </p>
+
+    <div class="range-bands">
+      <div class="range-row">
+        <div class="rname">Melee</div>
+        <div class="rdesc">Hull-to-hull. Boarding range. Point-defense systems and torpedo proximity fuses. Ramming becomes a viable, if very stupid, option.</div>
+      </div>
+      <div class="range-row">
+        <div class="rname">Very Close</div>
+        <div class="rdesc">Tight engagement. Short-range weapons effective. Visual ID without sensors. Knife-fight maneuvering.</div>
+      </div>
+      <div class="range-row">
+        <div class="rname">Close</div>
+        <div class="rdesc">The standard combat envelope. Most ship weapons are accurate. Targeting solutions resolve quickly.</div>
+      </div>
+      <div class="range-row">
+        <div class="rname">Far</div>
+        <div class="rdesc">Long-range engagement. Only long-range weapons effective. Sensor-dependent targeting; ECM matters here.</div>
+      </div>
+      <div class="range-row">
+        <div class="rname">Very Far</div>
+        <div class="rdesc">Tactical edge of detection. Capital-grade weapons only. Comms lag becomes noticeable. Most ships disengage rather than commit.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATIONS -->
+  <section id="stations">
+    <div class="section-label">03 / Crew Roles</div>
+    <h2>Combat Stations</h2>
+    <p>
+      During a ship engagement, each PC takes one of the five stations. The trait listed is the primary one used
+      for that station's actions, though clever play can justify other traits at GM discretion.
+    </p>
+
+    <div class="stations-grid">
+      <div class="station-card">
+        <h4>Helm</h4>
+        <div class="trait">Trait: Agility · Instinct</div>
+        <p>Piloting, evasion, attack runs. The helm officer drives the ship and triggers the Evasive Pattern and Full Burn actions.</p>
+      </div>
+      <div class="station-card">
+        <h4>Gunnery</h4>
+        <div class="trait">Trait: Finesse · Instinct</div>
+        <p>Weapons control. Resolves all Attack Vector actions and manages point-defense responses to incoming ordnance.</p>
+      </div>
+      <div class="station-card">
+        <h4>Engineering</h4>
+        <div class="trait">Trait: Knowledge · Strength</div>
+        <p>Power routing, damage control, repairs in motion. Engineering rolls clear Breach Conditions and reroute power between systems.</p>
+      </div>
+      <div class="station-card">
+        <h4>Comms / ECM</h4>
+        <div class="trait">Trait: Knowledge · Presence</div>
+        <p>Sensors, jamming, hails. The comms officer locks targeting solutions, breaks enemy locks, and handles all non-violent interactions during a fight.</p>
+      </div>
+      <div class="station-card">
+        <h4>Command</h4>
+        <div class="trait">Trait: Presence · Knowledge</div>
+        <p>Coordination. The captain reads the field, calls maneuvers, and grants tactical bonuses to other stations through Rally and decisive direction.</p>
+      </div>
+    </div>
+
+    <p style="margin-top:1rem;font-size:0.9rem;color:var(--text-dim);font-style:italic">
+      With smaller crews, one PC can run two stations &mdash; but they only get a full turn at one of them.
+      The other rolls at disadvantage. Ships with onboard NPCs or specialized AI can cover unattended stations.
+    </p>
+  </section>
+
+  <!-- DAMAGE & THRESHOLDS -->
+  <section id="damage">
+    <div class="section-label">04 / The Damage Flow</div>
+    <h2>Damage &amp; Thresholds</h2>
+    <p>
+      When a ship takes damage, subtract Armor from the incoming value, then compare the remainder to the ship's
+      Minor and Major Thresholds. Where it lands determines the severity.
+    </p>
+
+    <div class="threshold-strip">
+      <div class="thresh-tile minor">
+        <h4>BELOW MINOR</h4>
+        <p>The hull holds. Mark <strong>1 Hull Point</strong>. Energy weapons might scorch the plating; kinetic weapons might dent it. Nothing important breaks.</p>
+      </div>
+      <div class="thresh-tile major">
+        <h4>AT OR ABOVE MINOR</h4>
+        <p>Mark <strong>2 Hull Points</strong>. Roll a <strong>d12</strong>: on a 10 or higher, a non-critical system flickers offline for one round (lights, gravity, internal comms).</p>
+      </div>
+      <div class="thresh-tile severe">
+        <h4>AT OR ABOVE MAJOR</h4>
+        <p>Mark <strong>3 Hull Points</strong> and <strong>roll on the Breach Conditions table</strong>. A critical system is hit; something important is now broken or actively failing.</p>
+      </div>
+    </div>
+
+    <div class="callout">
+      "Hulls are designed to fail gracefully. Cargo first, then crew comfort, then weapons, then maneuvering, then life support.<br>
+      A ship that's losing gracefully is still losing."
+    </div>
+  </section>
+
+  <!-- BREACH CONDITIONS -->
+  <section id="breach">
+    <div class="section-label">05 / When Things Break</div>
+    <h2>Universal Breach Conditions</h2>
+    <p>
+      When damage at or above the Major Threshold triggers a breach, the GM either chooses or rolls on this list.
+      Each condition fills one Breach Slot and applies its effect until cleared by an Engineering Roll.
+    </p>
+
+    <div class="breach-grid">
+      <div class="breach-box">
+        <h4>◆ THRUSTERS COMPROMISED</h4>
+        <p>Helm rolls are made at disadvantage. The ship can't take the Full Burn action until cleared.</p>
+      </div>
+      <div class="breach-box">
+        <h4>◆ WEAPON SYSTEMS OFFLINE</h4>
+        <p>Choose one weapon hardpoint &mdash; it's down. No Attack Vector with that weapon until cleared.</p>
+      </div>
+      <div class="breach-box">
+        <h4>◆ LIFE SUPPORT CRITICAL</h4>
+        <p>Atmosphere, gravity, or thermal regulation failing. Every crew member marks a Stress at the start of each round until repaired.</p>
+      </div>
+      <div class="breach-box">
+        <h4>◆ SENSOR BLACKOUT</h4>
+        <p>Comms and targeting at disadvantage. Gunnery can't fire on targets beyond Close range. Comms can't lock or break locks.</p>
+      </div>
+      <div class="breach-box">
+        <h4>◆ JUMP DRIVE LOCKED</h4>
+        <p>You cannot Emergency Jump or initiate any FTL travel. The drive needs a full Engineering rebuild, or a long-rest's worth of work in a friendly port.</p>
+      </div>
+      <div class="breach-box">
+        <h4>◆ HULL INTEGRITY COMPROMISED</h4>
+        <p>The next damage roll against the ship is treated as one threshold higher. Stacking breaches stack the increase.</p>
+      </div>
+      <div class="breach-box">
+        <h4>◆ REACTOR UNSTABLE</h4>
+        <p>At the start of each round, the GM rolls a <strong>d6</strong>. On a 1, the reactor surges and a random station's officer marks a Stress. On a 6, the surge clears the condition.</p>
+      </div>
+    </div>
+
+    <h3>Clearing a Breach</h3>
+    <div class="rule-card teal-card">
+      <p style="font-size:0.92rem">
+        Engineering can attempt to clear a Breach as a station action: roll <strong>Knowledge</strong> against a
+        Difficulty of <strong>12</strong> (15 for severe conditions like Jump Drive Locked or Reactor Unstable).
+        On a success, the condition clears at the end of the round. On a Static success, it clears but you mark a
+        Stress as you take damage from arcing power, escaping plasma, or sheer effort.
+      </p>
+    </div>
+  </section>
+
+  <!-- SHIP ACTIONS -->
+  <section id="actions">
+    <div class="section-label">06 / Action Menu</div>
+    <h2>The Four Core Ship Actions</h2>
+    <p>
+      These are the universal actions available to any ship. Specialized modules and upgrades add more.
+    </p>
+
+    <div class="action-block">
+      <h4>▸ ATTACK VECTOR</h4>
+      <div class="station-tag">Station: Gunnery</div>
+      <p>Roll Finesse or Instinct against the target ship's Evasion. On a success, deal Armament damage from your chosen hardpoint. Spend a Signal to add your ship's Armament bonus a second time. Crit applies Vulnerable to one of the target's systems until end of next round.</p>
+    </div>
+
+    <div class="action-block">
+      <h4>▸ EVASIVE PATTERN</h4>
+      <div class="station-tag">Station: Helm</div>
+      <p>Roll Agility + Thrust. Until your next turn, all incoming attacks against your ship suffer a penalty equal to your Thrust value. On a critical success, the penalty doubles and the next attack to miss your ship grants you a Signal.</p>
+    </div>
+
+    <div class="action-block">
+      <h4>▸ EMERGENCY JUMP</h4>
+      <div class="station-tag">Station: Helm + Engineering (combined)</div>
+      <p>Roll the higher of Instinct or Knowledge against Difficulty <strong>14</strong> (or higher if pursued or damaged). On a success, the ship jumps to a random adjacent system, ending the engagement. On a Static success, you escape but exit with a random Breach Condition. On a miss, the drive misfires &mdash; mark a Hull Point and you're still here.</p>
+    </div>
+
+    <div class="action-block">
+      <h4>▸ FULL BURN</h4>
+      <div class="station-tag">Station: Helm</div>
+      <p>Push the engines hard. Roll Strength + Thrust against Difficulty <strong>12</strong>. On success, move one range band closer to or farther from a target of your choice and gain +2 Thrust until your next turn. On Static success, you move but the engines overheat &mdash; the next Helm action is at disadvantage. Cannot be taken while Thrusters Compromised.</p>
+    </div>
+  </section>
+
+  <!-- SHIP FRAMES -->
+  <section id="frames">
+    <div class="section-label">07 / The Fleet</div>
+    <h2>Ship Frames</h2>
+    <p>
+      Five frame classes cover the range of crew-scale vessels in Voidheart. Each is a distinct silhouette with its
+      own stat profile, role in a fight, and built-in perks. Customization comes through modules and upgrades layered
+      on top.
+    </p>
+
+    <!-- NEEDLE SCOUT -->
+    <div class="ship-frame scout">
+      <div class="frame-header">
+        <div>
+          <h3>NEEDLE</h3>
+          <div class="frame-role">Scout · Recon Frame</div>
+        </div>
+        <div class="frame-class">CLASS — SCOUT</div>
+      </div>
+      <p class="frame-flavor">
+        Long, slender, and built around an oversized sensor cluster and an oversized engine. Needles aren't built
+        to fight &mdash; they're built to see first and leave faster. Pilots talk about them the way they talk about
+        a good knife.
+      </p>
+      <div class="ship-stats">
+        <div class="stat-pill"><div class="v">8</div><div class="k">Hull</div></div>
+        <div class="stat-pill"><div class="v">1</div><div class="k">Armor</div></div>
+        <div class="stat-pill"><div class="v">4 / 8</div><div class="k">Thresholds</div></div>
+        <div class="stat-pill"><div class="v">3</div><div class="k">Breach</div></div>
+        <div class="stat-pill"><div class="v">+3</div><div class="k">Thrust</div></div>
+        <div class="stat-pill"><div class="v">d8</div><div class="k">Armament</div></div>
+      </div>
+      <div class="ship-perks">
+        <h5>Frame Perks</h5>
+        <ul>
+          <li><strong>Long Eyes:</strong> Sensor and Comms rolls gain advantage at Far or Very Far range.</li>
+          <li><strong>Slippery:</strong> The first Evasive Pattern action each combat costs no Signal to activate the doubled penalty effect.</li>
+          <li><strong>Light Drive:</strong> Emergency Jump Difficulty is reduced by 2.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- HAULER -->
+    <div class="ship-frame hauler">
+      <div class="frame-header">
+        <div>
+          <h3>HAULER</h3>
+          <div class="frame-role">Freighter · Cargo Frame</div>
+        </div>
+        <div class="frame-class">CLASS — FREIGHTER</div>
+      </div>
+      <p class="frame-flavor">
+        The workhorse. Wide-belly cargo capacity, redundant life support, hardpoints bolted on after the fact by
+        whoever owned it last. Haulers aren't supposed to be in fights &mdash; but every Hauler that's still flying
+        has been in at least one.
+      </p>
+      <div class="ship-stats">
+        <div class="stat-pill"><div class="v">14</div><div class="k">Hull</div></div>
+        <div class="stat-pill"><div class="v">2</div><div class="k">Armor</div></div>
+        <div class="stat-pill"><div class="v">6 / 12</div><div class="k">Thresholds</div></div>
+        <div class="stat-pill"><div class="v">4</div><div class="k">Breach</div></div>
+        <div class="stat-pill"><div class="v">+1</div><div class="k">Thrust</div></div>
+        <div class="stat-pill"><div class="v">d6</div><div class="k">Armament</div></div>
+      </div>
+      <div class="ship-perks">
+        <h5>Frame Perks</h5>
+        <ul>
+          <li><strong>Belly Holds:</strong> Cargo capacity is tripled compared to other frames. You can stash a small ship, a herd of livestock, or several months of supplies and not feel it.</li>
+          <li><strong>Built to Take a Hit:</strong> +1 to Minor and Major Thresholds (already included in stats above).</li>
+          <li><strong>Redundant Systems:</strong> When you mark a Breach Slot, roll a d6. On a 6, the breach affects a backup system instead &mdash; no condition applies.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- BLADE -->
+    <div class="ship-frame corsair">
+      <div class="frame-header">
+        <div>
+          <h3>BLADE</h3>
+          <div class="frame-role">Corsair · Interceptor Frame</div>
+        </div>
+        <div class="frame-class">CLASS — CORSAIR</div>
+      </div>
+      <p class="frame-flavor">
+        Lean and fast and built around the gunnery seat. Blades are what people fly when they need to catch
+        something faster than them, or get away from something heavier. Customary among smugglers, privateers,
+        bounty crews, and a particular kind of mercenary who doesn't talk about who pays them.
+      </p>
+      <div class="ship-stats">
+        <div class="stat-pill"><div class="v">10</div><div class="k">Hull</div></div>
+        <div class="stat-pill"><div class="v">2</div><div class="k">Armor</div></div>
+        <div class="stat-pill"><div class="v">5 / 10</div><div class="k">Thresholds</div></div>
+        <div class="stat-pill"><div class="v">3</div><div class="k">Breach</div></div>
+        <div class="stat-pill"><div class="v">+2</div><div class="k">Thrust</div></div>
+        <div class="stat-pill"><div class="v">d10</div><div class="k">Armament</div></div>
+      </div>
+      <div class="ship-perks">
+        <h5>Frame Perks</h5>
+        <ul>
+          <li><strong>Strike Profile:</strong> When you successfully Full Burn into Very Close range of a target, your next Attack Vector this round adds a d6 to damage.</li>
+          <li><strong>Twin Hardpoints:</strong> You have two forward-mounted weapon hardpoints. Spend a Signal on Attack Vector to fire both as a single action.</li>
+          <li><strong>Privateer Profile:</strong> Comms rolls to bluff identity or transmit false transponder data gain advantage.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- WRATH -->
+    <div class="ship-frame gunship">
+      <div class="frame-header">
+        <div>
+          <h3>WRATH</h3>
+          <div class="frame-role">Gunship · Heavy Frame</div>
+        </div>
+        <div class="frame-class">CLASS — GUNSHIP</div>
+      </div>
+      <p class="frame-flavor">
+        A flying weapons platform. Heavy plating, redundant fire control, broadside hardpoints, and enough mass
+        that the ship is functionally a wall in space. Wraths are slow, ugly, and absolutely terrifying when they
+        get a firing solution.
+      </p>
+      <div class="ship-stats">
+        <div class="stat-pill"><div class="v">16</div><div class="k">Hull</div></div>
+        <div class="stat-pill"><div class="v">4</div><div class="k">Armor</div></div>
+        <div class="stat-pill"><div class="v">7 / 14</div><div class="k">Thresholds</div></div>
+        <div class="stat-pill"><div class="v">4</div><div class="k">Breach</div></div>
+        <div class="stat-pill"><div class="v">+0</div><div class="k">Thrust</div></div>
+        <div class="stat-pill"><div class="v">d12</div><div class="k">Armament</div></div>
+      </div>
+      <div class="ship-perks">
+        <h5>Frame Perks</h5>
+        <ul>
+          <li><strong>Heavy Plating:</strong> Reduce all incoming damage by an additional 1 before applying Armor.</li>
+          <li><strong>Broadside:</strong> Once per engagement, fire all hardpoints in a single Attack Vector roll, splitting damage between up to three targets within Close range.</li>
+          <li><strong>Ponderous:</strong> Disadvantage on Full Burn rolls. The Wrath does not move quickly.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ARCHIVE -->
+    <div class="ship-frame research">
+      <div class="frame-header">
+        <div>
+          <h3>ARCHIVE</h3>
+          <div class="frame-role">Research · Science Frame</div>
+        </div>
+        <div class="frame-class">CLASS — RESEARCH</div>
+      </div>
+      <p class="frame-flavor">
+        Built around a central laboratory cluster and extensive specialized sensor arrays. Archive-class vessels
+        carry xenobiologists, void anomaly researchers, and salvage specialists into places everyone else has
+        learned to avoid. They aren't fighters &mdash; but they're the ship you want at your side when something
+        impossible needs to be understood, fast.
+      </p>
+      <div class="ship-stats">
+        <div class="stat-pill"><div class="v">11</div><div class="k">Hull</div></div>
+        <div class="stat-pill"><div class="v">2</div><div class="k">Armor</div></div>
+        <div class="stat-pill"><div class="v">5 / 11</div><div class="k">Thresholds</div></div>
+        <div class="stat-pill"><div class="v">5</div><div class="k">Breach</div></div>
+        <div class="stat-pill"><div class="v">+1</div><div class="k">Thrust</div></div>
+        <div class="stat-pill"><div class="v">d6</div><div class="k">Armament</div></div>
+      </div>
+      <div class="ship-perks">
+        <h5>Frame Perks</h5>
+        <ul>
+          <li><strong>Specialized Sensors:</strong> Once per scene, ask the GM one specific question about any anomaly, ancient ship, xenoform, or unusual phenomenon you encounter.</li>
+          <li><strong>Modular Lab:</strong> The Archive can substitute a Cipher domain card's effect for an Engineering or Comms action during ship combat, treating the card's level as a +X modifier.</li>
+          <li><strong>Extra Breach Capacity:</strong> The fifth Breach Slot reflects the ship's redundant compartments. You can take one more breach than other frames before Hull Failure checks begin.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- UPGRADES -->
+  <section id="upgrades">
+    <div class="section-label">08 / Modifications</div>
+    <h2>Ship Upgrades</h2>
+    <p>
+      Upgrades are major modifications that change how a ship performs in combat. Each can only be installed once.
+      Acquiring them is a major story beat &mdash; a downtime project, a payoff for a heist, a reward from a faction,
+      or the salvage of a wreck.
+    </p>
+
+    <div class="grid-auto-320" style="margin-top:1.5rem">
+      <div class="rule-card">
+        <h4 style="color:var(--signal)">◈ REINFORCED PLATING</h4>
+        <p style="font-size:0.9rem">+1 Armor and +1 to both Minor and Major Thresholds. Adds visible structural weight; the ship looks tougher because it is.</p>
+      </div>
+      <div class="rule-card teal-card">
+        <h4 style="color:var(--accent-teal)">⌬ TACTICAL AI</h4>
+        <p style="font-size:0.9rem">A combat-trained AI partner. Once per engagement, take an extra ship action on any station &mdash; the AI handles it. Roll at +1 Proficiency.</p>
+      </div>
+      <div class="rule-card static-card">
+        <h4 style="color:var(--static)">◇ STEALTH FIELD</h4>
+        <p style="font-size:0.9rem">A cloaking system that bends sensors. Once per scene, become Cloaked &mdash; no Attack Vector can target your ship until you fire or take a major action. Fades after one round of firing.</p>
+      </div>
+      <div class="rule-card rose-card">
+        <h4 style="color:var(--accent-rose)">✺ OVERCHARGED DRIVE</h4>
+        <p style="font-size:0.9rem">+1 Thrust permanently. Full Burn moves you two range bands instead of one. The drive runs hot &mdash; if you take a Reactor Unstable breach, its d6 surge result triggers on 1 or 2.</p>
+      </div>
+      <div class="rule-card gold-card">
+        <h4 style="color:var(--accent-gold)">✺ EXPANDED HARDPOINTS</h4>
+        <p style="font-size:0.9rem">Add one additional weapon hardpoint to the ship. Increases your maximum simultaneous Attack Vector targets by one.</p>
+      </div>
+      <div class="rule-card">
+        <h4 style="color:var(--signal-dim)">◈ FIELD MEDICAL BAY</h4>
+        <p style="font-size:0.9rem">A trauma-grade medical cluster. During a Short Rest aboard ship, the crew can clear an additional Hit Point. During a Long Rest, also clear a Stress.</p>
+      </div>
+    </div>
+
+    <div class="callout">
+      "Every ship in the void is held together by the work of the last person to repair it.<br>
+      Pray your last engineer was good at their job."
+    </div>
+  </section>
+
+  <p style="text-align:center;margin-top:3rem;color:var(--text-dim);font-size:0.88rem">
+    Back to <a href="index.html">the Hub</a> &mdash; or pick a <a href="classes.html">class</a> built for combat.
+  </p>
+
+</main>
+
+<footer>
+  <div>VOIDHEART &mdash; <a href="index.html">Home</a> · <a href="classes.html">Classes</a> · <a href="lineages.html">Lineages</a> · <a href="domains.html">Domains</a> · <a href="ship-combat.html">Ship Combat</a></div>
+  <div>Signal &amp; Static · Far Futures · Deep Space Adventure</div>
+</footer>
+
+<script src="scripts.js"></script>
+</body>
+</html>
