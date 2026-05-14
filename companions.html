@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Companions & Xenoforms — VOIDHEART</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=JetBrains+Mono:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+.xeno-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent-teal);
+  border-radius: 8px;
+  padding: 1.1rem 1.4rem;
+  margin: 0.75rem 0;
+}
+.xeno-card h4 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--accent-teal);
+  margin: 0;
+}
+.xeno-card .xeno-examples {
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  margin: 0.2rem 0 0.6rem;
+}
+.xeno-card .xeno-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  margin: 0.5rem 0;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  color: var(--signal);
+}
+.xeno-card .xeno-stats span { white-space: nowrap; }
+.xeno-card .xeno-advantage {
+  font-size: 0.85rem;
+  color: var(--text);
+  margin: 0.4rem 0;
+}
+.xeno-card .xeno-advantage strong { color: var(--accent-gold); }
+.xeno-card .xeno-feature {
+  font-size: 0.86rem;
+  margin: 0.35rem 0;
+  padding-left: 0.75rem;
+  border-left: 2px solid var(--border-bright);
+}
+.xeno-card .xeno-feature em.fname {
+  color: var(--accent-gold);
+  font-style: italic;
+  font-weight: 600;
+}
+
+.tier-header {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  color: var(--accent-rose);
+  text-transform: uppercase;
+  margin: 2rem 0 0.5rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.companion-step {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--signal);
+  border-radius: 8px;
+  padding: 1.1rem 1.4rem;
+  margin: 0.85rem 0;
+}
+.companion-step h4 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--signal);
+  margin: 0 0 0.4rem;
+}
+.companion-step p { font-size: 0.92rem; margin: 0.3rem 0; }
+
+.levelup-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 0.85rem;
+  margin: 1rem 0;
+}
+.levelup-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent-rose);
+  border-radius: 8px;
+  padding: 0.9rem 1.15rem;
+}
+.levelup-card h5 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  color: var(--accent-rose);
+  margin: 0 0 0.35rem;
+}
+.levelup-card p { font-size: 0.85rem; margin: 0; line-height: 1.55; }
+</style>
+</head>
+<body>
+
+<div id="starfield"></div>
+
+<nav class="site-nav">
+  <a class="nav-logo" href="index.html">VOIDHEART <span>Far Futures</span></a>
+  <button class="nav-toggle" aria-label="Toggle menu">MENU</button>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="classes.html">Classes</a></li>
+    <li><a href="lineages.html">Lineages</a></li>
+    <li><a href="domains.html">Domains</a></li>
+    <li><a href="ship-combat.html">Ship Combat</a></li>
+  </ul>
+</nav>
+
+<header class="page-header">
+  <div class="crumb">▸ The Reference / Beasts &amp; Bonds</div>
+  <h1>COMPANIONS &amp; XENOFORMS</h1>
+  <div class="sub">The Symbiote's Shapes · The Hunter's Bond</div>
+  <p class="desc">
+    Two classes need their own bestiary. The Symbiote chooses a Xenoform category each time they transform.
+    The Hunter (Beastbound) travels with a bonded xeno-companion that levels up alongside them. Both references
+    live here.
+  </p>
+</header>
+
+<main class="wide">
+
+  <div class="toc">
+    <div class="toc-label">Jump to a Section</div>
+    <div class="toc-grid">
+      <a href="#xenoforms">Xenoform Overview</a>
+      <a href="#tier-1">Tier 1 Xenoforms</a>
+      <a href="#tier-2">Tier 2 Xenoforms</a>
+      <a href="#tier-3">Tier 3 Xenoforms</a>
+      <a href="#tier-4">Tier 4 Xenoforms</a>
+      <a href="#companion">Hunter Companion</a>
+      <a href="#companion-setup">Companion Setup</a>
+      <a href="#companion-working">Working Together</a>
+      <a href="#companion-levelup">Level-Up Options</a>
+    </div>
+  </div>
+
+  <!-- XENOFORMS OVERVIEW -->
+  <section id="xenoforms">
+    <div class="section-label">01 / Symbiote Transformations</div>
+    <h2>Xenoform Options</h2>
+    <p>
+      When a Symbiote uses their <strong>Xenoform</strong> class feature, they choose a creature category of their
+      tier or lower from the list below. At the GM's discretion, you can describe yourself shifting into any alien
+      creature that reasonably fits the category.
+    </p>
+    <div class="rule-card teal-card">
+      <h4 style="color:var(--accent-teal)">⌬ HOW EACH ENTRY READS</h4>
+      <ul style="font-size:0.9rem;margin-top:0.5rem">
+        <li><strong>Creature Category:</strong> A name describing the role of creatures in that category, with example creatures.</li>
+        <li><strong>Character Trait:</strong> A bonus you gain to a trait while transformed. Lost when the form drops.</li>
+        <li><strong>Attack Rolls:</strong> The form's range, trait used, and damage dice. You use your own Proficiency.</li>
+        <li><strong>Evasion:</strong> Bonus added to your Evasion while transformed.</li>
+        <li><strong>Advantages:</strong> Verbs the form is especially suited to &mdash; you gain advantage on related action/reaction rolls.</li>
+        <li><strong>Features:</strong> Unique abilities of each form.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- TIER 1 -->
+  <section id="tier-1">
+    <div class="tier-header">▾ Tier 1 (Level 1)</div>
+
+    <div class="xeno-card">
+      <h4>■ STALKER DRONE</h4>
+      <div class="xeno-examples">Skitterer, Shadow-Lurker, Tunnel Wraith, etc.</div>
+      <div class="xeno-stats"><span>Agility +1</span><span>Evasion +2</span><span>Melee Agility d4 phy</span></div>
+      <div class="xeno-advantage"><strong>Advantage on:</strong> deceive, locate, sneak</div>
+      <div class="xeno-feature"><em class="fname">Agile:</em> Your movement is silent, and you can spend a Signal to move up to Far range without rolling.</div>
+      <div class="xeno-feature"><em class="fname">Fragile:</em> When you take Major or greater damage, you drop out of Xenoform.</div>
+    </div>
+
+    <div class="xeno-card">
+      <h4>■ VOID DRIFTER</h4>
+      <div class="xeno-examples">Drift-Gazer, Spore-Floater, Ether-Glider, etc.</div>
+      <div class="xeno-stats"><span>Agility +1</span><span>Evasion +3</span><span>Melee Agility d6 phy</span></div>
+      <div class="xeno-advantage"><strong>Advantage on:</strong> leap, sneak, sprint</div>
+      <div class="xeno-feature"><em class="fname">Elusive Prey:</em> When an attack roll against you would succeed, mark a Stress and roll a d4. Add the result to your Evasion against this attack.</div>
+      <div class="xeno-feature"><em class="fname">Fragile:</em> When you take Major or greater damage, you drop out of Xenoform.</div>
+    </div>
+
+    <div class="xeno-card">
+      <h4>■ DEEP CRAWLER</h4>
+      <div class="xeno-examples">Tide-Eel, Pressure-Fish, Void-Octopus, etc.</div>
+      <div class="xeno-stats"><span>Agility +1</span><span>Evasion +2</span><span>Melee Agility d4 phy</span></div>
+      <div class="xeno-advantage"><strong>Advantage on:</strong> navigate, sneak, swim</div>
+      <div class="xeno-feature"><em class="fname">Aquatic:</em> You can breathe and move naturally in liquid environments, including volatile atmospheric oceans and pressurized fluid tanks.</div>
+      <div class="xeno-feature"><em class="fname">Fragile:</em> When you take Major or greater damage, you drop out of Xenoform.</div>
+    </div>
+
+    <div class="xeno-card">
+      <h4>■ PACK BOND</h4>
+      <div class="xeno-examples">Hound-Form, Companion-Strain, Bonded Grub, etc.</div>
+      <div class="xeno-stats"><span>Instinct +1</span><span>Evasion +2</span><span>Melee Instinct d6 phy</span></div>
+      <div class="xeno-advantage"><strong>Advantage on:</strong> climb, locate, protect</div>
+      <div class="xeno-feature"><em class="fname">Companion:</em> When you Help an Ally, you can roll a d8 as your advantage die.</div>
+      <div class="xeno-feature"><em class="fname">Fragile:</em> When you take Major or greater damage, you drop out of Xenoform.</div>
+    </div>
+
+    <div class="xeno-card">
+      <h4>■ VOID PACK</h4>
+      <div class="xeno-examples">Snarl-Beast, Venom-Hyena, Rift-Wolf, etc.</div>
+      <div class="xeno-stats"><span>Strength +2</span><span>Evasion +1</span><span>Melee Strength d8+2 phy</span></div>
+      <div class="xeno-advantage"><strong>Advantage on:</strong> attack, sprint, track</div>
+      <div class="xeno-feature"><em class="fname">Hobbling Strike:</em> When you succeed on an attack against a target within Melee range, mark a Stress to make the target temporarily <em>Vulnerable</em>.</div>
+      <div class="xeno-feature"><em class="fname">Pack Hunting:</em> When you succeed on an attack against the same target as an ally who acts immediately before you, add a d8 to your damage roll.</div>
+    </div>
+
+    <div class="xeno-card">
+      <h4>■ CARAPACE HUNTER</h4>
+      <div class="xeno-examples">Void-Tarantula, Fang-Spider, Lattice-Crawler, etc.</div>
+      <div class="xeno-stats"><span>Finesse +1</span><span>Evasion +2</span><span>Melee Finesse d6+1 phy</span></div>
+      <div class="xeno-advantage"><strong>Advantage on:</strong> attack, climb, sneak</div>
+      <div class="xeno-feature"><em class="fname">Venomous Bite:</em> When you succeed on an attack against a target within Melee range, the target becomes temporarily <em>Poisoned</em>. A Poisoned creature takes 1d10 direct physical damage each time they act.</div>
+      <div class="xeno-feature"><em class="fname">Webslinger:</em> Create a strong adhesive filament useful for traversal and battle. You can temporarily <em>Restrain</em> a target within Close range by succeeding on a Finesse Roll against them.</div>
+    </div>
+  </section>
+
+  <!-- TIER 2 -->
+  <section id="tier-2">
+    <div class="tier-header">▾ Tier 2 (Levels 2-4)</div>
+
+    <div class="xeno-card">
+      <h4>■ SHELL BEHEMOTH</h4>
+      <div class="xeno-examples">Carapax-Brute, Vault-Tortoise, Plated Sentry, etc.</div>
+      <div class="xeno-stats"><span>Strength +1</span><span>Evasion +1</span><span>Melee Strength d8+2 phy</span></div>
+      <div class="xeno-advantage"><strong>Advantage on:</strong> dig, locate, protect</div>
+      <div class="xeno-feature"><em class="fname">Armored Shell:</em> Resistance to physical damage. Additionally, mark an Armor Slot to retract into your shell. While in your shell, physical damage is reduced by your Armor Score (after resistance), but you can't perform other actions without leaving this form.</div>
+      <div class="xeno-feature"><em class="fname">Cannonball:</em> Mark a Stress to allow an ally to throw or launch you at an adversary. They make an attack roll using Agility or Strength against a target within Close range. On success, the adversary takes d12+2 physical damage using the thrower's Proficiency. Spend a Signal to target an additional adversary within Very Close range; second target takes half damage.</div>
+    </div>
+
+    <div class="xeno-card">
+      <h4>■ VOID BRUTE</h4>
+      <div class="xeno-examples">Gravity-Bear, Siege-Bull, Rift-Bison, etc.</div>
+      <div class="xeno-stats"><span>Strength +3</span><span>Evasion +1</span><span>Melee Strength d10+4 phy</span></div>
+      <div class="xeno-advantage"><strong>Advantage on:</strong> navigate, protect, scare</div>
+      <div class="xeno-feature"><em class="fname">Rampage:</em> When you roll a 1 on a damage die, roll a d10 and add the result to the damage roll. Additionally, before an attack roll, mark a Stress to gain +1 Proficiency for that attack.</div>
+      <div class="xeno-feature"><em class="fname">Thick Hide:</em> +2 bonus to your damage thresholds.</div>
+    </div>
+
+    <div class="xeno-card">
+      <h4>■ DRIFT STRIDER</h4>
+      <div class="xeno-examples">Long-Runner, Traverse-Beast, Arc-Strider, etc.</div>
+      <div class="xeno-stats"><span>Agility +1</span><span>Evasion +2</span><span>Melee Agility d8+1 phy</span></div>
+      <div class="xeno-advantage"><strong>Advantage on:</strong> leap, navigate, sprint</div>
+      <div class="xeno-feature"><em class="fname">Carrier:</em> You can carry up to two willing allies with you when you move.</div>
+      <div class="xeno-feature"><em class="fname">Trample:</em> Mark a Stress to move up to Close range in a straight line and make an attack against all targets within Melee range of the line. Targets you succeed against take d8+1 physical damage and are temporarily <em>Vulnerable</em>.</div>
+    </div>
+
+    <div class="xeno-card">
+      <h4>■ VENOM SERPENT</h4>
+      <div class="xeno-examples">Rift-Cobra, Acid-Viper, Neurotoxin Fang, etc.</div>
+      <div class="xeno-stats"><span>Finesse +1</span><span>Evasion +2</span><span>Very Close Finesse d8+4 phy</span></div>
+      <div class="xeno-advantage"><strong>Advantage on:</strong> climb, deceive, sprint</div>
+      <div class="xeno-feature"><em class="fname">Venomous Strike:</em> Make an attack against any number of targets within Very Close range. On success, a target is temporarily <em>Poisoned</em>. A Poisoned creature takes 1d10 direct physical damage each time they act.</div>
+      <div class="xeno-feature"><em class="fname">Warning Hiss:</em> Mark a Stress to force any number of targets within Melee range to move back to Very Close range.</div>
+    </div>
+
+    <div class="xeno-card">
+      <h4>■ APEX STALKER</h4>
+      <div class="xeno-examples">Void-Panther, Rift-Cheetah, Shadow-Lion, etc.</div>
+      <div class="xeno-stats"><span>Instinct +1</span><span>Evasion +3</span><span>Melee Instinct d8+6 phy</span></div>
+      <div class="xeno-advantage"><strong>Advantage on:</strong> attack, climb, sneak</div>
+      <div class="xeno-feature"><em class="fname">Fleet:</em> Spend a Signal to move up to Far range without rolling.</div>
+      <div class="xeno-feature"><em class="fname">Takedown:</em> Mark a Stress to move into Melee range of a target and make an attack roll against them. On success, gain +2 Proficiency for this attack and the target must mark a Stress.</div>
+    </div>
+
+    <div class="xeno-card">
+      <h4>■ VOID FLYER</h4>
+      <div class="xeno-examples">Screamer-Hawk, Echo-Owl, Rift-Raven, etc.</div>
+      <div class="xeno-stats"><span>Finesse +1</span><span>Evasion +3</span><span>Melee Finesse d4+2 phy</span></div>
+      <div class="xeno-advantage"><strong>Advantage on:</strong> deceive, locate, scare</div>
+      <div class="xeno-feature"><em class="fname">Bird's-Eye View:</em> You can fly at will. Once per rest while airborne, ask the GM a question about the scene below you without rolling. The first character to act on that information gains advantage on the roll.</div>
+      <div class="xeno-feature"><em class="fname">Hollow Bones:</em> &minus;2 penalty to your damage thresholds.</div>
+    </div>
+  </section>
+
+  <!-- TIER 3 -->
+  <section id="tier-3">
+    <div class="tier-header">▾ Tier 3 (Levels 5-7)</div>
+
+    <div class="xeno-card">
+      <h4>■ VOID HUNTER</h4>
+      <div class="xeno-examples">Apex Pack-Beast, Rift-Raptor, Dire Stalker, etc.</div>
+      <div class="xeno-stats"><span>Strength +2</span><span>Evasion +2</span><span>Melee Strength d12+8 phy</span></div>
+      <div class="xeno-advantage"><strong>Advantage on:</strong> attack, sneak, sprint</div>
+      <div class="xeno-feature"><em class="fname">Carrier:</em> You can carry up to two willing allies with you when you move.</div>
+      <div class="xeno-feature"><em class="fname">Vicious Maul:</em> When you succeed on an attack against a target, spend a Signal to make them temporarily <em>Vulnerable</em> and gain +1 Proficiency for this attack.</div>
+    </div>
+
+    <div class="xeno-card">
+      <h4>■ CARAPACE TITAN</h4>
+      <div class="xeno-examples">Armored Lizard, Siege-Croc, Plated Colossus, etc.</div>
+      <div class="xeno-stats"><span>Instinct +2</span><span>Evasion +1</span><span>Melee Instinct d10+7 phy</span></div>
+      <div class="xeno-advantage"><strong>Advantage on:</strong> attack, sneak, track</div>
+      <div class="xeno-feature"><em class="fname">Physical Defense:</em> +3 bonus to your damage thresholds.</div>
+      <div class="xeno-feature"><em class="fname">Snapping Strike:</em> When you succeed on an attack against a target within Melee range, spend a Signal to lock that opponent in your grip, making them temporarily <em>Restrained</em> and <em>Vulnerable</em>.</div>
+    </div>
+
+    <div class="xeno-card">
+      <h4>■ STORM WING</h4>
+      <div class="xeno-examples">Great Screamer, Apex Void-Raptor, Shriek-Falcon, etc.</div>
+      <div class="xeno-stats"><span>Finesse +2</span><span>Evasion +3</span><span>Melee Finesse d8+6 phy</span></div>
+      <div class="xeno-advantage"><strong>Advantage on:</strong> deceive, distract, locate</div>
+      <div class="xeno-feature"><em class="fname">Bird's-Eye View:</em> You can fly at will. Once per rest while airborne, ask the GM a question about the scene below you without rolling. The first character to act on that information gains advantage on the roll.</div>
+      <div class="xeno-feature"><em class="fname">Carrier:</em> You can carry up to two willing allies with you when you move.</div>
+    </div>
+
+    <div class="xeno-card">
+      <h4>■ ABYSSAL HUNTER</h4>
+      <div class="xeno-examples">Deep-Dolphin, Void-Orca, Pressure-Shark, etc.</div>
+      <div class="xeno-stats"><span>Agility +2</span><span>Evasion +4</span><span>Melee Agility d10+6 phy</span></div>
+      <div class="xeno-advantage"><strong>Advantage on:</strong> attack, swim, track</div>
+      <div class="xeno-feature"><em class="fname">Aquatic:</em> You can breathe and move naturally in liquid environments.</div>
+      <div class="xeno-feature"><em class="fname">Vicious Maul:</em> When you succeed on an attack against a target, spend a Signal to make them <em>Vulnerable</em> and gain +1 Proficiency for this attack.</div>
+    </div>
+
+    <div class="xeno-card">
+      <h4>■ LEGENDARY XENO</h4>
+      <div class="xeno-examples">Upgraded Tier 1 Options</div>
+      <div class="xeno-feature"><em class="fname">Evolved:</em> Pick a Tier 1 Xenoform option and become a larger, more powerful version. You retain all traits and features and gain:</div>
+      <ul style="font-size:0.86rem;margin-left:1rem">
+        <li>+6 bonus to damage rolls</li>
+        <li>+1 bonus to the trait used by this form</li>
+        <li>+2 bonus to Evasion</li>
+      </ul>
+    </div>
+
+    <div class="xeno-card">
+      <h4>■ CHIMERIC XENO</h4>
+      <div class="xeno-examples">Griffon-Strain, Sphinx-Form, etc.</div>
+      <div class="xeno-stats"><span>Strength +2</span><span>Evasion +3</span><span>Melee Strength d10+8 phy</span></div>
+      <div class="xeno-feature"><em class="fname">Hybrid Features:</em> To transform into this creature, mark an additional Stress. Choose any two Xenoform options from Tiers 1&ndash;2. Choose a total of four advantages and two features from those options.</div>
+    </div>
+  </section>
+
+  <!-- TIER 4 -->
+  <section id="tier-4">
+    <div class="tier-header">▾ Tier 4 (Levels 8-10)</div>
+
+    <div class="xeno-card">
+      <h4>■ VOID COLOSSUS</h4>
+      <div class="xeno-examples">Great-Elephant, Rift-Mammoth, Siege-Rhino, etc.</div>
+      <div class="xeno-stats"><span>Strength +3</span><span>Evasion +1</span><span>Melee Strength d12+12 phy</span></div>
+      <div class="xeno-advantage"><strong>Advantage on:</strong> locate, protect, scare, sprint</div>
+      <div class="xeno-feature"><em class="fname">Carrier:</em> You can carry up to four willing allies with you when you move.</div>
+      <div class="xeno-feature"><em class="fname">Demolish:</em> Spend a Signal to move up to Far range in a straight line and make an attack against all targets within Melee range of the line. Targets you succeed against take d8+10 physical damage and are temporarily <em>Vulnerable</em>.</div>
+      <div class="xeno-feature"><em class="fname">Undaunted:</em> +2 bonus to all your damage thresholds.</div>
+    </div>
+
+    <div class="xeno-card">
+      <h4>■ EXTINCTION-CLASS</h4>
+      <div class="xeno-examples">Brachiosaurus-Strain, Apex Tyrant, Mass-Extinction Form, etc.</div>
+      <div class="xeno-stats"><span>Strength +3</span><span>Evasion +2</span><span>Melee Strength d12+10 phy</span></div>
+      <div class="xeno-advantage"><strong>Advantage on:</strong> attack, deceive, scare, track</div>
+      <div class="xeno-feature"><em class="fname">Devastating Strikes:</em> When you deal Severe damage to a target within Melee range, mark a Stress to force them to mark an additional Hit Point.</div>
+      <div class="xeno-feature"><em class="fname">Massive Stride:</em> You can move up to Far range without rolling. You ignore rough terrain (at the GM's discretion) due to your size.</div>
+    </div>
+
+    <div class="xeno-card">
+      <h4>■ APEX SKY TERROR</h4>
+      <div class="xeno-examples">Great Void-Dragon, Sky-Leviathan, Mythic Flyer, etc.</div>
+      <div class="xeno-stats"><span>Finesse +3</span><span>Evasion +4</span><span>Melee Finesse d10+11 phy</span></div>
+      <div class="xeno-advantage"><strong>Advantage on:</strong> attack, deceive, locate, navigate</div>
+      <div class="xeno-feature"><em class="fname">Carrier:</em> You can carry up to three willing allies with you when you move.</div>
+      <div class="xeno-feature"><em class="fname">Deadly Raptor:</em> You can fly at will and move up to Far range as part of your action. When you move in a straight line into Melee range of a target from at least Close range and make an attack against that target in the same action, reroll all damage dice that rolled lower than your Proficiency.</div>
+    </div>
+
+    <div class="xeno-card">
+      <h4>■ DEEP LEVIATHAN</h4>
+      <div class="xeno-examples">Giant Void-Squid, Pressure-Whale, Titan of the Deep, etc.</div>
+      <div class="xeno-stats"><span>Agility +3</span><span>Evasion +3</span><span>Melee Agility d10+10 phy</span></div>
+      <div class="xeno-advantage"><strong>Advantage on:</strong> locate, protect, scare, track</div>
+      <div class="xeno-feature"><em class="fname">Ocean Master:</em> You can breathe and move naturally in liquid environments. When you succeed on an attack against a target within Melee range, you can temporarily <em>Restrain</em> them.</div>
+      <div class="xeno-feature"><em class="fname">Unyielding:</em> When you would mark an Armor Slot, roll a d6. On 5 or higher, reduce the severity by one threshold without marking an Armor Slot.</div>
+    </div>
+
+    <div class="xeno-card">
+      <h4>■ MYTHIC XENO</h4>
+      <div class="xeno-examples">Upgraded Tier 1 or Tier 2 Options</div>
+      <div class="xeno-feature"><em class="fname">Evolved:</em> Pick a Tier 1 or Tier 2 Xenoform option and become a larger, more powerful version. You retain all traits and features and gain:</div>
+      <ul style="font-size:0.86rem;margin-left:1rem">
+        <li>+9 bonus to damage rolls</li>
+        <li>+2 bonus to the trait used by this form</li>
+        <li>+3 bonus to Evasion</li>
+        <li>Your damage die increases by one size (d6 → d8, d8 → d10, etc.)</li>
+      </ul>
+    </div>
+
+    <div class="xeno-card">
+      <h4>■ CHIMERIC APEX</h4>
+      <div class="xeno-examples">Chimera-Strain, Cockatrix-Form, Manticore-Class, etc.</div>
+      <div class="xeno-stats"><span>Strength +3</span><span>Evasion +2</span><span>Strength Melee d12+10 phy</span></div>
+      <div class="xeno-feature"><em class="fname">Hybrid Features:</em> To transform into this creature, mark 2 additional Stress. Choose any three Xenoform options from Tiers 1&ndash;3. Choose a total of five advantages and three features from those options.</div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- HUNTER COMPANION SHEET -->
+  <section id="companion">
+    <div class="section-label">02 / Beastbound Hunter</div>
+    <h2>Hunter Companion Sheet</h2>
+    <p>
+      When you choose the <a href="classes.html#hunter">Beastbound Hunter</a> subclass, take a companion sheet.
+      This sheet tracks important information about your character's xeno-companion and can be tucked beneath
+      the right side of your character sheet for ease of viewing.
+    </p>
+  </section>
+
+  <section id="companion-setup">
+    <h3>Setup Steps</h3>
+
+    <div class="companion-step">
+      <h4>STEP 1 — Name Your Companion</h4>
+      <p>Work with the GM to decide what kind of xeno-creature you have as your companion. Give them a name and add a picture or description of them to the companion sheet.</p>
+    </div>
+
+    <div class="companion-step">
+      <h4>STEP 2 — Write Their Evasion</h4>
+      <p>Fill in their Evasion, which starts at <strong>10</strong>.</p>
+    </div>
+
+    <div class="companion-step">
+      <h4>STEP 3 — Choose Their Experiences</h4>
+      <p>Create two Experiences for your companion based on their training and the history you have together. Start with <strong>+2</strong> in both Experiences. Whenever you gain a new Experience, your companion also gains one. All new Experiences start at +2.</p>
+      <p style="font-style:italic;color:var(--text-dim);font-size:0.85rem;margin-top:0.5rem">
+        <strong>Example Companion Experiences:</strong> Bold Distraction, Combat-Trained, Expert Climber, Fetch,
+        Ferocious, Guardian of the Crew, Horrifying, Intimidating, Loyal Until the End, Navigation, Nimble,
+        Nobody Left Behind, On High Alert, Protective, Scout, Sensor-Keen, Trusted Mount, Vigilant, We Always
+        Find Them, You Can't Hit What You Can't Find
+      </p>
+    </div>
+
+    <div class="companion-step">
+      <h4>STEP 4 — Choose Their Attack &amp; Damage Die</h4>
+      <p>Describe your companion's method of dealing damage (their standard attack) and record it. At level 1, your companion's damage die is a <strong>d6</strong> and their range is <strong>Melee</strong>. Choose whether they deal physical or energy damage.</p>
+    </div>
+  </section>
+
+  <section id="companion-working">
+    <h3>Working With Your Companion</h3>
+
+    <div class="rule-card">
+      <h4 style="color:var(--signal)">◈ CHANNEL ROLLS, SIGNAL &amp; EXPERIENCES</h4>
+      <p style="font-size:0.92rem">Make a <strong>Channel Roll</strong> to connect with your companion and command them to take action. Spend a Signal to add an applicable Companion Experience to the roll. On a success with Signal, if your next action builds on their success, you gain advantage on the roll.</p>
+    </div>
+
+    <div class="rule-card teal-card">
+      <h4 style="color:var(--accent-teal)">⌬ ATTACKING WITH YOUR COMPANION</h4>
+      <p style="font-size:0.92rem">When you command your companion to attack, they gain any benefits that would normally only apply to you (such as the effects of <em>Hunter's Focus</em>). On a success, their damage roll uses your Proficiency and their damage die.</p>
+    </div>
+
+    <div class="rule-card rose-card">
+      <h4 style="color:var(--accent-rose)">✺ TAKING DAMAGE AS STRESS</h4>
+      <p style="font-size:0.92rem">When your companion would take any amount of damage, they mark a Stress. When they mark their last Stress, they drop out of the scene (fleeing, going to ground, etc.). They remain unavailable until the start of your next long rest, where they return with 1 Stress cleared.</p>
+      <p style="font-size:0.92rem;margin-top:0.5rem">When you choose a downtime move that clears Stress on yourself, your companion clears an equal number of Stress.</p>
+    </div>
+
+    <div class="rule-card gold-card">
+      <h4 style="color:var(--accent-gold)">✺ LEVELING UP YOUR COMPANION</h4>
+      <p style="font-size:0.92rem">When your character levels up, choose one available option for your companion from the list below and mark it on your sheet.</p>
+    </div>
+  </section>
+
+  <section id="companion-levelup">
+    <h3>Level-Up Options</h3>
+    <p style="color:var(--text-dim)">Each option can be taken once. The Beastbound subclass features (Expert Training, Advanced Training) grant additional picks beyond the per-level default.</p>
+
+    <div class="levelup-grid">
+      <div class="levelup-card">
+        <h5>Intelligent</h5>
+        <p>Your companion gains a permanent +1 bonus to a Companion Experience of your choice.</p>
+      </div>
+      <div class="levelup-card">
+        <h5>Light in the Dark</h5>
+        <p>Use this as an additional Signal slot your character can mark.</p>
+      </div>
+      <div class="levelup-card">
+        <h5>Creature Comfort</h5>
+        <p>Once per rest, when you take time during a quiet moment to give your companion attention and care, you can gain a Signal or you can both clear a Stress.</p>
+      </div>
+      <div class="levelup-card">
+        <h5>Armored</h5>
+        <p>When your companion takes damage, you can mark one of your Armor Slots instead of marking one of their Stress.</p>
+      </div>
+      <div class="levelup-card">
+        <h5>Vicious</h5>
+        <p>Increase your companion's damage die or range by one step (d6 → d8, Melee → Close, etc.).</p>
+      </div>
+      <div class="levelup-card">
+        <h5>Resilient</h5>
+        <p>Your companion gains an additional Stress slot.</p>
+      </div>
+      <div class="levelup-card">
+        <h5>Bonded</h5>
+        <p>When you mark your last Hit Point, your companion rushes to your side. Roll a number of d6s equal to the unmarked Stress slots they have and mark them. If any roll a 6, your companion helps you up. Clear your last Hit Point and return to the scene.</p>
+      </div>
+      <div class="levelup-card">
+        <h5>Aware</h5>
+        <p>Your companion gains a permanent +2 bonus to their Evasion.</p>
+      </div>
+    </div>
+  </section>
+
+  <p style="text-align:center;margin-top:3rem;color:var(--text-dim);font-size:0.88rem">
+    Back to the <a href="classes.html#symbiote">Symbiote</a> or <a href="classes.html#hunter">Hunter</a> &mdash; or to the <a href="index.html">Hub</a>.
+  </p>
+
+</main>
+
+<footer>
+  <div>VOIDHEART &mdash; <a href="index.html">Home</a> · <a href="classes.html">Classes</a> · <a href="lineages.html">Lineages</a> · <a href="domains.html">Domains</a> · <a href="ship-combat.html">Ship Combat</a></div>
+  <div>Signal &amp; Static · Far Futures · Deep Space Adventure</div>
+</footer>
+
+<script src="scripts.js"></script>
+</body>
+</html>
