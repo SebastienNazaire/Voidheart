@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Domain Cards — VOIDHEART</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=JetBrains+Mono:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+.card-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1rem;
+  align-items: flex-end;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0 2rem;
+  position: sticky;
+  top: 56px;
+  z-index: 10;
+  backdrop-filter: blur(12px);
+}
+.card-filters label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+.card-filters select,
+.card-filters input {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  background: var(--panel-darker);
+  border: 1px solid var(--border-bright);
+  color: var(--text);
+  border-radius: 6px;
+  padding: 0.45rem 0.65rem;
+  min-width: 10rem;
+}
+.card-filters input { min-width: 14rem; }
+.filter-count {
+  margin-left: auto;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  color: var(--signal);
+  text-transform: uppercase;
+  align-self: center;
+}
+.catalog-domain {
+  margin: 3rem 0;
+  scroll-margin-top: 120px;
+}
+.catalog-domain-header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 1.25rem;
+  align-items: start;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+.catalog-glyph {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 900;
+  line-height: 1;
+  color: var(--signal);
+}
+.catalog-domain h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.35rem;
+  letter-spacing: 0.1em;
+  color: #fff;
+}
+.catalog-was {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  margin-top: 0.2rem;
+}
+.catalog-tagline {
+  font-size: 0.95rem;
+  color: var(--text-dim);
+  margin-top: 0.5rem;
+  line-height: 1.6;
+}
+.catalog-back {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.catalog-back:hover { color: var(--signal); }
+.catalog-terms {
+  margin-bottom: 1.25rem;
+  background: var(--panel-darker);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+}
+.catalog-terms summary {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  cursor: pointer;
+  padding: 0.35rem 0;
+}
+.catalog-terms ul {
+  margin: 0.5rem 0 0.75rem 1.25rem;
+  font-size: 0.88rem;
+  color: var(--text-dim);
+}
+.deck-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+}
+.deck-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.1rem 1.25rem;
+  scroll-margin-top: 100px;
+  position: relative;
+}
+.deck-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 4px; height: 100%;
+  border-radius: 10px 0 0 10px;
+}
+.deck-card.iron::before { background: #c97e3a; }
+.deck-card.vector::before { background: var(--signal); }
+.deck-card.shadow::before { background: #3a4a6a; }
+.deck-card.grid::before { background: var(--accent-teal); }
+.deck-card.cipher::before { background: #4ac9b8; }
+.deck-card.deep::before { background: var(--static); }
+.deck-card.psionic::before { background: var(--accent-rose); }
+.deck-card.tide::before { background: var(--accent-gold); }
+.deck-card.sable::before { background: #6a5080; }
+.deck-card-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+}
+.deck-card-title h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  color: #fff;
+  line-height: 1.3;
+}
+.deck-card-was {
+  display: block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.55rem;
+  letter-spacing: 0.08em;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  margin-top: 0.25rem;
+}
+.deck-card-badges {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  align-items: flex-end;
+  flex-shrink: 0;
+}
+.deck-card .badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.55rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.45rem;
+  border-radius: 4px;
+  border: 1px solid var(--border-bright);
+  color: var(--text-dim);
+  white-space: nowrap;
+}
+.deck-card .badge.level { color: var(--signal); border-color: var(--border-signal); }
+.deck-card .badge.recall { color: var(--accent-teal); }
+.deck-card-effect {
+  font-size: 0.88rem;
+  color: var(--text);
+  line-height: 1.65;
+}
+.catalog-empty {
+  text-align: center;
+  color: var(--text-dim);
+  padding: 3rem 1rem;
+}
+@media (max-width: 720px) {
+  .catalog-domain-header { grid-template-columns: 1fr; }
+  .catalog-back { justify-self: start; }
+  .filter-count { margin-left: 0; width: 100%; }
+  .card-filters { position: static; }
+}
+</style>
+</head>
+<body>
+
+<div id="starfield"></div>
+
+<nav class="site-nav">
+  <a class="nav-logo" href="index.html">VOIDHEART <span>Far Futures</span></a>
+  <button class="nav-toggle" aria-label="Toggle menu">MENU</button>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="classes.html">Classes</a></li>
+    <li><a href="lineages.html">Lineages</a></li>
+    <li><a href="domains.html">Domains</a></li>
+    <li><a href="domain-cards.html" class="active">Domain Cards</a></li>
+    <li><a href="ship-combat.html">Ship Combat</a></li>
+  </ul>
+</nav>
+
+<header class="page-header">
+  <div class="crumb">▸ The Reference / Practice</div>
+  <h1>DOMAIN CARDS</h1>
+  <div class="sub">Full Deck Reference</div>
+  <p class="desc">
+    Browse every Voidheart domain card by school and level. At character creation, choose two level-1 cards
+    from your class's two domains, then add higher-level cards as you advance. Filter by domain, level, or search by name.
+  </p>
+</header>
+
+<main class="wide">
+
+  <div class="toc">
+    <div class="toc-label">Jump to a Domain Deck</div>
+    <div class="toc-grid">
+      <a href="?domain=iron">Iron</a>
+      <a href="?domain=vector">Vector</a>
+      <a href="?domain=shadow">Shadow</a>
+      <a href="?domain=grid">Grid</a>
+      <a href="?domain=cipher">Cipher</a>
+      <a href="?domain=deep">Deep</a>
+      <a href="?domain=psionic">Psionic</a>
+      <a href="?domain=tide">Tide</a>
+      <a href="?domain=sable">Sable</a>
+    </div>
+  </div>
+
+  <div class="rule-card">
+    <h4 style="color:var(--signal);margin-bottom:0.5rem;font-size:0.78rem;letter-spacing:0.12em">PICKING CARDS</h4>
+    <p style="font-size:0.92rem;margin-bottom:0.5rem">
+      Your <a href="classes.html">class</a> grants two domains. Start with <strong>two level-1 cards</strong> from those decks.
+      Each card has a <strong>Recall Cost</strong> that counts against your loadout capacity. See
+      <a href="domains.html">Domains</a> for how schools work and what card types mean.
+    </p>
+  </div>
+
+  <form class="card-filters" id="card-filters" onsubmit="return false">
+    <label>
+      Domain
+      <select id="filter-domain" aria-label="Filter by domain">
+        <option value="">All domains</option>
+      </select>
+    </label>
+    <label>
+      Level
+      <select id="filter-level" aria-label="Filter by level">
+        <option value="">All levels</option>
+      </select>
+    </label>
+    <label>
+      Search
+      <input type="search" id="filter-search" placeholder="Name or keyword…" aria-label="Search cards">
+    </label>
+    <span class="filter-count" id="result-count" aria-live="polite"></span>
+  </form>
+
+  <div id="card-catalog"></div>
+
+  <p style="text-align:center;margin-top:3rem;color:var(--text-dim);font-size:0.88rem">
+    Overview: <a href="domains.html">domain schools</a> &mdash; build a character: <a href="classes.html">classes</a>.
+  </p>
+
+</main>
+
+<footer>
+  <div>VOIDHEART &mdash; <a href="index.html">Home</a> · <a href="classes.html">Classes</a> · <a href="domains.html">Domains</a> · <a href="domain-cards.html">Domain Cards</a></div>
+  <div>Signal &amp; Static · Far Futures · Deep Space Adventure</div>
+</footer>
+
+<script src="scripts.js"></script>
+<script src="data/domain-cards-data.js"></script>
+<script src="domain-cards.js"></script>
+</body>
+</html>

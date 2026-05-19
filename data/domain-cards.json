@@ -1,0 +1,2024 @@
+{
+  "domains": {
+    "deep": {
+      "name": "Deep",
+      "glyph": "∞",
+      "was": "Arcana",
+      "tagline": "Xenoarchaeology, alien biology, ancient technologies, void phenomena, and lore from dead civilizations.",
+      "terminology": [
+        "Hope → Signal",
+        "Spellcast Roll → Channel Roll",
+        "Spellcast trait → Channel trait",
+        "magic damage → energy damage",
+        "On Fire → Ignited",
+        "Arcana Spell → Deep Spell",
+        "Arcana Ability → Deep Ability"
+      ]
+    },
+    "iron": {
+      "name": "Iron",
+      "glyph": "⛨",
+      "was": "Blade",
+      "tagline": "Direct combat, personal weapons, armor use, close-quarters tactics, and refusing to go down.",
+      "terminology": [
+        "Hope → Signal",
+        "Fear → Static",
+        "Spellcast Roll → Channel Roll",
+        "Blade Ability → Iron Ability",
+        "weapon covers both kinetic and powered weapons in Voidheart"
+      ]
+    },
+    "vector": {
+      "name": "Vector",
+      "glyph": "↗",
+      "was": "Bone",
+      "tagline": "Ship piloting, jump navigation, evasive maneuvers, orbital mechanics, and reading space like a language.",
+      "terminology": [
+        "Hope → Signal",
+        "Fear → Static",
+        "Spellcast Roll → Channel Roll",
+        "Bone Ability → Vector Ability",
+        "weapon covers both kinetic and powered weapons in Voidheart"
+      ]
+    },
+    "grid": {
+      "name": "Grid",
+      "glyph": "⊞",
+      "was": "Codex",
+      "tagline": "Hacking, electronic warfare, system intrusion, drone control, and the weaponization of information.",
+      "terminology": [
+        "Hope → Signal",
+        "Fear → Static",
+        "Spellcast Roll → Channel Roll",
+        "Spellcast trait → Channel trait",
+        "magic damage → energy damage",
+        "Codex Spell → Grid Spell",
+        "Codex Ability → Grid Ability",
+        "Codex Grimoire → Grid Archive",
+        "\"Book of X\" → \"Archive of X\""
+      ]
+    },
+    "sable": {
+      "name": "Sable",
+      "glyph": "◆",
+      "was": "Grace",
+      "tagline": "Smuggling, underworld contacts, improvised solutions, heists, and the charisma of someone with nothing to lose.",
+      "terminology": [
+        "Hope → Signal",
+        "Fear → Static",
+        "Spellcast Roll → Channel Roll",
+        "Spellcast trait → Channel trait",
+        "Grace Spell → Sable Spell",
+        "Grace Ability → Sable Ability"
+      ]
+    },
+    "shadow": {
+      "name": "Shadow",
+      "glyph": "◐",
+      "was": "Midnight",
+      "tagline": "Stealth, infiltration, disguise, assassination, and moving through places you were never supposed to be.",
+      "terminology": [
+        "Hope → Signal",
+        "Fear → Static",
+        "Spellcast Roll → Channel Roll",
+        "Spellcast trait → Channel trait",
+        "magic damage → energy damage",
+        "can't cast spells → can't use Channel abilities",
+        "Midnight Spell/Ability → Shadow Spell/Ability"
+      ]
+    },
+    "cipher": {
+      "name": "Cipher",
+      "glyph": "⌬",
+      "was": "Sage",
+      "tagline": "Science, medicine, engineering, analysis, and building things no one else could from what's at hand.",
+      "terminology": [
+        "Hope → Signal",
+        "Fear → Static",
+        "Spellcast Roll → Channel Roll",
+        "Spellcast trait → Channel trait",
+        "magic damage → energy damage",
+        "Sage Spell → Cipher Spell",
+        "Sage Ability → Cipher Ability"
+      ]
+    },
+    "psionic": {
+      "name": "Psionic",
+      "glyph": "✺",
+      "was": "Splendor",
+      "tagline": "Mental projection, emotional reading, precognition, psychic defense, and communion with the inhuman.",
+      "terminology": [
+        "Hope → Signal",
+        "Fear → Static",
+        "Spellcast Roll → Channel Roll",
+        "Spellcast trait → Channel trait",
+        "magic damage → psionic damage",
+        "Splendor Spell → Psionic Spell",
+        "Splendor Ability → Psionic Ability"
+      ]
+    },
+    "tide": {
+      "name": "Tide",
+      "glyph": "≈",
+      "was": "Valor",
+      "tagline": "Leadership, morale, tactical coordination, inspiring under fire, and the weight of being the one others follow.",
+      "terminology": [
+        "Hope → Signal",
+        "Fear → Static",
+        "Valor Ability → Tide Ability"
+      ]
+    }
+  },
+  "cards": [
+    {
+      "id": "deep-ward-glyph",
+      "domain": "deep",
+      "name": "Ward Glyph",
+      "was": "Rune Ward",
+      "level": 1,
+      "type": "spell",
+      "recallCost": 0,
+      "effect": "You have a deeply personal artifact—a precursor sigil etched into your gear, a salvaged token from a dead civilization, or a fragment of alien ore—that can be infused with protective void energy as a ward by you or an ally. Describe what it is and why it's important to you. The ward's bearer can spend a Signal to reduce incoming damage by 1d8. If the Ward Die result is 8, the ward's power ends after it reduces damage this turn. It can be recharged for free on your next rest."
+    },
+    {
+      "id": "deep-void-surge",
+      "domain": "deep",
+      "name": "Void Surge",
+      "was": "Unleash Chaos",
+      "level": 1,
+      "type": "spell",
+      "recallCost": 1,
+      "effect": "At the beginning of a session, place a number of tokens equal to your Channel trait on this card. Make a Channel Roll against a target within Far range and spend any number of tokens to channel raw void energy from within yourself to unleash against them. On a success, roll a number of d10s equal to the tokens you spent and deal that much energy damage to the target. Mark a Stress to replenish this card with tokens (up to your Channel trait). At the end of each session, clear all unspent tokens."
+    },
+    {
+      "id": "deep-drift-walk",
+      "domain": "deep",
+      "name": "Drift Walk",
+      "was": "Wall Walk",
+      "level": 1,
+      "type": "spell",
+      "recallCost": 1,
+      "effect": "Spend a Signal to allow a creature you can touch to manipulate local gravity, walking on walls and ceilings as easily as walking on the ground. This lasts until the end of the scene or you cast Drift Walk again."
+    },
+    {
+      "id": "deep-plasma-grasp",
+      "domain": "deep",
+      "name": "Plasma Grasp",
+      "was": "Cinder Grasp",
+      "level": 2,
+      "type": "spell",
+      "recallCost": 1,
+      "effect": "Make a Channel Roll against a target within Melee range. On a success, the target instantly bursts into superheated plasma, takes 1d20+3 energy damage, and is temporarily Ignited. When a creature acts while Ignited, they must take an extra 2d6 energy damage if they are still Ignited at the end of their action."
+    },
+    {
+      "id": "deep-drift-eye",
+      "domain": "deep",
+      "name": "Drift Eye",
+      "was": "Floating Eye",
+      "level": 2,
+      "type": "spell",
+      "recallCost": 0,
+      "effect": "Spend a Signal to create a single, small drifting orb of contained void energy that you can move anywhere within Very Far range. While this orb is active, you can see through it as though you were looking out from its position. You can transition between using your own senses and seeing through the orb freely. If the orb takes damage or moves out of range, the spell ends."
+    },
+    {
+      "id": "deep-null-field",
+      "domain": "deep",
+      "name": "Null Field",
+      "was": "Counterspell",
+      "level": 3,
+      "type": "spell",
+      "recallCost": 2,
+      "effect": "You can interrupt a void, psionic, or technological effect taking place by making a reaction roll using your Channel trait. On a success, the effect stops and any consequences are avoided, and this card is placed in your vault."
+    },
+    {
+      "id": "deep-voidflight",
+      "domain": "deep",
+      "name": "Voidflight",
+      "was": "Flight",
+      "level": 3,
+      "type": "spell",
+      "recallCost": 1,
+      "effect": "Make a Channel Roll (15). On a success, place a number of tokens equal to your Agility on this card (minimum 1). You can fly freely while tokens remain on this card. When you make an action roll while flying, spend a token from this card. After the action that spends the last token is resolved, you descend gently to the ground directly below you."
+    },
+    {
+      "id": "deep-blink-shift",
+      "domain": "deep",
+      "name": "Blink Shift",
+      "was": "Blink Out",
+      "level": 4,
+      "type": "spell",
+      "recallCost": 1,
+      "effect": "Make a Channel Roll (12). On a success, spend a Signal to fold space and instantly shift to another point you can see within Far range. If any willing creatures are within Very Close range, spend an additional Signal for each creature to bring them with you."
+    },
+    {
+      "id": "deep-repulsion-wave",
+      "domain": "deep",
+      "name": "Repulsion Wave",
+      "was": "Preservation Blast",
+      "level": 4,
+      "type": "spell",
+      "recallCost": 1,
+      "effect": "Make a Channel Roll against all targets within Melee range. Targets you succeed against are forced back to Far range and take d8+3 energy damage using your Channel trait."
+    },
+    {
+      "id": "deep-arc-cascade",
+      "domain": "deep",
+      "name": "Arc Cascade",
+      "was": "Chain Lightning",
+      "level": 5,
+      "type": "spell",
+      "recallCost": 1,
+      "effect": "Mark 2 Stress to make a Channel Roll, unleashing arcing plasma on all targets within Close range. Targets you succeed against must make a reaction roll with a Difficulty equal to the result of your Channel Roll. Targets who fail take 2d8+4 energy damage. Additional adversaries not already targeted by Arc Cascade and within Close range of previous targets who took damage must also make the reaction roll. Targets who fail take 2d8+4 energy damage. This chain continues until there are no more adversaries within range."
+    },
+    {
+      "id": "deep-precognition",
+      "domain": "deep",
+      "name": "Precognition",
+      "was": "Premonition",
+      "level": 5,
+      "type": "spell",
+      "recallCost": 2,
+      "effect": "You can channel void energy to glimpse moments not yet collapsed into reality. Once per long rest, immediately after the GM conveys the consequences of a roll you made, you can rescind the move and consequences like they never happened and make another move instead."
+    },
+    {
+      "id": "deep-rift-walker",
+      "domain": "deep",
+      "name": "Rift Walker",
+      "was": null,
+      "level": 6,
+      "type": "spell",
+      "recallCost": 2,
+      "effect": "Make a Channel Roll (15). On a success, you place a void anchor on the ground where you currently stand. The next time you successfully cast Fold Anchor, a rift in space opens up, providing safe passage back to the exact spot where the first anchor was placed. This rift stays open until you choose to close it or you cast another spell. You can drop the spell at any time to cast Fold Anchor again and place the anchor somewhere new."
+    },
+    {
+      "id": "deep-graviton-grip",
+      "domain": "deep",
+      "name": "Graviton Grip",
+      "was": "Telekinesis",
+      "level": 6,
+      "type": "spell",
+      "recallCost": 0,
+      "effect": "Make a Channel Roll against a target within Far range. On a success, you can use focused graviton manipulation to move them anywhere within Far range of their original position. You can throw the lifted target as an attack by making an additional Channel Roll against the second target you're trying to attack. On a success, deal d12+4 physical damage to the second target using your Proficiency. This spell then ends."
+    },
+    {
+      "id": "deep-void-touched",
+      "domain": "deep",
+      "name": "Void-Touched",
+      "was": "Arcana-Touched",
+      "level": 7,
+      "type": "ability",
+      "recallCost": 2,
+      "effect": "When 4 or more of the domain cards in your loadout are from the Deep domain, gain the following benefits: +1 bonus to your Channel Rolls; once per rest, you can switch the results of your Signal and Static Dice."
+    },
+    {
+      "id": "deep-refraction-cloak",
+      "domain": "deep",
+      "name": "Refraction Cloak",
+      "was": "Cloaking Blast",
+      "level": 7,
+      "type": "spell",
+      "recallCost": 2,
+      "effect": "When you make a successful Channel Roll to cast a different spell, you can spend a Signal to bend light around your body and become Cloaked. While Cloaked, you remain unseen if you are stationary when an adversary moves to where they would normally see you. When you move into or within an adversary's line of sight or make an attack, you are no longer Cloaked."
+    },
+    {
+      "id": "deep-void-mirror",
+      "domain": "deep",
+      "name": "Void Mirror",
+      "was": "Arcane Reflection",
+      "level": 8,
+      "type": "spell",
+      "recallCost": 1,
+      "effect": "When you would take energy damage, you can spend any number of Signal to roll that many d6s. If any roll a 6, the attack is reflected back to the caster, dealing the damage to them instead."
+    },
+    {
+      "id": "deep-phantom-layers",
+      "domain": "deep",
+      "name": "Phantom Layers",
+      "was": "Confusing Aura",
+      "level": 8,
+      "type": "spell",
+      "recallCost": 1,
+      "effect": "Make a Channel Roll (14). Once per long rest on a success, you create a layer of holographic projection over your body that makes it hard to tell exactly where you are. Mark any number of Stress to make that many additional layers. When an adversary makes an attack against you, roll a number of d6s equal to the number of layers currently active. If any roll a 5 or higher, one layer is destroyed and the attack fails. If all results are 4 or lower, you take the damage and this spell ends."
+    },
+    {
+      "id": "deep-gravitic-shockwave",
+      "domain": "deep",
+      "name": "Gravitic Shockwave",
+      "was": "Earthquake",
+      "level": 9,
+      "type": "spell",
+      "recallCost": 2,
+      "effect": "Make a Channel Roll (16). Once per rest on a success, all targets within Very Far range who aren't flying must make a Reaction Roll (18). Targets who fail take 3d10+8 physical damage and are temporarily Vulnerable. Targets who succeed take half damage. Additionally, when you succeed on the Channel Roll, all terrain within Very Far range becomes difficult to move through and structures within this range might sustain damage or crumble."
+    },
+    {
+      "id": "deep-sensory-projection",
+      "domain": "deep",
+      "name": "Sensory Projection",
+      "was": null,
+      "level": 9,
+      "type": "spell",
+      "recallCost": 0,
+      "effect": "Once per rest, make a Channel Roll (15). On a success, drop into a remote-viewing trance that lets you clearly see and hear any place you have been before as though you are standing there in this moment. You can move freely in this projection and are not constrained by the physics or impediments of a physical body. This projection cannot be detected by mundane or technological means. You drop out of it upon taking damage or casting another spell."
+    },
+    {
+      "id": "deep-adjust-reality",
+      "domain": "deep",
+      "name": "Adjust Reality",
+      "was": null,
+      "level": 10,
+      "type": "spell",
+      "recallCost": 1,
+      "effect": "After you or a willing ally make any roll, you can spend 5 Signal to change the numerical result of that roll to a result of your choice instead. The result must be plausible within the range of the dice."
+    },
+    {
+      "id": "deep-starfall",
+      "domain": "deep",
+      "name": "Starfall",
+      "was": "Falling Sky",
+      "level": 10,
+      "type": "spell",
+      "recallCost": 1,
+      "effect": "Make a Channel Roll against all adversaries within Far range. Mark any number of Stress to call down shards of void debris and ancient orbital wreckage from above. Targets you succeed against take 1d20+2 energy damage for each Stress marked."
+    },
+    {
+      "id": "iron-get-back-up",
+      "domain": "iron",
+      "name": "Get Back Up",
+      "was": null,
+      "level": 1,
+      "type": "ability",
+      "recallCost": 1,
+      "effect": "When you take Severe damage, you can mark a Stress to reduce the severity by one threshold."
+    },
+    {
+      "id": "iron-not-good-enough",
+      "domain": "iron",
+      "name": "Not Good Enough",
+      "was": null,
+      "level": 1,
+      "type": "ability",
+      "recallCost": 1,
+      "effect": "When you roll your damage dice, you can reroll any 1s or 2s."
+    },
+    {
+      "id": "iron-whirlwind",
+      "domain": "iron",
+      "name": "Whirlwind",
+      "was": null,
+      "level": 1,
+      "type": "ability",
+      "recallCost": 0,
+      "effect": "When you make a successful attack against a target within Very Close range, you can spend a Signal to use the attack against all other targets within Very Close range. All additional adversaries you succeed against with this ability take half damage."
+    },
+    {
+      "id": "iron-a-soldiers-bond",
+      "domain": "iron",
+      "name": "A Soldier's Bond",
+      "was": null,
+      "level": 2,
+      "type": "ability",
+      "recallCost": 1,
+      "effect": "Once per long rest, when you compliment someone or ask them about something they're good at, you can both gain 3 Signal."
+    },
+    {
+      "id": "iron-reckless",
+      "domain": "iron",
+      "name": "Reckless",
+      "was": null,
+      "level": 2,
+      "type": "ability",
+      "recallCost": 1,
+      "effect": "Mark a Stress to gain advantage on an attack."
+    },
+    {
+      "id": "iron-scramble",
+      "domain": "iron",
+      "name": "Scramble",
+      "was": null,
+      "level": 3,
+      "type": "ability",
+      "recallCost": 1,
+      "effect": "Once per rest, when a creature within Melee range would deal damage to you, you can avoid the attack and safely move out of Melee range of the enemy."
+    },
+    {
+      "id": "iron-versatile-fighter",
+      "domain": "iron",
+      "name": "Versatile Fighter",
+      "was": null,
+      "level": 3,
+      "type": "ability",
+      "recallCost": 1,
+      "effect": "You can use a different character trait for an equipped weapon, rather than the trait the weapon calls for. When you deal damage, you can mark a Stress to use the maximum result of one of your damage dice instead of rolling it."
+    },
+    {
+      "id": "iron-deadly-focus",
+      "domain": "iron",
+      "name": "Deadly Focus",
+      "was": null,
+      "level": 4,
+      "type": "ability",
+      "recallCost": 2,
+      "effect": "Once per rest, you can apply all your focus toward a target of your choice. Until you attack another creature, you defeat the target, or the battle ends, gain a +1 bonus to your Proficiency."
+    },
+    {
+      "id": "iron-fortified-armor",
+      "domain": "iron",
+      "name": "Fortified Armor",
+      "was": null,
+      "level": 4,
+      "type": "ability",
+      "recallCost": 0,
+      "effect": "While you're wearing armor, gain a +2 bonus to your damage thresholds."
+    },
+    {
+      "id": "iron-champions-edge",
+      "domain": "iron",
+      "name": "Champion's Edge",
+      "was": null,
+      "level": 5,
+      "type": "ability",
+      "recallCost": 1,
+      "effect": "When you critically succeed on an attack, you can spend up to 3 Signal and choose one of the following options for each Signal spent: you clear a Hit Point; you clear an Armor Slot; the target must mark an additional Hit Point. You can't choose the same option more than once."
+    },
+    {
+      "id": "iron-vitality",
+      "domain": "iron",
+      "name": "Vitality",
+      "was": null,
+      "level": 5,
+      "type": "ability",
+      "recallCost": 0,
+      "effect": "When you choose this card, permanently gain two of the following benefits: one Stress slot; one Hit Point slot; +2 bonus to your damage thresholds. Then place this card in your vault permanently."
+    },
+    {
+      "id": "iron-battle-hardened",
+      "domain": "iron",
+      "name": "Battle-Hardened",
+      "was": null,
+      "level": 6,
+      "type": "ability",
+      "recallCost": 2,
+      "effect": "Once per long rest when you would make a Death Move, you can spend a Signal to clear a Hit Point instead."
+    },
+    {
+      "id": "iron-rage-up",
+      "domain": "iron",
+      "name": "Rage Up",
+      "was": null,
+      "level": 6,
+      "type": "ability",
+      "recallCost": 1,
+      "effect": "Before you make an attack, you can mark a Stress to gain a bonus to your damage roll equal to twice your Strength. You can Rage Up twice per attack."
+    },
+    {
+      "id": "iron-iron-touched",
+      "domain": "iron",
+      "name": "Iron-Touched",
+      "was": "Blade-Touched",
+      "level": 7,
+      "type": "ability",
+      "recallCost": 1,
+      "effect": "When 4 or more of the domain cards in your loadout are from the Iron domain, gain the following benefits: +2 bonus to your attack rolls; +4 bonus to your Severe damage threshold."
+    },
+    {
+      "id": "iron-glancing-blow",
+      "domain": "iron",
+      "name": "Glancing Blow",
+      "was": null,
+      "level": 7,
+      "type": "ability",
+      "recallCost": 1,
+      "effect": "When you fail an attack, you can mark a Stress to deal weapon damage using half your Proficiency."
+    },
+    {
+      "id": "iron-battle-cry",
+      "domain": "iron",
+      "name": "Battle Cry",
+      "was": null,
+      "level": 8,
+      "type": "ability",
+      "recallCost": 2,
+      "effect": "Once per long rest, while you're charging into danger, you can muster a rousing call that inspires your allies. All allies who can hear you each clear a Stress and gain a Signal. Additionally, your allies gain advantage on attack rolls until you or an ally rolls with Static."
+    },
+    {
+      "id": "iron-frenzy",
+      "domain": "iron",
+      "name": "Frenzy",
+      "was": null,
+      "level": 8,
+      "type": "ability",
+      "recallCost": 3,
+      "effect": "Once per long rest, you can go into a Frenzy until there are no more adversaries within sight. While Frenzied, you can't use Armor Slots, and you gain a +10 bonus to your damage rolls and a +8 bonus to your Severe damage threshold."
+    },
+    {
+      "id": "iron-gore-and-glory",
+      "domain": "iron",
+      "name": "Gore and Glory",
+      "was": null,
+      "level": 9,
+      "type": "ability",
+      "recallCost": 2,
+      "effect": "When you critically succeed on a weapon attack, gain an additional Signal or clear an additional Stress. Additionally, when you deal enough damage to defeat an enemy, gain a Signal or clear a Stress."
+    },
+    {
+      "id": "iron-reapers-strike",
+      "domain": "iron",
+      "name": "Reaper's Strike",
+      "was": null,
+      "level": 9,
+      "type": "ability",
+      "recallCost": 3,
+      "effect": "Once per long rest, spend a Signal to make an attack roll. The GM tells you which targets within range it would succeed against. Choose one of these targets and force them to mark 5 Hit Points."
+    },
+    {
+      "id": "iron-battle-monster",
+      "domain": "iron",
+      "name": "Battle Monster",
+      "was": null,
+      "level": 10,
+      "type": "ability",
+      "recallCost": 0,
+      "effect": "When you make a successful attack against an adversary, you can mark 4 Stress to force the target to mark a number of Hit Points equal to the number of Hit Points you currently have marked instead of rolling for damage."
+    },
+    {
+      "id": "iron-onslaught",
+      "domain": "iron",
+      "name": "Onslaught",
+      "was": null,
+      "level": 10,
+      "type": "ability",
+      "recallCost": 1,
+      "effect": "When you successfully make an attack with your weapon, you never deal damage beneath a target's Major damage threshold (the target always marks a minimum of 2 Hit Points). Additionally, when a creature within your weapon's range deals damage to an ally with an attack that doesn't include you, you can mark a Stress to force them to make a Reaction Roll (15). On a failure, the target must mark a Hit Point."
+    },
+    {
+      "id": "vector-deft-maneuvers",
+      "domain": "vector",
+      "name": "Deft Maneuvers",
+      "was": null,
+      "level": 1,
+      "type": "ability",
+      "recallCost": 0,
+      "effect": "Once per rest, mark a Stress to sprint anywhere within Far range without making an Agility Roll to get there. You read the lane before you take it. If you end this movement within Melee range of an adversary and immediately make an attack against them, gain a +1 bonus to the attack roll."
+    },
+    {
+      "id": "vector-i-see-it-coming",
+      "domain": "vector",
+      "name": "I See It Coming",
+      "was": null,
+      "level": 1,
+      "type": "ability",
+      "recallCost": 1,
+      "effect": "When you're targeted by an attack made from beyond Melee range, you can mark a Stress to roll a d4 and gain a bonus to your Evasion equal to the result against the attack. You saw the trajectory before they finished the squeeze."
+    },
+    {
+      "id": "vector-untouchable",
+      "domain": "vector",
+      "name": "Untouchable",
+      "was": null,
+      "level": 1,
+      "type": "ability",
+      "recallCost": 1,
+      "effect": "Gain a bonus to your Evasion equal to half your Agility."
+    },
+    {
+      "id": "vector-ferocity",
+      "domain": "vector",
+      "name": "Ferocity",
+      "was": null,
+      "level": 2,
+      "type": "ability",
+      "recallCost": 2,
+      "effect": "When you cause an adversary to mark 1 or more Hit Points, you can spend 2 Signal to increase your Evasion by the number of Hit Points they marked. This bonus lasts until after the next attack made against you."
+    },
+    {
+      "id": "vector-strategic-approach",
+      "domain": "vector",
+      "name": "Strategic Approach",
+      "was": null,
+      "level": 2,
+      "type": "ability",
+      "recallCost": 1,
+      "effect": "After a long rest, place a number of tokens equal to your Knowledge on this card (minimum 1). The first time you move within Close range of an adversary and make an attack against them, you can spend one token to choose one of: make the attack with advantage; clear a Stress on an ally within Melee range of the adversary; add a d8 to your damage roll. When you take a long rest, clear all unspent tokens."
+    },
+    {
+      "id": "vector-brace",
+      "domain": "vector",
+      "name": "Brace",
+      "was": null,
+      "level": 3,
+      "type": "ability",
+      "recallCost": 1,
+      "effect": "When you mark an Armor Slot to reduce incoming damage, you can mark a Stress to mark an additional Armor Slot. You angle into the hit."
+    },
+    {
+      "id": "vector-tactician",
+      "domain": "vector",
+      "name": "Tactician",
+      "was": null,
+      "level": 3,
+      "type": "ability",
+      "recallCost": 1,
+      "effect": "When you Help an Ally, they can spend a Signal to add one of your Experiences to their roll alongside your advantage die. When making a Tag Team Roll, you can roll a d20 as your Signal Die."
+    },
+    {
+      "id": "vector-boost",
+      "domain": "vector",
+      "name": "Boost",
+      "was": null,
+      "level": 4,
+      "type": "ability",
+      "recallCost": 1,
+      "effect": "Mark a Stress to boost off a willing ally within Close range, vault into the air on mag-boots or a thruster pulse, and perform an aerial attack against a target within Far range. You have advantage on the attack, add a d10 to the damage roll, and end your move within Melee range of the target."
+    },
+    {
+      "id": "vector-redirect",
+      "domain": "vector",
+      "name": "Redirect",
+      "was": null,
+      "level": 4,
+      "type": "ability",
+      "recallCost": 1,
+      "effect": "When an attack made against you from beyond Melee range fails, roll a number of d6s equal to your Proficiency. If any roll a 6, you can mark a Stress to redirect the attack to damage an adversary within Very Close range instead."
+    },
+    {
+      "id": "vector-know-thy-enemy",
+      "domain": "vector",
+      "name": "Know Thy Enemy",
+      "was": null,
+      "level": 5,
+      "type": "ability",
+      "recallCost": 1,
+      "effect": "When observing a creature, you can make an Instinct Roll against them. On a success, spend a Signal and ask the GM for one set of information: unmarked Hit Points and Stress; Difficulty and damage thresholds; tactics and standard attack damage dice; features and Experiences. Additionally, on a success, you can mark a Stress to remove a Static from the GM's Static pool."
+    },
+    {
+      "id": "vector-signature-move",
+      "domain": "vector",
+      "name": "Signature Move",
+      "was": null,
+      "level": 5,
+      "type": "ability",
+      "recallCost": 1,
+      "effect": "Name and describe your signature combat move. Once per rest, when you perform this signature move as part of an action you're taking, you can roll a d20 as your Signal Die. On a success, clear a Stress."
+    },
+    {
+      "id": "vector-rapid-riposte",
+      "domain": "vector",
+      "name": "Rapid Riposte",
+      "was": null,
+      "level": 6,
+      "type": "ability",
+      "recallCost": 0,
+      "effect": "When an attack made against you from within Melee range fails, you can mark a Stress and seize the opportunity to deal the weapon damage of one of your active weapons to the attacker."
+    },
+    {
+      "id": "vector-recovery",
+      "domain": "vector",
+      "name": "Recovery",
+      "was": null,
+      "level": 6,
+      "type": "ability",
+      "recallCost": 1,
+      "effect": "During a short rest, you can choose a long rest downtime move. You can spend a Signal to let an ally do the same."
+    },
+    {
+      "id": "vector-vector-touched",
+      "domain": "vector",
+      "name": "Vector-Touched",
+      "was": "Bone-Touched",
+      "level": 7,
+      "type": "ability",
+      "recallCost": 1,
+      "effect": "When 4 or more of the domain cards in your loadout are from the Vector domain, gain the following benefits: +1 bonus to Agility; once per rest, you can spend 3 Signal to cause an attack that succeeded against you to fail instead."
+    },
+    {
+      "id": "vector-cruel-precision",
+      "domain": "vector",
+      "name": "Cruel Precision",
+      "was": null,
+      "level": 7,
+      "type": "ability",
+      "recallCost": 1,
+      "effect": "When you make a successful attack with a weapon, gain a bonus to your damage roll equal to either your Finesse or Agility."
+    },
+    {
+      "id": "vector-breaking-blow",
+      "domain": "vector",
+      "name": "Breaking Blow",
+      "was": null,
+      "level": 8,
+      "type": "ability",
+      "recallCost": 3,
+      "effect": "When you make a successful attack, you can mark a Stress to make the next successful attack against that same target deal an extra 2d12 damage."
+    },
+    {
+      "id": "vector-wrangle",
+      "domain": "vector",
+      "name": "Wrangle",
+      "was": null,
+      "level": 8,
+      "type": "ability",
+      "recallCost": 1,
+      "effect": "Make an Agility Roll against all targets within Close range. Spend a Signal to move targets you succeeded against, and any willing allies within Close range, to another point within Close range."
+    },
+    {
+      "id": "vector-on-the-brink",
+      "domain": "vector",
+      "name": "On the Brink",
+      "was": null,
+      "level": 9,
+      "type": "ability",
+      "recallCost": 1,
+      "effect": "When you have 2 or fewer Hit Points unmarked, you don't take Minor damage."
+    },
+    {
+      "id": "vector-splintering-strike",
+      "domain": "vector",
+      "name": "Splintering Strike",
+      "was": null,
+      "level": 9,
+      "type": "ability",
+      "recallCost": 3,
+      "effect": "Spend a Signal and make an attack against all adversaries within your weapon's range. Once per long rest, on a success against any targets, roll your weapon's damage and distribute that damage however you wish between the targets you succeeded against. Before you deal damage to each target, roll an additional damage die and add its result to the damage you deal to them."
+    },
+    {
+      "id": "vector-deathrun",
+      "domain": "vector",
+      "name": "Deathrun",
+      "was": null,
+      "level": 10,
+      "type": "ability",
+      "recallCost": 1,
+      "effect": "Spend 3 Signal to run a straight path through the battlefield to a point within Far range, making an attack against all adversaries within your weapon's range along that path. Choose the order in which you deal damage to the targets you succeeded against. For the first, roll your weapon damage with a +1 bonus to your Proficiency. Then remove a die from your damage roll and deal the remaining damage to the next target. Continue until you have no more damage dice or adversaries. You can't target the same adversary more than once per attack."
+    },
+    {
+      "id": "vector-swift-step",
+      "domain": "vector",
+      "name": "Swift Step",
+      "was": null,
+      "level": 10,
+      "type": "ability",
+      "recallCost": 2,
+      "effect": "When an attack made against you fails, clear a Stress. If you can't clear a Stress, gain a Signal."
+    },
+    {
+      "id": "grid-archive-of-ava",
+      "domain": "grid",
+      "name": "Archive of Ava",
+      "was": "Book of Ava",
+      "level": 1,
+      "type": "archive",
+      "recallCost": 2,
+      "effect": "Kinetic Bolt (was Power Push): Make a Channel Roll against a target within Melee range. On a success, they're knocked back to Far range and take d10+2 energy damage using your Proficiency.\nTava's Lattice (was Tava's Armor): Spend a Signal to give a target you can touch a +1 bonus to their Armor Score until their next rest or you cast Tava's Lattice again.\nCryo Spike (was Ice Spike): Make a Channel Roll (12) to summon a large cryo spike within Far range. If used as a weapon, make the Channel Roll against the target's Difficulty instead. On a success, deal d6 physical damage using your Proficiency."
+    },
+    {
+      "id": "grid-archive-of-illiat",
+      "domain": "grid",
+      "name": "Archive of Illiat",
+      "was": "Book of Illiat",
+      "level": 1,
+      "type": "archive",
+      "recallCost": 2,
+      "effect": "Lull Routine (was Slumber): Make a Channel Roll against a target within Very Close range. On a success, they're Asleep until they take damage or the GM spends a Static on their turn to clear this condition.\nData Salvo (was Arcane Barrage): Once per rest, spend any number of Signal and fire data projectiles at a target within Close range. Roll a number of d6s equal to the Signal spent and deal that much energy damage.\nNeural Uplink (was Telepathy): Spend a Signal to open an encrypted line of mental communication with one target you can see until your next rest or you cast Neural Uplink again."
+    },
+    {
+      "id": "grid-archive-of-tyfar",
+      "domain": "grid",
+      "name": "Archive of Tyfar",
+      "was": "Book of Tyfar",
+      "level": 1,
+      "type": "archive",
+      "recallCost": 2,
+      "effect": "Plasma Arc (was Wild Flame): Make a Channel Roll against up to three adversaries within Melee range. Targets you succeed against take 2d6 energy damage and must mark a Stress.\nDrone Hand (was Magic Hand): You remotely deploy a manipulator drone with the same size and strength as your own within Far range.\nParticle Cloud (was Mysterious Mist): Make a Channel Roll (13) to release a temporary thick cloud of particulate within Very Close range that heavily obscures the area."
+    },
+    {
+      "id": "grid-archive-of-vagras",
+      "domain": "grid",
+      "name": "Archive of Vagras",
+      "was": "Book of Vagras",
+      "level": 1,
+      "type": "archive",
+      "recallCost": 2,
+      "effect": "Cipher Lock (was Runic Lock): Make a Channel Roll (15) on an object you're touching that can close. Once per rest on a success, encrypt it so only creatures of your choice can open it.\nFold Door (was Arcane Door): When you have no adversaries within Close range, make a Channel Roll (13). On a success, spend a Signal to open a folded-space portal to a point within Far range you can see. It closes once a creature has passed through.\nScan Pulse (was Reveal): Make a Channel Roll. If anything is concealed by cloaking or signal-baffling tech within Close range, it is revealed."
+    },
+    {
+      "id": "grid-archive-of-sitil",
+      "domain": "grid",
+      "name": "Archive of Sitil",
+      "was": "Book of Sitil",
+      "level": 2,
+      "type": "archive",
+      "recallCost": 2,
+      "effect": "Holoskin (was Adjust Appearance): Project a holographic overlay across your appearance and clothing to avoid recognition.\nEcho Protocol (was Parallela): Spend 2 Signal to cast on yourself or an ally within Close range. The next time the target makes an attack, they can hit an additional target within range that their attack roll would succeed against.\nHologram (was Illusion): Make a Channel Roll (14). On a success, project a temporary visual hologram within Close range that lasts as long as you maintain focus."
+    },
+    {
+      "id": "grid-archive-of-korvas",
+      "domain": "grid",
+      "name": "Archive of Korvas",
+      "was": "Book of Korvas",
+      "level": 3,
+      "type": "archive",
+      "recallCost": 2,
+      "effect": "Antigrav Lift (was Levitation): Make a Channel Roll to temporarily lift a target you can see and move them within Close range of their original position.\nMemory Scrub (was Recant): Spend a Signal to force a target within Melee range to make a Reaction Roll (15). On a failure, they forget the last minute of your conversation.\nProximity Field (was Rune Circle): Mark a Stress to deploy a temporary mine field where you stand. Adversaries within Melee range, or who enter it, take 2d12+4 energy damage and are knocked back to Very Close range."
+    },
+    {
+      "id": "grid-archive-of-norai",
+      "domain": "grid",
+      "name": "Archive of Norai",
+      "was": "Book of Norai",
+      "level": 3,
+      "type": "archive",
+      "recallCost": 2,
+      "effect": "Grav Tether (was Mystic Tether): Make a Channel Roll against a target within Far range. On a success, they're temporarily Restrained and must mark a Stress. Flying creatures are grounded and Restrained.\nThermite Round (was Fireball): Make a Channel Roll against a target within Far range. On a success, hurl an explosive payload. The target and all creatures within Very Close range must make a Reaction Roll (13). Targets who fail take d20+5 energy damage using your Proficiency. Targets who succeed take half damage."
+    },
+    {
+      "id": "grid-archive-of-exota",
+      "domain": "grid",
+      "name": "Archive of Exota",
+      "was": "Book of Exota",
+      "level": 4,
+      "type": "archive",
+      "recallCost": 3,
+      "effect": "Override Protocol (was Repudiate): Interrupt a program, code-effect, or system intrusion with a reaction roll using your Channel trait. Once per rest on a success, the effect stops and consequences are avoided.\nCreate Construct: Spend a Signal to assemble scrap into an animated drone that obeys basic commands. Make a Channel Roll to command it. It shares your Evasion and traits; its attacks deal 2d10+3 physical damage. You can only maintain one drone at a time."
+    },
+    {
+      "id": "grid-archive-of-grynn",
+      "domain": "grid",
+      "name": "Archive of Grynn",
+      "was": "Book of Grynn",
+      "level": 4,
+      "type": "archive",
+      "recallCost": 2,
+      "effect": "Counter Routine (was Arcane Deflection): Once per long rest, spend a Signal to negate the damage of an attack targeting you or an ally within Very Close range.\nStasis Lock (was Time Lock): Make a Channel Roll against an object within Far range. That object freezes in time and space until your next rest.\nPlasma Wall (was Wall of Flame): Make a Channel Roll (15). On a success, deploy a temporary wall of containment-grade plasma between two points within Far range. Anything that passes through takes 4d10+3 energy damage."
+    },
+    {
+      "id": "grid-hard-light-barrier",
+      "domain": "grid",
+      "name": "Hard Light Barrier",
+      "was": "Manifest Wall",
+      "level": 5,
+      "type": "spell",
+      "recallCost": 2,
+      "effect": "Make a Channel Roll (15). Once per rest on a success, spend a Signal to project a temporary hard-light barrier between two points within Far range (up to 50 feet high, any angle). Creatures or objects in its path are shunted to a side of your choice. The barrier stays up until your next rest or you cast Hard Light Barrier again."
+    },
+    {
+      "id": "grid-beacon-jump",
+      "domain": "grid",
+      "name": "Beacon Jump",
+      "was": "Teleport",
+      "level": 5,
+      "type": "spell",
+      "recallCost": 2,
+      "effect": "Once per long rest, execute a short-range micro-jump for yourself and any number of willing targets within Close range to a place you've been before. Make a Channel Roll (16) with a bonus based on familiarity (+3 very well, +1 frequently, 0 infrequently, −2 once). On a success, you arrive where intended; on a failure, you arrive off course."
+    },
+    {
+      "id": "grid-exile-protocol",
+      "domain": "grid",
+      "name": "Exile Protocol",
+      "was": "Banish",
+      "level": 6,
+      "type": "spell",
+      "recallCost": 2,
+      "effect": "Make a Channel Roll against a target within Close range. On a success, roll d20s equal to your Channel trait. The target must make a reaction roll with Difficulty equal to your highest result. On a success, they mark a Stress but aren't exiled. Once per rest on a failure, they are exiled from this dimension. When the PCs roll with Static, the Difficulty gains −1 and the target makes another reaction roll to return."
+    },
+    {
+      "id": "grid-vengeance-tag",
+      "domain": "grid",
+      "name": "Vengeance Tag",
+      "was": "Sigil of Retribution",
+      "level": 6,
+      "type": "spell",
+      "recallCost": 2,
+      "effect": "Tag an adversary within Close range. When the marked adversary deals damage to you or your allies, place a d8 on this card (up to your level). When you successfully attack the marked adversary, roll the dice on this card and add the total to your damage roll, then clear the dice. Ends when the adversary is defeated or you cast Vengeance Tag again."
+    },
+    {
+      "id": "grid-archive-of-homet",
+      "domain": "grid",
+      "name": "Archive of Homet",
+      "was": "Book of Homet",
+      "level": 7,
+      "type": "archive",
+      "recallCost": 0,
+      "effect": "Pass Through: Make a Channel Roll (13). Once per rest on a success, you and all creatures touching you can phase through a wall or door within Close range.\nDrift Gate (was Plane Gate): Make a Channel Roll (14). Once per long rest on a success, open a gateway to a location in another dimension or void layer you've been to before. Lasts until your next rest."
+    },
+    {
+      "id": "grid-grid-touched",
+      "domain": "grid",
+      "name": "Grid-Touched",
+      "was": "Codex-Touched",
+      "level": 7,
+      "type": "ability",
+      "recallCost": 2,
+      "effect": "When 4 or more of the domain cards in your loadout are from the Grid domain: you can mark a Stress to add your Proficiency to a Channel Roll; once per rest, replace this card with any card from your vault without paying its Recall Cost."
+    },
+    {
+      "id": "grid-archive-of-vyola",
+      "domain": "grid",
+      "name": "Archive of Vyola",
+      "was": "Book of Vyola",
+      "level": 8,
+      "type": "archive",
+      "recallCost": 2,
+      "effect": "Memory Probe (was Memory Delve): Make a Channel Roll against a target within Far range. On a success, jack into their neural buffer and ask the GM a question about their memories.\nShared Clarity: Once per long rest, spend a Signal to network two willing creatures. When one would mark Stress, they choose who marks it. Lasts until their next rest."
+    },
+    {
+      "id": "grid-safe-haven",
+      "domain": "grid",
+      "name": "Safe Haven",
+      "was": null,
+      "level": 8,
+      "type": "spell",
+      "recallCost": 3,
+      "effect": "When you have a few minutes of calm, spend 2 Signal to summon your Safe Haven—a large folded-space refuge. A sealed doorway appears within Close range; only creatures of your choice can enter. Once inside, you can make the entrance invisible. When you take a rest within your own Safe Haven, you can choose an additional downtime move."
+    },
+    {
+      "id": "grid-archive-of-ronin",
+      "domain": "grid",
+      "name": "Archive of Ronin",
+      "was": "Book of Ronin",
+      "level": 9,
+      "type": "archive",
+      "recallCost": 4,
+      "effect": "Transform: Make a Channel Roll (15). On a success, project a hard-light morph, taking the shape of an inanimate object no larger than twice your normal size until you take damage.\nCorruption Code (was Eternal Enervation): Once per long rest, make a Channel Roll against a target within Close range. On a success, they become permanently Vulnerable and can't clear it by any means."
+    },
+    {
+      "id": "grid-deletion-wave",
+      "domain": "grid",
+      "name": "Deletion Wave",
+      "was": "Disintegration Wave",
+      "level": 9,
+      "type": "spell",
+      "recallCost": 4,
+      "effect": "Make a Channel Roll (18). Once per long rest on a success, the GM tells you which adversaries within Far range have Difficulty 18 or lower. Mark a Stress for each one you wish to hit. They are deleted from existence and can't come back by any means."
+    },
+    {
+      "id": "grid-archive-of-yarrow",
+      "domain": "grid",
+      "name": "Archive of Yarrow",
+      "was": "Book of Yarrow",
+      "level": 10,
+      "type": "archive",
+      "recallCost": 2,
+      "effect": "Chrono Jam (was Timejammer): Make a Channel Roll (18). On a success, time temporarily slows to a halt for everyone within Far range except you until you make an action roll targeting another creature.\nNull Skin (was Magic Immunity): Spend 5 Signal to become immune to energy damage until your next rest."
+    },
+    {
+      "id": "grid-network-union",
+      "domain": "grid",
+      "name": "Network Union",
+      "was": "Transcendent Union",
+      "level": 10,
+      "type": "spell",
+      "recallCost": 1,
+      "effect": "Once per long rest, spend 5 Signal to neural-link two or more willing creatures. Until your next rest, when a connected creature would mark Stress or Hit Points, the connected creatures can choose who marks it."
+    },
+    {
+      "id": "sable-deft-deceiver",
+      "domain": "sable",
+      "name": "Deft Deceiver",
+      "was": null,
+      "level": 1,
+      "type": "ability",
+      "recallCost": 0,
+      "effect": "Spend a Signal to gain advantage on a roll to deceive or trick someone into believing a lie you tell them."
+    },
+    {
+      "id": "sable-enrapture",
+      "domain": "sable",
+      "name": "Enrapture",
+      "was": null,
+      "level": 1,
+      "type": "spell",
+      "recallCost": 0,
+      "effect": "Make a Channel Roll against a target within Close range. On a success, they become temporarily Enraptured—their attention fixed on you. Once per rest on a success, you can mark a Stress to force the Enraptured target to mark a Stress as well."
+    },
+    {
+      "id": "sable-inspirational-words",
+      "domain": "sable",
+      "name": "Inspirational Words",
+      "was": null,
+      "level": 1,
+      "type": "ability",
+      "recallCost": 1,
+      "effect": "After a long rest, place tokens equal to your Presence on this card. When you speak with an ally, spend a token to let them clear a Stress, clear a Hit Point, or gain a Signal. Clear unspent tokens on a long rest."
+    },
+    {
+      "id": "sable-tell-no-lies",
+      "domain": "sable",
+      "name": "Tell No Lies",
+      "was": null,
+      "level": 2,
+      "type": "spell",
+      "recallCost": 1,
+      "effect": "Make a Channel Roll against a target within Very Close range. On a success, they can't lie to you while within Close range but aren't compelled to speak. If they refuse to answer a question, they must mark a Stress and the effect ends."
+    },
+    {
+      "id": "sable-troublemaker",
+      "domain": "sable",
+      "name": "Troublemaker",
+      "was": null,
+      "level": 2,
+      "type": "ability",
+      "recallCost": 2,
+      "effect": "When you taunt or provoke a target within Far range, make a Presence Roll against them. Once per rest on a success, roll d4s equal to your Proficiency. The target must mark Stress equal to the highest result."
+    },
+    {
+      "id": "sable-hypnotic-shimmer",
+      "domain": "sable",
+      "name": "Hypnotic Shimmer",
+      "was": null,
+      "level": 3,
+      "type": "spell",
+      "recallCost": 1,
+      "effect": "Make a Channel Roll against all adversaries in front of you within Close range. Once per rest on a success, create flashing lights that temporarily Stun targets you succeed against and force them to mark a Stress. While Stunned, they can't use reactions or take other actions until they clear the condition."
+    },
+    {
+      "id": "sable-invisibility",
+      "domain": "sable",
+      "name": "Invisibility",
+      "was": null,
+      "level": 3,
+      "type": "spell",
+      "recallCost": 1,
+      "effect": "Make a Channel Roll (10). On a success, mark a Stress and choose yourself or an ally within Melee range to become Invisible. Place tokens equal to your Channel trait on this card. When the Invisible creature takes an action, spend a token. After the last token is spent, the effect ends. You can only hold Invisibility on one creature at a time."
+    },
+    {
+      "id": "sable-soothing-speech",
+      "domain": "sable",
+      "name": "Soothing Speech",
+      "was": null,
+      "level": 4,
+      "type": "ability",
+      "recallCost": 1,
+      "effect": "During a short rest, when you Tend to Wounds on another character, clear an additional Hit Point on them and also clear 2 Hit Points on yourself."
+    },
+    {
+      "id": "sable-through-your-eyes",
+      "domain": "sable",
+      "name": "Through Your Eyes",
+      "was": null,
+      "level": 4,
+      "type": "spell",
+      "recallCost": 1,
+      "effect": "Choose a target within Very Far range. You can see through their eyes and hear through their ears until you use another Channel ability or your next rest."
+    },
+    {
+      "id": "sable-thought-delver",
+      "domain": "sable",
+      "name": "Thought Delver",
+      "was": null,
+      "level": 5,
+      "type": "spell",
+      "recallCost": 2,
+      "effect": "Spend a Signal to read vague surface thoughts of a target within Far range. Make a Channel Roll to delve for deeper thoughts. On a roll with Static, the target might become aware you're reading them."
+    },
+    {
+      "id": "sable-words-of-discord",
+      "domain": "sable",
+      "name": "Words of Discord",
+      "was": null,
+      "level": 5,
+      "type": "spell",
+      "recallCost": 1,
+      "effect": "Whisper words of discord to an adversary within Melee range and make a Channel Roll (13). On a success, the target must mark a Stress and attack another adversary instead of you or your allies. The next time you use this on them, gain −5 to the Channel Roll."
+    },
+    {
+      "id": "sable-never-upstaged",
+      "domain": "sable",
+      "name": "Never Upstaged",
+      "was": null,
+      "level": 6,
+      "type": "ability",
+      "recallCost": 2,
+      "effect": "When you mark 1 or more Hit Points from an attack, you can mark a Stress to place tokens equal to the Hit Points marked on this card. On your next successful attack, gain +5 to your damage roll per token, then clear all tokens."
+    },
+    {
+      "id": "sable-share-the-burden",
+      "domain": "sable",
+      "name": "Share the Burden",
+      "was": null,
+      "level": 6,
+      "type": "spell",
+      "recallCost": 0,
+      "effect": "Once per rest, take on Stress from a willing creature within Melee range. Transfer any number of their marked Stress to you, then gain a Signal for each Stress transferred."
+    },
+    {
+      "id": "sable-endless-charisma",
+      "domain": "sable",
+      "name": "Endless Charisma",
+      "was": null,
+      "level": 7,
+      "type": "ability",
+      "recallCost": 2,
+      "effect": "After you make an action roll to persuade, lie, or gain favor, you can spend a Signal to reroll the Signal or Static Die."
+    },
+    {
+      "id": "sable-sable-touched",
+      "domain": "sable",
+      "name": "Sable-Touched",
+      "was": "Grace-Touched",
+      "level": 7,
+      "type": "ability",
+      "recallCost": 2,
+      "effect": "When 4 or more domain cards in your loadout are from Sable: you can mark an Armor Slot instead of marking a Stress; when you would force a target to mark Hit Points, you can choose to force them to mark that many Stress instead."
+    },
+    {
+      "id": "sable-ghost-signal",
+      "domain": "sable",
+      "name": "Ghost Signal",
+      "was": "Astral Projection",
+      "level": 8,
+      "type": "spell",
+      "recallCost": 0,
+      "effect": "Once per long rest, mark a Stress to broadcast a projected copy of yourself anywhere you've been before. You can see, hear, and affect the world as though you were there until your next rest or the projection takes damage."
+    },
+    {
+      "id": "sable-mass-enrapture",
+      "domain": "sable",
+      "name": "Mass Enrapture",
+      "was": null,
+      "level": 8,
+      "type": "spell",
+      "recallCost": 3,
+      "effect": "Make a Channel Roll against all targets within Far range. Targets you succeed against become temporarily Enraptured. Mark a Stress to force all Enraptured targets to mark a Stress, ending this spell."
+    },
+    {
+      "id": "sable-copycat",
+      "domain": "sable",
+      "name": "Copycat",
+      "was": null,
+      "level": 9,
+      "type": "spell",
+      "recallCost": 3,
+      "effect": "Once per long rest, mimic a level 8 or lower domain card from another player's loadout. Spend Signal equal to half the card's level to gain access until your next rest or they vault the card."
+    },
+    {
+      "id": "sable-master-of-the-craft",
+      "domain": "sable",
+      "name": "Master of the Craft",
+      "was": null,
+      "level": 9,
+      "type": "ability",
+      "recallCost": 0,
+      "effect": "Gain a permanent +2 bonus to two Experiences or a permanent +3 bonus to one Experience. Then place this card in your vault permanently."
+    },
+    {
+      "id": "sable-encore",
+      "domain": "sable",
+      "name": "Encore",
+      "was": null,
+      "level": 10,
+      "type": "spell",
+      "recallCost": 1,
+      "effect": "When an ally within Close range deals damage to an adversary, make a Channel Roll against that target. On a success, you deal the same damage your ally just dealt. On success with Static, place this card in your vault."
+    },
+    {
+      "id": "sable-notorious",
+      "domain": "sable",
+      "name": "Notorious",
+      "was": null,
+      "level": 10,
+      "type": "ability",
+      "recallCost": 0,
+      "effect": "When you leverage your notoriety, mark a Stress before you roll to gain +10 to the result. Food and drinks are always free; everything else is reduced by one bag of credits (minimum a handful). This card doesn't count against your loadout maximum of 5 and can't be placed in your vault."
+    },
+    {
+      "id": "shadow-pick-and-pull",
+      "domain": "shadow",
+      "name": "Pick and Pull",
+      "was": null,
+      "level": 1,
+      "type": "ability",
+      "recallCost": 0,
+      "effect": "You have advantage on action rolls to pick standard locks, disarm standard traps, or steal items from a target."
+    },
+    {
+      "id": "shadow-rain-of-blades",
+      "domain": "shadow",
+      "name": "Rain of Blades",
+      "was": null,
+      "level": 1,
+      "type": "spell",
+      "recallCost": 1,
+      "effect": "Spend a Signal to make a Channel Roll and deploy razor flechettes at all targets within Very Close range. Targets you succeed against take d8+2 energy damage using your Proficiency. Vulnerable targets take an extra 1d8."
+    },
+    {
+      "id": "shadow-uncanny-disguise",
+      "domain": "shadow",
+      "name": "Uncanny Disguise",
+      "was": null,
+      "level": 1,
+      "type": "spell",
+      "recallCost": 0,
+      "effect": "When you have a few minutes to prepare, mark a Stress to don the facade of any humanoid you can picture clearly. Place tokens equal to your Channel trait on this card. When you take an action while disguised, spend a token. After the last token is spent, the disguise drops."
+    },
+    {
+      "id": "shadow-shadow-specter",
+      "domain": "shadow",
+      "name": "Shadow Specter",
+      "was": "Midnight Spirit",
+      "level": 2,
+      "type": "spell",
+      "recallCost": 1,
+      "effect": "Spend a Signal to project a shadow specter that can move or carry things until your next rest, or attack an adversary within Very Far range (Channel Roll; on success, deal d6s equal to your Channel trait in energy damage, then the specter dissipates). Only one specter at a time."
+    },
+    {
+      "id": "shadow-shadowbind",
+      "domain": "shadow",
+      "name": "Shadowbind",
+      "was": null,
+      "level": 2,
+      "type": "spell",
+      "recallCost": 0,
+      "effect": "Make a Channel Roll against all adversaries within Very Close range. Targets you succeed against are temporarily Restrained as shadow binds them."
+    },
+    {
+      "id": "shadow-chokehold",
+      "domain": "shadow",
+      "name": "Chokehold",
+      "was": null,
+      "level": 3,
+      "type": "ability",
+      "recallCost": 0,
+      "effect": "When behind a creature about your size, mark a Stress to pull them into a chokehold, making them temporarily Vulnerable. Attacks against them deal an extra 2d6 damage."
+    },
+    {
+      "id": "shadow-veil-of-night",
+      "domain": "shadow",
+      "name": "Veil of Night",
+      "was": null,
+      "level": 3,
+      "type": "spell",
+      "recallCost": 1,
+      "effect": "Make a Channel Roll (13). On a success, create a temporary curtain of darkness between two points within Far range. Only you can see through it. You're Hidden to adversaries on the other side and have advantage on attacks through the darkness until you use another Channel ability."
+    },
+    {
+      "id": "shadow-stealth-expertise",
+      "domain": "shadow",
+      "name": "Stealth Expertise",
+      "was": null,
+      "level": 4,
+      "type": "ability",
+      "recallCost": 0,
+      "effect": "When you fail with Static while moving unnoticed, mark a Stress to roll with Signal instead. You can do the same for an ally within Close range."
+    },
+    {
+      "id": "shadow-painted-target",
+      "domain": "shadow",
+      "name": "Painted Target",
+      "was": "Glyph of Nightfall",
+      "level": 4,
+      "type": "spell",
+      "recallCost": 1,
+      "effect": "Make a Channel Roll against a target within Very Close range. On a success, spend a Signal to burn a vulnerability marker onto them, temporarily reducing their Difficulty by your Knowledge (minimum 1)."
+    },
+    {
+      "id": "shadow-hush",
+      "domain": "shadow",
+      "name": "Hush",
+      "was": null,
+      "level": 5,
+      "type": "spell",
+      "recallCost": 1,
+      "effect": "Make a Channel Roll against a target within Close range. On a success, spend a Signal to project suppressive interference in Very Close range around them that follows them. The target and area are Silenced until cleared. While Silenced, they can't make noise or use Channel abilities."
+    },
+    {
+      "id": "shadow-phantom-retreat",
+      "domain": "shadow",
+      "name": "Phantom Retreat",
+      "was": null,
+      "level": 5,
+      "type": "spell",
+      "recallCost": 2,
+      "effect": "Spend a Signal to activate Phantom Retreat where you're standing. Spend another Signal before your next rest to disappear and reappear where you activated it."
+    },
+    {
+      "id": "shadow-dark-whispers",
+      "domain": "shadow",
+      "name": "Dark Whispers",
+      "was": null,
+      "level": 6,
+      "type": "spell",
+      "recallCost": 0,
+      "effect": "Speak into the mind of anyone you've made physical contact with. Mark a Stress and make a Channel Roll to ask the GM: where are they, what are they doing, what are they afraid of, or what do they cherish most."
+    },
+    {
+      "id": "shadow-mass-disguise",
+      "domain": "shadow",
+      "name": "Mass Disguise",
+      "was": null,
+      "level": 6,
+      "type": "spell",
+      "recallCost": 0,
+      "effect": "With a few minutes of silence, mark a Stress to disguise all willing creatures within Close range. Activate a Countdown (8); when it triggers, the disguise drops."
+    },
+    {
+      "id": "shadow-shadow-touched",
+      "domain": "shadow",
+      "name": "Shadow-Touched",
+      "was": "Midnight-Touched",
+      "level": 7,
+      "type": "ability",
+      "recallCost": 2,
+      "effect": "When 4 or more domain cards are from Shadow: once per rest when you have 0 Signal and the GM would gain Static, gain a Signal instead; on a successful attack, mark a Stress to add your Static Die to damage."
+    },
+    {
+      "id": "shadow-vanishing-dodge",
+      "domain": "shadow",
+      "name": "Vanishing Dodge",
+      "was": null,
+      "level": 7,
+      "type": "spell",
+      "recallCost": 1,
+      "effect": "When an attack that would deal physical damage fails against you, spend a Signal to become Hidden and teleport within Close range of the attacker. Remain Hidden until your next action roll."
+    },
+    {
+      "id": "shadow-shadowhunter",
+      "domain": "shadow",
+      "name": "Shadowhunter",
+      "was": null,
+      "level": 8,
+      "type": "ability",
+      "recallCost": 2,
+      "effect": "While in low light or darkness, gain +1 Evasion and make attack rolls with advantage."
+    },
+    {
+      "id": "shadow-surge-cache",
+      "domain": "shadow",
+      "name": "Surge Cache",
+      "was": "Spellcharge",
+      "level": 8,
+      "type": "spell",
+      "recallCost": 1,
+      "effect": "When you take energy damage, place tokens equal to Hit Points marked (up to your Channel trait). On a successful attack, spend tokens to add a d6 per token to damage."
+    },
+    {
+      "id": "shadow-night-terror",
+      "domain": "shadow",
+      "name": "Night Terror",
+      "was": null,
+      "level": 9,
+      "type": "spell",
+      "recallCost": 2,
+      "effect": "Once per long rest, targets within Very Close range must succeed on Reaction Roll (16) or become temporarily Horrified and Vulnerable. Steal Static from the GM equal to Horrified targets (up to the pool). Roll d6s equal to stolen Static and deal total damage to each Horrified target."
+    },
+    {
+      "id": "shadow-twilight-toll",
+      "domain": "shadow",
+      "name": "Twilight Toll",
+      "was": null,
+      "level": 9,
+      "type": "ability",
+      "recallCost": 1,
+      "effect": "Choose a target within Far range. On successful non-damage action rolls against them, place a token. When you deal damage, spend tokens to add d12 per token. Only one target at a time."
+    },
+    {
+      "id": "shadow-eclipse",
+      "domain": "shadow",
+      "name": "Eclipse",
+      "was": null,
+      "level": 10,
+      "type": "spell",
+      "recallCost": 2,
+      "effect": "Make a Channel Roll (16). Once per long rest on a success, plunge Far range into darkness only you and allies see through. Attacks against you or allies have disadvantage. When you or an ally succeeds with Signal against an adversary in the shadow, they mark a Stress. Lasts until the GM spends Static or you take Severe damage."
+    },
+    {
+      "id": "shadow-specter-of-the-dark",
+      "domain": "shadow",
+      "name": "Specter of the Dark",
+      "was": null,
+      "level": 10,
+      "type": "spell",
+      "recallCost": 1,
+      "effect": "Mark a Stress to become Spectral until you make an action roll targeting another creature. Immune to physical damage; can float and pass through solid objects."
+    },
+    {
+      "id": "cipher-gifted-tracker",
+      "domain": "cipher",
+      "name": "Gifted Tracker",
+      "was": null,
+      "level": 1,
+      "type": "ability",
+      "recallCost": 0,
+      "effect": "When tracking creatures, spend Signal to ask the GM questions (direction, how long ago, what they were doing, how many). When you encounter tracked creatures, gain +1 Evasion against them."
+    },
+    {
+      "id": "cipher-natures-tongue",
+      "domain": "cipher",
+      "name": "Nature's Tongue",
+      "was": null,
+      "level": 1,
+      "type": "ability",
+      "recallCost": 0,
+      "effect": "Make an Instinct Roll (12) to communicate with or read alien creatures. Before a Channel Roll in a biological or xenological environment, spend a Signal for +2."
+    },
+    {
+      "id": "cipher-vicious-entangle",
+      "domain": "cipher",
+      "name": "Vicious Entangle",
+      "was": null,
+      "level": 1,
+      "type": "spell",
+      "recallCost": 1,
+      "effect": "Make a Channel Roll against a target within Far range. On a success, biotech tendrils deal 1d8+1 physical damage and temporarily Restrain them. Spend a Signal to Restrain another adversary within Very Close range."
+    },
+    {
+      "id": "cipher-conjure-swarm",
+      "domain": "cipher",
+      "name": "Conjure Swarm",
+      "was": null,
+      "level": 2,
+      "type": "spell",
+      "recallCost": 1,
+      "effect": "Swarm Drones: Mark a Stress to release micro-drones; when you next take damage, reduce severity by one threshold (spend Signal to keep active).\nScatter Drones: Channel Roll against all adversaries within Close range; spend a Signal to deal 2d8+3 energy damage to targets you succeed against."
+    },
+    {
+      "id": "cipher-natural-familiar",
+      "domain": "cipher",
+      "name": "Natural Familiar",
+      "was": null,
+      "level": 2,
+      "type": "spell",
+      "recallCost": 1,
+      "effect": "Spend a Signal to summon a small xenoform companion until your next rest or it's attacked. Spend an additional Signal for a flying companion. Add d6 to damage against adversaries within Melee range of your familiar."
+    },
+    {
+      "id": "cipher-corrosive-projectile",
+      "domain": "cipher",
+      "name": "Corrosive Projectile",
+      "was": null,
+      "level": 3,
+      "type": "spell",
+      "recallCost": 1,
+      "effect": "Make a Channel Roll against a target within Far range. On a success, deal d6+4 energy damage. Mark 2+ Stress to make them permanently Corroded (−1 Difficulty per 2 Stress spent; stacks)."
+    },
+    {
+      "id": "cipher-bio-spire",
+      "domain": "cipher",
+      "name": "Bio Spire",
+      "was": "Towering Stalk",
+      "level": 3,
+      "type": "spell",
+      "recallCost": 1,
+      "effect": "Once per rest, trigger rapid-growth biological formation within Close range (up to Far height). Mark a Stress to attack: Channel Roll against adversaries within Close range; on success, lift and drop them for d8 physical damage using your Proficiency."
+    },
+    {
+      "id": "cipher-death-grip",
+      "domain": "cipher",
+      "name": "Death Grip",
+      "was": null,
+      "level": 4,
+      "type": "spell",
+      "recallCost": 1,
+      "effect": "Make a Channel Roll within Close range and choose: pull into Melee range; force 2 Stress; or adversaries between you and target take 3d6+2 physical on failed Reaction Roll (13). On success, Restrain the target."
+    },
+    {
+      "id": "cipher-healing-field",
+      "domain": "cipher",
+      "name": "Healing Field",
+      "was": null,
+      "level": 4,
+      "type": "spell",
+      "recallCost": 2,
+      "effect": "Once per long rest, deploy a biomedical nanite field within Close range. You and allies clear a Hit Point (spend 2 Signal to clear 2 Hit Points instead)."
+    },
+    {
+      "id": "cipher-quill-hide",
+      "domain": "cipher",
+      "name": "Quill Hide",
+      "was": "Thorn Skin",
+      "level": 5,
+      "type": "spell",
+      "recallCost": 1,
+      "effect": "Once per rest, spend a Signal and place tokens equal to your Channel trait. When you take damage, spend tokens to roll d6s and reduce damage by the total; deal that damage back if within Melee range. Clear tokens on rest."
+    },
+    {
+      "id": "cipher-wild-fortress",
+      "domain": "cipher",
+      "name": "Wild Fortress",
+      "was": null,
+      "level": 5,
+      "type": "spell",
+      "recallCost": 1,
+      "effect": "Make a Channel Roll (13). On a success, spend 2 Signal for a dome you and one ally can shelter in (can't attack or be targeted; attacks against the dome auto-succeed). Thresholds 15/30, lasts until 3 Hit Points marked on the card."
+    },
+    {
+      "id": "cipher-conjured-steeds",
+      "domain": "cipher",
+      "name": "Conjured Steeds",
+      "was": null,
+      "level": 6,
+      "type": "spell",
+      "recallCost": 0,
+      "effect": "Spend Signal to summon xenoform mounts until your next long rest or they take damage. Double land travel speed; move within Far range without rolling in danger. Riders: −2 attack, +2 damage."
+    },
+    {
+      "id": "cipher-forager",
+      "domain": "cipher",
+      "name": "Forager",
+      "was": null,
+      "level": 6,
+      "type": "ability",
+      "recallCost": 1,
+      "effect": "As an additional downtime move, roll d6 to scavenge a consumable (ration, relic, calibration tool, medstim, lucky component, or choose). Party can carry up to five foraged consumables."
+    },
+    {
+      "id": "cipher-cipher-touched",
+      "domain": "cipher",
+      "name": "Cipher-Touched",
+      "was": "Sage-Touched",
+      "level": 7,
+      "type": "ability",
+      "recallCost": 2,
+      "effect": "When 4+ Cipher cards in loadout: +2 Channel Rolls in biological, xenological, or constructed-systems environments; once per rest, double Agility or Instinct on a roll (before rolling)."
+    },
+    {
+      "id": "cipher-wild-surge",
+      "domain": "cipher",
+      "name": "Wild Surge",
+      "was": null,
+      "level": 7,
+      "type": "spell",
+      "recallCost": 2,
+      "effect": "Once per long rest, mark a Stress to enhance yourself. Place a d6 on this card (1 up). Add its value to every action roll; after each use, increase by 1. When it would exceed 6 or you rest, the form drops and you mark an additional Stress."
+    },
+    {
+      "id": "cipher-xeno-sprites",
+      "domain": "cipher",
+      "name": "Xeno Sprites",
+      "was": "Forest Sprites",
+      "level": 8,
+      "type": "spell",
+      "recallCost": 2,
+      "effect": "Make a Channel Roll (13). On a success, spend Signal to create constructs within Far range: allies gain +3 attack against adversaries near a construct; allies can mark an extra Armor Slot near a construct. Constructs vanish after granting a benefit or taking damage."
+    },
+    {
+      "id": "cipher-rejuvenation-barrier",
+      "domain": "cipher",
+      "name": "Rejuvenation Barrier",
+      "was": null,
+      "level": 8,
+      "type": "spell",
+      "recallCost": 1,
+      "effect": "Make a Channel Roll (15). Once per rest on a success, barrier at Very Close range; allies inside when cast clear 1d4 Hit Points and have resistance to outside physical damage. Barrier follows you."
+    },
+    {
+      "id": "cipher-cipher-resonance",
+      "domain": "cipher",
+      "name": "Cipher Resonance",
+      "was": "Fane of the Wilds",
+      "level": 9,
+      "type": "ability",
+      "recallCost": 2,
+      "effect": "After a long rest, place tokens equal to Cipher cards in loadout and vault. Spend tokens after Channel Rolls for +1 per token. Gain a token on critical Cipher spell success. Clear on long rest."
+    },
+    {
+      "id": "cipher-bio-dominion",
+      "domain": "cipher",
+      "name": "Bio Dominion",
+      "was": "Plant Dominion",
+      "level": 9,
+      "type": "spell",
+      "recallCost": 1,
+      "effect": "Make a Channel Roll (18). Once per long rest on a success, exert total control over the living biological environment within Far range."
+    },
+    {
+      "id": "cipher-force-of-nature",
+      "domain": "cipher",
+      "name": "Force of Nature",
+      "was": null,
+      "level": 10,
+      "type": "spell",
+      "recallCost": 2,
+      "effect": "Mark a Stress to merge with a massive biotech construct: +10 damage on successful attack or Channel Roll; absorb defeated creatures within Close range to clear an Armor Slot; can't be Restrained. Spend a Signal before each action roll or revert."
+    },
+    {
+      "id": "cipher-tempest",
+      "domain": "cipher",
+      "name": "Tempest",
+      "was": null,
+      "level": 10,
+      "type": "spell",
+      "recallCost": 2,
+      "effect": "Choose Blizzard (2d20+8 energy, Vulnerable), Hurricane (3d10+10 energy, wind blocks movement), or Sandstorm (5d6+9 energy, ranged attacks at disadvantage). Channel Roll against all targets within Far range until GM spends Static."
+    },
+    {
+      "id": "psionic-bolt-beacon",
+      "domain": "psionic",
+      "name": "Bolt Beacon",
+      "was": null,
+      "level": 1,
+      "type": "spell",
+      "recallCost": 1,
+      "effect": "Make a Channel Roll against a target within Far range. On a success, spend a Signal to deal d8+2 psionic damage using your Proficiency. The target becomes temporarily Vulnerable and is marked by visible psionic resonance."
+    },
+    {
+      "id": "psionic-mending-touch",
+      "domain": "psionic",
+      "name": "Mending Touch",
+      "was": null,
+      "level": 1,
+      "type": "spell",
+      "recallCost": 1,
+      "effect": "Spend 2 Signal to clear a Hit Point or Stress on a creature you focus on for a few minutes. Once per long rest, if you learn something new about them or reveal something about yourself, clear 2 Hit Points or 2 Stress instead."
+    },
+    {
+      "id": "psionic-reassurance",
+      "domain": "psionic",
+      "name": "Reassurance",
+      "was": null,
+      "level": 1,
+      "type": "ability",
+      "recallCost": 0,
+      "effect": "Once per rest, after an ally attempts an action roll but before consequences, offer support so they can reroll their dice."
+    },
+    {
+      "id": "psionic-final-words",
+      "domain": "psionic",
+      "name": "Final Words",
+      "was": null,
+      "level": 2,
+      "type": "spell",
+      "recallCost": 1,
+      "effect": "Read lingering neural impressions of the recently deceased. Channel Roll (13). On success with Signal, answer up to three questions; with Static, one question. Impressions answer truthfully but only what the subject knew in life."
+    },
+    {
+      "id": "psionic-healing-hands",
+      "domain": "psionic",
+      "name": "Healing Hands",
+      "was": null,
+      "level": 2,
+      "type": "spell",
+      "recallCost": 1,
+      "effect": "Make a Channel Roll (13) targeting another creature within Melee range. On a success, mark a Stress to clear 2 Hit Points or 2 Stress; on failure, mark a Stress to clear one. Can't heal the same target again until your next long rest."
+    },
+    {
+      "id": "psionic-second-wind",
+      "domain": "psionic",
+      "name": "Second Wind",
+      "was": null,
+      "level": 3,
+      "type": "ability",
+      "recallCost": 2,
+      "effect": "Once per rest, when you succeed on an attack, clear 3 Stress or a Hit Point. On success with Signal, also clear 3 Stress or a Hit Point on an ally within Close range."
+    },
+    {
+      "id": "psionic-voice-of-reason",
+      "domain": "psionic",
+      "name": "Voice of Reason",
+      "was": null,
+      "level": 3,
+      "type": "ability",
+      "recallCost": 1,
+      "effect": "Advantage on rolls to de-escalate violence or convince someone to follow your lead. When all Stress slots are marked, gain +1 Proficiency on damage rolls."
+    },
+    {
+      "id": "psionic-precognition",
+      "domain": "psionic",
+      "name": "Precognition",
+      "was": "Divination",
+      "level": 4,
+      "type": "spell",
+      "recallCost": 1,
+      "effect": "Once per long rest, spend 3 Signal to ask one yes-or-no question about the near future."
+    },
+    {
+      "id": "psionic-life-ward",
+      "domain": "psionic",
+      "name": "Life Ward",
+      "was": null,
+      "level": 4,
+      "type": "spell",
+      "recallCost": 1,
+      "effect": "Spend 3 Signal and mark an ally within Close range with a psionic sigil. When they would make a death move, they clear a Hit Point instead. Ends when it saves them, you mark another target, or you take a long rest."
+    },
+    {
+      "id": "psionic-shape-material",
+      "domain": "psionic",
+      "name": "Shape Material",
+      "was": null,
+      "level": 5,
+      "type": "spell",
+      "recallCost": 1,
+      "effect": "Spend a Signal to telekinetically shape material you're touching (stone, ice, metal, polymer) within Close range, no larger than you—for tools, doors, etc."
+    },
+    {
+      "id": "psionic-mind-strike",
+      "domain": "psionic",
+      "name": "Mind Strike",
+      "was": "Smite",
+      "level": 5,
+      "type": "spell",
+      "recallCost": 2,
+      "effect": "Once per rest, spend 3 Signal to charge a psionic strike. On your next successful weapon attack, double your damage roll. The attack deals psionic damage regardless of weapon type."
+    },
+    {
+      "id": "psionic-restoration",
+      "domain": "psionic",
+      "name": "Restoration",
+      "was": null,
+      "level": 6,
+      "type": "spell",
+      "recallCost": 2,
+      "effect": "After a long rest, place tokens equal to your Channel trait. Touch a creature and spend tokens to clear 2 Hit Points or 2 Stress per token, or clear Vulnerable/repair ailments (GM may require extra tokens)."
+    },
+    {
+      "id": "psionic-zone-of-protection",
+      "domain": "psionic",
+      "name": "Zone of Protection",
+      "was": null,
+      "level": 6,
+      "type": "spell",
+      "recallCost": 2,
+      "effect": "Make a Channel Roll (16). Once per long rest on a success, create a protection zone within Far range. Place a d6 (1 up) on this card; allies in the zone reduce damage by the die's value, then increase the die. Ends when the die would exceed 6."
+    },
+    {
+      "id": "psionic-healing-strike",
+      "domain": "psionic",
+      "name": "Healing Strike",
+      "was": null,
+      "level": 7,
+      "type": "spell",
+      "recallCost": 1,
+      "effect": "When you deal damage to an adversary, spend 2 Signal to clear a Hit Point on an ally within Close range."
+    },
+    {
+      "id": "psionic-psionic-touched",
+      "domain": "psionic",
+      "name": "Psionic-Touched",
+      "was": "Splendor-Touched",
+      "level": 7,
+      "type": "ability",
+      "recallCost": 2,
+      "effect": "When 4+ Psionic cards in loadout: +3 Severe damage threshold; once per long rest, when incoming damage would mark Hit Points, mark that much Stress or spend that much Signal instead."
+    },
+    {
+      "id": "psionic-shield-aura",
+      "domain": "psionic",
+      "name": "Shield Aura",
+      "was": null,
+      "level": 8,
+      "type": "spell",
+      "recallCost": 2,
+      "effect": "Mark a Stress to cast on a target within Very Close range. When they mark an Armor Slot, reduce attack severity by an additional threshold. Ends if they mark no Hit Points from an attack. Only one target at a time."
+    },
+    {
+      "id": "psionic-stunning-radiance",
+      "domain": "psionic",
+      "name": "Stunning Radiance",
+      "was": "Stunning Sunlight",
+      "level": 8,
+      "type": "spell",
+      "recallCost": 2,
+      "effect": "Channel Roll against adversaries in front of you within Far range. On a success, spend Signal to force targets to Reaction Roll (14). Fail: 4d20+5 psionic damage and Stunned. Succeed: 3d20+3 psionic damage."
+    },
+    {
+      "id": "psionic-overwhelming-aura",
+      "domain": "psionic",
+      "name": "Overwhelming Aura",
+      "was": null,
+      "level": 9,
+      "type": "spell",
+      "recallCost": 2,
+      "effect": "Make a Channel Roll (15). On a success, spend 2 Signal to make your Presence equal to your Channel trait until your next long rest. Adversaries must mark a Stress when they target you with an attack."
+    },
+    {
+      "id": "psionic-salvation-beam",
+      "domain": "psionic",
+      "name": "Salvation Beam",
+      "was": null,
+      "level": 9,
+      "type": "spell",
+      "recallCost": 2,
+      "effect": "Make a Channel Roll (16). On a success, mark Stress to clear Hit Points on allies in a line within Far range, divided however you like."
+    },
+    {
+      "id": "psionic-invigoration",
+      "domain": "psionic",
+      "name": "Invigoration",
+      "was": null,
+      "level": 10,
+      "type": "spell",
+      "recallCost": 3,
+      "effect": "When you or an ally within Close range has used a once-per-rest or once-per-session feature, spend Signal and roll d6s. On any 6, the feature can be used again."
+    },
+    {
+      "id": "psionic-resurrection",
+      "domain": "psionic",
+      "name": "Resurrection",
+      "was": null,
+      "level": 10,
+      "type": "spell",
+      "recallCost": 2,
+      "effect": "Make a Channel Roll (20). On a success, restore a creature dead no longer than 100 years. Roll d6; on 5 or lower, vault this card permanently. On failure, can't cast Resurrection again for a week."
+    },
+    {
+      "id": "tide-bare-bones",
+      "domain": "tide",
+      "name": "Bare Bones",
+      "was": null,
+      "level": 1,
+      "type": "ability",
+      "recallCost": 0,
+      "effect": "When you choose not to equip armor, base Armor Score is 3 + Strength and damage thresholds: Tier 1: 9/19; Tier 2: 11/24; Tier 3: 13/31; Tier 4: 15/38."
+    },
+    {
+      "id": "tide-forceful-push",
+      "domain": "tide",
+      "name": "Forceful Push",
+      "was": null,
+      "level": 1,
+      "type": "ability",
+      "recallCost": 0,
+      "effect": "Attack with primary weapon within Melee range. On success, deal damage and knock to Close range. On success with Signal, add d6 damage. Spend a Signal to make them temporarily Vulnerable."
+    },
+    {
+      "id": "tide-i-am-your-shield",
+      "domain": "tide",
+      "name": "I Am Your Shield",
+      "was": null,
+      "level": 1,
+      "type": "ability",
+      "recallCost": 1,
+      "effect": "When an ally within Very Close range would take damage, mark a Stress to become the target instead. You can mark any number of Armor Slots when taking that damage."
+    },
+    {
+      "id": "tide-body-basher",
+      "domain": "tide",
+      "name": "Body Basher",
+      "was": null,
+      "level": 2,
+      "type": "ability",
+      "recallCost": 1,
+      "effect": "On a successful Melee weapon attack, gain a bonus to damage equal to your Strength."
+    },
+    {
+      "id": "tide-bold-presence",
+      "domain": "tide",
+      "name": "Bold Presence",
+      "was": null,
+      "level": 2,
+      "type": "ability",
+      "recallCost": 0,
+      "effect": "When you make a Presence Roll, spend a Signal to add your Strength. Once per rest when you would gain a condition, describe how your bold presence helps and avoid the condition."
+    },
+    {
+      "id": "tide-critical-inspiration",
+      "domain": "tide",
+      "name": "Critical Inspiration",
+      "was": null,
+      "level": 3,
+      "type": "ability",
+      "recallCost": 1,
+      "effect": "Once per rest, when you critically succeed on an attack, all allies within Very Close range can clear a Stress or gain a Signal."
+    },
+    {
+      "id": "tide-lean-on-me",
+      "domain": "tide",
+      "name": "Lean On Me",
+      "was": null,
+      "level": 3,
+      "type": "ability",
+      "recallCost": 1,
+      "effect": "Once per long rest, when you console or inspire an ally who failed an action roll, you both clear 2 Stress."
+    },
+    {
+      "id": "tide-goad-them-on",
+      "domain": "tide",
+      "name": "Goad Them On",
+      "was": null,
+      "level": 4,
+      "type": "ability",
+      "recallCost": 1,
+      "effect": "Presence Roll against a target within Close range. On a success, they mark a Stress and must target you with their next attack (with disadvantage)."
+    },
+    {
+      "id": "tide-support-tank",
+      "domain": "tide",
+      "name": "Support Tank",
+      "was": null,
+      "level": 4,
+      "type": "ability",
+      "recallCost": 2,
+      "effect": "When an ally within Close range fails a roll, spend 2 Signal to let them reroll their Signal or Static Die."
+    },
+    {
+      "id": "tide-armorer",
+      "domain": "tide",
+      "name": "Armorer",
+      "was": null,
+      "level": 5,
+      "type": "ability",
+      "recallCost": 1,
+      "effect": "While wearing armor, gain +1 Armor Score. During a rest when you repair armor, allies also clear an Armor Slot."
+    },
+    {
+      "id": "tide-rousing-strike",
+      "domain": "tide",
+      "name": "Rousing Strike",
+      "was": null,
+      "level": 5,
+      "type": "ability",
+      "recallCost": 1,
+      "effect": "Once per rest, when you critically succeed on an attack, you and allies who can see or hear you clear a Hit Point or 1d4 Stress."
+    },
+    {
+      "id": "tide-inevitable",
+      "domain": "tide",
+      "name": "Inevitable",
+      "was": null,
+      "level": 6,
+      "type": "ability",
+      "recallCost": 1,
+      "effect": "When you fail an action roll, your next action roll has advantage."
+    },
+    {
+      "id": "tide-rise-up",
+      "domain": "tide",
+      "name": "Rise Up",
+      "was": null,
+      "level": 6,
+      "type": "ability",
+      "recallCost": 2,
+      "effect": "Gain a bonus to your Severe threshold equal to your Proficiency. When you mark 1 or more Hit Points from an attack, clear a Stress."
+    },
+    {
+      "id": "tide-shrug-it-off",
+      "domain": "tide",
+      "name": "Shrug It Off",
+      "was": null,
+      "level": 7,
+      "type": "ability",
+      "recallCost": 1,
+      "effect": "When you would take damage, mark a Stress to reduce severity by one threshold. Roll d6; on 3 or lower, place this card in your vault."
+    },
+    {
+      "id": "tide-tide-touched",
+      "domain": "tide",
+      "name": "Tide-Touched",
+      "was": "Valor-Touched",
+      "level": 7,
+      "type": "ability",
+      "recallCost": 1,
+      "effect": "When 4+ Tide cards in loadout: +1 Armor Score; when you mark Hit Points without marking an Armor Slot, clear an Armor Slot."
+    },
+    {
+      "id": "tide-full-surge",
+      "domain": "tide",
+      "name": "Full Surge",
+      "was": null,
+      "level": 8,
+      "type": "ability",
+      "recallCost": 1,
+      "effect": "Once per long rest, mark 3 Stress for +2 to all character traits until your next rest."
+    },
+    {
+      "id": "tide-ground-pound",
+      "domain": "tide",
+      "name": "Ground Pound",
+      "was": null,
+      "level": 8,
+      "type": "ability",
+      "recallCost": 2,
+      "effect": "Spend 2 Signal to strike the ground. Strength Roll against all targets within Very Close range. On success, throw them to Far range; Reaction Roll (17)—fail: 4d10+8 damage, succeed: half."
+    },
+    {
+      "id": "tide-hold-the-line",
+      "domain": "tide",
+      "name": "Hold the Line",
+      "was": null,
+      "level": 9,
+      "type": "ability",
+      "recallCost": 1,
+      "effect": "Spend a Signal. Adversaries who move within Very Close range are pulled into Melee and Restrained until you move, fail with Static, or the GM spends 2 Static."
+    },
+    {
+      "id": "tide-lead-by-example",
+      "domain": "tide",
+      "name": "Lead by Example",
+      "was": null,
+      "level": 9,
+      "type": "ability",
+      "recallCost": 3,
+      "effect": "When you deal damage, mark a Stress and describe how you encourage allies. The next PC to attack that adversary can clear a Stress or gain a Signal."
+    },
+    {
+      "id": "tide-unbreakable",
+      "domain": "tide",
+      "name": "Unbreakable",
+      "was": null,
+      "level": 10,
+      "type": "ability",
+      "recallCost": 4,
+      "effect": "When you mark your last Hit Point, instead of a death move, roll d6 and clear that many Hit Points, then vault this card."
+    },
+    {
+      "id": "tide-unyielding-armor",
+      "domain": "tide",
+      "name": "Unyielding Armor",
+      "was": null,
+      "level": 10,
+      "type": "ability",
+      "recallCost": 1,
+      "effect": "When you would mark an Armor Slot, roll d6s equal to your Proficiency. On any 6, reduce severity by one threshold without marking an Armor Slot."
+    }
+  ]
+}
