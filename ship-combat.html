@@ -25,6 +25,16 @@
 .ship-frame.gunship .frame-domains { color: var(--signal); }
 .ship-frame.tender .frame-domains { color: var(--accent-teal); }
 .ship-frame.scout .frame-domains { color: var(--static); }
+.ship-frame.vanguard::before, .ship-frame.nemesis::before { background: var(--accent-rose); }
+.ship-frame.vanguard .frame-domains, .ship-frame.nemesis .frame-domains { color: var(--accent-rose); }
+.ship-frame.bulwark::before, .ship-frame.leviathan::before { background: var(--signal); }
+.ship-frame.bulwark .frame-domains, .ship-frame.leviathan .frame-domains { color: var(--signal); }
+.ship-frame.lance::before { background: var(--accent-gold); }
+.ship-frame.lance .frame-domains { color: var(--accent-gold); }
+.ship-frame.chorus::before, .ship-frame.aegis::before { background: var(--accent-teal); }
+.ship-frame.chorus .frame-domains, .ship-frame.aegis .frame-domains { color: var(--accent-teal); }
+.ship-frame.specter::before, .ship-frame.wraith::before, .ship-frame.oracle::before { background: var(--static); }
+.ship-frame.specter .frame-domains, .ship-frame.wraith .frame-domains, .ship-frame.oracle .frame-domains { color: var(--static); }
 .ship-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(95px, 1fr)); gap: 0.5rem; padding: 1rem; background: var(--panel-darker); border-radius: 8px; border: 1px solid var(--border); margin: 1rem 0 1.25rem; }
 .stat-pill { text-align: center; padding: 0.4rem 0.3rem; }
 .stat-pill .v { font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 1.05rem; color: var(--signal); line-height: 1.1; }
@@ -138,8 +148,12 @@
     <a href="#damage">Damage</a>
     <a href="#critical">Critical Systems</a>
     <a href="#frames">Ship Frames</a>
+    <a href="#frames-t2">Frames (T2)</a>
+    <a href="#frames-t3">Frames (T3)</a>
+    <a href="#npc-opposition">NPC Opposition</a>
     <a href="#modules-t1">Modules (T1)</a>
     <a href="#modules-t2">Modules (T2)</a>
+    <a href="#modules-t3">Modules (T3)</a>
     <a href="#weapons">Ship Weapons</a>
     <a href="#repairs">Repairs</a>
     <a href="#upgrading">Upgrading</a>
@@ -337,7 +351,6 @@
   <ul>
     <li>Your ship marks its <strong>last Hull Point</strong>.</li>
     <li>Your ship fills all <strong>System Stress</strong> slots (Cascade Failure).</li>
-    <li>Your ship takes <strong>Severe damage</strong> while already at 3 or fewer Hull Points.</li>
   </ul>
   <p>Roll <strong>1d12</strong> and apply the result. These conditions create drama, not dead stops.</p>
   <table class="data">
@@ -372,43 +385,172 @@
   <p>A <strong>Frame</strong> is the base chassis of your ship. It determines its base stats, its number of Module slots, its starting Weapon Mounts, and its unique Frame Feature. The five Tier 1 Frames are available from session one.</p>
 
   <div class="ship-frame corsair">
-    <div class="frame-header"><div><h3>◈ CORSAIR-CLASS</h3><p class="frame-tagline">Fast. Mean. Vanishes before you can hit back.</p></div><div class="frame-domains">DOMAINS — SHADOW · SABLE</div></div>
+    <div class="frame-header"><div><h3>◈ CORSAIR-CLASS</h3></div><div class="frame-domains">DOMAINS — SHADOW · SABLE</div></div>
     <div class="ship-stats"><div class="stat-pill"><div class="v">8</div><div class="k">Hull</div></div><div class="stat-pill"><div class="v">6</div><div class="k">Stress</div></div><div class="stat-pill"><div class="v">16</div><div class="k">Evasion</div></div><div class="stat-pill"><div class="v">2 (2)</div><div class="k">Armor</div></div><div class="stat-pill"><div class="v">8</div><div class="k">Power</div></div><div class="stat-pill"><div class="v">3</div><div class="k">Speed</div></div><div class="stat-pill"><div class="v">2</div><div class="k">Mounts</div></div></div>
     <div class="module-slots-row">Thresholds: Minor 5 / Major 10 / Severe 16 · Module Slots: 4 (2 Weapon, 1 Defense, 1 System)</div>
     <div class="frame-feature"><div class="ft-label">FRAME FEATURE — RUNNING DARK</div><p>Once per encounter, when the Helm station uses <strong>Evasive Pattern</strong>, the Corsair can also be treated as <em>Cloaked</em> until the start of the Helm character's next turn. Enemy ships cannot target a Cloaked ship.</p></div>
   </div>
 
   <div class="ship-frame patrol">
-    <div class="frame-header"><div><h3>◈ PATROL FRIGATE-CLASS</h3><p class="frame-tagline">The workhorse of the void. Dependable. Hard to stop.</p></div><div class="frame-domains">DOMAINS — IRON · TIDE</div></div>
+    <div class="frame-header"><div><h3>◈ PATROL FRIGATE-CLASS</h3></div><div class="frame-domains">DOMAINS — IRON · TIDE</div></div>
     <div class="ship-stats"><div class="stat-pill"><div class="v">12</div><div class="k">Hull</div></div><div class="stat-pill"><div class="v">6</div><div class="k">Stress</div></div><div class="stat-pill"><div class="v">12</div><div class="k">Evasion</div></div><div class="stat-pill"><div class="v">3 (3)</div><div class="k">Armor</div></div><div class="stat-pill"><div class="v">10</div><div class="k">Power</div></div><div class="stat-pill"><div class="v">2</div><div class="k">Speed</div></div><div class="stat-pill"><div class="v">3</div><div class="k">Mounts</div></div></div>
     <div class="module-slots-row">Thresholds: Minor 6 / Major 12 / Severe 18 · Module Slots: 5 (2 Weapon, 1 Defense, 1 System, 1 Support)</div>
     <div class="frame-feature"><div class="ft-label">FRAME FEATURE — COMBAT HARDENED</div><p>The Patrol Frigate ignores the first Critical Systems roll per encounter. The result simply doesn't apply. Describe how the crew and ship weather it.</p></div>
   </div>
 
   <div class="ship-frame gunship">
-    <div class="frame-header"><div><h3>◈ GUNSHIP-CLASS</h3><p class="frame-tagline">It doesn't dodge. It doesn't need to.</p></div><div class="frame-domains">DOMAINS — IRON · VECTOR</div></div>
+    <div class="frame-header"><div><h3>◈ GUNSHIP-CLASS</h3></div><div class="frame-domains">DOMAINS — IRON · VECTOR</div></div>
     <div class="ship-stats"><div class="stat-pill"><div class="v">16</div><div class="k">Hull</div></div><div class="stat-pill"><div class="v">7</div><div class="k">Stress</div></div><div class="stat-pill"><div class="v">9</div><div class="k">Evasion</div></div><div class="stat-pill"><div class="v">5 (5)</div><div class="k">Armor</div></div><div class="stat-pill"><div class="v">12</div><div class="k">Power</div></div><div class="stat-pill"><div class="v">1</div><div class="k">Speed</div></div><div class="stat-pill"><div class="v">4</div><div class="k">Mounts</div></div></div>
     <div class="module-slots-row">Thresholds: Minor 8 / Major 14 / Severe 20 · Module Slots: 6 (3 Weapon, 2 Defense, 1 System)</div>
     <div class="frame-feature"><div class="ft-label">FRAME FEATURE — WEAPONS PLATFORM</div><p>When the Gunnery station uses <strong>Salvo</strong>, the Power cost is reduced by 1 (to 1 Ship Signal). Additionally, the Gunship can fire at Long Range without penalty.</p></div>
   </div>
 
   <div class="ship-frame tender">
-    <div class="frame-header"><div><h3>◈ SUPPORT TENDER-CLASS</h3><p class="frame-tagline">Keeps everyone else alive. Underestimated. Unforgiven.</p></div><div class="frame-domains">DOMAINS — CIPHER · TIDE</div></div>
+    <div class="frame-header"><div><h3>◈ SUPPORT TENDER-CLASS</h3></div><div class="frame-domains">DOMAINS — CIPHER · TIDE</div></div>
     <div class="ship-stats"><div class="stat-pill"><div class="v">10</div><div class="k">Hull</div></div><div class="stat-pill"><div class="v">8</div><div class="k">Stress</div></div><div class="stat-pill"><div class="v">11</div><div class="k">Evasion</div></div><div class="stat-pill"><div class="v">2 (2)</div><div class="k">Armor</div></div><div class="stat-pill"><div class="v">14</div><div class="k">Power</div></div><div class="stat-pill"><div class="v">2</div><div class="k">Speed</div></div><div class="stat-pill"><div class="v">2</div><div class="k">Mounts</div></div></div>
     <div class="module-slots-row">Thresholds: Minor 5 / Major 9 / Severe 15 · Module Slots: 6 (1 Weapon, 1 Defense, 2 System, 2 Support)</div>
     <div class="frame-feature"><div class="ft-label">FRAME FEATURE — FIELD SUPPORT</div><p>Once per round, when any allied ship in the same engagement clears Hull Points or System Stress, they clear 1 additional. Presence is force multiplication.</p></div>
   </div>
 
   <div class="ship-frame scout">
-    <div class="frame-header"><div><h3>◈ SCOUT-CLASS</h3><p class="frame-tagline">You never see it coming. That's the point.</p></div><div class="frame-domains">DOMAINS — DEEP · SHADOW</div></div>
+    <div class="frame-header"><div><h3>◈ SCOUT-CLASS</h3></div><div class="frame-domains">DOMAINS — DEEP · SHADOW</div></div>
     <div class="ship-stats"><div class="stat-pill"><div class="v">8</div><div class="k">Hull</div></div><div class="stat-pill"><div class="v">6</div><div class="k">Stress</div></div><div class="stat-pill"><div class="v">14</div><div class="k">Evasion</div></div><div class="stat-pill"><div class="v">1 (1)</div><div class="k">Armor</div></div><div class="stat-pill"><div class="v">9</div><div class="k">Power</div></div><div class="stat-pill"><div class="v">3</div><div class="k">Speed</div></div><div class="stat-pill"><div class="v">2</div><div class="k">Mounts</div></div></div>
     <div class="module-slots-row">Thresholds: Minor 4 / Major 8 / Severe 12 · Module Slots: 5 (1 Weapon, 1 Defense, 2 System, 1 Electronic)</div>
     <div class="frame-feature"><div class="ft-label">FRAME FEATURE — LONG-RANGE RECON</div><p>The Scout's Comms Station can use <strong>Deep Scan</strong> at Deep Range without penalty, and the questions asked reveal one additional fact. The Scout always knows more than it should.</p></div>
   </div>
 </section>
 
+<section id="frames-t2">
+  <div class="section-label">08 / Proven Hulls</div>
+  <h2>Ship Frames — Tier 2</h2>
+  <p>Tier 2 Frames are <strong>capital-grade hulls</strong>, story-earned at <strong>Campaign Level 3+</strong>. A crew may adopt <em>any</em> Tier 2 Frame regardless of the Tier 1 hull it flew before &mdash; each is a full tier above every starting Frame, so the choice among the five is about role and playstyle, not lineage. Every Tier 2 Frame is a genuine upgrade over any Tier 1 ship.</p>
+
+  <div class="ship-frame vanguard">
+    <div class="frame-header"><div><h3>◈ VANGUARD-CLASS</h3></div><div class="frame-domains">DOMAINS — VECTOR · SABLE</div></div>
+    <div class="ship-stats"><div class="stat-pill"><div class="v">13</div><div class="k">Hull</div></div><div class="stat-pill"><div class="v">7</div><div class="k">Stress</div></div><div class="stat-pill"><div class="v">17</div><div class="k">Evasion</div></div><div class="stat-pill"><div class="v">3 (3)</div><div class="k">Armor</div></div><div class="stat-pill"><div class="v">12</div><div class="k">Power</div></div><div class="stat-pill"><div class="v">4</div><div class="k">Speed</div></div><div class="stat-pill"><div class="v">3</div><div class="k">Mounts</div></div></div>
+    <div class="module-slots-row">Thresholds: Minor 6 / Major 12 / Severe 18 · Module Slots: 6 (2 Weapon, 1 Defense, 2 System, 1 Electronic)</div>
+    <div class="frame-feature"><div class="ft-label">FRAME FEATURE — STRIKE VECTOR</div><p>When the Vanguard closes a range band on its turn (moving toward a target), its <strong>next Gunnery attack this round gains advantage</strong>. Speed is a weapon.</p></div>
+  </div>
+
+  <div class="ship-frame bulwark">
+    <div class="frame-header"><div><h3>◈ BULWARK-CLASS</h3></div><div class="frame-domains">DOMAINS — IRON · TIDE</div></div>
+    <div class="ship-stats"><div class="stat-pill"><div class="v">22</div><div class="k">Hull</div></div><div class="stat-pill"><div class="v">8</div><div class="k">Stress</div></div><div class="stat-pill"><div class="v">9</div><div class="k">Evasion</div></div><div class="stat-pill"><div class="v">6 (6)</div><div class="k">Armor</div></div><div class="stat-pill"><div class="v">13</div><div class="k">Power</div></div><div class="stat-pill"><div class="v">1</div><div class="k">Speed</div></div><div class="stat-pill"><div class="v">4</div><div class="k">Mounts</div></div></div>
+    <div class="module-slots-row">Thresholds: Minor 9 / Major 16 / Severe 22 · Module Slots: 7 (3 Weapon, 2 Defense, 1 System, 1 Support)</div>
+    <div class="frame-feature"><div class="ft-label">FRAME FEATURE — HOLD THE LINE</div><p>Once per round, when an attack targets an allied ship in the same engagement, the Bulwark may mark an <strong>Armor Slot</strong> to intercept it &mdash; the Bulwark takes the hit instead. Nothing gets past it.</p></div>
+  </div>
+
+  <div class="ship-frame lance">
+    <div class="frame-header"><div><h3>◈ LANCE-CLASS</h3></div><div class="frame-domains">DOMAINS — IRON · VECTOR</div></div>
+    <div class="ship-stats"><div class="stat-pill"><div class="v">18</div><div class="k">Hull</div></div><div class="stat-pill"><div class="v">8</div><div class="k">Stress</div></div><div class="stat-pill"><div class="v">10</div><div class="k">Evasion</div></div><div class="stat-pill"><div class="v">4 (4)</div><div class="k">Armor</div></div><div class="stat-pill"><div class="v">14</div><div class="k">Power</div></div><div class="stat-pill"><div class="v">2</div><div class="k">Speed</div></div><div class="stat-pill"><div class="v">5</div><div class="k">Mounts</div></div></div>
+    <div class="module-slots-row">Thresholds: Minor 7 / Major 14 / Severe 20 · Module Slots: 7 (4 Weapon, 1 Defense, 2 System)</div>
+    <div class="frame-feature"><div class="ft-label">FRAME FEATURE — OVERWATCH</div><p>At <strong>Long or Deep Range</strong>, the Lance's weapons ignore the range penalty, and a Severe hit marks the target <strong>1 additional System Stress</strong>. It reaches out and touches everything.</p></div>
+  </div>
+
+  <div class="ship-frame chorus">
+    <div class="frame-header"><div><h3>◈ CHORUS-CLASS</h3></div><div class="frame-domains">DOMAINS — CIPHER · TIDE</div></div>
+    <div class="ship-stats"><div class="stat-pill"><div class="v">18</div><div class="k">Hull</div></div><div class="stat-pill"><div class="v">9</div><div class="k">Stress</div></div><div class="stat-pill"><div class="v">12</div><div class="k">Evasion</div></div><div class="stat-pill"><div class="v">3 (3)</div><div class="k">Armor</div></div><div class="stat-pill"><div class="v">16</div><div class="k">Power</div></div><div class="stat-pill"><div class="v">2</div><div class="k">Speed</div></div><div class="stat-pill"><div class="v">3</div><div class="k">Mounts</div></div></div>
+    <div class="module-slots-row">Thresholds: Minor 6 / Major 11 / Severe 17 · Module Slots: 8 (1 Weapon, 2 Defense, 2 System, 3 Support)</div>
+    <div class="frame-feature"><div class="ft-label">FRAME FEATURE — FORCE MULTIPLIER</div><p>Once per round, when the Chorus takes a <strong>Support Station action</strong>, one allied ship in the same engagement may immediately take a free reaction-roll action. Presence is coordination.</p></div>
+  </div>
+
+  <div class="ship-frame specter">
+    <div class="frame-header"><div><h3>◈ SPECTER-CLASS</h3></div><div class="frame-domains">DOMAINS — CIPHER · SHADOW</div></div>
+    <div class="ship-stats"><div class="stat-pill"><div class="v">13</div><div class="k">Hull</div></div><div class="stat-pill"><div class="v">8</div><div class="k">Stress</div></div><div class="stat-pill"><div class="v">17</div><div class="k">Evasion</div></div><div class="stat-pill"><div class="v">2 (2)</div><div class="k">Armor</div></div><div class="stat-pill"><div class="v">13</div><div class="k">Power</div></div><div class="stat-pill"><div class="v">3</div><div class="k">Speed</div></div><div class="stat-pill"><div class="v">3</div><div class="k">Mounts</div></div></div>
+    <div class="module-slots-row">Thresholds: Minor 6 / Major 11 / Severe 16 · Module Slots: 7 (1 Weapon, 1 Defense, 2 System, 3 Electronic)</div>
+    <div class="frame-feature"><div class="ft-label">FRAME FEATURE — SIGNAL DOMINANCE</div><p>The Specter's Comms Station may run <strong>two Electronic actions per round</strong> (one per target). Enemy attempts to break its jamming are made at <strong>Difficulty +2</strong>. The battle is decided in the spectrum first.</p></div>
+  </div>
+</section>
+
+<section id="frames-t3">
+  <div class="section-label">09 / Legends</div>
+  <h2>Ship Frames — Tier 3</h2>
+  <p>Tier 3 Frames are <strong>legendary hulls</strong> &mdash; rare, named, story-defining ships earned at <strong>Campaign Level 6+</strong>. Each carries a <strong>signature feature that bends a rule of ship combat</strong>. As with Tier 2, any crew may claim any Tier 3 Frame; the choice is role, not lineage.</p>
+
+  <div class="ship-frame nemesis">
+    <div class="frame-header"><div><h3>◈ NEMESIS-CLASS</h3></div><div class="frame-domains">DOMAINS — SABLE · VECTOR</div></div>
+    <div class="ship-stats"><div class="stat-pill"><div class="v">16</div><div class="k">Hull</div></div><div class="stat-pill"><div class="v">9</div><div class="k">Stress</div></div><div class="stat-pill"><div class="v">20</div><div class="k">Evasion</div></div><div class="stat-pill"><div class="v">5 (5)</div><div class="k">Armor</div></div><div class="stat-pill"><div class="v">17</div><div class="k">Power</div></div><div class="stat-pill"><div class="v">5</div><div class="k">Speed</div></div><div class="stat-pill"><div class="v">4</div><div class="k">Mounts</div></div></div>
+    <div class="module-slots-row">Thresholds: Minor 8 / Major 15 / Severe 19 · Module Slots: 8 (3 Weapon, 1 Defense, 2 System, 2 Electronic)</div>
+    <div class="frame-feature"><div class="ft-label">FRAME FEATURE — KILL BOX</div><p>The first time each round the Nemesis attacks a ship that <strong>has not yet acted</strong>, that attack deals <strong>+1 damage die</strong> and its damage <strong>cannot be reduced below Minor</strong>. It hunts the unready.</p></div>
+  </div>
+
+  <div class="ship-frame leviathan">
+    <div class="frame-header"><div><h3>◈ LEVIATHAN-CLASS</h3></div><div class="frame-domains">DOMAINS — IRON · DEEP</div></div>
+    <div class="ship-stats"><div class="stat-pill"><div class="v">24</div><div class="k">Hull</div></div><div class="stat-pill"><div class="v">10</div><div class="k">Stress</div></div><div class="stat-pill"><div class="v">9</div><div class="k">Evasion</div></div><div class="stat-pill"><div class="v">8 (8)</div><div class="k">Armor</div></div><div class="stat-pill"><div class="v">19</div><div class="k">Power</div></div><div class="stat-pill"><div class="v">1</div><div class="k">Speed</div></div><div class="stat-pill"><div class="v">6</div><div class="k">Mounts</div></div></div>
+    <div class="module-slots-row">Thresholds: Minor 11 / Major 18 / Severe 26 · Module Slots: 9 (4 Weapon, 2 Defense, 2 System, 1 Support)</div>
+    <div class="frame-feature"><div class="ft-label">FRAME FEATURE — UNSINKABLE</div><p>Once per encounter, when the Leviathan would mark its last Hull Point, it instead stays at <strong>1 Hull</strong> and does <strong>not</strong> become Crippled &mdash; but immediately <strong>roll once on the Critical Systems table</strong>. She does not go down easy, but the void takes its due.</p></div>
+  </div>
+
+  <div class="ship-frame wraith">
+    <div class="frame-header"><div><h3>◈ WRAITH-CLASS</h3></div><div class="frame-domains">DOMAINS — SHADOW · DEEP</div></div>
+    <div class="ship-stats"><div class="stat-pill"><div class="v">12</div><div class="k">Hull</div></div><div class="stat-pill"><div class="v">9</div><div class="k">Stress</div></div><div class="stat-pill"><div class="v">22</div><div class="k">Evasion</div></div><div class="stat-pill"><div class="v">4 (4)</div><div class="k">Armor</div></div><div class="stat-pill"><div class="v">16</div><div class="k">Power</div></div><div class="stat-pill"><div class="v">5</div><div class="k">Speed</div></div><div class="stat-pill"><div class="v">4</div><div class="k">Mounts</div></div></div>
+    <div class="module-slots-row">Thresholds: Minor 7 / Major 12 / Severe 17 · Module Slots: 9 (3 Weapon, 1 Defense, 3 System, 2 Electronic)</div>
+    <div class="frame-feature"><div class="ft-label">FRAME FEATURE — NEVER THERE</div><p>The Wraith <strong>begins each encounter Cloaked</strong> (enemies need a Difficulty 18 roll to break the Cloak), and it can <strong>act while Cloaked</strong> without automatically revealing itself. You never see it coming. That's the point.</p></div>
+  </div>
+
+  <div class="ship-frame aegis">
+    <div class="frame-header"><div><h3>◈ AEGIS-CLASS</h3></div><div class="frame-domains">DOMAINS — CIPHER · TIDE</div></div>
+    <div class="ship-stats"><div class="stat-pill"><div class="v">26</div><div class="k">Hull</div></div><div class="stat-pill"><div class="v">11</div><div class="k">Stress</div></div><div class="stat-pill"><div class="v">11</div><div class="k">Evasion</div></div><div class="stat-pill"><div class="v">6 (6)</div><div class="k">Armor</div></div><div class="stat-pill"><div class="v">19</div><div class="k">Power</div></div><div class="stat-pill"><div class="v">2</div><div class="k">Speed</div></div><div class="stat-pill"><div class="v">4</div><div class="k">Mounts</div></div></div>
+    <div class="module-slots-row">Thresholds: Minor 9 / Major 15 / Severe 21 · Module Slots: 10 (2 Weapon, 2 Defense, 2 System, 4 Support)</div>
+    <div class="frame-feature"><div class="ft-label">FRAME FEATURE — FLAGSHIP</div><p>All allied ships in the same engagement gain <strong>+2 to reaction rolls</strong> and clear <strong>1 additional</strong> whenever they clear Hull Points or System Stress. The Aegis is a fleet unto itself.</p></div>
+  </div>
+
+  <div class="ship-frame oracle">
+    <div class="frame-header"><div><h3>◈ ORACLE-CLASS</h3></div><div class="frame-domains">DOMAINS — CIPHER · DEEP</div></div>
+    <div class="ship-stats"><div class="stat-pill"><div class="v">16</div><div class="k">Hull</div></div><div class="stat-pill"><div class="v">10</div><div class="k">Stress</div></div><div class="stat-pill"><div class="v">18</div><div class="k">Evasion</div></div><div class="stat-pill"><div class="v">4 (4)</div><div class="k">Armor</div></div><div class="stat-pill"><div class="v">18</div><div class="k">Power</div></div><div class="stat-pill"><div class="v">3</div><div class="k">Speed</div></div><div class="stat-pill"><div class="v">4</div><div class="k">Mounts</div></div></div>
+    <div class="module-slots-row">Thresholds: Minor 8 / Major 14 / Severe 20 · Module Slots: 10 (2 Weapon, 1 Defense, 3 System, 4 Electronic)</div>
+    <div class="frame-feature"><div class="ft-label">FRAME FEATURE — TOTAL AWARENESS</div><p>At the start of each round, the Oracle learns <strong>every enemy ship's declared Station Action</strong> before anyone acts. Once per encounter, it may <strong>cancel one enemy Powered or Overclocked action outright</strong>. It read this fight before it began.</p></div>
+  </div>
+</section>
+
+<section id="npc-opposition">
+  <div class="section-label">10 / The Opposition</div>
+  <h2>Building NPC Opposition</h2>
+  <p>With fifteen player Frames and dozens of Module combinations, <strong>do not hand-build a bespoke enemy ship per encounter.</strong> You don't need to. Player Frames are durability-balanced <em>within</em> each tier, so you build opposition to a <strong>tier number</strong>, not to whatever hull and modules the crew happens to run. And NPC ships use a stripped-down stat line &mdash; no Module slots, no build step, one signature trick.</p>
+
+  <div class="rule-card">
+    <h4 style="color:var(--signal)">◈ NPC SHIP STAT LINE</h4>
+    <p style="font-size:0.92rem"><code>Tier · Role · Hull · Evasion · Damage (avg) · Attacks/round · [1 Special] · Threat Value</code></p>
+    <p style="font-size:0.9rem;color:var(--text-dim)">Drop the System Stress track for NPC ships entirely. (Optional: give a Heavy or Capital an "Overload" line that triggers at half Hull.) Hull and damage are tuned so a focused crew drops a Line ship in ~2 rounds, a Heavy in ~3&ndash;4, and a Skirmisher in ~1 &mdash; and NPC damage is set to reach the <em>matching tier's</em> PC thresholds.</p>
+  </div>
+
+  <table class="data">
+    <thead><tr><th>Tier</th><th>Role</th><th class="center">Hull</th><th class="center">Evasion</th><th>Damage (avg)</th><th class="center">Atks</th><th class="center">TV</th></tr></thead>
+    <tbody>
+      <tr><td><strong>T1</strong></td><td>Skirmisher</td><td class="center">4</td><td class="center">13</td><td>1d8 (5)</td><td class="center">1</td><td class="center">1</td></tr>
+      <tr><td>T1</td><td>Line</td><td class="center">9</td><td class="center">11</td><td>2d8 (9)</td><td class="center">1</td><td class="center">2</td></tr>
+      <tr><td>T1</td><td>Heavy</td><td class="center">15</td><td class="center">9</td><td>3d8 (13)</td><td class="center">1</td><td class="center">3</td></tr>
+      <tr><td>T1</td><td>Capital (elite)</td><td class="center">28</td><td class="center">10</td><td>3d10 (16)</td><td class="center">2</td><td class="center">6</td></tr>
+      <tr><td><strong>T2</strong></td><td>Skirmisher</td><td class="center">8</td><td class="center">15</td><td>2d8 (9)</td><td class="center">1</td><td class="center">1</td></tr>
+      <tr><td>T2</td><td>Line</td><td class="center">13</td><td class="center">12</td><td>3d10 (16)</td><td class="center">1</td><td class="center">2</td></tr>
+      <tr><td>T2</td><td>Heavy</td><td class="center">20</td><td class="center">10</td><td>4d10 (22)</td><td class="center">1&ndash;2</td><td class="center">3</td></tr>
+      <tr><td>T2</td><td>Capital</td><td class="center">40</td><td class="center">11</td><td>4d12 (26)</td><td class="center">2</td><td class="center">6</td></tr>
+      <tr><td><strong>T3</strong></td><td>Skirmisher</td><td class="center">12</td><td class="center">17</td><td>3d10 (16)</td><td class="center">1</td><td class="center">1</td></tr>
+      <tr><td>T3</td><td>Line</td><td class="center">18</td><td class="center">13</td><td>4d10 (22)</td><td class="center">1</td><td class="center">2</td></tr>
+      <tr><td>T3</td><td>Heavy</td><td class="center">28</td><td class="center">11</td><td>5d12 (32)</td><td class="center">2</td><td class="center">3</td></tr>
+      <tr><td>T3</td><td>Capital</td><td class="center">55</td><td class="center">12</td><td>6d12 (39)</td><td class="center">2&ndash;3</td><td class="center">6</td></tr>
+    </tbody>
+  </table>
+
+  <div class="rule-card gold-card">
+    <h4 style="color:var(--accent-gold)">✺ ENCOUNTER BUDGET — THE ONE NUMBER YOU NEED</h4>
+    <p style="font-size:0.92rem">Spend a <strong>Threat Value budget of ≈ 1.5 × the number of players</strong>, using NPC ships of the crew's ship tier. A 4-player crew = <strong>TV ~6</strong> for a fair fight (TV ~8 for a hard fight, ~4 for an easy one). To field a <strong>swarm</strong>, drop one tier and double the count. A single same-tier <strong>Capital = the whole encounter</strong> (TV 6).</p>
+  </div>
+
+  <h3>Feature &amp; Module Impact</h3>
+  <p>Frame Features and premium Modules are not in the raw stat line, so classify each by what it touches &mdash; this single lens is what keeps "all combos" tractable:</p>
+  <table class="data">
+    <thead><tr><th>Class</th><th>What it does</th><th>Adjustment</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Durability</strong></td><td>Raises effective survivability the stat line can't see (Cloak, damage saves, damage redirection, hull/threshold/armor modules).</td><td>Fight runs longer &mdash; <strong>+1 TV</strong> per leaned-on source.</td></tr>
+      <tr><td><strong>Offense / Tempo</strong></td><td>Shortens the fight; the crew is effectively stronger (advantage engines, armor-ignoring or apex weapons, extra actions).</td><td>Enemies die faster &mdash; <strong>+1 TV</strong> per leaned-on source.</td></tr>
+      <tr><td><strong>Force Multiplier</strong></td><td>Buffs <em>other</em> allied ships (Flagship, Force Multiplier, Field Support).</td><td><strong>~Inert in a single-ship crew</strong> &mdash; no change unless the crew fields multiple ships.</td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:0.9rem;color:var(--text-dim)">The base NPC numbers already assume a competently-equipped crew, so ordinary loadouts need no correction. For each <em>standout</em> offensive or defensive feature/module the crew genuinely leans on, add <strong>+1 TV</strong>. That is the entire correction &mdash; you adjust one budget number and never rebuild the enemy.</p>
+</section>
+
 <section id="modules-t1">
-  <div class="section-label">08 / Tier 1 Modules</div>
+  <div class="section-label">11 / Tier 1 Modules</div>
   <h2>Ship Modules — Tier 1</h2>
   <p>Modules are installed components. Each Module has a <strong>Power Cost</strong>, a <strong>Type</strong> (Weapon, Defense, System, Support, or Electronic), a <strong>Tier</strong>, and an <strong>Effect</strong>. At campaign start, your ship can have one Tier 1 Module per Module Slot of the appropriate type, up to its Power Capacity.</p>
 
@@ -452,7 +594,7 @@
 </section>
 
 <section id="modules-t2">
-  <div class="section-label">09 / Tier 2 Modules</div>
+  <div class="section-label">12 / Tier 2 Modules</div>
   <h2>Ship Modules — Tier 2</h2>
   <p style="color:var(--text-dim);font-style:italic">Available at Campaign Level 3+. Higher-tier modules become available as the crew advances.</p>
 
@@ -473,10 +615,58 @@
     <div class="module-card system"><h5>Overclocked Targeting Core</h5><div class="m-meta">Cost 2 · System · T2</div><p class="m-flavor">The targeting system doesn't wait for you. It leads.</p><p>The Gunnery Station gains advantage on all <strong>Weapons Lock</strong> rolls. Additionally, <strong>Target Systems</strong> (Overclocked) costs only 1 System Stress instead of 2.</p></div>
     <div class="module-card system"><h5>Void Drive</h5><div class="m-meta">Cost 3 · System · T2</div><p class="m-flavor">This is not a standard FTL system. This is barely contained physics.</p><p>Replaces the Jump Drive Module. As Jump Drive, but on a successful roll, choose your destination with precision &mdash; you can arrive inside an Engagement range band of a specific target. On a critical success (Signal Die shows 12), arrive without spending any Ship Signal.</p></div>
   </div>
+
+  <h3 style="color:var(--accent-gold)">Support Modules (Tier 2)</h3>
+  <div class="module-grid">
+    <div class="module-card support"><h5>Trauma Pod</h5><div class="m-meta">Cost 2 · Support · T2</div><p class="m-flavor">The gap between a bad day and a funeral.</p><p>Once per encounter, a crew member can spend a Standard Action at this station to <strong>stabilize a downed crew member</strong>, OR clear <strong>3 Hit Points and 3 Stress</strong> from one crew member aboard.</p></div>
+    <div class="module-card support"><h5>Tactical Uplink</h5><div class="m-meta">Cost 2 · Support · Passive · T2</div><p class="m-flavor">A second opinion, delivered at the speed of light.</p><p>Once per round, one allied crew member may <strong>reroll a failed reaction roll</strong>. They must keep the new result.</p></div>
+  </div>
+
+  <h3 style="color:var(--static)">Electronic Modules (Tier 2)</h3>
+  <div class="module-grid">
+    <div class="module-card electronic"><h5>Phantom Fleet Projector</h5><div class="m-meta">Cost 3 · Electronic · T2</div><p class="m-flavor">Why field one ship when the enemy can waste their fire on three?</p><p>Upgrade of the Sensor Ghost Array. Create up to <strong>two ghosts</strong> of your ship. Enemies must succeed on a Difficulty 16 Knowledge Roll to pick out the real ship before targeting; on a failure, their <strong>entire action is wasted</strong> against a ghost.</p></div>
+    <div class="module-card electronic"><h5>Signal Hijack</h5><div class="m-meta">Cost 2 · Electronic · T2</div><p class="m-flavor">Their missile. Your target now.</p><p>Once per encounter, as a reaction, the Comms Station seizes control of one enemy <strong>Missile or Torpedo in flight</strong> and redirects it at any target within its range &mdash; including the ship that fired it.</p></div>
+  </div>
+</section>
+
+<section id="modules-t3">
+  <div class="section-label">13 / Apex Modules</div>
+  <h2>Ship Modules — Tier 3</h2>
+  <p style="color:var(--text-dim);font-style:italic">Available at Campaign Level 6+. These are the apex of each Module line &mdash; rare, expensive, and often the reason a crew survived a fight they had no business winning.</p>
+
+  <h3 style="color:var(--accent-rose)">Weapon Modules (Tier 3)</h3>
+  <div class="module-grid">
+    <div class="module-card weapon"><h5>Singularity Cannon</h5><div class="m-meta">Cost 5 · Weapon · T3</div><p class="m-flavor">It doesn't hit the ship. It hits the space the ship is in.</p><p><strong>5d12 energy damage</strong>. Range: Engagement&ndash;Long. <strong>Special:</strong> On Severe damage, the target marks <strong>2 System Stress</strong> and is dragged <strong>one range band toward you</strong>.</p></div>
+    <div class="module-card weapon"><h5>Nova Battery</h5><div class="m-meta">Cost 4 · Weapon · T3</div><p class="m-flavor">Indiscriminate. That's the feature, not the bug.</p><p><strong>4d8 energy damage</strong> to <strong>all ships in one range band</strong> &mdash; friend or foe. Range: Close Quarters&ndash;Engagement. Choose the band; everything in it is hit.</p></div>
+  </div>
+
+  <h3 style="color:var(--accent-teal)">Defense Modules (Tier 3)</h3>
+  <div class="module-grid">
+    <div class="module-card defense"><h5>Aegis Barrier</h5><div class="m-meta">Cost 4 · Defense · T3</div><p class="m-flavor">For one perfect moment, nothing can touch you.</p><p>Once per encounter, as a reaction, <strong>negate one incoming attack entirely</strong> &mdash; no damage, no thresholds, no marking. Mark 3 System Stress. <em>(Apex of the Phase Shield.)</em></p></div>
+    <div class="module-card defense"><h5>Nanite Swarm</h5><div class="m-meta">Cost 3 · Defense · Passive · T3</div><p class="m-flavor">The hull heals faster than they can break it.</p><p>At the start of each round, <strong>clear 1 Hull Point</strong> (up to a per-encounter cap set by the GM, typically 4).</p></div>
+  </div>
+
+  <h3 style="color:var(--signal)">System Modules (Tier 3)</h3>
+  <div class="module-grid">
+    <div class="module-card system"><h5>Quantum Core</h5><div class="m-meta">Cost 0 · System · T3</div><p class="m-flavor">The reactor stopped obeying thermodynamics some time ago.</p><p>Power Capacity increases by <strong>+5</strong> with <strong>no System Stress penalty</strong>. <em>(Apex of the Overclocked Reactor.)</em></p></div>
+    <div class="module-card system"><h5>Slipstream Drive</h5><div class="m-meta">Cost 3 · System · T3</div><p class="m-flavor">Distance is a suggestion. You decline.</p><p>As the Void Drive, but the jump is a <strong>free action once per encounter</strong> and can carry <strong>one allied ship</strong> in the same engagement along with you.</p></div>
+  </div>
+
+  <h3 style="color:var(--accent-gold)">Support Modules (Tier 3)</h3>
+  <div class="module-grid">
+    <div class="module-card support"><h5>Auto-Surgeon Suite</h5><div class="m-meta">Cost 2 · Support · T3</div><p class="m-flavor">It has never lost a patient. It will tell you so, repeatedly.</p><p>Clear <strong>4 Hit Points or 5 Stress</strong> from any crew member aboard. Usable <strong>twice per encounter</strong>, and it operates as a <strong>free action once per round</strong>. <em>(Apex of the Medical Bay.)</em></p></div>
+    <div class="module-card support"><h5>Command Nexus</h5><div class="m-meta">Cost 3 · Support · Passive · T3</div><p class="m-flavor">Every station, one mind, no lag.</p><p>All crew members at Stations gain a <strong>+2 bonus</strong> to reaction rolls, and the <strong>Support Station may act twice per round</strong>.</p></div>
+  </div>
+
+  <h3 style="color:var(--static)">Electronic Modules (Tier 3)</h3>
+  <div class="module-grid">
+    <div class="module-card electronic"><h5>Total Blackout Array</h5><div class="m-meta">Cost 3 · Electronic · T3</div><p class="m-flavor">One switch. The whole enemy fleet goes dark.</p><p>Once per encounter, <strong>all enemy ships</strong> in the engagement lose their <strong>Powered and Overclocked actions</strong> for one round (Difficulty 17 Knowledge Roll to resist, rolled per ship).</p></div>
+    <div class="module-card electronic"><h5>Reality Static</h5><div class="m-meta">Cost 4 · Electronic · T3</div><p class="m-flavor">Their sensors, targeting, and luck all stop agreeing with each other.</p><p>Once per encounter, force one enemy ship to <strong>reroll all of its dice for a full round</strong>, taking the <strong>lower result</strong> each time.</p></div>
+  </div>
 </section>
 
 <section id="weapons">
-  <div class="section-label">10 / Armament</div>
+  <div class="section-label">14 / Armament</div>
   <h2>Ship Weapons</h2>
   <p>Ship weapons installed in Weapon Mounts use the profiles below. The crew purchases or finds these as loot, pays for installation at a port, and records them on the Ship Sheet. All ship weapon attacks are made by the Gunnery Station character using their Finesse or Knowledge modifier. <strong>Proficiency</strong> for ship weapons equals the crew's average level (round up), representing collective competency.</p>
   <table class="data">
@@ -496,7 +686,7 @@
 </section>
 
 <section id="repairs">
-  <div class="section-label">11 / Between the Fights</div>
+  <div class="section-label">15 / Between the Fights</div>
   <h2>Ship Repairs</h2>
   <p>Ships are repaired during <strong>downtime</strong> in port or dock. These mirror character downtime moves.</p>
   <div class="rule-card teal-card">
@@ -513,24 +703,24 @@
 </section>
 
 <section id="upgrading">
-  <div class="section-label">12 / Improvement</div>
+  <div class="section-label">16 / Improvement</div>
   <h2>Upgrading Your Ship</h2>
   <p>Ships improve through <strong>Module Installation</strong> and, at major story milestones, <strong>Frame Upgrades</strong>.</p>
   <div class="grid-2">
     <div class="rule-card gold-card"><h4 style="color:var(--accent-gold)">✺ INSTALLING NEW MODULES</h4><p style="font-size:0.9rem">Costs credits (set by GM, typically <strong>500–2000 credits per tier</strong> of module) and requires access to a properly equipped port or shipyard. Takes time &mdash; usually a day per module tier.</p></div>
-    <div class="rule-card static-card"><h4 style="color:var(--static)">◇ FRAME UPGRADES</h4><p style="font-size:0.9rem">Acquiring a Tier 2 or higher Frame is a story event. The crew must find the ship, earn it, steal it, or commission it. A Frame Upgrade resets the Module Slots to the new Frame's configuration.</p></div>
+    <div class="rule-card static-card"><h4 style="color:var(--static)">◇ FRAME UPGRADES</h4><p style="font-size:0.9rem">Acquiring a Tier 2 or Tier 3 Frame is a story event. The crew must find the ship, earn it, steal it, or commission it &mdash; Tier 2 hulls become available around Campaign Level 3, Tier 3 around Level 6. A Frame Upgrade resets the Module Slots to the new Frame's configuration.</p></div>
   </div>
 </section>
 
 <section id="experience">
-  <div class="section-label">13 / Optional Rule</div>
+  <div class="section-label">17 / Optional Rule</div>
   <h2>Ship Experience</h2>
   <p>If the GM wants to give ships a sense of growth independent of Modules, ships can accumulate <strong>Flight Time</strong> &mdash; a narrative currency awarded by the GM after significant encounters. At <strong>3 Flight Time</strong>, the crew can permanently improve one of the following ship stats by the listed amount:</p>
   <div class="rule-card"><ul style="font-size:0.92rem"><li>+1 Evasion</li><li>+2 to one Damage Threshold</li><li>+1 Hull Point</li><li>+1 Power Capacity</li><li>+1 System Stress slot</li></ul></div>
 </section>
 
 <section id="examples">
-  <div class="section-label">14 / The Fleet at Work</div>
+  <div class="section-label">18 / The Fleet at Work</div>
   <h2>Example Ships</h2>
   <p style="color:var(--text-dim);margin-bottom:1rem">Two starting ships, fully built. Use them as-is or as templates.</p>
 
@@ -560,7 +750,7 @@
 </section>
 
 <section id="quickref">
-  <div class="section-label">15 / At the Table</div>
+  <div class="section-label">19 / At the Table</div>
   <h2>Quick Reference</h2>
 
   <h3>Station Action Summary</h3>
@@ -579,11 +769,24 @@
   <table class="data">
     <thead><tr><th>Frame</th><th class="center">Minor</th><th class="center">Major</th><th class="center">Severe</th></tr></thead>
     <tbody>
+      <tr><td colspan="4" style="color:var(--text-dim);font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase">Tier 1</td></tr>
       <tr><td>Corsair</td><td class="center">5</td><td class="center">10</td><td class="center">16</td></tr>
       <tr><td>Patrol Frigate</td><td class="center">6</td><td class="center">12</td><td class="center">18</td></tr>
       <tr><td>Gunship</td><td class="center">8</td><td class="center">14</td><td class="center">20</td></tr>
       <tr><td>Support Tender</td><td class="center">5</td><td class="center">9</td><td class="center">15</td></tr>
       <tr><td>Scout</td><td class="center">4</td><td class="center">8</td><td class="center">12</td></tr>
+      <tr><td colspan="4" style="color:var(--text-dim);font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase">Tier 2</td></tr>
+      <tr><td>Vanguard</td><td class="center">6</td><td class="center">12</td><td class="center">18</td></tr>
+      <tr><td>Bulwark</td><td class="center">9</td><td class="center">16</td><td class="center">22</td></tr>
+      <tr><td>Lance</td><td class="center">7</td><td class="center">14</td><td class="center">20</td></tr>
+      <tr><td>Chorus</td><td class="center">6</td><td class="center">11</td><td class="center">17</td></tr>
+      <tr><td>Specter</td><td class="center">6</td><td class="center">11</td><td class="center">16</td></tr>
+      <tr><td colspan="4" style="color:var(--text-dim);font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase">Tier 3</td></tr>
+      <tr><td>Nemesis</td><td class="center">8</td><td class="center">15</td><td class="center">19</td></tr>
+      <tr><td>Leviathan</td><td class="center">11</td><td class="center">18</td><td class="center">26</td></tr>
+      <tr><td>Wraith</td><td class="center">7</td><td class="center">12</td><td class="center">17</td></tr>
+      <tr><td>Aegis</td><td class="center">9</td><td class="center">15</td><td class="center">21</td></tr>
+      <tr><td>Oracle</td><td class="center">8</td><td class="center">14</td><td class="center">20</td></tr>
     </tbody>
   </table>
 
