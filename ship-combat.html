@@ -127,7 +127,7 @@
   <div class="crumb">▸ The Reference / Void Combat</div>
   <h1>SHIP COMBAT</h1>
   <div class="sub">The Sixth Crew Member</div>
-  <p class="desc">The void between stars is not empty. It is a killing field. The difference between a crew that survives and one that becomes debris is the same difference as always: preparation, nerve, and the knowledge of exactly what your ship can do.</p>
+  <p class="desc">Rules for fights between ships: crew stations, ship frames and modules, weapons, damage, and repairs.</p>
 </header>
 
 <main class="wide">
@@ -150,6 +150,7 @@
     <a href="#frames">Ship Frames</a>
     <a href="#frames-t2">Frames (T2)</a>
     <a href="#frames-t3">Frames (T3)</a>
+    <a href="#frames-t4">Legends (T4)</a>
     <a href="#npc-opposition">NPC Opposition</a>
     <a href="#modules-t1">Modules (T1)</a>
     <a href="#modules-t2">Modules (T2)</a>
@@ -166,32 +167,32 @@
 <section id="philosophy">
   <div class="section-label">00 / Foundations</div>
   <h2>Design Philosophy</h2>
-  <p>Void Combat treats your ship as a sixth crew member &mdash; one that your characters pilot, repair, and upgrade. It is built on three pillars:</p>
+  <p>Void Combat treats the crew's ship as a sixth member of the party. The characters pilot it, repair it, and upgrade it over the course of the campaign. The system has three design goals:</p>
   <div class="grid-auto-260">
-    <div class="rule-card"><h4 style="color:var(--signal)">◈ STATION-BASED PLAY</h4><p style="font-size:0.88rem">Every player character occupies a Station during ship combat, making meaningful choices with their own character's traits and abilities. Nobody watches while someone else plays.</p></div>
-    <div class="rule-card teal-card"><h4 style="color:var(--accent-teal)">⌬ SHARED JEOPARDY</h4><p style="font-size:0.88rem">The ship's health is the crew's health. Decisions about risk and power management feel real because losing the ship means losing everything.</p></div>
-    <div class="rule-card static-card"><h4 style="color:var(--static)">◇ BUILD WHAT YOU FLY</h4><p style="font-size:0.88rem">Ships are constructed through a modular Frame + Module system. Two crews flying Corsair frames will fly them completely differently.</p></div>
+    <div class="rule-card"><h4 style="color:var(--signal)">◈ STATION-BASED PLAY</h4><p style="font-size:0.88rem">Each player character takes a Station during ship combat and acts with their own traits and abilities, so every player has decisions to make during the fight.</p></div>
+    <div class="rule-card teal-card"><h4 style="color:var(--accent-teal)">⌬ SHARED JEOPARDY</h4><p style="font-size:0.88rem">Damage to the ship threatens the whole crew. Losing the ship strands the characters, which gives decisions about risk and power real weight.</p></div>
+    <div class="rule-card static-card"><h4 style="color:var(--static)">◇ BUILD WHAT YOU FLY</h4><p style="font-size:0.88rem">Each ship combines a Frame (the hull) with Modules (installed equipment). Two Corsair-class ships with different Modules play differently.</p></div>
   </div>
-  <p style="margin-top:1.25rem;font-size:0.92rem;color:var(--text-dim)">The system uses the same <strong>Duality Dice</strong>, <strong>Signal/Static economy</strong>, <strong>damage thresholds</strong>, and <strong>Evasion</strong> as the rest of Voidheart. If you know how to play Voidheart, you already know half of Void Combat.</p>
+  <p style="margin-top:1.25rem;font-size:0.92rem;color:var(--text-dim)">The system uses the same <strong>Duality Dice</strong>, <strong>Signal/Static economy</strong>, <strong>damage thresholds</strong>, and <strong>Evasion</strong> as the rest of Voidheart. Players who know the core rules already know most of what this chapter uses.</p>
 </section>
 
 <section id="anatomy">
   <div class="section-label">01 / The Ship Sheet</div>
   <h2>Ship Anatomy</h2>
   <p>Every ship has the following stats recorded on a shared <strong>Ship Sheet</strong>.</p>
-  <div class="rule-card"><h4 style="color:var(--signal)">◈ HULL POINTS</h4><p style="font-size:0.92rem">Hull Points represent the ship's structural integrity. Like a character's Hit Points, you mark Hull when you take damage above a threshold. When all Hull Points are marked, the ship is <strong>Crippled</strong> (see Critical Systems). Ships have <strong>8&ndash;20 Hull Points</strong> depending on their Frame.</p></div>
-  <div class="rule-card rose-card"><h4 style="color:var(--accent-rose)">✺ SYSTEM STRESS</h4><p style="font-size:0.92rem">System Stress represents strain placed on the ship's power grid, drives, and critical systems through combat damage and crew-driven overclocking. It is marked in a track separate from Hull. When all System Stress slots are filled, the ship suffers a <strong>Cascade Failure</strong> (see Critical Systems). Most ships have <strong>6 System Stress</strong> slots. Some Frames and Modules modify this. Crews can clear System Stress during Repair Actions or at the end of a combat encounter.</p></div>
+  <div class="rule-card"><h4 style="color:var(--signal)">◈ HULL POINTS</h4><p style="font-size:0.92rem">Hull Points represent the ship's structural integrity. Like a character's Hit Points, you mark Hull when you take damage above a threshold. When all Hull Points are marked, the ship is <strong>Crippled</strong> (see Critical Systems). Ships have <strong>8&ndash;26 Hull Points</strong> depending on their Frame, and more after a Tier 4 Legendary Refit.</p></div>
+  <div class="rule-card rose-card"><h4 style="color:var(--accent-rose)">✺ SYSTEM STRESS</h4><p style="font-size:0.92rem">System Stress represents strain placed on the ship's power grid, drives, and critical systems through combat damage and crew-driven overclocking. It is marked in a track separate from Hull. When all System Stress slots are filled, the ship suffers a <strong>Cascade Failure</strong> (see Critical Systems). Most ships have <strong>6 System Stress</strong> slots. Some Frames and Modules modify this. Crews clear System Stress with Engineering actions during combat and with repairs afterward (see Ship Repairs).</p></div>
   <div class="rule-card teal-card"><h4 style="color:var(--accent-teal)">⌬ EVASION</h4><p style="font-size:0.92rem">A ship's Evasion reflects how hard it is for enemy ships and weapons to get a clean lock on it. When an enemy attacks your ship, the GM rolls against your ship's Evasion. Base Evasion is set by the ship's Frame. The Helm station and certain Modules can modify it.</p></div>
-  <div class="rule-card"><h4 style="color:var(--signal)">◈ ARMOR SCORE &amp; ARMOR SLOTS</h4><p style="font-size:0.92rem">Ships have an Armor Score and a corresponding number of Armor Slots, identical in function to character armor. When your ship takes damage, a crew member at the Engineering Station can mark an Armor Slot to reduce the severity of incoming damage by one threshold: Severe&nbsp;→&nbsp;Major&nbsp;→&nbsp;Minor&nbsp;→&nbsp;None. Armor Slots are restored during a Full Repair (long rest equivalent).</p></div>
+  <div class="rule-card"><h4 style="color:var(--signal)">◈ ARMOR SCORE &amp; ARMOR SLOTS</h4><p style="font-size:0.92rem">Ships have an Armor Score and a corresponding number of Armor Slots, identical in function to character armor. When your ship takes damage, a crew member at the Engineering Station can mark an Armor Slot to reduce the severity of incoming damage by one threshold: Severe&nbsp;→&nbsp;Major&nbsp;→&nbsp;Minor&nbsp;→&nbsp;None. Marked Armor Slots are restored by a Minor Repair or a Full Overhaul (see Ship Repairs).</p></div>
   <div class="rule-card gold-card"><h4 style="color:var(--accent-gold)">✺ POWER CAPACITY</h4><p style="font-size:0.92rem">Power represents the ship's available energy output. Each active Module has a Power Cost. The total Power Cost of all active Modules cannot exceed the ship's Power Capacity. If a Module is deactivated during combat (by damage or choice), its Power is freed immediately. Reactivating a deactivated Module requires an Engineering action.</p></div>
-  <div class="rule-card static-card"><h4 style="color:var(--static)">◇ SPEED</h4><p style="font-size:0.92rem">Speed determines how freely the ship moves through range bands. Ships have a Speed rating of <strong>1, 2, or 3</strong>:</p><ul style="font-size:0.9rem;margin-top:0.5rem"><li><strong>Speed 1:</strong> Move one range band per Helm action.</li><li><strong>Speed 2:</strong> Move up to two range bands per Helm action.</li><li><strong>Speed 3:</strong> Move up to three range bands per Helm action, or move one range band without using a Helm action.</li></ul></div>
-  <div class="rule-card"><h4 style="color:var(--signal)">◈ WEAPON MOUNTS</h4><p style="font-size:0.92rem">Each ship has a number of Weapon Mount slots. Installed ship weapons occupy these slots. Ships always know exactly what weapons they have installed and what they can target from each mount.</p></div>
+  <div class="rule-card static-card"><h4 style="color:var(--static)">◇ SPEED</h4><p style="font-size:0.92rem">Speed determines how freely the ship moves through range bands. Frames have a Speed from <strong>1 to 5</strong>, and Modules can raise it to a maximum of 6.</p><ul style="font-size:0.9rem;margin-top:0.5rem"><li>With a Helm action, the ship moves up to its Speed in range bands.</li><li>At <strong>Speed 3 or higher</strong>, the ship can also move one range band once per exchange without using a Helm action.</li></ul></div>
+  <div class="rule-card"><h4 style="color:var(--signal)">◈ WEAPON MOUNTS</h4><p style="font-size:0.92rem">Each ship has a number of Weapon Mounts. A Weapon Module takes up both a Weapon Module slot and a Weapon Mount, and draws Power like any other Module. A weapon from the Ship Weapons table takes up only a Weapon Mount and draws no Power.</p></div>
 </section>
 
 <section id="ranges">
   <div class="section-label">02 / Engagement</div>
   <h2>Range Bands in the Void</h2>
-  <p>Ship combat uses the following range bands to track relative position between ships and objects. Distances are narrative and relative &mdash; two ships in an asteroid field might treat Long Range as blocked entirely. The GM adjudicates.</p>
+  <p>Ship combat uses the following range bands to track relative position between ships and objects. Distances are narrative and relative; in an asteroid field, the GM might rule that Long Range is blocked entirely.</p>
   <div class="range-bands">
     <div class="range-row"><div class="rname">Boarding</div><div class="rdesc">Mag-locked, docked, or grappled. Hard contact between hulls.</div><div class="rmap">≈ Melee</div></div>
     <div class="range-row"><div class="rname">Knife's Edge</div><div class="rdesc">Close enough to see faces through viewports. Point-blank.</div><div class="rmap">≈ Very Close</div></div>
@@ -200,6 +201,7 @@
     <div class="range-row"><div class="rname">Long Range</div><div class="rdesc">Edge of targeting systems.</div><div class="rmap">≈ Very Far</div></div>
     <div class="range-row"><div class="rname">Deep Range</div><div class="rdesc">Scanner range only, no targeting lock.</div><div class="rmap">≈ Beyond</div></div>
   </div>
+  <p style="font-size:0.92rem">A weapon can fire at targets within its listed range. It can also fire at a target one band beyond its maximum range with disadvantage; this is the <strong>range penalty</strong>. Ships at Deep Range can't be targeted unless a feature says otherwise.</p>
 </section>
 
 <section id="signal-pool">
@@ -207,30 +209,29 @@
   <h2>The Ship Signal Pool</h2>
   <p>Ship combat uses a shared <strong>Ship Signal Pool</strong> in addition to each character's personal Signal.</p>
   <div class="rule-card"><ul style="font-size:0.94rem"><li>When any player character <strong>rolls with Signal</strong> during ship combat, they may choose to add <strong>1 Signal to the Ship Signal Pool</strong> instead of their personal Signal (to a maximum of 6).</li><li><strong>Powered Station Actions</strong> draw from this pool.</li><li>At the end of each ship combat encounter, the Ship Signal Pool resets to 0.</li></ul></div>
-  <p style="font-style:italic;color:var(--text-dim);font-size:0.92rem">This creates a crew economy: generous early rolls fund powerful late-fight options.</p>
+  <p style="font-style:italic;color:var(--text-dim);font-size:0.92rem">Signal banked early in a fight pays for Powered Actions later in it.</p>
   <h3>Stations &amp; Action Types</h3>
-  <p>At the beginning of any ship combat encounter, each player character <strong>chooses a Station</strong>. A ship only needs one crew member at each Station to function, but two characters can share a Station &mdash; one acts, one assists. You make Station Action rolls using your <strong>character's traits</strong>. Experiences can apply at the GM's discretion. Each station has three action types:</p>
+  <p>At the beginning of any ship combat encounter, each player character <strong>chooses a Station</strong>. A ship only needs one crew member at each Station to function, but two characters can share a Station, with one acting and the other helping. You make Station Action rolls using your <strong>character's traits</strong>. Experiences can apply at the GM's discretion. Each station has three action types:</p>
   <div class="grid-2">
-    <div class="rule-card"><h4 style="color:var(--text)">◈ STANDARD ACTIONS</h4><p style="font-size:0.88rem">Always available on your turn. No resource cost.</p></div>
-    <div class="rule-card"><h4 style="color:var(--signal)">◈ POWERED ACTIONS</h4><p style="font-size:0.88rem">Cost Signal from the Ship Signal Pool. Stronger effects.</p></div>
+    <div class="rule-card"><h4 style="color:var(--text)">◈ STANDARD ACTIONS</h4><p style="font-size:0.88rem">Always available when the spotlight is on you. No resource cost.</p></div>
+    <div class="rule-card"><h4 style="color:var(--signal)">◈ POWERED ACTIONS</h4><p style="font-size:0.88rem">Cost Signal from the Ship Signal Pool and have stronger effects.</p></div>
   </div>
-  <div class="rule-card rose-card" style="margin-top:0.75rem"><h4 style="color:var(--accent-rose)">✺ OVERCLOCKED ACTIONS</h4><p style="font-size:0.88rem">Require marking Ship System Stress, but hit hardest.</p></div>
+  <div class="rule-card rose-card" style="margin-top:0.75rem"><h4 style="color:var(--accent-rose)">✺ OVERCLOCKED ACTIONS</h4><p style="font-size:0.88rem">Cost System Stress instead of Signal. These are the strongest actions.</p></div>
 </section>
 
 <section id="helm" class="station-block">
   <div class="stn-header"><h3>⚓ HELM</h3><div class="stn-trait">Trait: Agility · Instinct</div></div>
-  <p class="stn-flavor">"You are at the controls. What happens next is up to you."</p>
-  <p style="font-size:0.92rem;color:var(--text)">The pilot manages positioning, speed, and evasion. The Helm's Evasion Modifier can be applied to the ship's Evasion at the start of each round, representing active piloting.</p>
+  <p style="font-size:0.92rem;color:var(--text)">The pilot manages the ship's position, speed, and evasive maneuvers.</p>
   <div class="action-tier standard">
     <h4>▸ STANDARD ACTIONS</h4>
-    <div class="action-entry"><span class="a-name">Evasive Pattern</span><p>Describe how you're moving the ship. Roll <strong>Agility or Instinct</strong> against the GM's Difficulty.</p><ul><li><strong>Success with Signal:</strong> Raise Evasion by +3 until your next turn. Gain Signal.</li><li><strong>Success with Static:</strong> Raise Evasion by +2 until your next turn.</li><li><strong>Failure:</strong> The ship is momentarily exposed. The GM gains Static.</li></ul></div>
-    <div class="action-entry"><span class="a-name">Reposition</span><p>Move the ship up to your Speed rating in range bands. No roll required unless moving through a hazard or contested space &mdash; then roll Agility against Difficulty.</p></div>
-    <div class="action-entry"><span class="a-name">Lock Trajectory</span><p>You stop maneuvering to give Gunnery a stable firing platform. Until your next turn, the ship's Evasion decreases by &minus;2, but all Gunnery attacks gain advantage.</p></div>
+    <div class="action-entry"><span class="a-name">Evasive Pattern</span><p>Describe how you're moving the ship. Roll <strong>Agility or Instinct</strong> against the GM's Difficulty.</p><ul><li><strong>Success with Signal:</strong> Raise Evasion by +3 until the end of the next GM turn. Gain Signal.</li><li><strong>Success with Static:</strong> Raise Evasion by +2 until the end of the next GM turn.</li><li><strong>Failure:</strong> The ship is momentarily exposed. The GM gains Static.</li></ul></div>
+    <div class="action-entry"><span class="a-name">Reposition</span><p>Move the ship up to your Speed rating in range bands. No roll is required unless the ship moves through a hazard or contested space; in that case, roll Agility against the GM's Difficulty.</p></div>
+    <div class="action-entry"><span class="a-name">Lock Trajectory</span><p>You stop maneuvering to give Gunnery a stable firing platform. Until the end of the next GM turn, the ship's Evasion decreases by &minus;2, and the crew's Gunnery attacks gain advantage.</p></div>
   </div>
   <div class="action-tier powered">
     <h4>◈ POWERED ACTIONS</h4>
     <div class="action-entry powered"><span class="a-name">Hard Burn</span><span class="a-cost">Cost: 1 Ship Signal</span><p>Push the drives beyond rated output. Move the ship up to <strong>double its Speed rating</strong> instantly. Mark 1 System Stress.</p></div>
-    <div class="action-entry powered"><span class="a-name">Threading the Needle</span><span class="a-cost">Cost: 2 Ship Signal</span><p>Describe a dangerous maneuver. Roll Agility against Difficulty <strong>18</strong>. On a success, no enemy can target your ship until your next turn. On a failure, the ship takes Minor damage from collision hazards.</p></div>
+    <div class="action-entry powered"><span class="a-name">Threading the Needle</span><span class="a-cost">Cost: 2 Ship Signal</span><p>Describe a dangerous maneuver. Roll Agility against Difficulty <strong>18</strong>. On a success, no enemy can target your ship until the end of the next GM turn. On a failure, the ship takes Minor damage from collision hazards.</p></div>
   </div>
   <div class="action-tier overclocked">
     <h4>✺ OVERCLOCKED ACTIONS</h4>
@@ -240,7 +241,6 @@
 
 <section id="gunnery" class="station-block">
   <div class="stn-header"><h3>🎯 GUNNERY</h3><div class="stn-trait">Trait: Finesse · Knowledge</div></div>
-  <p class="stn-flavor">"Every shot is a decision. Make them count."</p>
   <p style="font-size:0.92rem;color:var(--text)">The gunner operates the ship's weapon systems.</p>
   <div class="action-tier standard">
     <h4>▸ STANDARD ACTIONS</h4>
@@ -250,85 +250,83 @@
   </div>
   <div class="action-tier powered">
     <h4>◈ POWERED ACTIONS</h4>
-    <div class="action-entry powered"><span class="a-name">Fire Solution</span><span class="a-cost">Cost: 1 Ship Signal</span><p>Your next Weapons Lock action this turn gains advantage on the attack roll.</p></div>
+    <div class="action-entry powered"><span class="a-name">Fire Solution</span><span class="a-cost">Cost: 1 Ship Signal</span><p>The crew's next Weapons Lock roll this exchange gains advantage.</p></div>
     <div class="action-entry powered"><span class="a-name">Salvo</span><span class="a-cost">Cost: 2 Ship Signal</span><p>Fire multiple weapons simultaneously. Make a Weapons Lock roll against each enemy ship within range (or the same target twice). Each attack is resolved separately.</p></div>
   </div>
   <div class="action-tier overclocked">
     <h4>✺ OVERCLOCKED ACTIONS</h4>
-    <div class="action-entry overclocked"><span class="a-name">Overcharge Shot</span><span class="a-cost stress">Mark 1 System Stress</span><p>Make a Weapons Lock roll. On a success, double one damage die in the roll. On a failure, the weapon must be cooled &mdash; it can't fire next round without an Engineering action.</p></div>
-    <div class="action-entry overclocked"><span class="a-name">Target Systems</span><span class="a-cost stress">Mark 2 System Stress</span><p>Make a <strong>Finesse Roll</strong> against Difficulty <strong>18</strong>. On a success, choose one:</p><ul><li>Destroy or disable one of the enemy ship's active Modules.</li><li>Reduce the enemy ship's Evasion by &minus;3 until their Engineering station repairs it.</li><li>Mark the enemy ship's damage as <strong>Severe</strong> regardless of their thresholds.</li></ul></div>
+    <div class="action-entry overclocked"><span class="a-name">Overcharge Shot</span><span class="a-cost stress">Mark 1 System Stress</span><p>Make a Weapons Lock roll. On a success, double one damage die in the roll. On a failure, the weapon overheats and can't fire again until the end of the next GM turn unless the Engineering station spends an action to cool it.</p></div>
+    <div class="action-entry overclocked"><span class="a-name">Target Systems</span><span class="a-cost stress">Mark 2 System Stress</span><p>Make a <strong>Finesse Roll</strong> against Difficulty <strong>18</strong>. On a success, choose one:</p><ul><li>Destroy or disable one of the enemy ship's active Modules.</li><li>Reduce the enemy ship's Evasion by &minus;3 for the rest of the encounter.</li><li>The crew's next successful hit against that ship this exchange deals <strong>double damage</strong>.</li></ul></div>
   </div>
 </section>
 
 <section id="engineering" class="station-block">
   <div class="stn-header"><h3>🔧 ENGINEERING</h3><div class="stn-trait">Trait: Knowledge · Strength</div></div>
-  <p class="stn-flavor">"It's fine. Everything is fine. You just need ten seconds and a patch kit."</p>
   <p style="font-size:0.92rem;color:var(--text)">The engineer manages damage control, power routing, and system repairs.</p>
   <div class="action-tier standard">
     <h4>▸ STANDARD ACTIONS</h4>
-    <div class="action-entry"><span class="a-name">Patch Job</span><p>Roll <strong>Knowledge</strong> against Difficulty <strong>12</strong>.</p><ul><li><strong>Success with Signal:</strong> Clear 1 Hull Point or 2 System Stress. Gain Signal.</li><li><strong>Success with Static:</strong> Clear 1 Hull Point <em>or</em> 1 System Stress.</li><li><strong>Failure:</strong> The GM chooses: mark 1 additional System Stress, or you can't take an Engineering action next round.</li></ul></div>
+    <div class="action-entry"><span class="a-name">Patch Job</span><p>Roll <strong>Knowledge</strong> against Difficulty <strong>12</strong>.</p><ul><li><strong>Success with Signal:</strong> Clear 1 Hull Point or 2 System Stress. Gain Signal.</li><li><strong>Success with Static:</strong> Clear 1 Hull Point <em>or</em> 1 System Stress.</li><li><strong>Failure:</strong> The GM chooses: mark 1 additional System Stress, or no one can take an Engineering action until the end of the next GM turn.</li></ul></div>
     <div class="action-entry"><span class="a-name">Armor Hold</span><p>When the ship takes damage, use your reaction to mark an <strong>Armor Slot</strong> and reduce the damage severity by one threshold. Happens before Hull Points are marked.</p></div>
     <div class="action-entry"><span class="a-name">Power Reroute</span><p>Deactivate one Module (freeing its Power) and immediately activate another Module that was previously offline. No roll required.</p></div>
   </div>
   <div class="action-tier powered">
     <h4>◈ POWERED ACTIONS</h4>
-    <div class="action-entry powered"><span class="a-name">Emergency Shielding</span><span class="a-cost">Cost: 1 Ship Signal</span><p>Until the start of your next turn, the ship's Armor Score increases by +2.</p></div>
+    <div class="action-entry powered"><span class="a-name">Emergency Shielding</span><span class="a-cost">Cost: 1 Ship Signal</span><p>Until the end of the next GM turn, the ship's Armor Score increases by +2.</p></div>
     <div class="action-entry powered"><span class="a-name">Systems Purge</span><span class="a-cost">Cost: 2 Ship Signal</span><p>Choose one: Clear 2 Hull Points, or clear all System Stress. If you clear Hull Points this way, mark 1 System Stress. If you clear System Stress this way, the ship's Power Capacity drops by 2 until your next long rest.</p></div>
   </div>
   <div class="action-tier overclocked">
     <h4>✺ OVERCLOCKED ACTIONS</h4>
-    <div class="action-entry overclocked"><span class="a-name">Burn Everything</span><span class="a-cost stress">Mark 2 System Stress</span><p>Choose one effect:</p><ul><li>All Gunnery attacks this round deal an extra <strong>1d12</strong> damage.</li><li>The ship's Evasion increases by <strong>+5</strong> until your next turn.</li><li>Clear <strong>3 Hull Points</strong> immediately.</li></ul></div>
+    <div class="action-entry overclocked"><span class="a-name">Burn Everything</span><span class="a-cost stress">Mark 2 System Stress</span><p>Choose one effect:</p><ul><li>The crew's Gunnery attacks this exchange deal an extra <strong>1d12</strong> damage.</li><li>The ship's Evasion increases by <strong>+5</strong> until the end of the next GM turn.</li><li>Clear <strong>3 Hull Points</strong> immediately.</li></ul></div>
     <div class="action-entry overclocked"><span class="a-name">Emergency Restart</span><span class="a-cost stress">Mark 3 System Stress</span><p>Roll <strong>Knowledge</strong> against Difficulty <strong>18</strong>. On a success, a destroyed Module functions again until the end of the encounter (after which it requires proper repair). On a failure, the attempt fails and you can't try again this encounter.</p></div>
   </div>
 </section>
 
 <section id="comms" class="station-block">
   <div class="stn-header"><h3>📡 COMMS &amp; ECM</h3><div class="stn-trait">Trait: Knowledge · Presence</div></div>
-  <p class="stn-flavor">"Information is a weapon. So is silence."</p>
   <p style="font-size:0.92rem;color:var(--text)">The Comms officer runs electronic warfare, sensor operations, and communications.</p>
   <div class="action-tier standard">
     <h4>▸ STANDARD ACTIONS</h4>
     <div class="action-entry"><span class="a-name">Deep Scan</span><p>Roll <strong>Knowledge</strong> against Difficulty <strong>12</strong>.</p><ul><li><strong>Success with Signal:</strong> Ask the GM two questions about any ship or object in sensor range.</li><li><strong>Success with Static:</strong> Ask one question.</li><li><strong>Failure:</strong> Your active scan pings their sensors. The GM gains Static.</li></ul><p style="font-style:italic;color:var(--text-dim);font-size:0.85rem;margin-top:0.4rem">Example questions: their Hull/Stress, hidden Modules, next likely move, who they're targeting, anyone aboard who might surrender.</p></div>
-    <div class="action-entry"><span class="a-name">Sensor Wash</span><p>Until your next turn, any enemy using Target Assessment or Deep Scan against your ship gets no useful information.</p></div>
+    <div class="action-entry"><span class="a-name">Sensor Wash</span><p>Until the end of the next GM turn, enemy scans reveal nothing about your ship, and enemy features that track your ship's position or status don't work.</p></div>
     <div class="action-entry"><span class="a-name">Open Channel</span><p>Hail another ship or contact. The default action for any communication during ship combat. Roll <strong>Presence</strong> for social outcomes.</p></div>
   </div>
   <div class="action-tier powered">
     <h4>◈ POWERED ACTIONS</h4>
     <div class="action-entry powered"><span class="a-name">ECM Pulse</span><span class="a-cost">Cost: 1 Ship Signal</span><p>Roll <strong>Knowledge</strong> against Difficulty <strong>14</strong>. On a success, one Module on the target ship is deactivated until their Engineering station repairs it. On Signal, choose which Module.</p></div>
-    <div class="action-entry powered"><span class="a-name">Ghost Signal</span><span class="a-cost">Cost: 2 Ship Signal</span><p>Until the start of your next turn, the enemy must succeed on a Difficulty <strong>16</strong> Knowledge Roll to target your ship at all. On a failure, their attack automatically misses.</p></div>
+    <div class="action-entry powered"><span class="a-name">Ghost Signal</span><span class="a-cost">Cost: 2 Ship Signal</span><p>Until the end of the next GM turn, an enemy ship must succeed on a Difficulty <strong>16</strong> Knowledge Roll to target your ship at all. On a failure, their attack automatically misses.</p></div>
   </div>
   <div class="action-tier overclocked">
     <h4>✺ OVERCLOCKED ACTIONS</h4>
-    <div class="action-entry overclocked"><span class="a-name">Hard Breach</span><span class="a-cost stress">Mark 2 System Stress</span><p>Make a <strong>Knowledge Roll</strong> against Difficulty <strong>18</strong>. On a success, you gain full access to the target ship's sensor feed until they purge it (requires their Comms station to spend a Standard Action). While breached, you know their Hull, System Stress, active Modules, and next Station action choices.</p></div>
+    <div class="action-entry overclocked"><span class="a-name">Hard Breach</span><span class="a-cost stress">Mark 2 System Stress</span><p>Make a <strong>Knowledge Roll</strong> against Difficulty <strong>18</strong>. On a success, you gain full access to the target ship's sensor feed until they purge it (requires their Comms station to spend a Standard Action). While breached, you know the target's remaining Hull, its special feature, and what it intends to do on the next GM turn.</p></div>
   </div>
 </section>
 
 <section id="command" class="station-block">
   <div class="stn-header"><h3>🎖️ COMMAND</h3><div class="stn-trait">Trait: Presence</div></div>
-  <p class="stn-flavor">"Someone has to hold all of this together. That's you."</p>
-  <p style="font-size:0.92rem;color:var(--text)">The Commander doesn't pilot or fire. They coordinate, inspire, and make sure everyone is doing the right thing at the right moment.</p>
+  <p style="font-size:0.92rem;color:var(--text)">The commander doesn't pilot or fire. They coordinate the other Stations and keep the crew steady.</p>
   <div class="action-tier standard">
     <h4>▸ STANDARD ACTIONS</h4>
     <div class="action-entry"><span class="a-name">Direct</span><p>Issue precise orders to one crew member at a Station. They gain advantage on their next roll. No roll required.</p></div>
-    <div class="action-entry"><span class="a-name">Read the Fight</span><p>Roll <strong>Presence</strong> against Difficulty <strong>12</strong>. On a success, tell one allied crew member what action the GM is most likely to take this round (the GM must confirm or deny). On Signal, predict two possible GM actions.</p></div>
+    <div class="action-entry"><span class="a-name">Read the Fight</span><p>Roll <strong>Presence</strong> against Difficulty <strong>12</strong>. On a success, tell one allied crew member what the GM is most likely to do on their next turn (the GM must confirm or deny). On Signal, predict two possible GM actions.</p></div>
     <div class="action-entry"><span class="a-name">Steady the Crew</span><p>One crew member of your choice clears 1 Stress. If you describe a particularly inspiring moment, spend 1 personal Signal to let them clear 2 Stress instead.</p></div>
   </div>
   <div class="action-tier powered">
     <h4>◈ POWERED ACTIONS</h4>
-    <div class="action-entry powered"><span class="a-name">Rally</span><span class="a-cost">Cost: 1 Ship Signal</span><p>Add 1 Ship Signal to the Ship Pool from nothing but force of personality. No roll required.</p></div>
-    <div class="action-entry powered"><span class="a-name">Coordinated Strike</span><span class="a-cost">Cost: 2 Ship Signal</span><p>Two crew members at different Stations can each take a Standard Action this turn instead of one of them waiting. Both act simultaneously.</p></div>
+    <div class="action-entry powered"><span class="a-name">Rally</span><span class="a-cost">Cost: 1 personal Signal</span><p>Spend 1 of your own Signal to add 2 Signal to the Ship Signal Pool. No roll is required. Once per exchange.</p></div>
+    <div class="action-entry powered"><span class="a-name">Coordinated Strike</span><span class="a-cost">Cost: 2 Ship Signal</span><p>Choose a crew member at another Station. They immediately take one Standard Action. This doesn't count as their own time in the spotlight.</p></div>
   </div>
   <div class="action-tier overclocked">
     <h4>✺ OVERCLOCKED ACTIONS</h4>
-    <div class="action-entry overclocked"><span class="a-name">All Hands</span><span class="a-cost stress">Mark 2 System Stress</span><p>Every crew member immediately takes one Standard Action at their Station, out of turn order &mdash; on top of their normal turn. All these actions are resolved simultaneously.</p></div>
+    <div class="action-entry overclocked"><span class="a-name">All Hands</span><span class="a-cost stress">Mark 2 System Stress</span><p>Every crew member immediately takes one Standard Action at their Station. Resolve them in any order the crew chooses. If any of these rolls fails or rolls with Static, the GM takes one turn after all of them are resolved.</p></div>
   </div>
 </section>
 
 <section id="flow">
-  <div class="section-label">04 / Round Structure</div>
+  <div class="section-label">04 / The Spotlight</div>
   <h2>Combat Flow</h2>
-  <p>Void Combat follows the same structure as ground combat, with five steps each round:</p>
-  <div class="rule-card"><ol style="padding-left:1.25rem;line-height:2;font-size:0.95rem"><li><strong>Establish Range.</strong> At the start of combat, the GM places all ships at their starting range bands relative to each other.</li><li><strong>Determine Turn Order.</strong> Turn order is determined by each crew member's Initiative (Instinct Roll at the start of combat). Ship NPCs use their listed Initiative.</li><li><strong>Player Turns.</strong> On a PC's turn, they take their Station Action. Some Station Actions use personal Signal/Static. Some feed the Ship Signal Pool.</li><li><strong>GM Turns.</strong> Enemy ships act on their Initiative count. Attacks roll against the player ship's Evasion.</li><li><strong>Round End.</strong> Check for Critical Systems conditions. Clear any "until your next turn" effects.</li></ol></div>
+  <p>Void Combat uses the spotlight, just like ground combat. There are no rounds and no initiative.</p>
+  <div class="rule-card"><ol style="padding-left:1.25rem;line-height:2;font-size:0.95rem"><li><strong>Set the scene.</strong> The GM places all ships in their starting range bands and decides who has the spotlight first. Usually it's the crew; if the crew was ambushed, the GM takes the first turn.</li><li><strong>Crew actions.</strong> The crew member in the spotlight takes one Station Action, then passes the spotlight to another crew member. Try to give every Station the spotlight before anyone acts twice. Actions that don't need a roll never hand the spotlight to the GM.</li><li><strong>GM turns.</strong> When a crew member fails a roll or rolls with Static, the GM takes a turn after that action resolves. The GM can also spend a Static to take a turn at any other moment, interrupting the crew. On a GM turn, one enemy ship acts for free, and the GM can spend 1 Static for each additional ship that acts. Enemy attacks roll against the crew ship's Evasion.</li><li><strong>Back to the crew.</strong> After a GM turn, the spotlight returns to the crew, and the players choose who acts next.</li></ol></div>
+  <div class="rule-card teal-card"><h4 style="color:var(--accent-teal)">⌬ TIMING TERMS</h4><ul style="font-size:0.92rem"><li><strong>Exchange:</strong> the stretch of play from the end of one GM turn to the end of the next. Effects that say "once per exchange" can be used again after each GM turn ends.</li><li><strong>Until the end of the next GM turn:</strong> the effect lasts through the enemy's next set of actions, then ends.</li><li><strong>Your next action:</strong> the next time the spotlight is on you and you take a Station Action.</li></ul></div>
 </section>
 
 <section id="damage">
@@ -337,11 +335,11 @@
   <p>When your ship takes damage, compare the damage total against the ship's <strong>Damage Thresholds</strong>:</p>
   <div class="threshold-strip">
     <div class="thresh-tile none"><h4>BELOW MINOR</h4><div class="val">None</div><p>No Hull marked.</p></div>
-    <div class="thresh-tile minor"><h4>AT/ABOVE MINOR</h4><div class="val">Mark 1 Hull</div><p>The hull holds.</p></div>
-    <div class="thresh-tile major"><h4>AT/ABOVE MAJOR</h4><div class="val">Mark 2 Hull</div><p>Solid hit.</p></div>
-    <div class="thresh-tile severe"><h4>AT/ABOVE SEVERE</h4><div class="val">Mark 3 Hull</div><p>Critical strike.</p></div>
+    <div class="thresh-tile minor"><h4>AT/ABOVE MINOR</h4><div class="val">Mark 1 Hull</div><p>Light damage.</p></div>
+    <div class="thresh-tile major"><h4>AT/ABOVE MAJOR</h4><div class="val">Mark 2 Hull</div><p>Heavy damage.</p></div>
+    <div class="thresh-tile severe"><h4>AT/ABOVE SEVERE</h4><div class="val">Mark 3 Hull</div><p>Structural damage.</p></div>
   </div>
-  <p style="font-size:0.92rem;color:var(--text-dim)">The Engineering Station can mark an Armor Slot to reduce severity by one step before Hull is marked. Ship Damage Thresholds are determined by Frame and modified by Modules. A typical Tier 1 ship might have <strong>Minor&nbsp;4 / Major&nbsp;8 / Severe&nbsp;14</strong>.</p>
+  <p style="font-size:0.92rem;color:var(--text-dim)">The Engineering Station can mark an Armor Slot to reduce severity by one step before Hull is marked. Ship Damage Thresholds are determined by Frame and modified by Modules. A typical Tier 1 ship has thresholds around <strong>Minor&nbsp;6 / Major&nbsp;11 / Severe&nbsp;17</strong>.</p>
 </section>
 
 <section id="critical">
@@ -352,30 +350,30 @@
     <li>Your ship marks its <strong>last Hull Point</strong>.</li>
     <li>Your ship fills all <strong>System Stress</strong> slots (Cascade Failure).</li>
   </ul>
-  <p>Roll <strong>1d12</strong> and apply the result. These conditions create drama, not dead stops.</p>
+  <p>Roll <strong>1d12</strong> and apply the result. Each result complicates the fight without ending it.</p>
   <table class="data">
     <thead><tr><th class="center" style="width:60px">d12</th><th>Critical System</th><th>Effect</th></tr></thead>
     <tbody>
       <tr><td class="center"><strong>1</strong></td><td><strong>Drive Failure</strong></td><td>Speed drops to 1. Engineering Standard Action to restore.</td></tr>
       <tr><td class="center"><strong>2</strong></td><td><strong>Weapon Mount Destroyed</strong></td><td>One weapon mount is offline until repaired at port.</td></tr>
       <tr><td class="center"><strong>3</strong></td><td><strong>Targeting Array Down</strong></td><td>All Gunnery rolls are made without advantage until repaired (Engineering action).</td></tr>
-      <tr><td class="center"><strong>4</strong></td><td><strong>Hull Breach</strong></td><td>One section is venting atmosphere. Crew without suits must mark Stress each round they remain aboard.</td></tr>
+      <tr><td class="center"><strong>4</strong></td><td><strong>Hull Breach</strong></td><td>One section is venting atmosphere. Crew without suits must mark Stress each exchange they remain aboard.</td></tr>
       <tr><td class="center"><strong>5</strong></td><td><strong>Power Surge</strong></td><td>Mark 2 additional System Stress immediately. One Module deactivates.</td></tr>
       <tr><td class="center"><strong>6</strong></td><td><strong>Navigation Failure</strong></td><td>Helm cannot use Powered or Overclocked Actions until repaired.</td></tr>
       <tr><td class="center"><strong>7</strong></td><td><strong>Sensor Array Scrambled</strong></td><td>Comms Station loses all Powered and Overclocked actions until repaired.</td></tr>
       <tr><td class="center"><strong>8</strong></td><td><strong>Armor Breach</strong></td><td>All Armor Slots are marked until the ship reaches a port or dock.</td></tr>
-      <tr><td class="center"><strong>9</strong></td><td><strong>Emergency Lockdown</strong></td><td>The ship's AI initiates emergency protocols. All Station Actions this round are at Difficulty +4.</td></tr>
-      <tr><td class="center"><strong>10</strong></td><td><strong>Crew Injury</strong></td><td>One crew member (GM's choice or random) takes Major damage directly, bypassing ship HP.</td></tr>
-      <tr><td class="center"><strong>11</strong></td><td><strong>Core Instability</strong></td><td>Mark the <em>Core Unstable</em> condition &mdash; if the ship takes any Severe damage again before repairs, roll on this table twice.</td></tr>
-      <tr><td class="center"><strong>12</strong></td><td><strong>She's Still Flying</strong></td><td>Against all odds, nothing critical breaks. Gain 2 Ship Signal immediately.</td></tr>
+      <tr><td class="center"><strong>9</strong></td><td><strong>Emergency Lockdown</strong></td><td>The ship's AI initiates emergency protocols. All Station Actions this exchange are at Difficulty +4.</td></tr>
+      <tr><td class="center"><strong>10</strong></td><td><strong>Crew Injury</strong></td><td>One crew member (GM's choice or random) takes Major damage directly, bypassing the ship's Hull.</td></tr>
+      <tr><td class="center"><strong>11</strong></td><td><strong>Core Instability</strong></td><td>Mark the <em>Core Unstable</em> condition. If the ship takes Severe damage again before it is repaired, roll on this table twice.</td></tr>
+      <tr><td class="center"><strong>12</strong></td><td><strong>She's Still Flying</strong></td><td>Nothing critical breaks. Gain 2 Ship Signal immediately.</td></tr>
     </tbody>
   </table>
   <h3>Ending Ship Combat</h3>
   <div class="rule-card">
     <p style="font-size:0.92rem"><strong>Victory:</strong> The enemy ships are destroyed, disabled, or fled.</p>
     <p style="font-size:0.92rem"><strong>Disengage:</strong> A ship can attempt to disengage by moving to Deep Range. Requires a successful Helm action (Difficulty 14) and costs 2 System Stress.</p>
-    <p style="font-size:0.92rem"><strong>Surrender / Boarding:</strong> A ship can broadcast surrender. What happens next is the GM's call and the crew's problem.</p>
-    <p style="font-size:0.92rem"><strong>Crippled:</strong> When a ship marks all Hull Points, it is Crippled &mdash; dead in the void, no thrust, no shields.</p>
+    <p style="font-size:0.92rem"><strong>Surrender / Boarding:</strong> A ship can broadcast surrender. The GM decides how the other side responds.</p>
+    <p style="font-size:0.92rem"><strong>Crippled:</strong> When a ship marks all Hull Points, it is Crippled: it has no thrust, weapons, or shields until it is repaired.</p>
   </div>
 </section>
 
@@ -388,129 +386,186 @@
     <div class="frame-header"><div><h3>◈ CORSAIR-CLASS</h3></div><div class="frame-domains">DOMAINS — SHADOW · SABLE</div></div>
     <div class="ship-stats"><div class="stat-pill"><div class="v">8</div><div class="k">Hull</div></div><div class="stat-pill"><div class="v">6</div><div class="k">Stress</div></div><div class="stat-pill"><div class="v">16</div><div class="k">Evasion</div></div><div class="stat-pill"><div class="v">2 (2)</div><div class="k">Armor</div></div><div class="stat-pill"><div class="v">8</div><div class="k">Power</div></div><div class="stat-pill"><div class="v">3</div><div class="k">Speed</div></div><div class="stat-pill"><div class="v">2</div><div class="k">Mounts</div></div></div>
     <div class="module-slots-row">Thresholds: Minor 5 / Major 10 / Severe 16 · Module Slots: 4 (2 Weapon, 1 Defense, 1 System)</div>
-    <div class="frame-feature"><div class="ft-label">FRAME FEATURE — RUNNING DARK</div><p>Once per encounter, when the Helm station uses <strong>Evasive Pattern</strong>, the Corsair can also be treated as <em>Cloaked</em> until the start of the Helm character's next turn. Enemy ships cannot target a Cloaked ship.</p></div>
+    <div class="frame-feature"><div class="ft-label">FRAME FEATURE — RUNNING DARK</div><p>Once per encounter, when the Helm station uses <strong>Evasive Pattern</strong>, the Corsair can also be treated as <em>Cloaked</em> until the end of the next GM turn. Enemy ships cannot target a Cloaked ship.</p></div>
   </div>
 
   <div class="ship-frame patrol">
     <div class="frame-header"><div><h3>◈ PATROL FRIGATE-CLASS</h3></div><div class="frame-domains">DOMAINS — IRON · TIDE</div></div>
     <div class="ship-stats"><div class="stat-pill"><div class="v">12</div><div class="k">Hull</div></div><div class="stat-pill"><div class="v">6</div><div class="k">Stress</div></div><div class="stat-pill"><div class="v">12</div><div class="k">Evasion</div></div><div class="stat-pill"><div class="v">3 (3)</div><div class="k">Armor</div></div><div class="stat-pill"><div class="v">10</div><div class="k">Power</div></div><div class="stat-pill"><div class="v">2</div><div class="k">Speed</div></div><div class="stat-pill"><div class="v">3</div><div class="k">Mounts</div></div></div>
-    <div class="module-slots-row">Thresholds: Minor 6 / Major 12 / Severe 18 · Module Slots: 5 (2 Weapon, 1 Defense, 1 System, 1 Support)</div>
-    <div class="frame-feature"><div class="ft-label">FRAME FEATURE — COMBAT HARDENED</div><p>The Patrol Frigate ignores the first Critical Systems roll per encounter. The result simply doesn't apply. Describe how the crew and ship weather it.</p></div>
+    <div class="module-slots-row">Thresholds: Minor 6 / Major 11 / Severe 17 · Module Slots: 5 (2 Weapon, 1 Defense, 1 System, 1 Support)</div>
+    <div class="frame-feature"><div class="ft-label">FRAME FEATURE — COMBAT HARDENED</div><p>The Patrol Frigate ignores the first Critical Systems roll per encounter. Ignore its result and describe how the crew and ship ride it out.</p></div>
   </div>
 
   <div class="ship-frame gunship">
     <div class="frame-header"><div><h3>◈ GUNSHIP-CLASS</h3></div><div class="frame-domains">DOMAINS — IRON · VECTOR</div></div>
-    <div class="ship-stats"><div class="stat-pill"><div class="v">16</div><div class="k">Hull</div></div><div class="stat-pill"><div class="v">7</div><div class="k">Stress</div></div><div class="stat-pill"><div class="v">9</div><div class="k">Evasion</div></div><div class="stat-pill"><div class="v">5 (5)</div><div class="k">Armor</div></div><div class="stat-pill"><div class="v">12</div><div class="k">Power</div></div><div class="stat-pill"><div class="v">1</div><div class="k">Speed</div></div><div class="stat-pill"><div class="v">4</div><div class="k">Mounts</div></div></div>
-    <div class="module-slots-row">Thresholds: Minor 8 / Major 14 / Severe 20 · Module Slots: 6 (3 Weapon, 2 Defense, 1 System)</div>
-    <div class="frame-feature"><div class="ft-label">FRAME FEATURE — WEAPONS PLATFORM</div><p>When the Gunnery station uses <strong>Salvo</strong>, the Power cost is reduced by 1 (to 1 Ship Signal). Additionally, the Gunship can fire at Long Range without penalty.</p></div>
+    <div class="ship-stats"><div class="stat-pill"><div class="v">13</div><div class="k">Hull</div></div><div class="stat-pill"><div class="v">7</div><div class="k">Stress</div></div><div class="stat-pill"><div class="v">9</div><div class="k">Evasion</div></div><div class="stat-pill"><div class="v">4 (4)</div><div class="k">Armor</div></div><div class="stat-pill"><div class="v">12</div><div class="k">Power</div></div><div class="stat-pill"><div class="v">1</div><div class="k">Speed</div></div><div class="stat-pill"><div class="v">4</div><div class="k">Mounts</div></div></div>
+    <div class="module-slots-row">Thresholds: Minor 7 / Major 13 / Severe 19 · Module Slots: 6 (3 Weapon, 2 Defense, 1 System)</div>
+    <div class="frame-feature"><div class="ft-label">FRAME FEATURE — WEAPONS PLATFORM</div><p>When the Gunnery station uses <strong>Salvo</strong>, it costs 1 Ship Signal instead of 2. The Gunship's weapons also ignore the range penalty at Long Range.</p></div>
   </div>
 
   <div class="ship-frame tender">
     <div class="frame-header"><div><h3>◈ SUPPORT TENDER-CLASS</h3></div><div class="frame-domains">DOMAINS — CIPHER · TIDE</div></div>
-    <div class="ship-stats"><div class="stat-pill"><div class="v">10</div><div class="k">Hull</div></div><div class="stat-pill"><div class="v">8</div><div class="k">Stress</div></div><div class="stat-pill"><div class="v">11</div><div class="k">Evasion</div></div><div class="stat-pill"><div class="v">2 (2)</div><div class="k">Armor</div></div><div class="stat-pill"><div class="v">14</div><div class="k">Power</div></div><div class="stat-pill"><div class="v">2</div><div class="k">Speed</div></div><div class="stat-pill"><div class="v">2</div><div class="k">Mounts</div></div></div>
-    <div class="module-slots-row">Thresholds: Minor 5 / Major 9 / Severe 15 · Module Slots: 6 (1 Weapon, 1 Defense, 2 System, 2 Support)</div>
-    <div class="frame-feature"><div class="ft-label">FRAME FEATURE — FIELD SUPPORT</div><p>Once per round, when any allied ship in the same engagement clears Hull Points or System Stress, they clear 1 additional. Presence is force multiplication.</p></div>
+    <div class="ship-stats"><div class="stat-pill"><div class="v">12</div><div class="k">Hull</div></div><div class="stat-pill"><div class="v">8</div><div class="k">Stress</div></div><div class="stat-pill"><div class="v">11</div><div class="k">Evasion</div></div><div class="stat-pill"><div class="v">3 (3)</div><div class="k">Armor</div></div><div class="stat-pill"><div class="v">14</div><div class="k">Power</div></div><div class="stat-pill"><div class="v">2</div><div class="k">Speed</div></div><div class="stat-pill"><div class="v">2</div><div class="k">Mounts</div></div></div>
+    <div class="module-slots-row">Thresholds: Minor 5 / Major 10 / Severe 15 · Module Slots: 6 (1 Weapon, 1 Defense, 2 System, 2 Support)</div>
+    <div class="frame-feature"><div class="ft-label">FRAME FEATURE — FIELD SUPPORT</div><p>Once per exchange, when an allied ship in the same engagement clears Hull Points or System Stress, that ship clears 1 additional.</p></div>
   </div>
 
   <div class="ship-frame scout">
     <div class="frame-header"><div><h3>◈ SCOUT-CLASS</h3></div><div class="frame-domains">DOMAINS — DEEP · SHADOW</div></div>
-    <div class="ship-stats"><div class="stat-pill"><div class="v">8</div><div class="k">Hull</div></div><div class="stat-pill"><div class="v">6</div><div class="k">Stress</div></div><div class="stat-pill"><div class="v">14</div><div class="k">Evasion</div></div><div class="stat-pill"><div class="v">1 (1)</div><div class="k">Armor</div></div><div class="stat-pill"><div class="v">9</div><div class="k">Power</div></div><div class="stat-pill"><div class="v">3</div><div class="k">Speed</div></div><div class="stat-pill"><div class="v">2</div><div class="k">Mounts</div></div></div>
-    <div class="module-slots-row">Thresholds: Minor 4 / Major 8 / Severe 12 · Module Slots: 5 (1 Weapon, 1 Defense, 2 System, 1 Electronic)</div>
-    <div class="frame-feature"><div class="ft-label">FRAME FEATURE — LONG-RANGE RECON</div><p>The Scout's Comms Station can use <strong>Deep Scan</strong> at Deep Range without penalty, and the questions asked reveal one additional fact. The Scout always knows more than it should.</p></div>
+    <div class="ship-stats"><div class="stat-pill"><div class="v">10</div><div class="k">Hull</div></div><div class="stat-pill"><div class="v">6</div><div class="k">Stress</div></div><div class="stat-pill"><div class="v">14</div><div class="k">Evasion</div></div><div class="stat-pill"><div class="v">2 (2)</div><div class="k">Armor</div></div><div class="stat-pill"><div class="v">9</div><div class="k">Power</div></div><div class="stat-pill"><div class="v">3</div><div class="k">Speed</div></div><div class="stat-pill"><div class="v">2</div><div class="k">Mounts</div></div></div>
+    <div class="module-slots-row">Thresholds: Minor 5 / Major 9 / Severe 14 · Module Slots: 5 (1 Weapon, 1 Defense, 2 System, 1 Electronic)</div>
+    <div class="frame-feature"><div class="ft-label">FRAME FEATURE — LONG-RANGE RECON</div><p>The Scout's Comms Station can use <strong>Deep Scan</strong> on targets at Deep Range, and each successful Deep Scan reveals one additional fact.</p></div>
   </div>
 </section>
 
 <section id="frames-t2">
   <div class="section-label">08 / Proven Hulls</div>
   <h2>Ship Frames — Tier 2</h2>
-  <p>Tier 2 Frames are <strong>capital-grade hulls</strong>, story-earned at <strong>Campaign Level 3+</strong>. A crew may adopt <em>any</em> Tier 2 Frame regardless of the Tier 1 hull it flew before &mdash; each is a full tier above every starting Frame, so the choice among the five is about role and playstyle, not lineage. Every Tier 2 Frame is a genuine upgrade over any Tier 1 ship.</p>
+  <p>Tier 2 Frames are <strong>capital-grade hulls</strong>, story-earned at <strong>Campaign Level 3+</strong>. A crew can adopt <em>any</em> Tier 2 Frame, whatever Tier 1 hull it flew before. Every Tier 2 Frame outperforms every Tier 1 Frame, so the choice among the five comes down to the role and playstyle the crew wants.</p>
 
   <div class="ship-frame vanguard">
     <div class="frame-header"><div><h3>◈ VANGUARD-CLASS</h3></div><div class="frame-domains">DOMAINS — VECTOR · SABLE</div></div>
     <div class="ship-stats"><div class="stat-pill"><div class="v">13</div><div class="k">Hull</div></div><div class="stat-pill"><div class="v">7</div><div class="k">Stress</div></div><div class="stat-pill"><div class="v">17</div><div class="k">Evasion</div></div><div class="stat-pill"><div class="v">3 (3)</div><div class="k">Armor</div></div><div class="stat-pill"><div class="v">12</div><div class="k">Power</div></div><div class="stat-pill"><div class="v">4</div><div class="k">Speed</div></div><div class="stat-pill"><div class="v">3</div><div class="k">Mounts</div></div></div>
     <div class="module-slots-row">Thresholds: Minor 6 / Major 12 / Severe 18 · Module Slots: 6 (2 Weapon, 1 Defense, 2 System, 1 Electronic)</div>
-    <div class="frame-feature"><div class="ft-label">FRAME FEATURE — STRIKE VECTOR</div><p>When the Vanguard closes a range band on its turn (moving toward a target), its <strong>next Gunnery attack this round gains advantage</strong>. Speed is a weapon.</p></div>
+    <div class="frame-feature"><div class="ft-label">FRAME FEATURE — STRIKE VECTOR</div><p>When the Helm moves the Vanguard at least one range band closer to a target, the crew's <strong>next Gunnery attack against that target this exchange gains advantage</strong>.</p></div>
   </div>
 
   <div class="ship-frame bulwark">
     <div class="frame-header"><div><h3>◈ BULWARK-CLASS</h3></div><div class="frame-domains">DOMAINS — IRON · TIDE</div></div>
     <div class="ship-stats"><div class="stat-pill"><div class="v">22</div><div class="k">Hull</div></div><div class="stat-pill"><div class="v">8</div><div class="k">Stress</div></div><div class="stat-pill"><div class="v">9</div><div class="k">Evasion</div></div><div class="stat-pill"><div class="v">6 (6)</div><div class="k">Armor</div></div><div class="stat-pill"><div class="v">13</div><div class="k">Power</div></div><div class="stat-pill"><div class="v">1</div><div class="k">Speed</div></div><div class="stat-pill"><div class="v">4</div><div class="k">Mounts</div></div></div>
     <div class="module-slots-row">Thresholds: Minor 9 / Major 16 / Severe 22 · Module Slots: 7 (3 Weapon, 2 Defense, 1 System, 1 Support)</div>
-    <div class="frame-feature"><div class="ft-label">FRAME FEATURE — HOLD THE LINE</div><p>Once per round, when an attack targets an allied ship in the same engagement, the Bulwark may mark an <strong>Armor Slot</strong> to intercept it &mdash; the Bulwark takes the hit instead. Nothing gets past it.</p></div>
+    <div class="frame-feature"><div class="ft-label">FRAME FEATURE — HOLD THE LINE</div><p>Once per exchange, when an attack targets an allied ship in the same engagement, the Bulwark may mark an <strong>Armor Slot</strong> to intercept it; the Bulwark takes the hit instead.</p></div>
   </div>
 
   <div class="ship-frame lance">
     <div class="frame-header"><div><h3>◈ LANCE-CLASS</h3></div><div class="frame-domains">DOMAINS — IRON · VECTOR</div></div>
     <div class="ship-stats"><div class="stat-pill"><div class="v">18</div><div class="k">Hull</div></div><div class="stat-pill"><div class="v">8</div><div class="k">Stress</div></div><div class="stat-pill"><div class="v">10</div><div class="k">Evasion</div></div><div class="stat-pill"><div class="v">4 (4)</div><div class="k">Armor</div></div><div class="stat-pill"><div class="v">14</div><div class="k">Power</div></div><div class="stat-pill"><div class="v">2</div><div class="k">Speed</div></div><div class="stat-pill"><div class="v">5</div><div class="k">Mounts</div></div></div>
     <div class="module-slots-row">Thresholds: Minor 7 / Major 14 / Severe 20 · Module Slots: 7 (4 Weapon, 1 Defense, 2 System)</div>
-    <div class="frame-feature"><div class="ft-label">FRAME FEATURE — OVERWATCH</div><p>At <strong>Long or Deep Range</strong>, the Lance's weapons ignore the range penalty, and a Severe hit marks the target <strong>1 additional System Stress</strong>. It reaches out and touches everything.</p></div>
+    <div class="frame-feature"><div class="ft-label">FRAME FEATURE — OVERWATCH</div><p>The Lance's weapons ignore the range penalty, and the Lance can target ships at <strong>Deep Range</strong>. When it deals Severe damage, the target marks <strong>1 additional System Stress</strong>.</p></div>
   </div>
 
   <div class="ship-frame chorus">
     <div class="frame-header"><div><h3>◈ CHORUS-CLASS</h3></div><div class="frame-domains">DOMAINS — CIPHER · TIDE</div></div>
     <div class="ship-stats"><div class="stat-pill"><div class="v">18</div><div class="k">Hull</div></div><div class="stat-pill"><div class="v">9</div><div class="k">Stress</div></div><div class="stat-pill"><div class="v">12</div><div class="k">Evasion</div></div><div class="stat-pill"><div class="v">3 (3)</div><div class="k">Armor</div></div><div class="stat-pill"><div class="v">16</div><div class="k">Power</div></div><div class="stat-pill"><div class="v">2</div><div class="k">Speed</div></div><div class="stat-pill"><div class="v">3</div><div class="k">Mounts</div></div></div>
     <div class="module-slots-row">Thresholds: Minor 6 / Major 11 / Severe 17 · Module Slots: 8 (1 Weapon, 2 Defense, 2 System, 3 Support)</div>
-    <div class="frame-feature"><div class="ft-label">FRAME FEATURE — FORCE MULTIPLIER</div><p>Once per round, when the Chorus takes a <strong>Support Station action</strong>, one allied ship in the same engagement may immediately take a free reaction-roll action. Presence is coordination.</p></div>
+    <div class="frame-feature"><div class="ft-label">FRAME FEATURE — FORCE MULTIPLIER</div><p>Once per exchange, when a crew member aboard the Chorus uses a <strong>Support Module</strong>, one allied ship in the same engagement can immediately take one Standard Action at any Station.</p></div>
   </div>
 
   <div class="ship-frame specter">
     <div class="frame-header"><div><h3>◈ SPECTER-CLASS</h3></div><div class="frame-domains">DOMAINS — CIPHER · SHADOW</div></div>
     <div class="ship-stats"><div class="stat-pill"><div class="v">13</div><div class="k">Hull</div></div><div class="stat-pill"><div class="v">8</div><div class="k">Stress</div></div><div class="stat-pill"><div class="v">17</div><div class="k">Evasion</div></div><div class="stat-pill"><div class="v">2 (2)</div><div class="k">Armor</div></div><div class="stat-pill"><div class="v">13</div><div class="k">Power</div></div><div class="stat-pill"><div class="v">3</div><div class="k">Speed</div></div><div class="stat-pill"><div class="v">3</div><div class="k">Mounts</div></div></div>
     <div class="module-slots-row">Thresholds: Minor 6 / Major 11 / Severe 16 · Module Slots: 7 (1 Weapon, 1 Defense, 2 System, 3 Electronic)</div>
-    <div class="frame-feature"><div class="ft-label">FRAME FEATURE — SIGNAL DOMINANCE</div><p>The Specter's Comms Station may run <strong>two Electronic actions per round</strong> (one per target). Enemy attempts to break its jamming are made at <strong>Difficulty +2</strong>. The battle is decided in the spectrum first.</p></div>
+    <div class="frame-feature"><div class="ft-label">FRAME FEATURE — SIGNAL DOMINANCE</div><p>The Specter's Comms Station may run <strong>two Electronic actions each time it has the spotlight</strong> (one per target). Enemy attempts to break its jamming are made at <strong>Difficulty +2</strong>.</p></div>
   </div>
 </section>
 
 <section id="frames-t3">
-  <div class="section-label">09 / Legends</div>
+  <div class="section-label">09 / Capital Hulls</div>
   <h2>Ship Frames — Tier 3</h2>
-  <p>Tier 3 Frames are <strong>legendary hulls</strong> &mdash; rare, named, story-defining ships earned at <strong>Campaign Level 6+</strong>. Each carries a <strong>signature feature that bends a rule of ship combat</strong>. As with Tier 2, any crew may claim any Tier 3 Frame; the choice is role, not lineage.</p>
+  <p>Tier 3 Frames are <strong>capital hulls</strong>: rare ships that a crew earns through the story at <strong>Campaign Level 6+</strong>. Each has a <strong>signature feature that bends a rule of ship combat</strong>. As with Tier 2, any crew can claim any Tier 3 Frame.</p>
 
   <div class="ship-frame nemesis">
     <div class="frame-header"><div><h3>◈ NEMESIS-CLASS</h3></div><div class="frame-domains">DOMAINS — SABLE · VECTOR</div></div>
     <div class="ship-stats"><div class="stat-pill"><div class="v">16</div><div class="k">Hull</div></div><div class="stat-pill"><div class="v">9</div><div class="k">Stress</div></div><div class="stat-pill"><div class="v">20</div><div class="k">Evasion</div></div><div class="stat-pill"><div class="v">5 (5)</div><div class="k">Armor</div></div><div class="stat-pill"><div class="v">17</div><div class="k">Power</div></div><div class="stat-pill"><div class="v">5</div><div class="k">Speed</div></div><div class="stat-pill"><div class="v">4</div><div class="k">Mounts</div></div></div>
     <div class="module-slots-row">Thresholds: Minor 8 / Major 15 / Severe 19 · Module Slots: 8 (3 Weapon, 1 Defense, 2 System, 2 Electronic)</div>
-    <div class="frame-feature"><div class="ft-label">FRAME FEATURE — KILL BOX</div><p>The first time each round the Nemesis attacks a ship that <strong>has not yet acted</strong>, that attack deals <strong>+1 damage die</strong> and its damage <strong>cannot be reduced below Minor</strong>. It hunts the unready.</p></div>
+    <div class="frame-feature"><div class="ft-label">FRAME FEATURE — KILL BOX</div><p>The Nemesis's <strong>first attack against each enemy ship</strong> in an encounter deals <strong>+1 damage die</strong>, and its damage <strong>cannot be reduced below Minor</strong>.</p></div>
   </div>
 
   <div class="ship-frame leviathan">
     <div class="frame-header"><div><h3>◈ LEVIATHAN-CLASS</h3></div><div class="frame-domains">DOMAINS — IRON · DEEP</div></div>
     <div class="ship-stats"><div class="stat-pill"><div class="v">24</div><div class="k">Hull</div></div><div class="stat-pill"><div class="v">10</div><div class="k">Stress</div></div><div class="stat-pill"><div class="v">9</div><div class="k">Evasion</div></div><div class="stat-pill"><div class="v">8 (8)</div><div class="k">Armor</div></div><div class="stat-pill"><div class="v">19</div><div class="k">Power</div></div><div class="stat-pill"><div class="v">1</div><div class="k">Speed</div></div><div class="stat-pill"><div class="v">6</div><div class="k">Mounts</div></div></div>
     <div class="module-slots-row">Thresholds: Minor 11 / Major 18 / Severe 26 · Module Slots: 9 (4 Weapon, 2 Defense, 2 System, 1 Support)</div>
-    <div class="frame-feature"><div class="ft-label">FRAME FEATURE — UNSINKABLE</div><p>Once per encounter, when the Leviathan would mark its last Hull Point, it instead stays at <strong>1 Hull</strong> and does <strong>not</strong> become Crippled &mdash; but immediately <strong>roll once on the Critical Systems table</strong>. She does not go down easy, but the void takes its due.</p></div>
+    <div class="frame-feature"><div class="ft-label">FRAME FEATURE — UNSINKABLE</div><p>Once per encounter, when the Leviathan would mark its last Hull Point, it instead stays at <strong>1 Hull</strong> and does <strong>not</strong> become Crippled. It then <strong>rolls once on the Critical Systems table</strong>.</p></div>
   </div>
 
   <div class="ship-frame wraith">
     <div class="frame-header"><div><h3>◈ WRAITH-CLASS</h3></div><div class="frame-domains">DOMAINS — SHADOW · DEEP</div></div>
     <div class="ship-stats"><div class="stat-pill"><div class="v">12</div><div class="k">Hull</div></div><div class="stat-pill"><div class="v">9</div><div class="k">Stress</div></div><div class="stat-pill"><div class="v">22</div><div class="k">Evasion</div></div><div class="stat-pill"><div class="v">4 (4)</div><div class="k">Armor</div></div><div class="stat-pill"><div class="v">16</div><div class="k">Power</div></div><div class="stat-pill"><div class="v">5</div><div class="k">Speed</div></div><div class="stat-pill"><div class="v">4</div><div class="k">Mounts</div></div></div>
     <div class="module-slots-row">Thresholds: Minor 7 / Major 12 / Severe 17 · Module Slots: 9 (3 Weapon, 1 Defense, 3 System, 2 Electronic)</div>
-    <div class="frame-feature"><div class="ft-label">FRAME FEATURE — NEVER THERE</div><p>The Wraith <strong>begins each encounter Cloaked</strong> (enemies need a Difficulty 18 roll to break the Cloak), and it can <strong>act while Cloaked</strong> without automatically revealing itself. You never see it coming. That's the point.</p></div>
+    <div class="frame-feature"><div class="ft-label">FRAME FEATURE — NEVER THERE</div><p>The Wraith <strong>begins each encounter Cloaked</strong> (enemies need a Difficulty 18 roll to break the Cloak), and it can <strong>act while Cloaked</strong> without automatically revealing itself.</p></div>
   </div>
 
   <div class="ship-frame aegis">
     <div class="frame-header"><div><h3>◈ AEGIS-CLASS</h3></div><div class="frame-domains">DOMAINS — CIPHER · TIDE</div></div>
     <div class="ship-stats"><div class="stat-pill"><div class="v">26</div><div class="k">Hull</div></div><div class="stat-pill"><div class="v">11</div><div class="k">Stress</div></div><div class="stat-pill"><div class="v">11</div><div class="k">Evasion</div></div><div class="stat-pill"><div class="v">6 (6)</div><div class="k">Armor</div></div><div class="stat-pill"><div class="v">19</div><div class="k">Power</div></div><div class="stat-pill"><div class="v">2</div><div class="k">Speed</div></div><div class="stat-pill"><div class="v">4</div><div class="k">Mounts</div></div></div>
     <div class="module-slots-row">Thresholds: Minor 9 / Major 15 / Severe 21 · Module Slots: 10 (2 Weapon, 2 Defense, 2 System, 4 Support)</div>
-    <div class="frame-feature"><div class="ft-label">FRAME FEATURE — FLAGSHIP</div><p>All allied ships in the same engagement gain <strong>+2 to reaction rolls</strong> and clear <strong>1 additional</strong> whenever they clear Hull Points or System Stress. The Aegis is a fleet unto itself.</p></div>
+    <div class="frame-feature"><div class="ft-label">FRAME FEATURE — FLAGSHIP</div><p>All allied ships in the same engagement gain <strong>+2 to reaction rolls</strong> and clear <strong>1 additional</strong> whenever they clear Hull Points or System Stress.</p></div>
   </div>
 
   <div class="ship-frame oracle">
     <div class="frame-header"><div><h3>◈ ORACLE-CLASS</h3></div><div class="frame-domains">DOMAINS — CIPHER · DEEP</div></div>
     <div class="ship-stats"><div class="stat-pill"><div class="v">16</div><div class="k">Hull</div></div><div class="stat-pill"><div class="v">10</div><div class="k">Stress</div></div><div class="stat-pill"><div class="v">18</div><div class="k">Evasion</div></div><div class="stat-pill"><div class="v">4 (4)</div><div class="k">Armor</div></div><div class="stat-pill"><div class="v">18</div><div class="k">Power</div></div><div class="stat-pill"><div class="v">3</div><div class="k">Speed</div></div><div class="stat-pill"><div class="v">4</div><div class="k">Mounts</div></div></div>
     <div class="module-slots-row">Thresholds: Minor 8 / Major 14 / Severe 20 · Module Slots: 10 (2 Weapon, 1 Defense, 3 System, 4 Electronic)</div>
-    <div class="frame-feature"><div class="ft-label">FRAME FEATURE — TOTAL AWARENESS</div><p>At the start of each round, the Oracle learns <strong>every enemy ship's declared Station Action</strong> before anyone acts. Once per encounter, it may <strong>cancel one enemy Powered or Overclocked action outright</strong>. It read this fight before it began.</p></div>
+    <div class="frame-feature"><div class="ft-label">FRAME FEATURE — TOTAL AWARENESS</div><p>At the start of each exchange, the GM tells the crew <strong>what each enemy ship intends to do on the next GM turn</strong>. Once per encounter, the Oracle can <strong>cancel one enemy ship's action outright</strong>.</p></div>
+  </div>
+</section>
+
+<section id="frames-t4">
+  <div class="section-label">10 / Legends</div>
+  <h2>Tier 4 &mdash; Legendary Ships</h2>
+  <p>At <strong>Campaign Level 8+</strong>, a ship can become a legend: one of a kind, known by name across the galaxy, with systems no other ship has. There are no Tier 4 Frames to pick from a list. Instead, a crew reaches Tier 4 in one of two ways:</p>
+  <div class="grid-2">
+    <div class="rule-card"><h4 style="color:var(--signal)">◈ ASCEND YOUR SHIP</h4><p style="font-size:0.9rem">The ship the crew has flown through the campaign earns its place in history. It keeps its name, its scars, and its Frame, and receives a Legendary Refit. If it isn't already a Tier 3 Frame, it is rebuilt on the Tier 3 Frame closest to its role.</p></div>
+    <div class="rule-card static-card"><h4 style="color:var(--static)">◇ CLAIM A LEGEND</h4><p style="font-size:0.9rem">The crew finds, wins, or inherits a named legendary ship: a lost flagship, a precursor vessel, or a hull rebuilt around something no shipyard can make. The GM chooses its Tier 3 Frame and its first Legacy System; the crew chooses the second.</p></div>
+  </div>
+
+  <h3>Legendary Refit</h3>
+  <div class="rule-card">
+    <p style="font-size:0.92rem">Start from any Tier 3 Frame and apply all of the following:</p>
+    <ul style="font-size:0.92rem">
+      <li><strong>+6 Hull Points</strong> and <strong>+2 System Stress</strong> slots.</li>
+      <li><strong>+2 Armor Score</strong>.</li>
+      <li>Damage thresholds increase by <strong>+4 Minor, +5 Major, and +6 Severe</strong>.</li>
+      <li><strong>+4 Power Capacity</strong>, <strong>+1 Weapon Mount</strong>, and <strong>+2 Module slots</strong> of any type.</li>
+      <li>Evasion and Speed don't change.</li>
+    </ul>
+    <p style="font-size:0.9rem;color:var(--text-dim)">The refit keeps a legendary ship about as durable against Tier 4 enemies as a Tier 3 ship is against Tier 3 enemies. Its real advantage comes from its Legacy Systems.</p>
+  </div>
+
+  <h3>Legacy Systems</h3>
+  <p>Choose <strong>two Legacy Systems</strong> when the ship reaches Tier 4, and a <strong>third at Campaign Level 10</strong>. A Legacy System doesn't use a Module slot or Power, and no other ship in the galaxy has the same one. Tier 4 ships use Tier 3 Modules; Legacy Systems take the place of a Tier 4 Module line.</p>
+  <div class="module-grid">
+    <div class="module-card system"><h5>Precursor Core</h5><div class="m-meta">Legacy System</div><p>Power Capacity increases by +4. Once per encounter, a crew member can take one Overclocked Action without marking System Stress.</p></div>
+    <div class="module-card system"><h5>Living Hull</h5><div class="m-meta">Legacy System</div><p>Hull Breach and Armor Breach results on the Critical Systems table have no effect. After each encounter, clear all marked Hull Points and Armor Slots without a repair.</p></div>
+    <div class="module-card system"><h5>Fold Engine</h5><div class="m-meta">Legacy System</div><p>Once per exchange, the Helm can move the ship to any range band, including Deep Range, without a roll and without using their action.</p></div>
+    <div class="module-card system"><h5>Spinal Weapon</h5><div class="m-meta">Legacy System</div><p>Once per encounter, the Gunnery station fires the ship's spinal weapon at a target within Engagement range: <strong>8d12 energy damage</strong> that ignores Armor and can't be reduced by marking Armor Slots. Against an NPC ship, the hit counts as Severe.</p></div>
+    <div class="module-card system"><h5>Ship Mind</h5><div class="m-meta">Legacy System</div><p>The ship's AI becomes a member of the crew. Give it a name and a personality. Once per exchange, it takes one Standard Action at an unoccupied Station with a +3 modifier, and it can spend Ship Signal on Powered Actions.</p></div>
+    <div class="module-card system"><h5>Dread Name</h5><div class="m-meta">Legacy System</div><p>At the start of an encounter, each NPC Skirmisher and Line ship that recognizes the ship must succeed on a reaction roll (16) or withdraw. The GM can spend 1 Static per ship to keep it in the fight. The crew has advantage on Open Channel rolls to demand a surrender.</p></div>
+    <div class="module-card system"><h5>Aegis Lattice</h5><div class="m-meta">Legacy System</div><p>Once per encounter, as a reaction, every allied ship in the engagement ignores all damage until the end of the current GM turn.</p></div>
+    <div class="module-card system"><h5>Phase Hull</h5><div class="m-meta">Legacy System</div><p>Once per exchange, when an attack would hit the ship, the Helm can mark 1 System Stress to make the attack miss.</p></div>
+    <div class="module-card system"><h5>Your Own</h5><div class="m-meta">Legacy System</div><p>Design a Legacy System with the GM, using the ones above as a guide. Once-per-encounter effects can be large; effects that are always on should stay small.</p></div>
+  </div>
+
+  <h3>Name and Legend</h3>
+  <div class="rule-card">
+    <p style="font-size:0.92rem">Write one sentence that people across the galaxy say about the ship. The GM uses it for rumors, rivals, and job offers.</p>
+    <p style="font-size:0.92rem">A legendary ship is hard to lose for good. A Crippled Tier 4 ship can always be recovered and restored with a Full Overhaul, however bad the damage looked.</p>
+  </div>
+
+  <h3>Example Legends</h3>
+  <div class="grid-auto-260">
+    <div class="rule-card"><h4 style="color:var(--signal)">THE LONG SILENCE</h4><p style="font-size:0.88rem">Wraith-class. Fold Engine and Dread Name. <em>"If you hear her, she's already gone."</em></p></div>
+    <div class="rule-card teal-card"><h4 style="color:var(--accent-teal)">MOTHER OF FLEETS</h4><p style="font-size:0.88rem">Aegis-class. Ship Mind and Aegis Lattice. <em>"Every refugee convoy for three sectors owes her a debt."</em></p></div>
+    <div class="rule-card rose-card"><h4 style="color:var(--accent-rose)">NINTH HAMMER</h4><p style="font-size:0.88rem">Leviathan-class. Spinal Weapon and Living Hull. <em>"Eight shipyards tried to build her. The ninth succeeded."</em></p></div>
   </div>
 </section>
 
 <section id="npc-opposition">
-  <div class="section-label">10 / The Opposition</div>
+  <div class="section-label">11 / The Opposition</div>
   <h2>Building NPC Opposition</h2>
-  <p>With fifteen player Frames and dozens of Module combinations, <strong>do not hand-build a bespoke enemy ship per encounter.</strong> You don't need to. Player Frames are durability-balanced <em>within</em> each tier, so you build opposition to a <strong>tier number</strong>, not to whatever hull and modules the crew happens to run. And NPC ships use a stripped-down stat line &mdash; no Module slots, no build step, one signature trick.</p>
+  <p>With fifteen player Frames and many Module combinations, building a custom enemy ship for every encounter isn't practical. Player Frames within a tier are balanced for durability, so build opposition to the crew's <strong>ship tier</strong> rather than to their exact hull and Modules. NPC ships use a reduced stat line: no Module slots, no build step, and one special feature.</p>
 
   <div class="rule-card">
     <h4 style="color:var(--signal)">◈ NPC SHIP STAT LINE</h4>
-    <p style="font-size:0.92rem"><code>Tier · Role · Hull · Evasion · Damage (avg) · Attacks/round · [1 Special] · Threat Value</code></p>
-    <p style="font-size:0.9rem;color:var(--text-dim)">Drop the System Stress track for NPC ships entirely. (Optional: give a Heavy or Capital an "Overload" line that triggers at half Hull.) Hull and damage are tuned so a focused crew drops a Line ship in ~2 rounds, a Heavy in ~3&ndash;4, and a Skirmisher in ~1 &mdash; and NPC damage is set to reach the <em>matching tier's</em> PC thresholds.</p>
+    <p style="font-size:0.92rem"><code>Tier · Role · Hull · Evasion · Attack · Damage (avg) · Attacks when it acts · [1 Special] · Threat Value</code></p>
+    <ul style="font-size:0.9rem;color:var(--text-dim)">
+      <li><strong>Hull</strong> is a pool of damage. Subtract each hit's damage from it; NPC ships have no damage thresholds, Armor, or System Stress. At 0 Hull the ship is disabled.</li>
+      <li><strong>Attack:</strong> NPC ships attack with <strong>+2 at Tier 1, +4 at Tier 2, +6 at Tier 3, and +8 at Tier 4</strong>. Capitals add another +1. The GM rolls a d20 plus this bonus against the target ship's Evasion.</li>
+      <li><strong>Spotlight:</strong> on each GM turn, one enemy ship acts for free, and the GM can spend 1 Static for each additional ship that acts. A ship makes its listed number of attacks each time it acts.</li>
+      <li><strong>Converting player effects:</strong> each System Stress an effect would make an NPC ship mark deals 2 damage to its Hull instead. An effect that triggers on Severe damage triggers against an NPC ship when a single hit deals at least 16 damage at Tier 1, 18 at Tier 2, 21 at Tier 3, or 27 at Tier 4. An effect that would disable a Module, Station, or action on an NPC ship disables its special feature until the end of the next GM turn instead.</li>
+      <li>Optionally, give a Heavy or Capital an "Overload" feature that triggers at half Hull.</li>
+    </ul>
+    <p style="font-size:0.9rem;color:var(--text-dim)">These numbers are tuned so that, with weapons of the same tier, a Skirmisher usually goes down to one hit, a Line ship to one or two, a Heavy to two or three, and a Capital to three or more. NPC damage is set to reach the thresholds of player ships of the same tier.</p>
   </div>
 
   <table class="data">
@@ -528,229 +583,234 @@
       <tr><td>T3</td><td>Line</td><td class="center">18</td><td class="center">13</td><td>4d10 (22)</td><td class="center">1</td><td class="center">2</td></tr>
       <tr><td>T3</td><td>Heavy</td><td class="center">28</td><td class="center">11</td><td>5d12 (32)</td><td class="center">2</td><td class="center">3</td></tr>
       <tr><td>T3</td><td>Capital</td><td class="center">55</td><td class="center">12</td><td>6d12 (39)</td><td class="center">2&ndash;3</td><td class="center">6</td></tr>
+      <tr><td><strong>T4</strong></td><td>Skirmisher</td><td class="center">16</td><td class="center">19</td><td>4d10 (22)</td><td class="center">1</td><td class="center">1</td></tr>
+      <tr><td>T4</td><td>Line</td><td class="center">24</td><td class="center">15</td><td>5d10 (27)</td><td class="center">1</td><td class="center">2</td></tr>
+      <tr><td>T4</td><td>Heavy</td><td class="center">38</td><td class="center">13</td><td>6d12 (39)</td><td class="center">2</td><td class="center">3</td></tr>
+      <tr><td>T4</td><td>Capital</td><td class="center">75</td><td class="center">14</td><td>8d12 (52)</td><td class="center">3</td><td class="center">6</td></tr>
+
     </tbody>
   </table>
 
   <div class="rule-card gold-card">
-    <h4 style="color:var(--accent-gold)">✺ ENCOUNTER BUDGET — THE ONE NUMBER YOU NEED</h4>
-    <p style="font-size:0.92rem">Spend a <strong>Threat Value budget of ≈ 1.5 × the number of players</strong>, using NPC ships of the crew's ship tier. A 4-player crew = <strong>TV ~6</strong> for a fair fight (TV ~8 for a hard fight, ~4 for an easy one). To field a <strong>swarm</strong>, drop one tier and double the count. A single same-tier <strong>Capital = the whole encounter</strong> (TV 6).</p>
+    <h4 style="color:var(--accent-gold)">✺ ENCOUNTER BUDGET</h4>
+    <p style="font-size:0.92rem">Spend a <strong>Threat Value budget of ≈ 1.5 × the number of players</strong>, using NPC ships of the crew's ship tier. For a 4-player crew, <strong>TV 6</strong> makes a fair fight, TV 8 a hard one, and TV 4 an easy one. To field a <strong>swarm</strong>, drop one tier and double the number of ships. A single <strong>Capital</strong> of the crew's tier (TV 6) is a full encounter on its own.</p>
   </div>
 
   <h3>Feature &amp; Module Impact</h3>
-  <p>Frame Features and premium Modules are not in the raw stat line, so classify each by what it touches &mdash; this single lens is what keeps "all combos" tractable:</p>
+  <p>Frame Features and strong Modules don't appear in the NPC stat line. To account for them, classify each one by what it affects:</p>
   <table class="data">
     <thead><tr><th>Class</th><th>What it does</th><th>Adjustment</th></tr></thead>
     <tbody>
-      <tr><td><strong>Durability</strong></td><td>Raises effective survivability the stat line can't see (Cloak, damage saves, damage redirection, hull/threshold/armor modules).</td><td>Fight runs longer &mdash; <strong>+1 TV</strong> per leaned-on source.</td></tr>
-      <tr><td><strong>Offense / Tempo</strong></td><td>Shortens the fight; the crew is effectively stronger (advantage engines, armor-ignoring or apex weapons, extra actions).</td><td>Enemies die faster &mdash; <strong>+1 TV</strong> per leaned-on source.</td></tr>
-      <tr><td><strong>Force Multiplier</strong></td><td>Buffs <em>other</em> allied ships (Flagship, Force Multiplier, Field Support).</td><td><strong>~Inert in a single-ship crew</strong> &mdash; no change unless the crew fields multiple ships.</td></tr>
+      <tr><td><strong>Durability</strong></td><td>Raises effective survivability the stat line can't see (Cloak, damage saves, damage redirection, hull/threshold/armor modules).</td><td>The fight runs longer: <strong>+1 TV</strong> for each such source the crew relies on.</td></tr>
+      <tr><td><strong>Offense / Tempo</strong></td><td>Shortens the fight; the crew is effectively stronger (advantage engines, armor-ignoring or apex weapons, extra actions).</td><td>Enemies go down faster: <strong>+1 TV</strong> for each such source the crew relies on.</td></tr>
+      <tr><td><strong>Force Multiplier</strong></td><td>Buffs <em>other</em> allied ships (Flagship, Force Multiplier, Field Support).</td><td><strong>No effect with a single ship.</strong> Adjust only if the crew fields more than one ship.</td></tr>
     </tbody>
   </table>
-  <p style="font-size:0.9rem;color:var(--text-dim)">The base NPC numbers already assume a competently-equipped crew, so ordinary loadouts need no correction. For each <em>standout</em> offensive or defensive feature/module the crew genuinely leans on, add <strong>+1 TV</strong>. That is the entire correction &mdash; you adjust one budget number and never rebuild the enemy.</p>
+  <p style="font-size:0.9rem;color:var(--text-dim)">The base NPC numbers already assume a competently-equipped crew, so ordinary loadouts need no correction. For each <em>standout</em> offensive or defensive feature/module the crew genuinely leans on, add <strong>+1 TV</strong>. Adjust the budget rather than rebuilding the enemy ships.</p>
 </section>
 
 <section id="modules-t1">
-  <div class="section-label">11 / Tier 1 Modules</div>
+  <div class="section-label">12 / Tier 1 Modules</div>
   <h2>Ship Modules — Tier 1</h2>
   <p>Modules are installed components. Each Module has a <strong>Power Cost</strong>, a <strong>Type</strong> (Weapon, Defense, System, Support, or Electronic), a <strong>Tier</strong>, and an <strong>Effect</strong>. At campaign start, your ship can have one Tier 1 Module per Module Slot of the appropriate type, up to its Power Capacity.</p>
 
   <h3 style="color:var(--accent-rose)">Weapon Modules</h3>
   <div class="module-grid">
-    <div class="module-card weapon"><h5>Railgun Battery</h5><div class="m-meta">Cost 2 · Weapon</div><p class="m-flavor">High-velocity kinetic slugs. Simple. Effective.</p><p>A ship weapon mount fires a Railgun: <strong>2d10 physical damage</strong>. Range: Long Range. Reload: None.</p></div>
-    <div class="module-card weapon"><h5>Plasma Lance</h5><div class="m-meta">Cost 3 · Weapon</div><p class="m-flavor">One beam. One problem.</p><p>Plasma Lance: <strong>3d8 energy damage</strong>. Range: Close Quarters–Engagement. <strong>Special:</strong> On Severe damage, the target also marks 1 System Stress.</p></div>
-    <div class="module-card weapon"><h5>Missile Array</h5><div class="m-meta">Cost 2 · Weapon</div><p class="m-flavor">Fire and forget. Mostly.</p><p>Missiles: <strong>2d6 physical damage</strong>. Range: Knife's Edge–Long Range. <strong>Special:</strong> Cannot be blocked by Lock Trajectory and ignore Evasion bonuses from Evasive Pattern. Missiles can be decoyed &mdash; the GM may spend Static to redirect a missile onto a different target.</p></div>
-    <div class="module-card weapon"><h5>Point Defense Array</h5><div class="m-meta">Cost 1 · Weapon · Passive</div><p class="m-flavor">Everything trying to kill you is also trying to kill the missiles.</p><p>Whenever your ship would take damage from a Missile attack, reduce the damage by <strong>1d8</strong> before applying thresholds.</p></div>
+    <div class="module-card weapon"><h5>Railgun Battery</h5><div class="m-meta">Cost 2 · Weapon</div><p><strong>2d10 physical damage</strong>. Range: Long Range.</p></div>
+    <div class="module-card weapon"><h5>Plasma Lance</h5><div class="m-meta">Cost 3 · Weapon</div><p>Plasma Lance: <strong>3d8 energy damage</strong>. Range: Close Quarters–Engagement. <strong>Special:</strong> On Severe damage, the target also marks 1 System Stress.</p></div>
+    <div class="module-card weapon"><h5>Missile Array</h5><div class="m-meta">Cost 2 · Weapon</div><p>Missiles: <strong>2d6 physical damage</strong>. Range: Knife's Edge–Long Range. <strong>Special:</strong> Missiles ignore Evasion bonuses from Evasive Pattern. They can be decoyed: the GM can spend a Static to redirect a missile onto a different target.</p></div>
+    <div class="module-card weapon"><h5>Point Defense Array</h5><div class="m-meta">Cost 1 · Weapon · Passive</div><p>Whenever your ship would take damage from a Missile attack, reduce the damage by <strong>1d8</strong> before applying thresholds.</p></div>
   </div>
 
   <h3 style="color:var(--accent-teal)">Defense Modules</h3>
   <div class="module-grid">
-    <div class="module-card defense"><h5>Reinforced Hull Plating</h5><div class="m-meta">Cost 1 · Defense</div><p class="m-flavor">More hull between you and them.</p><p>Permanent <strong>+2 to all damage thresholds</strong> (Minor, Major, Severe).</p></div>
-    <div class="module-card defense"><h5>ECM Shroud</h5><div class="m-meta">Cost 2 · Defense · Passive</div><p class="m-flavor">Hard to hit what you can't see.</p><p>Your ship's Evasion increases by <strong>+2</strong>.</p></div>
-    <div class="module-card defense"><h5>Emergency Bulkheads</h5><div class="m-meta">Cost 1 · Defense</div><p class="m-flavor">When something goes wrong, contain it.</p><p>Once per encounter, when you would roll on the Critical Systems table, you may choose the result instead of rolling.</p></div>
-    <div class="module-card defense"><h5>Regenerative Armor</h5><div class="m-meta">Cost 2 · Defense</div><p class="m-flavor">It's not getting better. It's getting replaced.</p><p>At the start of each round, clear 1 marked Armor Slot (up to the Armor Score maximum).</p></div>
+    <div class="module-card defense"><h5>Reinforced Hull Plating</h5><div class="m-meta">Cost 1 · Defense</div><p>Permanent <strong>+2 to all damage thresholds</strong> (Minor, Major, Severe).</p></div>
+    <div class="module-card defense"><h5>ECM Shroud</h5><div class="m-meta">Cost 2 · Defense · Passive</div><p>Your ship's Evasion increases by <strong>+2</strong>.</p></div>
+    <div class="module-card defense"><h5>Emergency Bulkheads</h5><div class="m-meta">Cost 1 · Defense</div><p>Once per encounter, when you would roll on the Critical Systems table, you may choose the result instead of rolling.</p></div>
+    <div class="module-card defense"><h5>Regenerative Armor</h5><div class="m-meta">Cost 2 · Defense</div><p>At the end of each GM turn in which the ship took no damage, clear 1 marked Armor Slot.</p></div>
   </div>
 
   <h3 style="color:var(--signal)">System Modules</h3>
   <div class="module-grid">
-    <div class="module-card system"><h5>Afterburner Suite</h5><div class="m-meta">Cost 2 · System</div><p class="m-flavor">For when Speed 3 isn't fast enough.</p><p>Speed increases by +1 (max 4). The <strong>Hard Burn</strong> Helm action costs 0 System Stress while this Module is active.</p></div>
-    <div class="module-card system"><h5>Overclocked Reactor</h5><div class="m-meta">Cost 0 · System</div><p class="m-flavor">More power. Always more power. It's fine.</p><p>Power Capacity increases by <strong>+3</strong>. However, System Stress capacity decreases by 1.</p></div>
-    <div class="module-card system"><h5>Damage Control System</h5><div class="m-meta">Cost 1 · System</div><p class="m-flavor">Automated. Tireless. Slightly too calm about everything.</p><p>The Engineering Station can clear 1 System Stress as a free action once per round (not consuming the station's normal action).</p></div>
-    <div class="module-card system"><h5>Jump Drive</h5><div class="m-meta">Cost 2 · System</div><p class="m-flavor">When this fight is done and you need to be somewhere else instantly.</p><p>The Helm station can spend 3 Ship Signal and make an Agility Roll (Difficulty 16). On a success, the ship jumps to a pre-plotted or improvised location, ending the encounter. On a failure, the drive sputters &mdash; try again next round.</p></div>
+    <div class="module-card system"><h5>Afterburner Suite</h5><div class="m-meta">Cost 2 · System</div><p>Speed increases by +1 (maximum 6). The <strong>Hard Burn</strong> Helm action costs 0 System Stress while this Module is active.</p></div>
+    <div class="module-card system"><h5>Overclocked Reactor</h5><div class="m-meta">Cost 0 · System</div><p>Power Capacity increases by <strong>+3</strong>. However, System Stress capacity decreases by 1.</p></div>
+    <div class="module-card system"><h5>Damage Control System</h5><div class="m-meta">Cost 1 · System</div><p>The Engineering Station can clear 1 System Stress as a free action once per exchange (not consuming the station's normal action).</p></div>
+    <div class="module-card system"><h5>Jump Drive</h5><div class="m-meta">Cost 2 · System</div><p>The Helm station can spend 3 Ship Signal and make an Agility Roll (Difficulty 16). On a success, the ship jumps to a pre-plotted or improvised location, ending the encounter. On a failure, the drive sputters, and the Helm can try again on their next action.</p></div>
   </div>
 
   <h3 style="color:var(--accent-gold)">Support Modules</h3>
   <div class="module-grid">
-    <div class="module-card support"><h5>Medical Bay</h5><div class="m-meta">Cost 1 · Support</div><p class="m-flavor">The ship's doctor. If you have one.</p><p>Once per encounter, a crew member can spend a Standard Action at this station to clear 2 Hit Points or 3 Stress from any crew member aboard.</p></div>
-    <div class="module-card support"><h5>Crew Interface Network</h5><div class="m-meta">Cost 1 · Support · Passive</div><p class="m-flavor">Everyone hears everything. Reaction time improves dramatically.</p><p>All crew members at Stations gain a <strong>+1 bonus</strong> to their reaction rolls.</p></div>
-    <div class="module-card support"><h5>Salvage Drones</h5><div class="m-meta">Cost 1 · Support</div><p class="m-flavor">After the fight, there is always something worth keeping.</p><p>After an encounter, the crew can make a Knowledge Roll (Difficulty 12) to recover <strong>1d6 × 100 credits</strong> in salvageable components from defeated ships or debris.</p></div>
+    <div class="module-card support"><h5>Medical Bay</h5><div class="m-meta">Cost 1 · Support</div><p>Once per encounter, a crew member can spend a Standard Action at the Medical Bay to clear 2 Hit Points or 3 Stress from any crew member aboard.</p></div>
+    <div class="module-card support"><h5>Crew Interface Network</h5><div class="m-meta">Cost 1 · Support · Passive</div><p>All crew members at Stations gain a <strong>+1 bonus</strong> to their reaction rolls.</p></div>
+    <div class="module-card support"><h5>Salvage Drones</h5><div class="m-meta">Cost 1 · Support</div><p>After an encounter, the crew can make a Knowledge Roll (Difficulty 12) to recover <strong>1d6 × 100 credits</strong> in salvageable components from defeated ships or debris.</p></div>
   </div>
 
   <h3 style="color:var(--static)">Electronic Modules</h3>
   <div class="module-grid">
-    <div class="module-card electronic"><h5>Sensor Ghost Array</h5><div class="m-meta">Cost 2 · Electronic</div><p class="m-flavor">You're not where they think you are.</p><p>Once per encounter, as a free action, the Comms Station can create a false sensor ghost of the ship. Enemies must succeed on a Difficulty 15 Knowledge Roll to distinguish the real ship from the ghost before targeting. On a failure, their attack targets the ghost.</p></div>
-    <div class="module-card electronic"><h5>Comm Interceptor</h5><div class="m-meta">Cost 1 · Electronic · Passive</div><p class="m-flavor">Their orders, your intelligence.</p><p>Once per round, when an enemy ship takes a Station Action, the Comms Station learns what that action is immediately after it's declared (before it resolves).</p></div>
-    <div class="module-card electronic"><h5>Electronic Warfare Suite</h5><div class="m-meta">Cost 2 · Electronic</div><p class="m-flavor">Break their targeting. Break their coordination. Break their will.</p><p>The Comms Station's <strong>ECM Pulse</strong> can now target two Modules on the enemy ship simultaneously (still one roll). Additionally, <strong>Ghost Signal</strong> costs 1 Ship Signal instead of 2.</p></div>
+    <div class="module-card electronic"><h5>Sensor Ghost Array</h5><div class="m-meta">Cost 2 · Electronic</div><p>Once per encounter, as a free action, the Comms Station can create a false sensor ghost of the ship. Enemies must succeed on a Difficulty 15 Knowledge Roll to distinguish the real ship from the ghost before targeting. On a failure, their attack targets the ghost.</p></div>
+    <div class="module-card electronic"><h5>Comm Interceptor</h5><div class="m-meta">Cost 1 · Electronic · Passive</div><p>Once per exchange, when an enemy ship acts, the GM tells the Comms station what the action is before it resolves.</p></div>
+    <div class="module-card electronic"><h5>Electronic Warfare Suite</h5><div class="m-meta">Cost 2 · Electronic</div><p>The Comms Station's <strong>ECM Pulse</strong> can now target two Modules on the enemy ship simultaneously (still one roll). Additionally, <strong>Ghost Signal</strong> costs 1 Ship Signal instead of 2.</p></div>
   </div>
 </section>
 
 <section id="modules-t2">
-  <div class="section-label">12 / Tier 2 Modules</div>
+  <div class="section-label">13 / Tier 2 Modules</div>
   <h2>Ship Modules — Tier 2</h2>
   <p style="color:var(--text-dim);font-style:italic">Available at Campaign Level 3+. Higher-tier modules become available as the crew advances.</p>
 
   <h3 style="color:var(--accent-rose)">Weapon Modules (Tier 2)</h3>
   <div class="module-grid">
-    <div class="module-card weapon"><h5>Mass Driver</h5><div class="m-meta">Cost 3 · Weapon · T2</div><p class="m-flavor">At sufficient velocity, a rock becomes a weapon of mass destruction.</p><p><strong>4d10 physical damage</strong>. Range: Engagement–Long Range. <strong>Special:</strong> On a hit, the target must succeed on a Difficulty 14 Strength Roll or be knocked back one range band.</p></div>
-    <div class="module-card weapon"><h5>Void Lance</h5><div class="m-meta">Cost 4 · Weapon · T2</div><p class="m-flavor">Not plasma. Something older.</p><p><strong>3d12 energy damage</strong>. Range: Close Quarters–Engagement. <strong>Special:</strong> Ignores the target's Armor Score entirely. Their Armor Slots cannot be marked to reduce this damage.</p></div>
+    <div class="module-card weapon"><h5>Mass Driver</h5><div class="m-meta">Cost 3 · Weapon · T2</div><p><strong>4d10 physical damage</strong>. Range: Engagement–Long Range. <strong>Special:</strong> On a hit, the target must succeed on a reaction roll (14) or be knocked back one range band.</p></div>
+    <div class="module-card weapon"><h5>Void Lance</h5><div class="m-meta">Cost 4 · Weapon · T2</div><p><strong>3d12 energy damage</strong>. Range: Close Quarters–Engagement. <strong>Special:</strong> Ignores the target's Armor Score entirely. Their Armor Slots cannot be marked to reduce this damage.</p></div>
   </div>
 
   <h3 style="color:var(--accent-teal)">Defense Modules (Tier 2)</h3>
   <div class="module-grid">
-    <div class="module-card defense"><h5>Phase Shield</h5><div class="m-meta">Cost 3 · Defense · T2</div><p class="m-flavor">It hurts to look at. That's working as intended.</p><p>Once per encounter, when your ship would take Major or Severe damage, activate the Phase Shield as a reaction. The damage is reduced to Minor instead. Mark 2 System Stress.</p></div>
-    <div class="module-card defense"><h5>Adaptive Plating</h5><div class="m-meta">Cost 2 · Defense · T2</div><p class="m-flavor">Learns what's hitting it. Adapts.</p><p>The first time each encounter your ship takes energy damage, gain resistance to energy damage for the remainder of that encounter. The same applies to physical damage. (Resistance = halve damage before applying thresholds.)</p></div>
+    <div class="module-card defense"><h5>Phase Shield</h5><div class="m-meta">Cost 3 · Defense · T2</div><p>Once per encounter, when your ship would take Major or Severe damage, activate the Phase Shield as a reaction. The damage is reduced to Minor instead. Mark 2 System Stress.</p></div>
+    <div class="module-card defense"><h5>Adaptive Plating</h5><div class="m-meta">Cost 2 · Defense · T2</div><p>The first time each encounter your ship takes energy damage, gain resistance to energy damage for the remainder of that encounter. The same applies to physical damage. (Resistance = halve damage before applying thresholds.)</p></div>
   </div>
 
   <h3 style="color:var(--signal)">System Modules (Tier 2)</h3>
   <div class="module-grid">
-    <div class="module-card system"><h5>Overclocked Targeting Core</h5><div class="m-meta">Cost 2 · System · T2</div><p class="m-flavor">The targeting system doesn't wait for you. It leads.</p><p>The Gunnery Station gains advantage on all <strong>Weapons Lock</strong> rolls. Additionally, <strong>Target Systems</strong> (Overclocked) costs only 1 System Stress instead of 2.</p></div>
-    <div class="module-card system"><h5>Void Drive</h5><div class="m-meta">Cost 3 · System · T2</div><p class="m-flavor">This is not a standard FTL system. This is barely contained physics.</p><p>Replaces the Jump Drive Module. As Jump Drive, but on a successful roll, choose your destination with precision &mdash; you can arrive inside an Engagement range band of a specific target. On a critical success (Signal Die shows 12), arrive without spending any Ship Signal.</p></div>
+    <div class="module-card system"><h5>Overclocked Targeting Core</h5><div class="m-meta">Cost 2 · System · T2</div><p>The Gunnery Station gains advantage on all <strong>Weapons Lock</strong> rolls. Additionally, <strong>Target Systems</strong> (Overclocked) costs only 1 System Stress instead of 2.</p></div>
+    <div class="module-card system"><h5>Void Drive</h5><div class="m-meta">Cost 3 · System · T2</div><p>Replaces the Jump Drive Module. As Jump Drive, but on a successful roll, choose your destination with precision; you can arrive at Engagement range of a specific target. On a critical success (Signal Die shows 12), arrive without spending any Ship Signal.</p></div>
   </div>
 
   <h3 style="color:var(--accent-gold)">Support Modules (Tier 2)</h3>
   <div class="module-grid">
-    <div class="module-card support"><h5>Trauma Pod</h5><div class="m-meta">Cost 2 · Support · T2</div><p class="m-flavor">The gap between a bad day and a funeral.</p><p>Once per encounter, a crew member can spend a Standard Action at this station to <strong>stabilize a downed crew member</strong>, OR clear <strong>3 Hit Points and 3 Stress</strong> from one crew member aboard.</p></div>
-    <div class="module-card support"><h5>Tactical Uplink</h5><div class="m-meta">Cost 2 · Support · Passive · T2</div><p class="m-flavor">A second opinion, delivered at the speed of light.</p><p>Once per round, one allied crew member may <strong>reroll a failed reaction roll</strong>. They must keep the new result.</p></div>
+    <div class="module-card support"><h5>Trauma Pod</h5><div class="m-meta">Cost 2 · Support · T2</div><p>Once per encounter, a crew member can spend a Standard Action at the Trauma Pod to <strong>stabilize a downed crew member</strong>, OR clear <strong>3 Hit Points and 3 Stress</strong> from one crew member aboard.</p></div>
+    <div class="module-card support"><h5>Tactical Uplink</h5><div class="m-meta">Cost 2 · Support · Passive · T2</div><p>Once per exchange, one allied crew member may <strong>reroll a failed reaction roll</strong>. They must keep the new result.</p></div>
   </div>
 
   <h3 style="color:var(--static)">Electronic Modules (Tier 2)</h3>
   <div class="module-grid">
-    <div class="module-card electronic"><h5>Phantom Fleet Projector</h5><div class="m-meta">Cost 3 · Electronic · T2</div><p class="m-flavor">Why field one ship when the enemy can waste their fire on three?</p><p>Upgrade of the Sensor Ghost Array. Create up to <strong>two ghosts</strong> of your ship. Enemies must succeed on a Difficulty 16 Knowledge Roll to pick out the real ship before targeting; on a failure, their <strong>entire action is wasted</strong> against a ghost.</p></div>
-    <div class="module-card electronic"><h5>Signal Hijack</h5><div class="m-meta">Cost 2 · Electronic · T2</div><p class="m-flavor">Their missile. Your target now.</p><p>Once per encounter, as a reaction, the Comms Station seizes control of one enemy <strong>Missile or Torpedo in flight</strong> and redirects it at any target within its range &mdash; including the ship that fired it.</p></div>
+    <div class="module-card electronic"><h5>Phantom Fleet Projector</h5><div class="m-meta">Cost 3 · Electronic · T2</div><p>Upgrade of the Sensor Ghost Array. Create up to <strong>two ghosts</strong> of your ship. Enemies must succeed on a Difficulty 16 Knowledge Roll to pick out the real ship before targeting; on a failure, their <strong>entire action is wasted</strong> against a ghost.</p></div>
+    <div class="module-card electronic"><h5>Signal Hijack</h5><div class="m-meta">Cost 2 · Electronic · T2</div><p>Once per encounter, as a reaction, the Comms Station seizes control of one enemy <strong>Missile or Torpedo in flight</strong> and redirects it at any target within its range, including the ship that fired it.</p></div>
   </div>
 </section>
 
 <section id="modules-t3">
-  <div class="section-label">13 / Apex Modules</div>
+  <div class="section-label">14 / Apex Modules</div>
   <h2>Ship Modules — Tier 3</h2>
-  <p style="color:var(--text-dim);font-style:italic">Available at Campaign Level 6+. These are the apex of each Module line &mdash; rare, expensive, and often the reason a crew survived a fight they had no business winning.</p>
+  <p style="color:var(--text-dim);font-style:italic">Available at Campaign Level 6+. These are the strongest Modules in each line, and they are rare and expensive.</p>
 
   <h3 style="color:var(--accent-rose)">Weapon Modules (Tier 3)</h3>
   <div class="module-grid">
-    <div class="module-card weapon"><h5>Singularity Cannon</h5><div class="m-meta">Cost 5 · Weapon · T3</div><p class="m-flavor">It doesn't hit the ship. It hits the space the ship is in.</p><p><strong>5d12 energy damage</strong>. Range: Engagement&ndash;Long. <strong>Special:</strong> On Severe damage, the target marks <strong>2 System Stress</strong> and is dragged <strong>one range band toward you</strong>.</p></div>
-    <div class="module-card weapon"><h5>Nova Battery</h5><div class="m-meta">Cost 4 · Weapon · T3</div><p class="m-flavor">Indiscriminate. That's the feature, not the bug.</p><p><strong>4d8 energy damage</strong> to <strong>all ships in one range band</strong> &mdash; friend or foe. Range: Close Quarters&ndash;Engagement. Choose the band; everything in it is hit.</p></div>
+    <div class="module-card weapon"><h5>Singularity Cannon</h5><div class="m-meta">Cost 5 · Weapon · T3</div><p><strong>5d12 energy damage</strong>. Range: Engagement&ndash;Long. <strong>Special:</strong> On Severe damage, the target marks <strong>2 System Stress</strong> and is dragged <strong>one range band toward you</strong>.</p></div>
+    <div class="module-card weapon"><h5>Nova Battery</h5><div class="m-meta">Cost 4 · Weapon · T3</div><p><strong>4d8 energy damage</strong> to <strong>all ships in one range band</strong>, including allied ships. Range: Close Quarters&ndash;Engagement. Choose the band; everything in it is hit.</p></div>
   </div>
 
   <h3 style="color:var(--accent-teal)">Defense Modules (Tier 3)</h3>
   <div class="module-grid">
-    <div class="module-card defense"><h5>Aegis Barrier</h5><div class="m-meta">Cost 4 · Defense · T3</div><p class="m-flavor">For one perfect moment, nothing can touch you.</p><p>Once per encounter, as a reaction, <strong>negate one incoming attack entirely</strong> &mdash; no damage, no thresholds, no marking. Mark 3 System Stress. <em>(Apex of the Phase Shield.)</em></p></div>
-    <div class="module-card defense"><h5>Nanite Swarm</h5><div class="m-meta">Cost 3 · Defense · Passive · T3</div><p class="m-flavor">The hull heals faster than they can break it.</p><p>At the start of each round, <strong>clear 1 Hull Point</strong> (up to a per-encounter cap set by the GM, typically 4).</p></div>
+    <div class="module-card defense"><h5>Aegis Barrier</h5><div class="m-meta">Cost 4 · Defense · T3</div><p>Once per encounter, as a reaction, <strong>negate one incoming attack entirely</strong>; it deals no damage. Mark 3 System Stress. <em>(Apex of the Phase Shield.)</em></p></div>
+    <div class="module-card defense"><h5>Nanite Swarm</h5><div class="m-meta">Cost 3 · Defense · Passive · T3</div><p>At the end of each GM turn, <strong>clear 1 Hull Point</strong> (up to a per-encounter cap set by the GM, typically 4).</p></div>
   </div>
 
   <h3 style="color:var(--signal)">System Modules (Tier 3)</h3>
   <div class="module-grid">
-    <div class="module-card system"><h5>Quantum Core</h5><div class="m-meta">Cost 0 · System · T3</div><p class="m-flavor">The reactor stopped obeying thermodynamics some time ago.</p><p>Power Capacity increases by <strong>+5</strong> with <strong>no System Stress penalty</strong>. <em>(Apex of the Overclocked Reactor.)</em></p></div>
-    <div class="module-card system"><h5>Slipstream Drive</h5><div class="m-meta">Cost 3 · System · T3</div><p class="m-flavor">Distance is a suggestion. You decline.</p><p>As the Void Drive, but the jump is a <strong>free action once per encounter</strong> and can carry <strong>one allied ship</strong> in the same engagement along with you.</p></div>
+    <div class="module-card system"><h5>Quantum Core</h5><div class="m-meta">Cost 0 · System · T3</div><p>Power Capacity increases by <strong>+5</strong> with <strong>no System Stress penalty</strong>. <em>(Apex of the Overclocked Reactor.)</em></p></div>
+    <div class="module-card system"><h5>Slipstream Drive</h5><div class="m-meta">Cost 3 · System · T3</div><p>As the Void Drive, but the jump is a <strong>free action once per encounter</strong> and can carry <strong>one allied ship</strong> in the same engagement along with you.</p></div>
   </div>
 
   <h3 style="color:var(--accent-gold)">Support Modules (Tier 3)</h3>
   <div class="module-grid">
-    <div class="module-card support"><h5>Auto-Surgeon Suite</h5><div class="m-meta">Cost 2 · Support · T3</div><p class="m-flavor">It has never lost a patient. It will tell you so, repeatedly.</p><p>Clear <strong>4 Hit Points or 5 Stress</strong> from any crew member aboard. Usable <strong>twice per encounter</strong>, and it operates as a <strong>free action once per round</strong>. <em>(Apex of the Medical Bay.)</em></p></div>
-    <div class="module-card support"><h5>Command Nexus</h5><div class="m-meta">Cost 3 · Support · Passive · T3</div><p class="m-flavor">Every station, one mind, no lag.</p><p>All crew members at Stations gain a <strong>+2 bonus</strong> to reaction rolls, and the <strong>Support Station may act twice per round</strong>.</p></div>
+    <div class="module-card support"><h5>Auto-Surgeon Suite</h5><div class="m-meta">Cost 2 · Support · T3</div><p>Clear <strong>4 Hit Points or 5 Stress</strong> from any crew member aboard. Usable <strong>twice per encounter</strong>, and it operates as a <strong>free action once per exchange</strong>. <em>(Apex of the Medical Bay.)</em></p></div>
+    <div class="module-card support"><h5>Command Nexus</h5><div class="m-meta">Cost 3 · Support · Passive · T3</div><p>All crew members at Stations gain a <strong>+2 bonus</strong> to reaction rolls, and once per exchange a crew member can use a <strong>Support Module without spending their Standard Action</strong>.</p></div>
   </div>
 
   <h3 style="color:var(--static)">Electronic Modules (Tier 3)</h3>
   <div class="module-grid">
-    <div class="module-card electronic"><h5>Total Blackout Array</h5><div class="m-meta">Cost 3 · Electronic · T3</div><p class="m-flavor">One switch. The whole enemy fleet goes dark.</p><p>Once per encounter, <strong>all enemy ships</strong> in the engagement lose their <strong>Powered and Overclocked actions</strong> for one round (Difficulty 17 Knowledge Roll to resist, rolled per ship).</p></div>
-    <div class="module-card electronic"><h5>Reality Static</h5><div class="m-meta">Cost 4 · Electronic · T3</div><p class="m-flavor">Their sensors, targeting, and luck all stop agreeing with each other.</p><p>Once per encounter, force one enemy ship to <strong>reroll all of its dice for a full round</strong>, taking the <strong>lower result</strong> each time.</p></div>
+    <div class="module-card electronic"><h5>Total Blackout Array</h5><div class="m-meta">Cost 3 · Electronic · T3</div><p>Once per encounter, <strong>all enemy ships</strong> in the engagement lose their <strong>special features</strong> until the end of the next GM turn (Difficulty 17 Knowledge Roll to resist, rolled per ship).</p></div>
+    <div class="module-card electronic"><h5>Reality Static</h5><div class="m-meta">Cost 4 · Electronic · T3</div><p>Once per encounter, force one enemy ship to <strong>roll all of its dice twice during the next GM turn</strong>, taking the <strong>lower result</strong> each time.</p></div>
   </div>
 </section>
 
 <section id="weapons">
-  <div class="section-label">14 / Armament</div>
+  <div class="section-label">15 / Armament</div>
   <h2>Ship Weapons</h2>
-  <p>Ship weapons installed in Weapon Mounts use the profiles below. The crew purchases or finds these as loot, pays for installation at a port, and records them on the Ship Sheet. All ship weapon attacks are made by the Gunnery Station character using their Finesse or Knowledge modifier. <strong>Proficiency</strong> for ship weapons equals the crew's average level (round up), representing collective competency.</p>
+  <p>Ship weapons installed in Weapon Mounts use the profiles below. The crew purchases or finds these as loot, pays for installation at a port, and records them on the Ship Sheet. All ship weapon attacks are made by the character at the Gunnery Station, using their Finesse or Knowledge. Ship weapon damage doesn't use Proficiency; a ship's damage grows through higher-tier Modules instead.</p>
   <table class="data">
     <thead><tr><th>Weapon</th><th>Damage</th><th>Range</th><th>Type</th><th>Special</th></tr></thead>
     <tbody>
       <tr><td><strong>Kinetic Autocannon</strong></td><td>2d6 phy</td><td>Close–Engagement</td><td>Kinetic</td><td><strong>Rapid:</strong> Can fire twice per Salvo action.</td></tr>
       <tr><td><strong>Heavy Railgun</strong></td><td>2d12 phy</td><td>Engagement–Long</td><td>Kinetic</td><td><strong>Armor Pierce:</strong> Reduce target's effective Armor Score by 2.</td></tr>
-      <tr><td><strong>Plasma Beam</strong></td><td>2d8 ene</td><td>Knife's–Engagement</td><td>Energy</td><td><strong>Sustained:</strong> If you don't move this round, deal an extra 1d8.</td></tr>
+      <tr><td><strong>Plasma Beam</strong></td><td>2d8 ene</td><td>Knife's–Engagement</td><td>Energy</td><td><strong>Sustained:</strong> If the ship hasn't moved this exchange, deal an extra 1d8.</td></tr>
       <tr><td><strong>Ion Cannon</strong></td><td>1d10 ene</td><td>Close–Long</td><td>Energy</td><td><strong>System Burn:</strong> On Major or Severe hit, target marks 1 System Stress.</td></tr>
-      <tr><td><strong>Torpedo Tubes</strong></td><td>3d10 phy</td><td>All ranges</td><td>Missile</td><td><strong>Slow:</strong> Torpedoes arrive at the start of your next turn. Can be shot down (Engineering Standard Action, Difficulty 15).</td></tr>
+      <tr><td><strong>Torpedo Tubes</strong></td><td>3d10 phy</td><td>All ranges</td><td>Missile</td><td><strong>Slow:</strong> Torpedoes hit at the end of the next GM turn. The target's Gunnery station can shoot a torpedo down with a Standard Action (Difficulty 15).</td></tr>
       <tr><td><strong>Micro-Missile Swarm</strong></td><td>2d4 × 3 phy</td><td>Close–Long</td><td>Missile</td><td><strong>Scatter:</strong> Roll three times, assign each roll to any target within range.</td></tr>
-      <tr><td><strong>EMP Projector</strong></td><td>—</td><td>Close–Engagement</td><td>Electronic</td><td>No damage. Target marks 3 System Stress. Difficulty 14 Evasion roll negates.</td></tr>
-      <tr><td><strong>Graviton Lens</strong></td><td>2d8 ene</td><td>Close–Engagement</td><td>Energy</td><td><strong>Slow:</strong> Target ship cannot move on their next turn on a Severe or Major hit.</td></tr>
+      <tr><td><strong>EMP Projector</strong></td><td>—</td><td>Close–Engagement</td><td>Electronic</td><td>No damage. The target marks 3 System Stress unless it succeeds on a reaction roll (14).</td></tr>
+      <tr><td><strong>Graviton Lens</strong></td><td>2d8 ene</td><td>Close–Engagement</td><td>Energy</td><td><strong>Pin:</strong> On a Major or Severe hit, the target ship can't move during the next GM turn.</td></tr>
       <tr><td><strong>Arc Caster</strong></td><td>1d12 ene</td><td>Knife's Edge only</td><td>Energy</td><td><strong>Chain:</strong> On a hit, arcs to one additional ship within Knife's Edge range for half damage.</td></tr>
     </tbody>
   </table>
 </section>
 
 <section id="repairs">
-  <div class="section-label">15 / Between the Fights</div>
+  <div class="section-label">16 / Between the Fights</div>
   <h2>Ship Repairs</h2>
   <p>Ships are repaired during <strong>downtime</strong> in port or dock. These mirror character downtime moves.</p>
   <div class="rule-card teal-card">
     <h4 style="color:var(--accent-teal)">⌬ MINOR REPAIR</h4>
-    <p style="font-size:0.9rem;font-style:italic;color:var(--text-dim)">Short Rest equivalent &mdash; a few hours in dock</p>
+    <p style="font-size:0.9rem;font-style:italic;color:var(--text-dim)">Short rest equivalent: a few hours in dock</p>
     <p style="font-size:0.92rem;margin-top:0.5rem">Choose one:</p>
     <ul style="font-size:0.9rem"><li>Clear up to 4 Hull Points.</li><li>Clear all System Stress.</li><li>Restore all marked Armor Slots.</li><li>Repair one Critical Systems condition.</li></ul>
   </div>
   <div class="rule-card">
     <h4 style="color:var(--signal)">◈ FULL OVERHAUL</h4>
-    <p style="font-size:0.9rem;font-style:italic;color:var(--text-dim)">Long Rest equivalent &mdash; a full day or more</p>
+    <p style="font-size:0.9rem;font-style:italic;color:var(--text-dim)">Long rest equivalent: a full day or more</p>
     <p style="font-size:0.92rem;margin-top:0.5rem">Clear all Hull Points, System Stress, Armor Slots, and Critical Systems conditions. A Full Overhaul also allows the crew to <strong>swap or install one Module</strong> (if they have the parts and credits).</p>
   </div>
 </section>
 
 <section id="upgrading">
-  <div class="section-label">16 / Improvement</div>
+  <div class="section-label">17 / Improvement</div>
   <h2>Upgrading Your Ship</h2>
   <p>Ships improve through <strong>Module Installation</strong> and, at major story milestones, <strong>Frame Upgrades</strong>.</p>
   <div class="grid-2">
-    <div class="rule-card gold-card"><h4 style="color:var(--accent-gold)">✺ INSTALLING NEW MODULES</h4><p style="font-size:0.9rem">Costs credits (set by GM, typically <strong>500–2000 credits per tier</strong> of module) and requires access to a properly equipped port or shipyard. Takes time &mdash; usually a day per module tier.</p></div>
-    <div class="rule-card static-card"><h4 style="color:var(--static)">◇ FRAME UPGRADES</h4><p style="font-size:0.9rem">Acquiring a Tier 2 or Tier 3 Frame is a story event. The crew must find the ship, earn it, steal it, or commission it &mdash; Tier 2 hulls become available around Campaign Level 3, Tier 3 around Level 6. A Frame Upgrade resets the Module Slots to the new Frame's configuration.</p></div>
+    <div class="rule-card gold-card"><h4 style="color:var(--accent-gold)">✺ INSTALLING NEW MODULES</h4><p style="font-size:0.9rem">Costs credits (set by GM, typically <strong>500–2000 credits per tier</strong> of module) and requires access to a properly equipped port or shipyard. Installation usually takes one day per Module tier.</p></div>
+    <div class="rule-card static-card"><h4 style="color:var(--static)">◇ FRAME UPGRADES</h4><p style="font-size:0.9rem">Acquiring a Tier 2 or Tier 3 Frame, or raising a ship to Tier 4, is a story event. The crew must find the ship, earn it, steal it, or commission it. Tier 2 hulls become available around Campaign Level 3, Tier 3 hulls around Level 6, and Tier 4 around Level 8 (see Legendary Ships). A Frame Upgrade resets the Module Slots to the new Frame's configuration.</p></div>
   </div>
 </section>
 
 <section id="experience">
-  <div class="section-label">17 / Optional Rule</div>
+  <div class="section-label">18 / Optional Rule</div>
   <h2>Ship Experience</h2>
-  <p>If the GM wants to give ships a sense of growth independent of Modules, ships can accumulate <strong>Flight Time</strong> &mdash; a narrative currency awarded by the GM after significant encounters. At <strong>3 Flight Time</strong>, the crew can permanently improve one of the following ship stats by the listed amount:</p>
+  <p>If the GM wants to give ships a sense of growth independent of Modules, ships can accumulate <strong>Flight Time</strong>, a narrative currency the GM awards after significant encounters. At <strong>3 Flight Time</strong>, the crew can permanently improve one of the following ship stats by the listed amount:</p>
   <div class="rule-card"><ul style="font-size:0.92rem"><li>+1 Evasion</li><li>+2 to one Damage Threshold</li><li>+1 Hull Point</li><li>+1 Power Capacity</li><li>+1 System Stress slot</li></ul></div>
 </section>
 
 <section id="examples">
-  <div class="section-label">18 / The Fleet at Work</div>
+  <div class="section-label">19 / The Fleet at Work</div>
   <h2>Example Ships</h2>
   <p style="color:var(--text-dim);margin-bottom:1rem">Two starting ships, fully built. Use them as-is or as templates.</p>
 
   <div class="example-ship">
     <h4>THE VAGRANT STAR</h4>
-    <div class="e-tagline">A Corsair-Class running well past rated hours. She's faster than she looks.</div>
+    <div class="e-tagline">A Corsair-class ship kept flying well past its rated service hours.</div>
     <div class="e-meta">FRAME: CORSAIR-CLASS · TIER 1</div>
     <div class="ship-stats" style="margin:0 0 0.75rem"><div class="stat-pill"><div class="v">8</div><div class="k">Hull</div></div><div class="stat-pill"><div class="v">6</div><div class="k">Stress</div></div><div class="stat-pill"><div class="v">16</div><div class="k">Evasion</div></div><div class="stat-pill"><div class="v">2 (2)</div><div class="k">Armor</div></div><div class="stat-pill"><div class="v">8</div><div class="k">Power</div></div><div class="stat-pill"><div class="v">3</div><div class="k">Speed</div></div></div>
     <div class="e-row"><strong>Thresholds:</strong> Minor 5 / Major 10 / Severe 16</div>
     <div class="e-row"><strong>Weapon Mounts:</strong> 2</div>
-    <div class="e-row"><strong>Modules:</strong> Plasma Lance (Weapon), ECM Shroud (Defense), Damage Control System (System), Sensor Ghost Array (Electronic)</div>
-    <div class="e-row"><strong>Active Power:</strong> 2 + 2 + 1 + 2 = 7 of 8</div>
-    <div class="e-notes">Running Dark frame feature. Fast, slippery, hard to pin down. Glass jaw &mdash; if they land a hit, it counts.</div>
+    <div class="e-row"><strong>Modules:</strong> Plasma Lance (Weapon), Missile Array (Weapon), ECM Shroud (Defense), Damage Control System (System)</div>
+    <div class="e-row"><strong>Active Power:</strong> 3 + 2 + 2 + 1 = 8 of 8</div>
+    <div class="e-notes">Running Dark frame feature. Fast and hard to hit, but a low Hull total means each hit that lands matters.</div>
   </div>
 
   <div class="example-ship">
     <h4>THE IRON PASTORAL</h4>
-    <div class="e-tagline">A Gunship nobody decommissioned because nobody wanted to be the one to try.</div>
+    <div class="e-tagline">A Gunship that has outlasted three decommissioning orders.</div>
     <div class="e-meta">FRAME: GUNSHIP-CLASS · TIER 1</div>
-    <div class="ship-stats" style="margin:0 0 0.75rem"><div class="stat-pill"><div class="v">16</div><div class="k">Hull</div></div><div class="stat-pill"><div class="v">7</div><div class="k">Stress</div></div><div class="stat-pill"><div class="v">9</div><div class="k">Evasion</div></div><div class="stat-pill"><div class="v">5 (5)</div><div class="k">Armor</div></div><div class="stat-pill"><div class="v">12</div><div class="k">Power</div></div><div class="stat-pill"><div class="v">1</div><div class="k">Speed</div></div></div>
-    <div class="e-row"><strong>Thresholds:</strong> Minor 8 / Major 14 / Severe 20</div>
+    <div class="ship-stats" style="margin:0 0 0.75rem"><div class="stat-pill"><div class="v">13</div><div class="k">Hull</div></div><div class="stat-pill"><div class="v">7</div><div class="k">Stress</div></div><div class="stat-pill"><div class="v">9</div><div class="k">Evasion</div></div><div class="stat-pill"><div class="v">4 (4)</div><div class="k">Armor</div></div><div class="stat-pill"><div class="v">15</div><div class="k">Power</div></div><div class="stat-pill"><div class="v">1</div><div class="k">Speed</div></div></div>
+    <div class="e-row"><strong>Thresholds:</strong> Minor 7 / Major 13 / Severe 19</div>
     <div class="e-row"><strong>Weapon Mounts:</strong> 4</div>
-    <div class="e-row"><strong>Modules:</strong> Heavy Railgun (Weapon), Railgun Battery (Weapon), Plasma Lance (Weapon), Reinforced Hull Plating (Defense), Regenerative Armor (Defense), Overclocked Reactor (System)</div>
-    <div class="e-row"><strong>Active Power:</strong> 2 + 2 + 3 + 1 + 2 + 0 = 10 of 12 (Reactor brings capacity to 12)</div>
-    <div class="e-notes">Weapons Platform frame feature. Slow, brutal, nearly impossible to kill. Point it at something and let it work.</div>
+    <div class="e-row"><strong>Modules:</strong> Railgun Battery (Weapon), Plasma Lance (Weapon), Missile Array (Weapon), Reinforced Hull Plating (Defense), Regenerative Armor (Defense), Overclocked Reactor (System)</div>
+    <div class="e-row"><strong>Active Power:</strong> 2 + 3 + 2 + 1 + 2 + 0 = 10 of 15 (the Reactor raises capacity from 12 to 15)</div>
+    <div class="e-notes">Weapons Platform frame feature. Slow and heavily armored, with the firepower to end fights quickly.</div>
   </div>
 </section>
 
 <section id="quickref">
-  <div class="section-label">19 / At the Table</div>
+  <div class="section-label">20 / At the Table</div>
   <h2>Quick Reference</h2>
 
   <h3>Station Action Summary</h3>
@@ -771,10 +831,10 @@
     <tbody>
       <tr><td colspan="4" style="color:var(--text-dim);font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase">Tier 1</td></tr>
       <tr><td>Corsair</td><td class="center">5</td><td class="center">10</td><td class="center">16</td></tr>
-      <tr><td>Patrol Frigate</td><td class="center">6</td><td class="center">12</td><td class="center">18</td></tr>
-      <tr><td>Gunship</td><td class="center">8</td><td class="center">14</td><td class="center">20</td></tr>
-      <tr><td>Support Tender</td><td class="center">5</td><td class="center">9</td><td class="center">15</td></tr>
-      <tr><td>Scout</td><td class="center">4</td><td class="center">8</td><td class="center">12</td></tr>
+      <tr><td>Patrol Frigate</td><td class="center">6</td><td class="center">11</td><td class="center">17</td></tr>
+      <tr><td>Gunship</td><td class="center">7</td><td class="center">13</td><td class="center">19</td></tr>
+      <tr><td>Support Tender</td><td class="center">5</td><td class="center">10</td><td class="center">15</td></tr>
+      <tr><td>Scout</td><td class="center">5</td><td class="center">9</td><td class="center">14</td></tr>
       <tr><td colspan="4" style="color:var(--text-dim);font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase">Tier 2</td></tr>
       <tr><td>Vanguard</td><td class="center">6</td><td class="center">12</td><td class="center">18</td></tr>
       <tr><td>Bulwark</td><td class="center">9</td><td class="center">16</td><td class="center">22</td></tr>
@@ -787,6 +847,8 @@
       <tr><td>Wraith</td><td class="center">7</td><td class="center">12</td><td class="center">17</td></tr>
       <tr><td>Aegis</td><td class="center">9</td><td class="center">15</td><td class="center">21</td></tr>
       <tr><td>Oracle</td><td class="center">8</td><td class="center">14</td><td class="center">20</td></tr>
+      <tr><td colspan="4" style="color:var(--text-dim);font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase">Tier 4</td></tr>
+      <tr><td>Legendary Refit</td><td class="center">+4</td><td class="center">+5</td><td class="center">+6</td></tr>
     </tbody>
   </table>
 
@@ -796,7 +858,7 @@
 
 <p style="text-align:center;margin-top:3rem;color:var(--text-dim);font-size:0.85rem;font-style:italic">Designed as a supplement for Voidheart, a sci-fi reskin of Daggerheart by Darrington Press.<br>Mechanically inspired by Lancer (Massif Press), Powered by the Apocalypse (Meguey &amp; Vincent Baker), and GURPS (Steve Jackson Games).</p>
 
-<p style="text-align:center;margin-top:2rem;color:var(--text-dim);font-size:0.88rem">Back to <a href="index.html">the Hub</a> &mdash; or pick a <a href="classes.html">class</a> built for combat.</p>
+<p style="text-align:center;margin-top:2rem;color:var(--text-dim);font-size:0.88rem">Back to <a href="index.html">the Hub</a>, or choose a <a href="classes.html">class</a>.</p>
 
 </main>
 

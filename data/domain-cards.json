@@ -138,7 +138,7 @@
       "level": 1,
       "type": "spell",
       "recallCost": 0,
-      "effect": "You have a deeply personal artifact—a precursor sigil etched into your gear, a salvaged token from a dead civilization, or a fragment of alien ore—that can be infused with protective void energy as a ward by you or an ally. Describe what it is and why it's important to you. The ward's bearer can spend a Signal to reduce incoming damage by 1d8. If the Ward Die result is 8, the ward's power ends after it reduces damage this turn. It can be recharged for free on your next rest."
+      "effect": "You have a deeply personal artifact, such as a precursor sigil etched into your gear, a salvaged token from a dead civilization, or a fragment of alien ore, that can be infused with protective void energy as a ward by you or an ally. Describe what it is and why it's important to you. The ward's bearer can spend a Signal to reduce incoming damage by 1d8. If the Ward Die result is 8, the ward's power ends after it reduces damage this turn. It can be recharged for free on your next rest."
     },
     {
       "id": "deep-void-surge",
@@ -217,7 +217,7 @@
       "was": "Preservation Blast",
       "level": 4,
       "type": "spell",
-      "recallCost": 1,
+      "recallCost": 2,
       "effect": "Make a Channel Roll against all targets within Melee range. Targets you succeed against are forced back to Far range and take d8+3 energy damage using your Channel trait."
     },
     {
@@ -248,7 +248,7 @@
       "level": 6,
       "type": "spell",
       "recallCost": 2,
-      "effect": "Make a Channel Roll (15). On a success, you place a void anchor on the ground where you currently stand. The next time you successfully cast Fold Anchor, a rift in space opens up, providing safe passage back to the exact spot where the first anchor was placed. This rift stays open until you choose to close it or you cast another spell. You can drop the spell at any time to cast Fold Anchor again and place the anchor somewhere new."
+      "effect": "Make a Channel Roll (15). On a success, you place a void anchor on the ground where you currently stand. The next time you successfully use Rift Walker, a rift in space opens, providing safe passage back to the exact spot where the anchor was placed. This rift stays open until you choose to close it or you use another Channel ability. You can drop the effect at any time to use Rift Walker again and place the anchor somewhere new."
     },
     {
       "id": "deep-graviton-grip",
@@ -297,7 +297,7 @@
       "was": "Confusing Aura",
       "level": 8,
       "type": "spell",
-      "recallCost": 1,
+      "recallCost": 2,
       "effect": "Make a Channel Roll (14). Once per long rest on a success, you create a layer of holographic projection over your body that makes it hard to tell exactly where you are. Mark any number of Stress to make that many additional layers. When an adversary makes an attack against you, roll a number of d6s equal to the number of layers currently active. If any roll a 5 or higher, one layer is destroyed and the attack fails. If all results are 4 or lower, you take the damage and this spell ends."
     },
     {
@@ -547,7 +547,7 @@
       "was": null,
       "level": 10,
       "type": "ability",
-      "recallCost": 1,
+      "recallCost": 3,
       "effect": "When you successfully make an attack with your weapon, you never deal damage beneath a target's Major damage threshold (the target always marks a minimum of 2 Hit Points). Additionally, when a creature within your weapon's range deals damage to an ally with an attack that doesn't include you, you can mark a Stress to force them to make a Reaction Roll (15). On a failure, the target must mark a Hit Point."
     },
     {
@@ -687,7 +687,7 @@
       "was": "Bone-Touched",
       "level": 7,
       "type": "ability",
-      "recallCost": 1,
+      "recallCost": 2,
       "effect": "When 4 or more of the domain cards in your loadout are from the Vector domain, gain the following benefits: +1 bonus to Agility; once per rest, you can spend 3 Signal to cause an attack that succeeded against you to fail instead."
     },
     {
@@ -795,7 +795,7 @@
       "domain": "grid",
       "name": "Archive of Vagras",
       "was": "Book of Vagras",
-      "level": 1,
+      "level": 2,
       "type": "archive",
       "recallCost": 2,
       "effect": "Cipher Lock (was Runic Lock): Make a Channel Roll (15) on an object you're touching that can close. Once per rest on a success, encrypt it so only creatures of your choice can open it.\nFold Door (was Arcane Door): When you have no adversaries within Close range, make a Channel Roll (13). On a success, spend a Signal to open a folded-space portal to a point within Far range you can see. It closes once a creature has passed through.\nScan Pulse (was Reveal): Make a Channel Roll. If anything is concealed by cloaking or signal-baffling tech within Close range, it is revealed."
@@ -877,7 +877,7 @@
       "was": "Banish",
       "level": 6,
       "type": "spell",
-      "recallCost": 2,
+      "recallCost": 0,
       "effect": "Make a Channel Roll against a target within Close range. On a success, roll d20s equal to your Channel trait. The target must make a reaction roll with Difficulty equal to your highest result. On a success, they mark a Stress but aren't exiled. Once per rest on a failure, they are exiled from this dimension. When the PCs roll with Static, the Difficulty gains −1 and the target makes another reaction roll to return."
     },
     {
@@ -928,7 +928,7 @@
       "level": 8,
       "type": "spell",
       "recallCost": 3,
-      "effect": "When you have a few minutes of calm, spend 2 Signal to summon your Safe Haven—a large folded-space refuge. A sealed doorway appears within Close range; only creatures of your choice can enter. Once inside, you can make the entrance invisible. When you take a rest within your own Safe Haven, you can choose an additional downtime move."
+      "effect": "When you have a few minutes of calm, spend 2 Signal to summon your Safe Haven, a large folded-space refuge where you and your allies can take shelter. A sealed doorway appears within Close range, and only creatures of your choice can enter. Once inside, you can make the entrance invisible. You and anyone else inside can always exit. Once you leave, the doorway must be summoned again. When you take a rest within your own Safe Haven, you can choose an additional downtime move."
     },
     {
       "id": "grid-archive-of-ronin",
@@ -988,7 +988,7 @@
       "level": 1,
       "type": "spell",
       "recallCost": 0,
-      "effect": "Make a Channel Roll against a target within Close range. On a success, they become temporarily Enraptured—their attention fixed on you. Once per rest on a success, you can mark a Stress to force the Enraptured target to mark a Stress as well."
+      "effect": "Make a Channel Roll against a target within Close range. On a success, they become temporarily Enraptured. While Enraptured, a target's attention is fixed on you, narrowing their field of view and drowning out any sound but your voice. Once per rest on a success, you can mark a Stress to force the Enraptured target to mark a Stress as well."
     },
     {
       "id": "sable-inspirational-words",
@@ -1038,7 +1038,7 @@
       "level": 3,
       "type": "spell",
       "recallCost": 1,
-      "effect": "Make a Channel Roll (10). On a success, mark a Stress and choose yourself or an ally within Melee range to become Invisible. Place tokens equal to your Channel trait on this card. When the Invisible creature takes an action, spend a token. After the last token is spent, the effect ends. You can only hold Invisibility on one creature at a time."
+      "effect": "Make a Channel Roll (10). On a success, mark a Stress and choose yourself or an ally within Melee range to become Invisible. An Invisible creature can't be seen except by specialized sensors, and attack rolls against them are made with disadvantage. Place a number of tokens equal to your Channel trait on this card. When the Invisible creature takes an action, spend a token from this card. After the action that spends the last token is resolved, the effect ends.\nYou can only hold Invisibility on one creature at a time."
     },
     {
       "id": "sable-soothing-speech",
@@ -1107,7 +1107,7 @@
       "was": null,
       "level": 7,
       "type": "ability",
-      "recallCost": 2,
+      "recallCost": 1,
       "effect": "After you make an action roll to persuade, lie, or gain favor, you can spend a Signal to reroll the Signal or Static Die."
     },
     {
@@ -1208,7 +1208,7 @@
       "level": 1,
       "type": "spell",
       "recallCost": 0,
-      "effect": "When you have a few minutes to prepare, mark a Stress to don the facade of any humanoid you can picture clearly. Place tokens equal to your Channel trait on this card. When you take an action while disguised, spend a token. After the last token is spent, the disguise drops."
+      "effect": "When you have a few minutes to prepare, you can mark a Stress to don the facade of any humanoid you can picture clearly. While disguised, you have advantage on Presence Rolls to avoid scrutiny.\nPlace a number of tokens equal to your Channel trait on this card. When you take an action while disguised, spend a token from this card. After the action that spends the last token is resolved, the disguise drops."
     },
     {
       "id": "shadow-shadow-specter",
@@ -1237,7 +1237,7 @@
       "was": null,
       "level": 3,
       "type": "ability",
-      "recallCost": 0,
+      "recallCost": 1,
       "effect": "When behind a creature about your size, mark a Stress to pull them into a chokehold, making them temporarily Vulnerable. Attacks against them deal an extra 2d6 damage."
     },
     {
@@ -1258,7 +1258,7 @@
       "level": 4,
       "type": "ability",
       "recallCost": 0,
-      "effect": "When you fail with Static while moving unnoticed, mark a Stress to roll with Signal instead. You can do the same for an ally within Close range."
+      "effect": "When you roll with Static while attempting to move unnoticed through a dangerous area, you can mark a Stress to roll with Signal instead.\nIf an ally within Close range is also attempting to move unnoticed and rolls with Static, you can mark a Stress to change their result to a roll with Signal."
     },
     {
       "id": "shadow-painted-target",
@@ -1278,7 +1278,7 @@
       "level": 5,
       "type": "spell",
       "recallCost": 1,
-      "effect": "Make a Channel Roll against a target within Close range. On a success, spend a Signal to project suppressive interference in Very Close range around them that follows them. The target and area are Silenced until cleared. While Silenced, they can't make noise or use Channel abilities."
+      "effect": "Make a Channel Roll against a target within Close range. On a success, spend a Signal to project suppressive interference around the target that covers everything within Very Close range of them and follows them as they move.\nThe target and anything within the area is Silenced until the GM spends a Static on their turn to clear this condition, you use Hush again, or you take Major damage. While Silenced, they can't make noise and can't use Channel abilities."
     },
     {
       "id": "shadow-phantom-retreat",
@@ -1288,7 +1288,7 @@
       "level": 5,
       "type": "spell",
       "recallCost": 2,
-      "effect": "Spend a Signal to activate Phantom Retreat where you're standing. Spend another Signal before your next rest to disappear and reappear where you activated it."
+      "effect": "Spend a Signal to activate Phantom Retreat where you're currently standing. Spend another Signal at any time before your next rest to disappear from where you are and reappear where you were standing when you activated Phantom Retreat. The effect ends after you reappear."
     },
     {
       "id": "shadow-dark-whispers",
@@ -1298,7 +1298,7 @@
       "level": 6,
       "type": "spell",
       "recallCost": 0,
-      "effect": "Speak into the mind of anyone you've made physical contact with. Mark a Stress and make a Channel Roll to ask the GM: where are they, what are they doing, what are they afraid of, or what do they cherish most."
+      "effect": "You can speak into the mind of any person you've made physical contact with. Once you've opened a channel with them, they can speak back into your mind. Additionally, you can mark a Stress to make a Channel Roll against them. On a success, ask the GM one of the following questions and receive an answer:\nWhere are they?\nWhat are they doing?\nWhat are they afraid of?\nWhat do they cherish most in the world?"
     },
     {
       "id": "shadow-mass-disguise",
@@ -1308,7 +1308,7 @@
       "level": 6,
       "type": "spell",
       "recallCost": 0,
-      "effect": "With a few minutes of silence, mark a Stress to disguise all willing creatures within Close range. Activate a Countdown (8); when it triggers, the disguise drops."
+      "effect": "When you have a few minutes of silence to focus, you can mark a Stress to project holographic disguises over all willing creatures within Close range. Their new forms must share a general body structure and size, and can be someone or something you've seen before or an invented appearance. A disguised creature has advantage on Presence Rolls to avoid scrutiny.\nActivate a Countdown (8). It ticks down as a consequence the GM chooses. When it triggers, the disguise drops."
     },
     {
       "id": "shadow-shadow-touched",
@@ -1318,7 +1318,7 @@
       "level": 7,
       "type": "ability",
       "recallCost": 2,
-      "effect": "When 4 or more domain cards are from Shadow: once per rest when you have 0 Signal and the GM would gain Static, gain a Signal instead; on a successful attack, mark a Stress to add your Static Die to damage."
+      "effect": "When 4 or more of the domain cards in your loadout are from the Shadow domain, gain the following benefits:\nOnce per rest, when you have 0 Signal and the GM would gain a Static, you can gain a Signal instead.\nWhen you make a successful attack, you can mark a Stress to add the result of your Static Die to your damage roll."
     },
     {
       "id": "shadow-vanishing-dodge",
@@ -1358,7 +1358,7 @@
       "level": 9,
       "type": "spell",
       "recallCost": 2,
-      "effect": "Once per long rest, targets within Very Close range must succeed on Reaction Roll (16) or become temporarily Horrified and Vulnerable. Steal Static from the GM equal to Horrified targets (up to the pool). Roll d6s equal to stolen Static and deal total damage to each Horrified target."
+      "effect": "Once per long rest, choose any targets within Very Close range to perceive you as a nightmarish horror. The targets must succeed on a Reaction Roll (16) or become temporarily Horrified. While Horrified, they're Vulnerable. Steal a number of Static from the GM equal to the number of Horrified targets (up to the number of Static in the GM's pool). Roll a number of d6s equal to the stolen Static and deal the total damage to each Horrified target. Discard the stolen Static."
     },
     {
       "id": "shadow-twilight-toll",
@@ -1368,7 +1368,7 @@
       "level": 9,
       "type": "ability",
       "recallCost": 1,
-      "effect": "Choose a target within Far range. On successful non-damage action rolls against them, place a token. When you deal damage, spend tokens to add d12 per token. Only one target at a time."
+      "effect": "Choose a target within Far range. When you succeed on an action roll against them that doesn't result in a damage roll, place a token on this card. When you deal damage to this target, spend any number of tokens to add a d12 for each token spent to your damage roll. You can only hold Twilight Toll on one creature at a time.\nWhen you choose a new target or take a rest, clear all unspent tokens."
     },
     {
       "id": "shadow-eclipse",
@@ -1398,7 +1398,7 @@
       "level": 1,
       "type": "ability",
       "recallCost": 0,
-      "effect": "When tracking creatures, spend Signal to ask the GM questions (direction, how long ago, what they were doing, how many). When you encounter tracked creatures, gain +1 Evasion against them."
+      "effect": "When you're tracking a specific creature or group of creatures based on signs of their passage, you can spend any number of Signal and ask the GM that many questions from the following list:\nWhat direction did they go?\nHow long ago did they pass through?\nWhat were they doing in this location?\nHow many of them were here?\nWhen you encounter creatures you've tracked in this way, gain a +1 bonus to your Evasion against them."
     },
     {
       "id": "cipher-natures-tongue",
@@ -1408,7 +1408,7 @@
       "level": 1,
       "type": "ability",
       "recallCost": 0,
-      "effect": "Make an Instinct Roll (12) to communicate with or read alien creatures. Before a Channel Roll in a biological or xenological environment, spend a Signal for +2."
+      "effect": "You can read the signals of living ecosystems. When you want to communicate with the plants and creatures around you, make an Instinct Roll (12). On a success, they share the information they know. On a roll with Static, their knowledge might be limited or come at a cost.\nAdditionally, before you make a Channel Roll in a biological or xenological environment, you can spend a Signal to gain a +2 bonus to the roll."
     },
     {
       "id": "cipher-vicious-entangle",
@@ -1438,7 +1438,7 @@
       "level": 2,
       "type": "spell",
       "recallCost": 1,
-      "effect": "Spend a Signal to summon a small xenoform companion until your next rest or it's attacked. Spend an additional Signal for a flying companion. Add d6 to damage against adversaries within Melee range of your familiar."
+      "effect": "Spend a Signal to summon a small xeno-creature to your side until your next rest, you use Natural Familiar again, or the familiar is targeted by an attack. If you spend an additional Signal, you can summon a familiar that flies. You can communicate with it, make a Channel Roll to command it to perform simple tasks, and mark a Stress to see through its eyes.\nWhen you deal damage to an adversary within Melee range of your familiar, add a d6 to your damage roll."
     },
     {
       "id": "cipher-corrosive-projectile",
@@ -1448,7 +1448,7 @@
       "level": 3,
       "type": "spell",
       "recallCost": 1,
-      "effect": "Make a Channel Roll against a target within Far range. On a success, deal d6+4 energy damage. Mark 2+ Stress to make them permanently Corroded (−1 Difficulty per 2 Stress spent; stacks)."
+      "effect": "Make a Channel Roll against a target within Far range. On a success, deal d6+4 energy damage using your Proficiency. Additionally, you can mark 2 or more Stress to make them permanently Corroded. While a target is Corroded, they take a −1 penalty to their Difficulty for every 2 Stress you spent. This condition can stack."
     },
     {
       "id": "cipher-bio-spire",
@@ -1468,7 +1468,7 @@
       "level": 4,
       "type": "spell",
       "recallCost": 1,
-      "effect": "Make a Channel Roll within Close range and choose: pull into Melee range; force 2 Stress; or adversaries between you and target take 3d6+2 physical on failed Reaction Roll (13). On success, Restrain the target."
+      "effect": "Make a Channel Roll against a target within Close range and choose one of the following options:\nYou pull the target into Melee range, or pull yourself into Melee range of them.\nYou constrict the target and force them to mark 2 Stress.\nAll adversaries between you and the target must succeed on a Reaction Roll (13) or take 3d6+2 physical damage.\nOn a success, biotech tendrils lash out from your hands, causing the chosen effect and temporarily Restraining the target."
     },
     {
       "id": "cipher-healing-field",
@@ -1508,7 +1508,7 @@
       "level": 6,
       "type": "spell",
       "recallCost": 0,
-      "effect": "Spend Signal to summon xenoform mounts until your next long rest or they take damage. Double land travel speed; move within Far range without rolling in danger. Riders: −2 attack, +2 damage."
+      "effect": "Spend any number of Signal to summon that many xenoform mounts that you and your allies can ride until your next long rest or the mounts take any damage. The mounts double your land speed while traveling and, when in danger, allow you to move within Far range without having to roll. Creatures riding a mount take a −2 penalty to attack rolls and gain a +2 bonus to damage rolls."
     },
     {
       "id": "cipher-forager",
@@ -1518,7 +1518,7 @@
       "level": 6,
       "type": "ability",
       "recallCost": 1,
-      "effect": "As an additional downtime move, roll d6 to scavenge a consumable (ration, relic, calibration tool, medstim, lucky component, or choose). Party can carry up to five foraged consumables."
+      "effect": "As an additional downtime move you can choose, roll a d6 to see what you scavenge. Work with the GM to describe it and add it to your inventory as a consumable. Your party can carry up to five foraged consumables at a time.\n1: A rare ration (clear 2 Stress)\n2: A strange relic (gain 2 Signal)\n3: A calibration chip (+2 to a Channel Roll)\n4: A medstim (clear 2 Hit Points)\n5: A lucky component (reroll any die)\n6: Choose one of the options above."
     },
     {
       "id": "cipher-cipher-touched",
@@ -1528,7 +1528,7 @@
       "level": 7,
       "type": "ability",
       "recallCost": 2,
-      "effect": "When 4+ Cipher cards in loadout: +2 Channel Rolls in biological, xenological, or constructed-systems environments; once per rest, double Agility or Instinct on a roll (before rolling)."
+      "effect": "When 4 or more of the domain cards in your loadout are from the Cipher domain, gain the following benefits:\nWhile you're in a biological or xenological environment, you gain a +2 bonus to your Channel Rolls.\nOnce per rest, you can double your Agility or Instinct when making a roll that uses that trait. You must choose to do this before you roll."
     },
     {
       "id": "cipher-wild-surge",
@@ -1548,7 +1548,7 @@
       "level": 8,
       "type": "spell",
       "recallCost": 2,
-      "effect": "Make a Channel Roll (13). On a success, spend Signal to create constructs within Far range: allies gain +3 attack against adversaries near a construct; allies can mark an extra Armor Slot near a construct. Constructs vanish after granting a benefit or taking damage."
+      "effect": "Make a Channel Roll (13). On a success, spend any number of Signal to deploy an equal number of small support drones at points you choose within Far range. They provide the following benefits:\nYour allies gain a +3 bonus to attack rolls against adversaries within Melee range of a drone.\nAn ally who marks an Armor Slot while within Melee range of a drone can mark an additional Armor Slot.\nA drone vanishes after granting a benefit or taking any damage."
     },
     {
       "id": "cipher-rejuvenation-barrier",
@@ -1558,7 +1558,7 @@
       "level": 8,
       "type": "spell",
       "recallCost": 1,
-      "effect": "Make a Channel Roll (15). Once per rest on a success, barrier at Very Close range; allies inside when cast clear 1d4 Hit Points and have resistance to outside physical damage. Barrier follows you."
+      "effect": "Make a Channel Roll (15). Once per rest on a success, create a temporary barrier of protective energy around you at Very Close range. You and all allies within the barrier when you create it clear 1d4 Hit Points. While the barrier is up, you and all allies within it have resistance to physical damage from outside the barrier. When you move, the barrier follows you."
     },
     {
       "id": "cipher-cipher-resonance",
@@ -1598,7 +1598,7 @@
       "level": 10,
       "type": "spell",
       "recallCost": 2,
-      "effect": "Choose Blizzard (2d20+8 energy, Vulnerable), Hurricane (3d10+10 energy, wind blocks movement), or Sandstorm (5d6+9 energy, ranged attacks at disadvantage). Channel Roll against all targets within Far range until GM spends Static."
+      "effect": "Choose one of the following storms and make a Channel Roll against all targets within Far range. Targets you succeed against suffer its effects until the GM spends a Static on their turn to end this effect.\nBlizzard: Deal 2d20+8 energy damage, and targets are temporarily Vulnerable.\nHurricane: Deal 3d10+10 energy damage and choose the direction the wind is blowing. Targets can't move against the wind.\nSandstorm: Deal 5d6+9 energy damage. Attacks made from beyond Melee range have disadvantage."
     },
     {
       "id": "psionic-bolt-beacon",
@@ -1698,7 +1698,7 @@
       "level": 5,
       "type": "spell",
       "recallCost": 1,
-      "effect": "Spend a Signal to telekinetically shape material you're touching (stone, ice, metal, polymer) within Close range, no larger than you—for tools, doors, etc."
+      "effect": "Spend a Signal to telekinetically reshape a section of material you're touching, such as stone, ice, metal, or polymer. The area can be no larger than you. For example, you can form a rudimentary tool or create a door. You can only affect material within Close range of where you're touching it."
     },
     {
       "id": "psionic-mind-strike",
@@ -1718,7 +1718,7 @@
       "level": 6,
       "type": "spell",
       "recallCost": 2,
-      "effect": "After a long rest, place tokens equal to your Channel trait. Touch a creature and spend tokens to clear 2 Hit Points or 2 Stress per token, or clear Vulnerable/repair ailments (GM may require extra tokens)."
+      "effect": "After a long rest, place a number of tokens equal to your Channel trait on this card. Touch a creature and spend any number of tokens to clear 2 Hit Points or 2 Stress for each token spent.\nYou can also spend a token when touching a creature to clear the Vulnerable condition or treat a physical or psionic ailment (the GM might require additional tokens depending on the ailment's strength).\nWhen you take a long rest, clear all unspent tokens."
     },
     {
       "id": "psionic-zone-of-protection",
@@ -1748,7 +1748,7 @@
       "level": 7,
       "type": "ability",
       "recallCost": 2,
-      "effect": "When 4+ Psionic cards in loadout: +3 Severe damage threshold; once per long rest, when incoming damage would mark Hit Points, mark that much Stress or spend that much Signal instead."
+      "effect": "When 4 or more of the domain cards in your loadout are from the Psionic domain, gain the following benefits:\n+3 bonus to your Severe damage threshold.\nOnce per long rest, when incoming damage would require you to mark a number of Hit Points, you can choose to mark that much Stress or spend that much Signal instead."
     },
     {
       "id": "psionic-shield-aura",
@@ -1768,7 +1768,7 @@
       "level": 8,
       "type": "spell",
       "recallCost": 2,
-      "effect": "Channel Roll against adversaries in front of you within Far range. On a success, spend Signal to force targets to Reaction Roll (14). Fail: 4d20+5 psionic damage and Stunned. Succeed: 3d20+3 psionic damage."
+      "effect": "Make a Channel Roll to unleash a blinding psionic flare against all adversaries in front of you within Far range. On a success, spend any number of Signal and force that many targets you succeeded against to make a Reaction Roll (14).\nTargets who succeed take 3d20+3 psionic damage. Targets who fail take 4d20+5 psionic damage and are temporarily Stunned. While Stunned, they can't use reactions and can't take any other actions until they clear this condition."
     },
     {
       "id": "psionic-overwhelming-aura",
@@ -1958,7 +1958,7 @@
       "level": 7,
       "type": "ability",
       "recallCost": 1,
-      "effect": "When 4+ Tide cards in loadout: +1 Armor Score; when you mark Hit Points without marking an Armor Slot, clear an Armor Slot."
+      "effect": "When 4 or more of the domain cards in your loadout are from the Tide domain, gain the following benefits:\n+1 bonus to your Armor Score.\nWhen you mark 1 or more Hit Points without marking an Armor Slot, clear an Armor Slot."
     },
     {
       "id": "tide-full-surge",
@@ -1978,7 +1978,7 @@
       "level": 8,
       "type": "ability",
       "recallCost": 2,
-      "effect": "Spend 2 Signal to strike the ground. Strength Roll against all targets within Very Close range. On success, throw them to Far range; Reaction Roll (17)—fail: 4d10+8 damage, succeed: half."
+      "effect": "Spend 2 Signal to strike the ground where you stand and make a Strength Roll against all targets within Very Close range. Targets you succeed against are thrown back to Far range and must make a Reaction Roll (17). Targets who fail take 4d10+8 damage. Targets who succeed take half damage."
     },
     {
       "id": "tide-hold-the-line",
